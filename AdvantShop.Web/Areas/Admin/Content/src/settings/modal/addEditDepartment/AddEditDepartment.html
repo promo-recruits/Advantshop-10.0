@@ -1,0 +1,40 @@
+﻿<form novalidate name="addEditDepartmentForm">
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{ctrl.mode == "add" ? ('Admin.Js.AddEditDepartment.Add'|translate) : ('Admin.Js.AddEditDepartment.Edit'|translate)}}</h2>
+    </div>
+    <div class="modal-body" ng-init="ctrl.addEditDepartmentForm = addEditDepartmentForm">
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">
+                <span class="text-required">
+                    {{'Admin.Js.AddEditDepartment.Name'|translate}}
+                </span>
+            </label>
+            <div class="col-xs-9">
+                <input data-e2e="departmentName" type="text" class="form-control" ng-model="ctrl.name" required validation-input-text={{'Admin.Js.AddEditDepartment.Name'|translate}} autofocus />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">{{'Admin.Js.AddEditDepartment.SortingOrder'|translate}}</label>
+            <div class="col-xs-9">
+                <input type="text" data-e2e="departmentSort" ng-model="ctrl.sort" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">{{'Admin.Js.AddEditDepartment.Active'|translate}}</label>
+            <div class="col-xs-9">
+                <label class="adv-checkbox-label">
+                    <input type="checkbox" data-e2e="departmentEnabled" class="adv-checkbox-input control-checkbox" ng-model="ctrl.enabled" />
+                    <span class="adv-checkbox-emul"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-save btn-primary" type="button" data-e2e="departmentButtonSave"
+                data-button-validation-success="ctrl.save()" data-button-validation ladda="ctrl.btnSleep"
+                disabled ng-disabled="ctrl.mode == 'edit' && (!ctrl.formInited || !addEditDepartmentForm.modified)"
+                ng-bind="ctrl.mode == 'add' ? ('Admin.Js.AddEdit.Add'|translate) : ('Admin.Js.AddEdit.Save'|translate)"></button>
+        <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.AddEdit.Cancel'|translate}}</button>
+    </div>
+</form>

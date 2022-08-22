@@ -1,0 +1,5 @@
+﻿Id;Name;Enabled;Template;Url;CreatedDate;LandingSiteId;IsMain;PageType
+1;OrderFromFormFunnel;true;Default;orderfromformfunnel;01.06.2021 15:03;1;true;0
+2;OrderFromButtonFunnel;true;Default;orderfrombuttonfunnel;01.06.2021 15:04;2;true;0
+3;OrderFromProductBlockFunnel;true;Default;orderfromproductblockfunnel;01.06.2021 15:04;3;true;0
+4;OrderFromMultiProductBlockFunnel;true;Default;orderfrommultiproductblockfunnel;01.06.2021 15:04;4;true;0

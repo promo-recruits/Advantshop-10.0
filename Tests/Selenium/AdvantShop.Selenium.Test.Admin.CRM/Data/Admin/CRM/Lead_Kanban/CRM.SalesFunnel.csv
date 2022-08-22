@@ -1,0 +1,6 @@
+Id;Name;SortOrder;FinalSuccessAction;Enable;LeadAutoCompleteActionType
+1;Основная воронка;10;0;true;0
+2;Лиды;20;0;true;0
+3;Тестовая воронка;30;0;true;0
+4;Воронка;40;0;true;0
+5;Воронка 2;50;0;true;0

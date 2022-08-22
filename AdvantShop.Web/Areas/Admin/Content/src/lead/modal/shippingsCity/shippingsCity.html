@@ -1,0 +1,82 @@
+﻿<form>
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{'Admin.Js.ShippingsCity.Title'|translate}}</h2>
+    </div>
+    <div class="modal-body">
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-2 control-label">
+                        <span class="text-required">{{'Admin.Js.ShippingsCity.Country'|translate}}</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" ng-model="ctrl.data.Country" required validation-input-text={{'Admin.Js.ShippingsCity.Country'|translate}} autocompleter on-type="country" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-2 control-label">
+                        <span class="text-required">{{'Admin.Js.ShippingsCity.Region'|translate}}</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" ng-model="ctrl.data.Region" required validation-input-text={{'Admin.Js.ShippingsCity.Region'|translate}} autocompleter on-type="region" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-2 control-label">
+                        {{'Admin.Js.ShippingsCity.District'|translate}}
+                    </label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" ng-model="ctrl.data.District" validation-input-text={{'Admin.Js.ShippingsCity.District'|translate}} />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-2 control-label">
+                        <span class="text-required">{{'Admin.Js.ShippingsCity.City'|translate}}</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" ng-model="ctrl.data.City" required validation-input-text={{'Admin.Js.ShippingsCity.City'|translate}} autocompleter on-type="city" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-2 control-label">
+                        {{'Admin.Js.ShippingsCity.Address'|translate}}
+                    </label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" ng-model="ctrl.data.Street" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-2 control-label">
+                        <span class="text-required">Индекс</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" ng-model="ctrl.data.Zip" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-save btn-primary" type="button" button-validation-success="ctrl.save()" data-button-validation>{{'Admin.Js.AddEdit.Save'|translate}}</button>
+        <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.AddEdit.Cancel'|translate}}</button>
+    </div>
+</form>

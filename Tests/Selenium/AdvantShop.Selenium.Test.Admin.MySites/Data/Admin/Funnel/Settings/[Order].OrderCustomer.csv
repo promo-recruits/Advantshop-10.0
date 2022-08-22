@@ -1,0 +1,3 @@
+﻿OrderId;CustomerID[GUID];CustomerIP;FirstName;LastName;Email;Phone
+3;8A22DFF6-34D5-4DD8-9C12-884310FD9B4F;;NameSecond;SurnameSecond;emailSecond@mail.ru;+7(999)999-99-92
+4;443C44E3-7B8D-4D3A-A458-461EC2F0B527;;NameThird;SurnameThird;emailThird@mail.ru;+7(999)999-99-93

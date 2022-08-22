@@ -1,0 +1,229 @@
+testName1;Export1;;
+defaultExportType;xml;;
+firstProductStart;"<offer id=\""1\"" available=\""true\"" group_id=\""1\"">";;
+secondProductStart;"<offer id=\""4\"" available=\""true\"" group_id=\""4\"">";;
+ssPriceMargin;20;;
+ssAdditionalUrlTags;"utm-source=""my-shop.ru""";;
+ssShopName;MyShopName;;
+ssCompanyName;MyCompanyName;;
+ssSalesNotes;My product sales notes - 1234567890;;
+estrShopSet1;<shop><name>MyShopName</name>;;
+estrShopSet2;<company>MyCompanyName</company>;;
+estrShopSet3;<sales_notes>My product sales notes - 1234567890</sales_notes>;;
+estrShopSet11;<price>21.6</price>;;
+estrShopSet12;"<url>http://my-shop.ru/products/test-product1?utm-source=\""my-shop.ru\""</url>";;
+estrShopSet41;<price>96</price>;;
+estrShopSet42;"<url>http://my-shop.ru/products/test-product4?utm-source=\""my-shop.ru\""</url>";;
+testName2;Export2;;
+cdsCurDefault;RUB;;
+cdsLocalDeliveryDays;1-4;;
+cdsLocalDeliveryOrderBefore;18:00;;
+cdsCurSecond;EUR;;
+cdsGlobalDeliveryCost1;300;;
+cdsGlobalDeliveryDays1;2-5;;
+cdsGlobalDeliveryOrderBefore1;14:00;;
+cdsGlobalDeliveryCost2;600;;
+cdsGlobalDeliveryDays2;;;
+cdsGlobalDeliveryOrderBefore2;;;
+estrCurDelNoneDeliveryOptions;<delivery-options;;
+estrCurDelNoneOldPrice;<oldprice;;
+estrCurDelNonePurchase;<purchase_price;;
+estrCurDelDelivery1;<delivery>true</delivery>;;
+estrCurDelStore1;<store>true</store>;;
+estrCurDelPickup1;<pickup>true</pickup>;;
+estrCurDelDelivery2;<delivery>false</delivery>;;
+estrCurDelStore2;<store>false</store>;;
+estrCurDelPickup2;<pickup>false</pickup>;;
+estrCurDelPrice1a;<price>18</price>;;
+estrCurDelPrice1b;<price>80</price>;;
+estrCurDelOldPrice1a;<oldprice>20</oldprice>;;
+estrCurDelPurchase1a;<purchase_price>10</purchase_price>;;
+estrCurDelPurchase1b;<purchase_price>40</purchase_price>;;
+estrCurDelCurrency1;<currencyId>RUB</currencyId>;;
+estrCurDelDeliveryOptions1;"<delivery-options><option cost=\""100\"" days=\""1-4\"" order-before=\""18:00\"" /></delivery-options>";;
+estrCurDelCommonDeliveryOptions1;"<delivery-options><option cost=\""0\"" days=\""1-4\"" order-before=\""18:00\"" /></delivery-options>";;
+estrCurDelPrice2a;<price>0.24</price>;;
+estrCurDelPrice2b;<price>1.0667</price>;;
+estrCurDelPurchase2;<purchase_price>;;
+estrCurDelCurrency2;<currencyId>EUR</currencyId>;;
+estrCurDelCommonDeliveryOptions2;"<delivery-options><option cost=\""300\"" days=\""2-5\"" order-before=\""14:00\"" /><option cost=\""600\"" days=\""\"" /></delivery-options>";;
+testName3;Export3;;
+dovDelVarProductCount;16;;
+dovDelVarProductWithShipPriceCount;1;;
+dovDelVarProductWithNotAvailable;1;;
+dovLocalDeliveryDays;1-4;;
+dovLocalDeliveryOrderBefore;18:00;;
+dovGlobalDeliveryCost1;300;;
+dovGlobalDeliveryDays1;2-5;;
+dovGlobalDeliveryOrderBefore1;14:00;;
+dovGlobalDeliveryCost2;600;;
+dovGlobalDeliveryDays2;;;
+dovGlobalDeliveryOrderBefore2;;;
+estrDelVarNoneDelivery;<delivery-options;;
+estrDelVarDelivery1;<delivery>true</delivery>;;
+estrDelVarDelivery2;<delivery>false</delivery>;;
+estrDelVarLocalDelOpt2a;"<delivery-options><option cost=\""100\"" days=\""\"" /></delivery-options>";;
+estrDelVarLocalDelOpt2b;"<delivery-options><option cost=\""0\"" days=\""\"" /></delivery-options>";;
+estrDelVarLocalDelOpt4a;"<delivery-options><option cost=\""100\"" days=\""1-4\"" order-before=\""18:00\"" /></delivery-options>";;
+estrDelVarLocalDelOpt4b;"<delivery-options><option cost=\""0\"" days=\""1-4\"" order-before=\""18:00\"" /></delivery-options>";;
+estrDelVarLocalDelOpt4NotAv;"<delivery-options><option cost=\""0\"" days=\""\"" /></delivery-options>";;
+estrDelVarGlobalDelOpt;"<delivery-options><option cost=\""300\"" days=\""2-5\"" order-before=\""14:00\"" /><option cost=\""600\"" days=\""\"" /></delivery-options>";;
+testName4;Export4;все галки выставлены в тру
+subTestName1;Export4_1;все, что начинается с ps1 - первый подтест, все чекбоксы фалсе, из селектов выделены 2 вариант; здесь: 
+productBarcodeID;10;
+productBarcodeValue;2483048394323;
+ps1ProdCount;18;;//было - 17?
+ps1ProdNotActiveCount;2;;
+ps1ProdNotActive1;"<offer id=\""6\"" available=\""true\"" group_id=\""6\"">";;
+ps1ProdNotActive1Full;"<offer id=\""6\"" available=\""true\"" group_id=\""6\""><url>http://my-shop.ru/products/test-product6</url><price>120</price><currencyId>RUB</currencyId><categoryId>2</categoryId><picture>http://my-shop.ru/pictures/product/big/286_big.jpg</picture><store>false</store><pickup>false</pickup><delivery>true</delivery><name>TestProduct6 SizeName6 Color6</name><description>briefDesc6</description><vendorCode>6</vendorCode><weight>6.00</weight><param name=\""Цвет\"">Color6</param><param name=\""Размер\"">SizeName6</param><param name=\""Property1\"">PropertyValue6</param><dimensions>0.6/0.6/0.6</dimensions></offer>";;
+ps1ProdNotActive2;"<offer id=\""7\"" available=\""true\"" group_id=\""7\"">";;
+ps1ProdNotActive2Full;"<offer id=\""7\"" available=\""true\"" group_id=\""7\""><url>http://my-shop.ru/products/test-product7</url><price>0</price><currencyId>RUB</currencyId><categoryId>2</categoryId><picture>http://my-shop.ru/pictures/product/big/287_big.jpg</picture><store>false</store><pickup>false</pickup><delivery>true</delivery><name>TestProduct7 SizeName7 Color7</name><description>briefDesc7</description><vendorCode>7</vendorCode><weight>7.00</weight><param name=\""Цвет\"">Color7</param><param name=\""Размер\"">SizeName7</param><param name=\""Property2\"">PropertyValue7</param><dimensions>0.7/0.7/0.7</dimensions></offer>";;
+ps1ProdSimpleTypeStart1;"<offer id=\""18\"" available=\""true\""";//начало с производителем и страной;
+ps1ProdSimpleType1;</delivery><name>individualYandexMarketName</name><description;//Упрощенный для товара с производителем и страной;
+ps1ProdSimpleTypeStart2;"<offer id=\""19\"" available=\""true\"" group_id=\""19\"">";//начало без страны;
+ps1ProdSimpleType2;</delivery><name>TestProduct19 Color9</name><description;//Упрощенный для товара с производителем без страны;
+ps1ProdSimpleTypeStart3;"<offer id=\""20\"" available=\""true\"" group_id=\""20\"">";//начало без производителя;
+ps1ProdSimpleType3;</delivery><name>TestProduct20 SizeName10</name><description;//Упрощенный для товара без производителя;
+ps1ProdWithModificationGrID;"group_id=\""";;
+ps1ProdWithoutModifCount;1;;
+ps1ProdColSizeStart1;"<offer id=\""9\"" available=\""true\"" group_id=\""9\"">";это для продукта с неск. модификациями(id9)++проверить отдельно, что есть group_id;
+ps1ProdColSize1a;"<param name=\""Цвет\"">Color9</param><param name=\""Размер\"">SizeName9</param>";;
+ps1ProdColSize1b;<name>TestProduct9 SizeName9 Color9</name>;добавлять к названию цвет и размер;
+ps1ProdProperty1;"<param name=\""Property4\"">PropertyValue9</param>";//проверка наличия свойства у товара;
+ps1ProdColSizeStart2;"<offer id=\""10\"" available=\""true\"" group_id=\""10\"">";это для продукта с 1 модификацией++проверить отдельно, что есть group_id;
+ps1ProdColSize2a;"<param name=\""Цвет\"">Color10</param><param name=\""Размер\"">SizeName10</param>";;
+ps1ProdColSize2b;<name>TestProduct10 SizeName10 Color10</name>;добавлять к названию цвет и размер;
+ps1ProdProperty2;"<param name=\""Property5\"" unit=\""details\"">PropertyValue10</param>";//проверка наличия свойства у товара с единицами измерения;
+ps1ProdColOnlyStart;"<offer id=\""19\"" available=\""true\"" group_id=\""19\"">";это для продукта только с цветом;
+ps1ProdColOnlya1;"<param name=\""Цвет\"">Color9</param>";;
+ps1ProdColOnlya2;"<param name=\""Размер\"">";;
+ps1ProdColOnlyb;<name>TestProduct19 Color9</name>;добавлять к названию цвет и размер;
+ps1ProdSizeOnlyStart;"<offer id=\""20\"" available=\""true\"" group_id=\""20\"">";это для продукта только с размером;
+ps1ProdSizeOnlya1;"<param name=\""Размер\"">SizeName10</param>";;
+ps1ProdSizeOnlya2;"<param name=\""Цвет\"">";;
+ps1ProdSizeOnlyb;<name>TestProduct20 SizeName10</name>;добавлять к названию цвет и размер;
+ps1ProdWithoutColSizeStart;"<offer id=\""18\"" available=\""true\""";проверить, что у него нет цвета и размера в названии, нет этих тегов и нет group_id;
+ps1ProdWithoutColSizea1;"<param name=\""Цвет\"">";строка не найдена;
+ps1ProdWithoutColSizea2;"<param name=\""Размер\"">";строка не найдена;
+ps1ProdWithoutColSizeb;<name>TestProduct10</name>;только название, без цвета и размера;
+ps1ProdWithoutProperties;"<param name=\""Property\""";//строка не найдена;
+ps1ProdBreafDescrStart;"<offer id=\""9\"" available=\""true\"" group_id=\""9\"">";//товар с кратким описанием без html;
+ps1ProdBreafDescr;<description>briefDesc9</description>;;
+ps1ProdWithourDescrStart;"<offer id=\""11\"" available=\""true\"" group_id=\""11\"">";//товар без описания вообще;
+ps1ProdWithoutDescr;<description;тег не найден;
+ps1ProdHtmlDescrStart;"<offer id=\""10\"" available=\""true\"" group_id=\""10\"">";продукт с html-описанием;
+ps1ProdHtmlDescr;"<description>briefDesc10</description>";исходное описание: p style=color:red;><b>briefDesc10</b></p>
+ps1ProdBarcodeCount;1;;
+ps1ProdBarcodeTag;<barcode;;
+ps1ProdBarcodeStart;"<offer id=\""10\"" available=\""true\"" group_id=\""10\"">";продукт с html-описанием;
+ps1ProdBarcode;"<barcode>2483048394323</barcode>";;
+ps1ProdAllPhotoStart1;"<offer id=\""11\"" available=\""true\"" group_id=\""11\"">";;
+ps1ProdAllPhoto1;</categoryId><picture>http://my-shop.ru/pictures/product/big/291_big.jpg</picture><store>;//прод с 1 фото;
+ps1ProdAllPhotoStart2;"<offer id=\""10\"" available=\""true\"" group_id=\""10\"">";;
+ps1ProdAllPhoto2;</categoryId><picture>http://my-shop.ru/pictures/product/big/1000_big.jpg</picture><picture>http://my-shop.ru/pictures/product/big/1001_big.jpg</picture><picture>http://my-shop.ru/pictures/product/big/1002_big.jpg</picture><store>;//10-тый c 3-мя фото;
+ps1ProdWithRelatedCount;2;;
+ps1ProdWithRelatedTag;<rec;;
+ps1ProdWithRelatedStart1;"<offer id=\""10\"" available=\""true\"" group_id=\""10\"">";;
+ps1ProdWithRelated1;"<rec>9,11</rec>";;
+ps1ProdWithRelatedStart2;"<offer id=\""12\"" available=\""true\"" group_id=\""12\"">";;
+ps1ProdWithRelated2;"<rec>13</rec>";;
+ps1ProdWithRelNotExportProductStart;"<offer id=\""14\"" available=\""true\"" group_id=\""14\"">";товар где рекомендованый товар не участвует в выгрузке;
+ps1ProdWithRelNotExportProduct;<rec;не найден в файле;
+ps1ProdWithModifications;" group_id=\""9\"">";//9тый продукт, сюда вставить available=true group_id=..., удостовериться, что такие параметры только единожды;
+ps1ProdPreOrderCount;1;;
+ps1ProdPreOrderTag;" available=\""false\""";;
+ps1ProdPreOrderStart;"<offer id=\""8\"" available=\""false\"" group_id=\""8\"">";;
+ps1ProdDimensionsCount;16;!ДЛЯ ВЕРСИИ 7.0.4 и выше(у 3 и 5 нет размеров)
+ps1ProdDimensionsTag;"<dimensions>";
+ps1ProdDimensionsTag2;"<dimensions";
+ps1ProdDimensions1Start;"<offer id=\""1\"" available=\""true\"" group_id=\""1\"">";;
+ps1ProdDimensions1;"<dimensions>0.1/0.1/0.1</dimensions>";;
+ps1ProdDimensions2Start;"<offer id=\""2\"" available=\""true\"" group_id=\""2\"">";;
+ps1ProdDimensions2;"<dimensions>0.2/0.2/0.2</dimensions>";;
+ps1ProdDimensions3Start;"<offer id=\""3\"" available=\""true\"" group_id=\""3\"">";;
+ps1ProdDimensions3;"<dimensions";==null
+subTestName2;Export4_2;все, что начинается с ps2 - второй тест, все чекбоксы фалсе, из селектов выделены 2 вариант; здесь: 
+ps2ProdCount;18;:не выгружаем неактивные, но выгружаем модификации; было 20;
+ps2ProdNotActive1;"<offer id=\""6\""";//этих строк быть не должно в файле;
+ps2ProdNotActive2;"<offer id=\""7\""";//этих строк быть не должно в файле;
+ps2ProdWithModificationGrID;"group_id=\""9\"">";;
+ps2ProdWithModifCount;4;;
+ps2ProdWithModifStart1;"<offer id=\""9\"" available=\""true\"" group_id=\""9\"">";;
+ps2ProdWithModifStart2;"<offer id=\""21\"" available=\""true\"" group_id=\""9\"">";;
+ps2ProdWithModifStart3;"<offer id=\""22\"" available=\""true\"" group_id=\""9\"">";;
+ps2ProdWithModifStart4;"<offer id=\""23\"" available=\""true\"" group_id=\""9\"">";;
+ps2ProdColSizeStart1;"<offer id=\""9\"" available=\""true\"" group_id=\""9\"">";
+ps2ProdColSize1a;"<param name=\""Цвет\"">Color9</param><param name=\""Размер\"">SizeName9</param>";;
+ps2ProdColSize1;<name>TestProduct9</name>;не добавлять к названию цвет и размер;
+ps2ProdColSizeStart2;"<offer id=\""10\"" available=\""true\"" group_id=\""10\"">";это для продукта с 1 модификацией++проверить отдельно, что есть group_id;
+ps2ProdColSize2a;"<param name=\""Цвет\"">Color10</param><param name=\""Размер\"">SizeName10</param>";;
+ps2ProdColSize2;<name>TestProduct10</name>;не добавлять к названию цвет и размер;
+ps2ProdColOnlyStart;"<offer id=\""19\"" available=\""true\"" group_id=\""19\"" type=\""vendor.model\"">";это для продукта только с цветом;
+ps2ProdColOnlya1;"<param name=\""Цвет\"">Color9</param>";;
+ps2ProdColOnlya2;"<param name=\""Размер\"">";;
+ps2ProdColOnly;<model>TestProduct19</model>;не добавлять к названию цвет и размер;
+ps2ProdSizeOnlyStart;"<offer id=\""20\"" available=\""true\"" group_id=\""20\"">";это для продукта только с размером;
+ps2ProdSizeOnlya1;"<param name=\""Размер\"">SizeName10</param>";;
+ps2ProdSizeOnlya2;"<param name=\""Цвет\"">";;
+ps2ProdSizeOnly;<name>TestProduct20</name>;добавлять к названию цвет и размер;
+ps2ProdWithoutColSizeStart;"<offer id=\""18\"" available=\""true\"" type=\""vendor.model\""";проверить, что у него нет цвета и размера в названии, нет этих тегов и нет group_id;
+ps2ProdWithoutColSizea1;"<param name=\""Цвет\"">";строка не найдена;
+ps2ProdWithoutColSizea2;"<param name=\""Размер\"">";строка не найдена;
+ps2ProdWithoutColSize;<model>TestProduct8</model>;только название, без цвета и размера;
+ps2ProdProperty;"<param name=\""Property";//проверка отсутствия свойств в выгрузке;
+ps2ProdNotSimpleTypeStart1;"<offer id=\""18\"" available=\""true\"" type=\""vendor.model\""";;//Произвольный для товара с производителем и страной;
+ps2ProdNotSimpleType1;"<vendor>BrandName1</vendor><country_of_origin>Россия</country_of_origin><model>individualYandexMarketModel</model>";//;
+ps2ProdNotSimpleTypeStart2;"<offer id=\""19\"" available=\""true\"" group_id=\""19\"" type=\""vendor.model\"">";;//Произвольный для товара с производителем и страной;
+ps2ProdNotSimpleType2;"<vendor>BrandName2</vendor><country_of_origin /><model>TestProduct19</model>";//Произвольный для товара с производителем без страны;
+ps2ProdNotSimpleTypeStart3;"<offer id=\""20\"" available=\""true\"" group_id=\""20\"">";;//Произвольный для товара с производителем и страной;
+ps2ProdNotSimpleType3;"<name>TestProduct20</name>";//Произвольный для товара без производителя;
+ps2ProdFullDescrStart;"<offer id=\""9\"" available=\""true\"" group_id=\""9\"">";//товар с кратким описанием без html;
+ps2ProdFullDescr;<description><![CDATA[Desc9]]></description>;;
+ps2ProdWithourDescrStart;"<offer id=\""11\"" available=\""true\"" group_id=\""11\"">";//товар без описания вообще;
+ps2ProdWithoutDescr;<description;тег не найден;
+ps2ProdHtmlDescrStart;"<offer id=\""10\"" available=\""true\"" group_id=\""10\"">";продукт с html-описанием;
+ps2ProdHtmlDescr;"<description><![CDATA[<span style=\""\&quot;color:blue;\&quot;\""><b>FullDesc10</b></span>]]></description>";исходное описание: p style=color:red;><b>briefDesc10</b></p>
+ps2ProdPreOrderTag;" available=\""false\""";не найдено ни одного в выгрузке;
+subTestName3;Export4_3;все, что начинается с ps3 - третий подтест, все чекбоксы фалсе, из селектов выделены 2 вариант; здесь: 
+ps3ProdCount;10;;
+ps3ProdArticulMStart;"group_id=\""10\"">";товар, у которого точно одна модификация. его id должен быть равен артикулу
+ps3ProdArticulMValue;" id=\""10\""";данное значение должно быть не найдено
+ps3ColSizeWithModifStart;"<offer id=\""9\"" available=\""true\"" group_id=\""9\"">";идентификатор группы товаров. проверить, что у первого id стандартный, а у остальных - нет.
+ps3ColSizeWithModifNext;"<offer id=\""10\"" available=\""true\"" group_id=\""10\"">";окончание блока с товарами группы: следующий после всех модификаций девятого - для 703 и ниже
+ps3ColSizeWithModifPreLast;"<offer id=\""15\"" available=\""true\"" group_id=\""15\"">";начало второго блока с товарами группы: за ним будут 21, 22, 23 - для 704 и выше
+ps3ColSizeWithModStart1;"<offer id=\""9\"" ";должен быть найден
+ps3ColSizeWithModStart2;"<offer id=\""21\"" ";должен быть не найден
+ps3ColSizeWithModStart3;"<offer id=\""22\"" ";должен быть не найден
+ps3ColSizeWithModStart4;"<offer id=\""23\"" ";должен быть не найден
+ps3ColSizeWithModifName1;"<name>TestProduct9 SizeName9 Color9</name>"
+ps3ColSizeWithModifParam1;"<param name=\""Цвет\"">Color9</param><param name=\""Размер\"">SizeName9</param>"
+ps3ColSizeWithModifName2;"<name>TestProduct9 SizeName9 Color10</name>"
+ps3ColSizeWithModifParam2;"<param name=\""Цвет\"">Color10</param><param name=\""Размер\"">SizeName9</param>"
+ps3ColSizeWithModifName3;"<name>TestProduct9 SizeName10 Color9</name>"
+ps3ColSizeWithModifParam3;"<param name=\""Цвет\"">Color9</param><param name=\""Размер\"">SizeName10</param>"
+ps3ColSizeWithModifName4;"<name>TestProduct9 SizeName10 Color10</name>"
+ps3ColSizeWithModifParam4;"<param name=\""Цвет\"">Color10</param><param name=\""Размер\"">SizeName10</param>"
+ps3NoneDescription;"<description";првоерить, что этог тега нет
+ps3ProdWithRelatedCount;1;;
+ps3ProdWithRelatedTag;<rec;;
+ps3ProdWithRelatedStart1;"<offer id=\""10\"" available=\""true\"" group_id=\""10\"">";;
+ps3ProdWithRelated1;"<rec>9,11</rec>";;
+ps3ProdWithRelatedExStart1;"<offer id=\""12\"" available=\""true\"" group_id=\""12\"">";;
+ps3ProdWithRelatedEx1;"<rec";;
+testName5;ExportSettingsYG;индивидуальные я-настройки для 18 товара; сравниваются с 19 товаром без настроек
+ps5ProductID;18
+ps5ProductStart18;"<offer id=\""18\"" available=\""true\"" group_id=\""18\"" bid=\""70\"">";настройка бид
+ps5ProductStart18_2;"<offer id=\""18\"" available=\""true\"" group_id=\""18\"" type=\""vendor.model\"" bid=\""70\"">";настройка бид
+ps5ProductStart19;"<offer id=\""19\"" available=\""true\"" group_id=\""19\"" type=\""vendor.model\"">"
+ps5ProductStart20;"<offer id=\""20\"" available=\""true\"" group_id=\""20\"">"
+ps5SalesNotes18;individualSalesNotes;
+ps5SalesNotes19;commonSalesNotes;//у 20 товара общие 
+ps5TypePrefix18;<typePrefix>individualTypePrefix</typePrefix>;//у 20 товара вообще нет
+ps5Model18;individualYandexMarketModel SizeName1;
+ps5Model19;TestProduct19 Color9;
+ps5Name18;individualYandexMarketName SizeName1
+ps5Name20;TestProduct20 SizeName10
+ps5DeliveryOptions18;"<delivery-options><option cost=\""100\"" days=\""10-15\"" /></delivery-options>";;
+ps5DeliveryOptions19;"<delivery-options><option cost=\""0\"" days=\""1-5\"" /></delivery-options>";;
+ps5UnitSize18;"<param name=\""Размер\"" unit=\""RU\"">SizeName1</param>";unit size
+ps5UnitSize20;"<param name=\""Размер\"">SizeName10</param>";

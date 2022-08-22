@@ -1,0 +1,4 @@
+Id;Name;Enabled;Template;Url;DomainUrl;CreatedDate;ProductId
+1;test1;true;Default;test1;;04.02.2019 13:49;NULL
+2;ProductCrossSell1;true;ProductCrossSellDownSell1;crosssell1;;04.02.2019 13:49;7
+3;ProductCrossSell2;true;ProductCrossSellDownSell2;crosssell2;;04.02.2019 13:49;9

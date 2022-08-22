@@ -1,0 +1,13 @@
+testType;Csv
+text252;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex e
+adminPath;exportfeeds
+exportPath;
+exportName;
+add1;Export1
+default1;ExportDefaultField
+edit1;Export2
+edit1d;Export2Description
+edit2;Export2_modified
+edit3;Export2_twice_modified
+remove1;ExportR1
+remove2;ExportR2

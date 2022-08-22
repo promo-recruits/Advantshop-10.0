@@ -1,0 +1,12 @@
+﻿Id;Name;Enabled;Template;Url;DomainUrl;CreatedDate;ProductId;AdditionalSalesProductId;ScreenShot;ModifiedDate;ScreenShotDate
+1;emptyfunnel;true;Default;emptyfunnel;;06.10.2021 17:22;NULL;NULL;NULL;06.10.2021 17:22;NULL
+2;ArticleLead;true;ArticleLead;articlelead;;06.10.2021 17:22;NULL;NULL;https://f003.backblazeb2.com/file/scrshots/109663/lp-2.jpeg;06.10.2021 17:22;06.10.2021 17:22
+3;CollectContactsForAccess;true;CollectContactsForAccess;collectcontactsforaccess;;06.10.2021 17:22;NULL;NULL;https://f003.backblazeb2.com/file/scrshots/109663/lp-3.jpeg;06.10.2021 17:22;06.10.2021 17:22
+4;CollectContactsForAccess;true;CollectContactsForAccess;collectcontactsforaccess-1;;06.10.2021 17:22;NULL;NULL;https://f003.backblazeb2.com/file/scrshots/109663/lp-4.jpeg;06.10.2021 17:22;06.10.2021 17:22
+5;CollectContactsForAccess;true;CollectContactsForAccess;collectcontactsforaccess-2;;06.10.2021 17:22;NULL;NULL;https://f003.backblazeb2.com/file/scrshots/109663/lp-5.jpeg;06.10.2021 17:23;06.10.2021 17:23
+6;ConsultingNew;true;ConsultingNew;consultingnew;;06.10.2021 17:23;NULL;NULL;https://f003.backblazeb2.com/file/scrshots/109663/lp-6.jpeg;2021-10-06 17:23:07.087;2021-10-06 17:23:07.087
+7;ContactForContent;true;ContactForContent;contactforcontent;;06.10.2021 17:23;NULL;NULL;https://f003.backblazeb2.com/file/scrshots/109663/lp-7.jpeg;06.10.2021 17:23;06.10.2021 17:23
+8;ContactForEBook;true;ContactForEBook;contactforebook;;06.10.2021 17:23;NULL;NULL;https://f003.backblazeb2.com/file/scrshots/109663/lp-8.jpeg;06.10.2021 17:23;06.10.2021 17:23
+9;CouponWithDiscount;true;CouponWithDiscount;couponwithdiscount;;06.10.2021 17:23;NULL;NULL;https://f003.backblazeb2.com/file/scrshots/109663/lp-9.jpeg;06.10.2021 17:24;06.10.2021 17:24
+10;Lottery;true;Lottery;lottery;;06.10.2021 17:24;3;NULL;https://f003.backblazeb2.com/file/scrshots/109663/lp-10.jpeg;06.10.2021 17:24;06.10.2021 17:24
+11;LandingFunnelOrderWithForm;true;VideoLeadMagnetNew;landingfunnelorderwithform;;06.10.2021 17:24;NULL;NULL;https://f003.backblazeb2.com/file/scrshots/109663/lp-11.jpeg;06.10.2021 17:24;06.10.2021 17:24

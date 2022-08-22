@@ -1,0 +1,196 @@
+﻿@using AdvantShop.Core.Services.IPTelephony
+@model AdvantShop.Web.Admin.Models.Crm.Leads.LeadModel
+@{
+    ViewBag.CustomerFieldModelPrefix = "lead.instance";
+    ViewBag.CustomerFieldOnChange = "lead.saveCustomerField()";
+}
+
+<div class="ibox">
+    <div class="ibox-content block-additional-parameters-content">
+
+        <div class="relative">
+            <h3 class="m-b-md inline lead-customer-title">@T("Admin.Leads.Customer.ContactsData")</h3>
+            @if (Model.Lead.CustomerId != null)
+            {
+                <div class="inline pull-right">
+                    <a href="@Url.Action("View", "Customers", new {id = Model.Lead.CustomerId})" class="edit link-decoration-none" data-e2e="ClientData" target="_blank">@T("Admin.Leads.Customer.ClientsCard")</a>
+                </div>
+            }
+        </div>
+        @Html.HiddenFor(x => x.Lead.CustomerId, new { ng_init = "lead.instance.lead.customerId='" + Model.Lead.CustomerId + "'"})
+
+        <div class="form-horizontal container-fluid" ng-init="lead.instance.lead.customer.customerId='@Model.Lead.CustomerId'">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-4 control-label">
+                        @T("Admin.Leads.Customer.Lastname")
+                    </div>
+                    <div class="col-xs-8">
+                        @*@if (Model.Lead.CustomerId != null)
+                        {
+                            @Html.TextBoxFor(x => x.Lead.Customer.LastName, new { ng_model = "lead.instance.lead.customer.lastName", @class = "form-control", ng_blur = "leadForm['Lead.Customer.LastName'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly" })
+                        }
+                        else
+                        {*@
+                            @Html.TextBoxFor(x => x.Lead.LastName, new { ng_model = "lead.instance.lead.lastName", @class = "form-control", ng_blur = "leadForm['Lead.LastName'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly" })
+                        @*}*@
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-4 control-label">
+                        @T("Admin.Leads.Customer.FirstName")
+                    </div>
+                    <div class="col-xs-8">
+                        @*@if (Model.Lead.CustomerId != null)
+                        {
+                            @Html.TextBoxFor(x => x.Lead.Customer.FirstName, new { ng_model = "lead.instance.lead.customer.firstName", @class = "form-control", ng_blur = "leadForm['Lead.Customer.FirstName'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly" })
+                        }
+                        else
+                        {*@
+                            @Html.TextBoxFor(x => x.Lead.FirstName, new { ng_model = "lead.instance.lead.firstName", @class = "form-control", ng_blur = "leadForm['Lead.FirstName'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly" })
+                        @*}*@
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-4 control-label">
+                        @T("Admin.Leads.Customer.Patronymic")
+                    </div>
+                    <div class="col-xs-8">
+                        @*@if (Model.Lead.CustomerId != null)
+                        {
+                            @Html.TextBoxFor(x => x.Lead.Customer.Patronymic, new { ng_model = "lead.instance.lead.customer.patronymic", @class = "form-control", ng_blur = "leadForm['Lead.Customer.Patronymic'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly" })
+                        }
+                        else
+                        {*@
+                            @Html.TextBoxFor(x => x.Lead.Patronymic, new { ng_model = "lead.instance.lead.patronymic", @class = "form-control", ng_blur = "leadForm['Lead.Patronymic'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly" })
+                        @*}*@
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-4 control-label">
+                        @T("Admin.Leads.Customer.Organization")
+                    </div>
+                    <div class="col-xs-8">
+                        @*@if (Model.Lead.CustomerId != null)
+                        {
+                            @Html.TextBoxFor(x => x.Lead.Customer.Organization, new { ng_model = "lead.instance.lead.customer.organization", @class = "form-control", ng_blur = "leadForm['Lead.Customer.Organization'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly" })
+                        }
+                        else
+                        {*@
+                            @Html.TextBoxFor(x => x.Lead.Organization, new { ng_model = "lead.instance.lead.organization", @class = "form-control", ng_blur = "leadForm['Lead.Organization'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly" })
+                        @*}*@
+                    </div>
+                </div>
+            </div>
+
+            @*@if (Model.VkUser != null)
+    {
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 control-label">
+                    @{
+                        var vkLink = "https://vk.com/" + (!string.IsNullOrEmpty(Model.VkUser.ScreenName) ? Model.VkUser.ScreenName : "id" + Model.VkUser.Id);
+                    }
+                    <i class="fab fa-vk vk-customer-icon" style=""></i> <a href="@vkLink" target="_blank" class="m-r-xs">@vkLink</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.InstagramUser != null)
+    {
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 control-label">
+                    <i class="fa fa-instagram instagram-user-name" style=""></i>
+                    <a href="https://instagram.com/@(Model.InstagramUser.UserName)/" class="instagram-user-name m-r-xs" target="_blank">@Model.InstagramUser.UserName</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.FacebookUser != null)
+    {
+        <div class="m-b-md">
+            <i class="fa fa-facebook-official vk-customer-icon" style=""></i>
+            <a href="https://facebook.com/@(Model.FacebookUser.Id)/" target="_blank">@Model.FacebookUser.FirstName @Model.FacebookUser.LastName</a>
+        </div>
+    }*@
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-4 control-label">
+                        E-mail
+                    </div>
+                    <div class="col-xs-8">
+                        @*@if (Model.Lead.CustomerId != null)
+                        {
+                            @Html.TextBoxFor(x => x.Lead.Customer.EMail, new { ng_model = "lead.instance.lead.customer.email", @class = "form-control", ng_blur = "leadForm['Lead.Customer.EMail'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly" })
+                        }
+                        else
+                        {*@
+                            @Html.TextBoxFor(x => x.Lead.Email, new { ng_model = "lead.instance.lead.email", @class = "form-control", ng_blur = "leadForm['Lead.Email'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly" })
+                        @*}*@
+                        <div ng-if="lead.instance.lead.email != null && lead.instance.lead.email.length > 0">
+                            <ui-modal-trigger data-controller="'ModalSendLetterToCustomerCtrl'" controller-as="ctrl" size="lg"
+                                              template-url="../areas/admin/content/src/_shared/modal/sendLetterToCustomer/sendLetterToCustomer.html"
+                                              data-resolve="{params: {@(Model.Lead.CustomerId != null ? "customerId: '" + Model.Lead.CustomerId + "'," : "") email: lead.instance.lead.email, firstName: lead.instance.lead.firstName, lastName: lead.instance.lead.lastName, patronymic: lead.instance.lead.patronymic}}"
+                                              on-close="lead.updateLeadEventsWithDelay()">
+                                <a href="" class="edit link-decoration-none">@T("Admin.Leads.Customer.SendEmail")</a>
+                            </ui-modal-trigger>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-4 control-label">
+                        @T("Admin.Leads.Customer.PhoneNumber")
+                    </div>
+                    <div class="col-xs-8">
+                        @*@if (Model.Lead.CustomerId != null)
+                        {
+                            @Html.TextBoxFor(x => x.Lead.Customer.Phone, new { ng_model = "lead.instance.lead.customer.phone", @class = "form-control m-b-xs", ng_blur = "leadForm['Lead.Customer.Phone'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly", mask_control = "",  mask_control_preset = "phone" })
+                        }
+                        else
+                        {*@
+                            @Html.TextBoxFor(x => x.Lead.Phone, new { ng_model = "lead.instance.lead.phone", @class = "form-control m-b-xs", ng_blur= "leadForm['Lead.Phone'].modified && lead.saveLead(lead.instance)", ng_readonly = "lead.readOnly", mask_control = "",  mask_control_preset = "phone" })
+                        @*}*@
+                        @if (Model.StandardPhone != null)
+                        {
+                            <div class="m-b-xs flex middle-xs">
+                                <a href="tel:+@Model.StandardPhone" class="edit link-decoration-none">@T("Admin.Leads.Customer.Call")</a>
+                                @if (Model.Lead.Customer != null)
+                                {
+                                    <ui-modal-trigger data-controller="'ModalSendSmsAdvCtrl'" controller-as="ctrl" 
+                                                      data-resolve="{params: { customerId: '@Model.Lead.Customer.Id', leadId: '@Model.Lead.Id', phone: lead.instance.lead.phone}}" 
+                                                      on-close="lead.updateLeadEventsWithDelay()" 
+                                                      template-url="../areas/admin/content/src/_shared/modal/sendSms/sendSms.html">
+                                        <a href="" class="edit link-decoration-none m-l-xs">@T("Admin.Leads.Customer.SendSMS")</a>
+                                    </ui-modal-trigger>
+                                }
+                            </div>
+
+                            <div class="m-b-xs flex middle-xs">
+                                @Html.RenderModules("admin_lead_customer_info", new { customer = Model.Lead.Customer })
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-fields-two-columns">
+                @Html.Partial("_CustomerFields", Model.CustomerFields)
+            </div>
+
+            @Html.RenderModules("admin_lead_customer", new { leadId = Model.Lead.Id })
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿@using AdvantShop.Core.Services.Admin
+@model AdvantShop.Web.Admin.Models.Partners.PartnerViewModel
+@{
+    Layout = "~/Areas/Admin/Views/Partners/_PartnersLayout.cshtml";
+    var isAdminv3 = AdminAreaTemplate.IsAdminv3();
+}
+
+@if (isAdminv3)
+{
+    <div class="sticky-page-name">
+        @Html.Back("Партнеры", Url.Action("Index", "Partners"))
+    </div>
+}
+
+<div ng-init="partnerView.init(@Model.Partner.Id)">
+
+    <div class="row m-b-lg ng-cloak">
+        <div class="col-xs">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="m-b-sm">
+                        <h2 data-e2e="partnerName" class="m-t-none">
+                            {{partnerView.instance.Partner.Name}}
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div>@T("Admin.Partners.View.Balance") </div>
+                            <div data-e2e="balance" class="font-size-md">{{partnerView.instance.BalanceFormatted}}</div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div>@T("Admin.Partners.View.CustomersCount")</div>
+                            <div data-e2e="customersCount" class="font-size-md">{{partnerView.instance.CustomersCount}}</div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div>@T("Admin.Partners.View.TimeFromCreated")</div>
+                            <div data-e2e="timeFromCreated" title="@Model.Partner.DateCreated.ToString()" class="font-size-md">
+                                {{partnerView.instance.TimeFromCreated}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <a data-e2e="DelPartner" href="" class="link-danger m-r-sm" ng-click="partnerView.delete()">@T("Admin.Delete")</a>
+            <partner-info-trigger partner-id="partnerView.partnerId" on-close="partnerView.getPartnerView()">
+                <a data-e2e="EditPartnerRight" class="inline" href="">@T("Admin.Edit")</a>
+            </partner-info-trigger>
+        </div>
+    </div>
+    <div class="ibox partner-view">
+        <uib-tabset data-e2e="TabPartner" uid="partnerTab" active>
+            <uib-tab index="'commonInfo'" classes="ng-tab" heading="@T("Admin.Partners.View.GeneralInformation")">
+                <div class="customer-tabs--bg-grey p-t-sm">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            @Html.Partial("_ViewPartnerInfo", Model)
+                            @Html.Partial("_ViewAdminComment", Model)
+                        </div>
+                        <div class="col-xs-6">
+                            @Html.Partial("_ViewCouponInfo", Model)
+                            @Html.Partial("_ViewPaymentInfo", Model)
+                            @Html.Partial("_ViewContractInfo", Model)
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="'customers'" classes="ng-tab" heading="@T("Admin.Partners.View.Customers")">
+                <partner-customers partner-id="partnerView.partnerId" on-bind-customer="partnerView.getPartnerView()"></partner-customers>
+            </uib-tab>
+            <uib-tab index="'transactions'" classes="ng-tab" heading="Начисления/списания">
+                <partner-transactions partner-id="partnerView.partnerId" on-grid-init="partnerView.gridTransactions = grid"></partner-transactions>
+            </uib-tab>
+            <uib-tab index="'act-reports'" classes="ng-tab" heading="Акт-отчеты">
+                <partner-act-reports partner-id="partnerView.partnerId"></partner-act-reports>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+</div>

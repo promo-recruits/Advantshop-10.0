@@ -1,0 +1,22 @@
+﻿var adminDependency = [
+    'ui.bootstrap',
+    'productsSelectvizr',
+    'subblockInplace',
+    'inplaceLanding',
+    'blocksConstructor',
+    'as.sortable',
+    'lpSettings',
+    'pictureLoader',
+    //'gallery',
+    'ngCropper',
+    'colorSchemeSettings',
+    'galleryCloud',
+    'angular-flatpickr',
+    'uiAceTextarea',
+    'lpGrid',
+    'galleryIcons',
+    'offersSelectvizr',
+    'ngCkeditor',
+    'helpTrigger',
+    'videoFileUploader'
+];

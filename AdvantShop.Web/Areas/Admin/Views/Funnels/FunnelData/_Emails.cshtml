@@ -1,0 +1,80 @@
+﻿@using AdvantShop.Core.Services.Loging.Emails 
+@using AdvantShop.Core.Services.Triggers
+@{ 
+    var emailStatuses = new List<EmailStatus>
+    {
+        EmailStatus.Sent,
+        EmailStatus.Delivered,
+        EmailStatus.Opened,
+        EmailStatus.Clicked,
+        EmailStatus.Spam,
+    };
+    var dateFrom = DateTime.Now.Date.AddDays(-7).ToString("yyyy-MM-dd");
+    var dateTo = DateTime.Now.Date.ToString("yyyy-MM-dd");
+}
+
+<div class="ibox" ng-init="$ctrl.init({ dateFrom: '@dateFrom', dateTo: '@dateTo', triggerObjectTypes: [@ETriggerObjectType.Order.ConvertIntString(), @ETriggerObjectType.Lead.ConvertIntString()], triggersActive: @SettingsMain.TriggersActive.ToLowerString(), canAddSalesChannel: @CustomerContext.CurrentCustomer.IsAdmin.ToLowerString() })">
+    <div class="ibox-content">
+        <div class="row middle-xs m-b-md" ng-if="$ctrl.triggerEmails.length > 0">
+            <div class="col-xs-slim">Временной интервал:</div>
+            <div class="col-xs-slim">
+                <div class="" ng-flatpickr fp-opts="{dateFormat: 'd.m.Y', startDateFormat: 'Y-m-d', wrap: true}" fp-on-change="$ctrl.fetch()">
+                    <span class="flatpickr-custom-wrap">
+                        <input type="text" class="form-control" ng-flatpickr-input ng-model="$ctrl.emailsDateFrom">
+                    </span>
+                    <span class="input-group-addon" data-toggle><i class="fas fa-calendar-alt"></i></span>
+                </div>
+            </div>
+            <div class="col-xs-slim">–</div>
+            <div class="col-xs-slim">
+                <div class="" ng-flatpickr fp-opts="{dateFormat: 'd.m.Y', startDateFormat: 'Y-m-d', wrap: true}" fp-on-change="$ctrl.fetch()">
+                    <span class="flatpickr-custom-wrap">
+                        <input type="text" class="form-control" ng-flatpickr-input ng-model="$ctrl.emailsDateTo">
+                    </span>
+                    <span class="input-group-addon" data-toggle><i class="fas fa-calendar-alt"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="m-b-md">
+            <button class="btn btn-sm btn-submit" data-e2e="AddSiteTrigger" type="button" ng-click="$ctrl.addTrigger()">
+                <span class="fa fa-plus"></span>
+                Новая цепочка писем
+            </button>
+        </div>
+
+        <div class="m-b-lg ng-cloak" ng-if="$ctrl.triggerEmails == null || $ctrl.triggerEmails.length == 0">
+            Нет настроенных цепочек
+        </div>
+        <div class="ng-cloak" ng-if="$ctrl.triggerEmails.length > 0">
+            <div ng-repeat="trigger in $ctrl.triggerEmails track by $index">
+
+                <h3 class="m-b-md">{{trigger.Name}}<a ng-href="triggers/edit/{{trigger.Id}}" class="m-l-sm link-invert link-decoration-none fas fa-pencil-alt"></a></h3>
+                <table class="table table-striped table-bordered">
+                    <tr>
+                        <th>Тема письма</th>
+                        @foreach (var status in emailStatuses)
+                        {
+                            <th class="width-sm">@status.Localize()</th>
+                        }
+                    </tr>
+                    <tr ng-repeat="item in trigger.Emailings track by $index">
+                        <td>{{item.EmailSubject || '[Не указана]'}}</td>
+                        @if (SettingsMail.UseAdvantshopMail)
+                        {
+                            foreach (var status in emailStatuses)
+                            {
+                                <td>{{item.EmailsCount['@status.ToString()']}}</td>
+                            }
+                        }
+                        else
+                        {
+                            <td colspan="@emailStatuses.Count">
+                                <a href="" ng-click="$ctrl.setMailSettings()">Подключить статистику</a>
+                            </td>
+                        }
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

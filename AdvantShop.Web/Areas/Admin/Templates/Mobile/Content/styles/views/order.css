@@ -1,0 +1,38 @@
+.order-contacts__variants {
+  display: flex;
+  margin: -5px;
+  flex-wrap: wrap;
+}
+
+.order-contacts__variants-item {
+  margin: 5px;
+}
+
+.order-contacts__address {
+  width: calc(100% - 68px);
+}
+
+.order-contacts__address-trigger {
+  width: 50px;
+}
+
+.order-nav {
+  text-align: center;
+}
+
+.order-nav__control {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.order-nav__control--disabled {
+  color: #ACAEAF;
+}
+
+.block--mobile-transparent {
+  background-color: transparent;
+}
+
+.order-btn--min-width {
+  min-width: 190px;
+}

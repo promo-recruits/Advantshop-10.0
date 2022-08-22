@@ -1,0 +1,87 @@
+﻿/*switcher*/
+
+.onoffswitch {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+
+    &__input {
+        display: none;
+    }
+
+    &__input:checked + &__label {
+        color: #000;
+    }
+
+    &__input:checked + &__label:before {
+        background-color: #2D9CEE;
+    }
+
+    &__input:checked + &__label:after {
+        transform: translateX(16px);
+    }
+
+    /*&__input:checked + &__label:active:after {
+        transform: translateX(8px);
+    }*/
+
+    /*&__label:active:after {
+        transform: translateX(8px);
+    }*/
+
+    &__input:checked + &__label:active:before {
+        background-color: #b4effa;
+    }
+
+    &__label {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 50px;
+        font-size: 14px;
+        cursor: pointer;
+        position: relative;
+        transition: color .1s linear;
+
+        span {
+            vertical-align: middle;
+        }
+    }
+
+    &__label:before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 25px;
+        background-color: #C8C7CC;
+        border-radius: 25px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transition: background-color .1s linear;
+    }
+
+    &__label:after {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        z-index: 2;
+        transition: transform .1s linear;
+    }
+
+    &__label:active:before {
+        background-color: #b4effa;
+    }
+}
+
+.onoffswitch--remove-br {
+    .onoffswitch__label br {
+        display: none;
+    }
+}

@@ -1,0 +1,18 @@
+﻿<div class="shipping-control-select" ng-init="shippingTemplate.fireTemplateReady()">
+    <span class="select-custom cs-t-4 icon-down-open-after-abs" ng-if="shippingTemplate.shipping.ShippingPoints != null && shippingTemplate.shipping.ShippingPoints.length > 0">
+        <select class="cs-bg-2"
+                ng-required="shippingTemplate.isSelected"
+                data-ng-options="point.Address for point in shippingTemplate.shipping.ShippingPoints track by point.Id"
+                data-ng-model="shippingTemplate.shipping.SelectedPoint"
+                data-ng-init="shippingTemplate.dirty = false"
+                data-ng-click="shippingTemplate.dirty = true"
+                data-ng-change="shippingTemplate.dirty === true ? shippingTemplate.changePrepare($event, shippingTemplate.shipping.SelectedPoint) : null"
+                data-validation-input-text="{{ ::'Js.ShippingTemplate.SelectPickupPoint.NotSelected' | translate }}"></select>
+    </span>
+    <div data-ng-if="shippingTemplate.shipping.ShippingPoints != null && shippingTemplate.shipping.ShippingPoints.length > 0 && shippingTemplate.shipping.SelectedPoint == null && shippingTemplate.isSelected" class="shipping-extend-error error-color">
+        {{ ::'Js.ShippingTemplate.SelectPickupPointOrDelivery.NotSelected' | translate }}
+    </div>
+    <readmore class="shipping-item-description cs-t-3" data-max-height="30" data-speed="1s" data-ng-if="shippingTemplate.shipping.SelectedPoint.Description">
+        <span data-ng-bind-html="shippingTemplate.shipping.SelectedPoint.Description"></span>
+    </readmore>
+</div>

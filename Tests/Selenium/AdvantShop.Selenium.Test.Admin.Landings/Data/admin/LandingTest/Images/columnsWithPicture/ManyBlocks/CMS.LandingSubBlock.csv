@@ -1,0 +1,24 @@
+﻿Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
+1;1;title;Создавай с Advantshop;html;null;0
+2;1;subtitle;Реализуй все с Advantshop;html;null;100
+3;1;header1;Трансформер дизайна;html;null;200
+4;1;header2;CRM для интернет-магазина;html;null;300
+5;1;header3;Регистрация SSL;html;null;400
+6;1;header4;Регистрация SSL;html;null;500
+7;1;text1;Существуют две основные трактовки понятия «текст»: «имманентная» (расширенная, философски нагруженная);html;null;600
+8;1;text2;Имманентный подход подразумевает отношение к тексту как к автономной реальности;html;null;700
+9;1;text3;Существуют две основные трактовки понятия «текст»: «имманентная» (рас-ширенная, философски нагруженная);html;null;800
+10;1;text4;Существуют две основные трактовки понятия «текст»: «имманентная» (рас-ширенная, философски нагруженная);html;null;900
+11;1;picture;;picture;"{""src"":""areas/landing/images/columns/columns_with_picture.jpg"",""class"":""""}";1000
+12;2;title;Вдохновляйся идеями;html;null;0
+13;2;subtitle;Реализуй все с Advantshop;html;null;100
+14;2;text;Простой инструмент для онлайн-продаж. Зарабатывайте больше, используя различные каналы продаж, и выстраивайте правильные отношения с клиентом.;html;null;200
+15;4;title;Вдохновляйся идеями;html;null;0
+16;4;subtitle;Реализуй все с Advantshop;html;null;100
+17;4;text;Простой инструмент для онлайн-продаж. Зарабатывайте больше, используя различные каналы продаж, и выстраивайте правильные отношения с клиентом.;html;null;200
+18;5;logo;;logo;"{""alt"":""Мой магазин"",""src"":""areas/landing/frontend/images/logotype.png""}";0
+19;5;phone;8 (800) 550-83-13;html;null;100
+20;5;phone_mobile;88005508313;phonemobile;null;200
+21;5;email;info@mysite.ru;html;null;300
+22;5;callback;;button;"{""text"":""Обратный звонок"",""style"":{}}";400
+23;5;menuHeader;;menu;"{""font_size"":16,""menu_items_spacing"":20,""style"":{""font-size"":""16px"",""padding-left"":""20px"",""padding-right"":""20px""}}";500

@@ -1,0 +1,100 @@
+﻿<form>
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{ctrl.type == "add" ? ('Admin.Js.AddEditOrderStatus.AddOrderStatus'|translate) : ('Admin.Js.AddEditOrderStatus.EditOrderStatus'|translate)}}</h2>
+    </div>
+    <div class="modal-body">
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">
+                <span class="text-required">{{'Admin.Js.AddEditOrderStatus.Name'|translate}}</span>
+            </label>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" ng-model="ctrl.name" required validation-input-text={{'Admin.Js.AddEditOrderStatus.Name'|translate}} data-e2e="orderStatusName" autofocus />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">{{'Admin.Js.AddEditOrderStatus.Default'|translate}}</label>
+            <div class="col-xs-9">
+                <label class="adv-checkbox-label" data-e2e="orderStatusIsDefault">
+                    <input type="checkbox" class="adv-checkbox-input control-checkbox" ng-model="ctrl.isDefault" />
+                    <span class="adv-checkbox-emul"></span>
+                </label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">{{'Admin.Js.AddEditOrderStatus.CancelOrder'|translate}}</label>
+            <div class="col-xs-9">
+                <label class="adv-checkbox-label" data-e2e="orderStatusIsCanceled">
+                    <input type="checkbox" class="adv-checkbox-input control-checkbox" ng-model="ctrl.isCanceled" />
+                    <span class="adv-checkbox-emul"></span>
+                </label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">{{'Admin.Js.AddEditOrderStatus.OrderIsCompleted'|translate}}</label>
+            <div class="col-xs-9">
+                <label class="adv-checkbox-label" data-e2e="orderStatusIsCompleted">
+                    <input type="checkbox" class="adv-checkbox-input control-checkbox" ng-model="ctrl.isCompleted" />
+                    <span class="adv-checkbox-emul"></span>
+                </label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">{{'Admin.Js.AddEditOrderStatus.HiddenForClient'|translate}}</label>
+            <div class="col-xs-9">
+                <label class="adv-checkbox-label" data-e2e="orderStatusHidden">
+                    <input type="checkbox" class="adv-checkbox-input control-checkbox" ng-model="ctrl.hidden" />
+                    <span class="adv-checkbox-emul"></span>
+                </label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">{{'Admin.Js.AddEditOrderStatus.Color'|translate}}</label>
+            <div class="col-xs-9">
+                <color-picker data-e2e="orderStatusColor"
+                              ng-model="ctrl.color"
+                              options="ctrl.colorPickerOptions"
+                              validation-input-text={{'Admin.Js.AddEditOrderStatus.Color'|translate}}
+                              api="ctrl.colorPickerApi"
+                              event-api="ctrl.colorPickerEventApi">
+                </color-picker>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">{{'Admin.Js.AddEditOrderStatus.Sorting'|translate}}</label>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" ng-model="ctrl.sortOrder" data-e2e="orderStatusSortOrder" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">{{'Admin.Js.AddEditOrderStatus.StatusCommand'|translate}}</label>
+            <div class="col-xs-9">
+                <select ng-model="ctrl.command" ng-options="s.label for s in ctrl.commands track by s.value" class="form-control" data-e2e="orderStatusCommand"></select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">{{'Admin.Js.AddEditOrderStatus.CancelForbidden'|translate}}</label>
+            <div class="col-xs-9">
+                <label class="adv-checkbox-label" data-e2e="orderStatusIsCompleted">
+                    <input type="checkbox" class="adv-checkbox-input control-checkbox" ng-model="ctrl.cancelForbidden"/>
+                    <span class="adv-checkbox-emul"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-xs-3 control-label">{{'Admin.Js.AddEditOrderStatus.ShowInMenu'|translate}}</label>
+            <div class="col-xs-9">
+                <label class="adv-checkbox-label" data-e2e="ShowInMenu">
+                    <input type="checkbox" class="adv-checkbox-input control-checkbox" ng-model="ctrl.ShowInMenu"/>
+                    <span class="adv-checkbox-emul"></span>
+                </label>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-save btn-primary" type="button" data-button-validation-success="ctrl.saveStatus()" data-e2e="orderStatusSave" data-button-validation>{{'Admin.Js.AddEdit.Save'|translate}}</button>
+        <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.AddEdit.Cancel'|translate}}</button>
+    </div>
+</form>

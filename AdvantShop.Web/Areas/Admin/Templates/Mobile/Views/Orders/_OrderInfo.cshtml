@@ -1,0 +1,180 @@
+﻿@model AdvantShop.Web.Admin.Models.Orders.OrdersEdit.OrderModel
+@{
+    var rnd = new Random().NextDouble();
+    var orderCustomer = Model.IsEditMode && Model.Order != null
+        ? Model.Order.OrderCustomer
+        : null;
+
+    var customerFullName = orderCustomer != null ? ((Customer)orderCustomer).GetFullName() : string.Empty;
+    var contact = orderCustomer != null ? ((Customer)orderCustomer).Contacts.FirstOrDefault() : null;
+    var address = contact != null ? CustomerService.ConvertToLinedAddress(contact) : string.Empty;
+
+    var hasCustomFields = orderCustomer != null && new List<string> { orderCustomer.CustomField1, orderCustomer.CustomField2, orderCustomer.CustomField3 }.Any(x => x.IsNotEmpty());
+}
+@if (Model.IsEditMode && Model.Order != null && !Model.Order.IsDraft)
+{
+    <div class="text-color-alt">
+        @T("Admin.Orders.OrderInfo.Contacts")
+    </div>
+    <div class="row between-xs m-b-xs">
+        <div class="col-xs-slim">
+            @if (Model.Customer != null)
+            {
+                <a href="@Url.Action("View", "Customers", new {id = Model.Customer.Id})">
+                    @customerFullName
+                </a>
+            }
+            else
+            {
+                <span>@customerFullName</span>
+            }
+        </div>
+        <div class="col-xs-slim">
+            <ui-modal-trigger data-controller="'ModalChangeOrderCustomerCtrl'" data-controller-as="ctrl" size="xs-11" window-class="modal--panel modal--bg" opened-class="modal-open--panel" 
+                              data-resolve="{ params: { orderId: @(Model.OrderId) }}"
+                              data-on-close="order.editCustomerClose()"
+                              template-url="@("orders/popupOrderCustomer?orderid=" + Model.OrderId + "&rnd=" + rnd)">
+                <a href="" data-e2e="ChangeCustomer">
+                    Изменить
+                </a>
+            </ui-modal-trigger>
+        </div>
+    </div>
+
+    if (orderCustomer != null)
+    {
+
+        if (orderCustomer.Email.IsNotEmpty())
+        {
+            <div class="m-b-xs">@orderCustomer.Email</div>
+        }
+        if (orderCustomer.Phone.IsNotEmpty())
+        {
+
+            <div class="m-b-xs">@orderCustomer.StandardPhone</div>
+        }
+
+        <div class="order-contacts__variants m-t-sm">
+            @if (orderCustomer.Email.IsNotEmpty())
+            {
+                <div class="block-content block-content--padding line-height order-contacts__variants-item">
+                    <ui-modal-trigger data-controller="'ModalSendLetterToCustomerCtrl'"
+                                      controller-as="ctrl" size="lg"
+                                      template-url="../areas/admin/content/src/_shared/modal/sendLetterToCustomer/sendLetterToCustomer.html"
+                                      data-on-close="order.updateLeadEventsWithDelay()"
+                                      data-resolve="{params: {customerId: '@orderCustomer.CustomerID', email: '@orderCustomer.Email', firstName: '@orderCustomer.FirstName', lastName: '@orderCustomer.LastName', patronymic: '@orderCustomer.Patronymic', pageType: 'order'}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C118.941 8 8 118.919 8 256c0 137.059 110.919 248 248 248 48.154 0 95.342-14.14 135.408-40.223 12.005-7.815 14.625-24.288 5.552-35.372l-10.177-12.433c-7.671-9.371-21.179-11.667-31.373-5.129C325.92 429.757 291.314 440 256 440c-101.458 0-184-82.542-184-184S154.542 72 256 72c100.139 0 184 57.619 184 160 0 38.786-21.093 79.742-58.17 83.693-17.349-.454-16.91-12.857-13.476-30.024l23.433-121.11C394.653 149.75 383.308 136 368.225 136h-44.981a13.518 13.518 0 0 0-13.432 11.993l-.01.092c-14.697-17.901-40.448-21.775-59.971-21.775-74.58 0-137.831 62.234-137.831 151.46 0 65.303 36.785 105.87 96 105.87 26.984 0 57.369-15.637 74.991-38.333 9.522 34.104 40.613 34.103 70.71 34.103C462.609 379.41 504 307.798 504 232 504 95.653 394.023 8 256 8zm-21.68 304.43c-22.249 0-36.07-15.623-36.07-40.771 0-44.993 30.779-72.729 58.63-72.729 22.292 0 35.601 15.241 35.601 40.77 0 45.061-33.875 72.73-58.161 72.73z"></path></svg>
+                    </ui-modal-trigger>
+                </div>
+            }
+
+            @if (orderCustomer.Phone.IsNotEmpty() && orderCustomer.StandardPhone != null && orderCustomer.StandardPhone.Value != 0)
+            {
+                <div class="block-content block-content--padding line-height order-contacts__variants-item">
+                    <a href="tel:+@orderCustomer.StandardPhone" data-e2e="CustomerTel" title="Позвонить"
+                       onclick="return advTrack('@AdvantShop.Track.ETrackEvent.Core_Orders_CallCustomer.ToString()');">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.562 16.65c.51.514.509 1.342-.003 1.854L17.562 21.5C8.14 21.5.5 13.861.5 4.437l.005.004L3.52 1.43a1.313 1.313 0 011.857 0l3.386 3.392c.512.513.51 1.344-.001 1.856L5.75 9.687l6.563 6.563 3.006-3.007a1.312 1.312 0 011.859.003l3.384 3.404zM21.5 11h-2.625c0-4.343-3.532-7.875-7.875-7.875V.5C16.79.5 21.5 5.21 21.5 11zm-5.25 0h-2.625A2.628 2.628 0 0011 8.375V5.75A5.255 5.255 0 0116.25 11z" fill="#00C48C" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="block-content block-content--padding line-height order-contacts__variants-item">
+                    <ui-modal-trigger data-controller="'ModalSendSmsAdvCtrl'" controller-as="ctrl"
+                                      data-resolve="{params: { customerId: '@orderCustomer.CustomerID', phone: order.standardPhone, orderId: '@Model.OrderId', pageType: 'order'}}"
+                                      template-url="../areas/admin/content/src/_shared/modal/sendSms/sendSms.html">
+                        <svg data-e2e="CustomerPhone" width="22" height="22" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.188 5.25c.724 0 1.312.588 1.312 1.313v9.187c0 .724-.588 1.313-1.313 1.313h-2.625V21l-3.937-3.938H7.062l2.4-2.625h8.1c.725 0 1.313-.587 1.313-1.312V5.25h1.313zM1.813 0h13.124c.725 0 1.313.588 1.313 1.313V10.5c0 .725-.588 1.313-1.313 1.313H8.375L4.437 15.75v-3.938H1.813A1.313 1.313 0 01.5 10.5V1.312C.5.589 1.088 0 1.813 0z" fill="#0084F4" />
+                        </svg>
+                    </ui-modal-trigger>
+                </div>
+                <div class="block-content block-content--padding line-height order-contacts__variants-item" ng-init="order.ShowViberDesktopAppNotification = @Model.ShowViberDesktopAppNotification.ToLowerString()">
+                    <ui-modal-trigger class="ng-cloak"
+                                      ng-if="order.ShowViberDesktopAppNotification"
+                                      data-controller="'ModalDesktopAppNotificationCtrl'" data-controller-as="ctrl"
+                                      data-resolve="{ params: { appName: 'Viber', link: 'https://viber.click/@orderCustomer.StandardPhone' }}"
+                                      data-on-close="order.ShowViberDesktopAppNotification = result"
+                                      template-url="../areas/admin/content/src/order/modal/desktopAppNotification/desktopAppNotification.html">
+                        <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                            <path fill="#574E92" d="M44.6 10.6c-.8-2.9-2.4-5.2-4.8-6.8-3-2.1-6.4-2.8-9.4-3.2C26.3 0 22.6-.1 19 .3c-3.3.4-5.8 1.1-8.1 2.1-4.5 2.1-7.1 5.4-8 9.9-.4 2.2-.7 4.2-.8 6-.4 4.4 0 8.2 1 11.8 1 3.5 2.8 6 5.3 7.6.7.4 1.5.7 2.3 1 .5.2.9.3 1.3.5.3.2.3.2.3.5V48h1.9l.3-.3c.2-.2 4.8-4.6 6.4-6.4l.2-.2c.3-.3.3-.3.6-.3 2.2 0 4.5-.1 6.7-.3 2.7-.1 5.9-.4 8.9-1.7 2.7-1.1 4.7-2.9 5.9-5.4 1.2-2.5 2-5.3 2.3-8.4.7-5.4.3-10.1-.9-14.4zm-9.8 21.2c-.7 1.1-1.7 1.9-2.9 2.4-.9.4-1.8.3-2.6-.1-7.3-3.1-13-7.9-16.7-14.9-.8-1.4-1.3-3-1.9-4.5-.1-.3-.1-.7-.2-1 .1-2.4 1.9-3.8 3.8-4.2.7-.2 1.4.1 1.9.6 1.5 1.4 2.7 3.1 3.6 4.9.4.8.2 1.5-.4 2.1-.1.1-.3.2-.4.4-1.5 1.1-1.7 2-.9 3.7 1.4 2.9 3.6 4.9 6.6 6.1.8.3 1.5.2 2.1-.5.1-.1.2-.2.2-.3 1.2-1.9 2.8-1.7 4.4-.6 1 .7 2 1.5 3 2.2 1.4 1.1 1.4 2.2.4 3.7zm-9.6-19.3c-.3 0-.7 0-1 .1-.6.1-1.1-.3-1.2-.9-.1-.6.3-1.1.9-1.2.4-.1.9-.1 1.4-.1 4.5 0 8.2 3.7 8.2 8.2 0 .5 0 .9-.1 1.4-.1.5-.5.9-1 .9h-.2c-.6-.1-.9-.6-.9-1.2.1-.3.1-.7.1-1-.1-3.4-2.8-6.2-6.2-6.2zm5.1 6.3c0 .6-.5 1-1 1-.6 0-1-.5-1-1 0-1.7-1.4-3.1-3.1-3.1-.6 0-1-.5-1-1 0-.6.5-1 1-1 2.7-.1 5.1 2.2 5.1 5.1zm5.9 2.3c-.1.5-.5.8-1 .8H35c-.6-.1-.9-.7-.8-1.3.2-.7.2-1.4.2-2 0-5.1-4.1-9.2-9.2-9.2-.7 0-1.4.1-2 .2-.6.1-1.1-.2-1.2-.8-.1-.6.2-1.1.8-1.2.8-.2 1.7-.3 2.5-.3 6.2 0 11.3 5.1 11.3 11.3-.1.8-.2 1.7-.4 2.5z" />
+                        </svg>
+                    </ui-modal-trigger>
+                    <a ng-if="!order.ShowViberDesktopAppNotification" href="https://viber.click/@orderCustomer.StandardPhone" target="_blank" data-e2e="ViberLink" title="Viber">
+                        <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                            <path fill="#574E92" d="M44.6 10.6c-.8-2.9-2.4-5.2-4.8-6.8-3-2.1-6.4-2.8-9.4-3.2C26.3 0 22.6-.1 19 .3c-3.3.4-5.8 1.1-8.1 2.1-4.5 2.1-7.1 5.4-8 9.9-.4 2.2-.7 4.2-.8 6-.4 4.4 0 8.2 1 11.8 1 3.5 2.8 6 5.3 7.6.7.4 1.5.7 2.3 1 .5.2.9.3 1.3.5.3.2.3.2.3.5V48h1.9l.3-.3c.2-.2 4.8-4.6 6.4-6.4l.2-.2c.3-.3.3-.3.6-.3 2.2 0 4.5-.1 6.7-.3 2.7-.1 5.9-.4 8.9-1.7 2.7-1.1 4.7-2.9 5.9-5.4 1.2-2.5 2-5.3 2.3-8.4.7-5.4.3-10.1-.9-14.4zm-9.8 21.2c-.7 1.1-1.7 1.9-2.9 2.4-.9.4-1.8.3-2.6-.1-7.3-3.1-13-7.9-16.7-14.9-.8-1.4-1.3-3-1.9-4.5-.1-.3-.1-.7-.2-1 .1-2.4 1.9-3.8 3.8-4.2.7-.2 1.4.1 1.9.6 1.5 1.4 2.7 3.1 3.6 4.9.4.8.2 1.5-.4 2.1-.1.1-.3.2-.4.4-1.5 1.1-1.7 2-.9 3.7 1.4 2.9 3.6 4.9 6.6 6.1.8.3 1.5.2 2.1-.5.1-.1.2-.2.2-.3 1.2-1.9 2.8-1.7 4.4-.6 1 .7 2 1.5 3 2.2 1.4 1.1 1.4 2.2.4 3.7zm-9.6-19.3c-.3 0-.7 0-1 .1-.6.1-1.1-.3-1.2-.9-.1-.6.3-1.1.9-1.2.4-.1.9-.1 1.4-.1 4.5 0 8.2 3.7 8.2 8.2 0 .5 0 .9-.1 1.4-.1.5-.5.9-1 .9h-.2c-.6-.1-.9-.6-.9-1.2.1-.3.1-.7.1-1-.1-3.4-2.8-6.2-6.2-6.2zm5.1 6.3c0 .6-.5 1-1 1-.6 0-1-.5-1-1 0-1.7-1.4-3.1-3.1-3.1-.6 0-1-.5-1-1 0-.6.5-1 1-1 2.7-.1 5.1 2.2 5.1 5.1zm5.9 2.3c-.1.5-.5.8-1 .8H35c-.6-.1-.9-.7-.8-1.3.2-.7.2-1.4.2-2 0-5.1-4.1-9.2-9.2-9.2-.7 0-1.4.1-2 .2-.6.1-1.1-.2-1.2-.8-.1-.6.2-1.1.8-1.2.8-.2 1.7-.3 2.5-.3 6.2 0 11.3 5.1 11.3 11.3-.1.8-.2 1.7-.4 2.5z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="block-content block-content--padding line-height order-contacts__variants-item" ng-init="order.ShowWhatsAppDesktopAppNotification = @Model.ShowWhatsAppDesktopAppNotification.ToLowerString()">
+                    <ui-modal-trigger class="ng-cloak"
+                                      ng-if="order.ShowWhatsAppDesktopAppNotification"
+                                      data-controller="'ModalDesktopAppNotificationCtrl'" data-controller-as="ctrl"
+                                      data-resolve="{ params: { appName: 'WhatsApp', link: 'https://wa.me/@orderCustomer.StandardPhone' }}"
+                                      data-on-close="order.ShowWhatsAppDesktopAppNotification = result"
+                                      template-url="../areas/admin/content/src/order/modal/desktopAppNotification/desktopAppNotification.html">
+                        <svg data-e2e="WhatsAppLink" width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                            <path fill="#25D366" d="M24 0C10.8 0 0 10.8 0 24c0 4.1 1.1 8.2 3.1 11.8L0 46.7c-.1.4 0 .7.3 1 .2.2.5.3.7.3h.3l11.4-2.8C16.1 47 20 48 24 48c13.2 0 24-10.8 24-24S37.2 0 24 0zm12.1 32.5c-.5 1.4-3 2.7-4.2 2.9-1.1.2-2.4.2-3.9-.2-.9-.3-2-.7-3.5-1.3-6.2-2.6-10.2-8.8-10.5-9.2-.3-.4-2.5-3.3-2.5-6.3s1.6-4.5 2.2-5.1 1.2-.8 1.6-.8h1.2c.4 0 .9-.1 1.4 1 .5 1.2 1.7 4.2 1.9 4.5.2.3.3.7.1 1.1-.2.4-.3.7-.6 1-.3.4-.6.8-.9 1.1-.3.3-.6.6-.3 1.2.4.6 1.6 2.6 3.4 4.2 2.4 2.1 4.3 2.7 5 3 .6.3 1 .3 1.3-.2.4-.4 1.5-1.8 2-2.4.4-.6.8-.5 1.4-.3.6.2 3.6 1.7 4.2 2 .6.3 1 .5 1.2.7 0 .4 0 1.6-.5 3.1z" />
+                        </svg>
+                    </ui-modal-trigger>
+                    <a ng-if="order.ShowWhatsAppDesktopAppNotification === false" href="https://wa.me/@orderCustomer.StandardPhone" target="_blank" data-e2e="WhatsAppLink" title="WhatsApp">
+                        <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                            <path fill="#25D366" d="M24 0C10.8 0 0 10.8 0 24c0 4.1 1.1 8.2 3.1 11.8L0 46.7c-.1.4 0 .7.3 1 .2.2.5.3.7.3h.3l11.4-2.8C16.1 47 20 48 24 48c13.2 0 24-10.8 24-24S37.2 0 24 0zm12.1 32.5c-.5 1.4-3 2.7-4.2 2.9-1.1.2-2.4.2-3.9-.2-.9-.3-2-.7-3.5-1.3-6.2-2.6-10.2-8.8-10.5-9.2-.3-.4-2.5-3.3-2.5-6.3s1.6-4.5 2.2-5.1 1.2-.8 1.6-.8h1.2c.4 0 .9-.1 1.4 1 .5 1.2 1.7 4.2 1.9 4.5.2.3.3.7.1 1.1-.2.4-.3.7-.6 1-.3.4-.6.8-.9 1.1-.3.3-.6.6-.3 1.2.4.6 1.6 2.6 3.4 4.2 2.4 2.1 4.3 2.7 5 3 .6.3 1 .3 1.3-.2.4-.4 1.5-1.8 2-2.4.4-.6.8-.5 1.4-.3.6.2 3.6 1.7 4.2 2 .6.3 1 .5 1.2.7 0 .4 0 1.6-.5 3.1z" />
+                        </svg>
+                    </a>
+                </div>
+            }
+        </div>
+        @*Для окна доставки*@
+        @Html.HiddenFor(x => x.Order.OrderCustomer.Country, new Dictionary<string, object>() { { "ng-model", "order.country" } })
+        @Html.HiddenFor(x => x.Order.OrderCustomer.Region, new Dictionary<string, object>() { { "ng-model", "order.region" } })
+        @Html.HiddenFor(x => x.Order.OrderCustomer.City, new Dictionary<string, object>() { { "ng-model", "order.city" } })
+        @Html.HiddenFor(x => x.Order.OrderCustomer.Zip, new Dictionary<string, object>() { { "ng-model", "order.zip" } })
+
+    }
+
+
+    if (address.IsNotEmpty() || hasCustomFields)
+    {
+        <div class="m-t-md">
+            <div class="text-color-alt">Адрес доставки:</div>
+            @if (address.IsNotEmpty())
+            {
+                <div class="row middle-xs">
+                    <div class="col-xs-slim order-contacts__address" data-e2e="CustomerAdress">
+                        @address
+                    </div>
+                    <div class="col-xs-slim order-contacts__address-triger">
+                        <a class="block-content block-content--padding line-height" href="//maps.yandex.ru/?text=@address" data-e2e="CustomerAdressMap" target="_blank">
+                            <svg width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 0C4.32 0 .6 3.72.6 8.4.6 14.64 9 24 9 24s8.4-9.36 8.4-15.6C17.4 3.72 13.68 0 9 0zm0 11.4c-1.68 0-3-1.32-3-3s1.32-3 3-3 3 1.32 3 3-1.32 3-3 3z" fill="#BE52F2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            }
+            @if (hasCustomFields)
+            {
+                <div class="m-t-sm">
+                    @if (orderCustomer.CustomField1.IsNotEmpty())
+                    {
+                        <div class="m-t-xs">
+                            @SettingsCheckout.CustomShippingField1: <span>@orderCustomer.CustomField1</span>
+                        </div>
+                    }
+                    @if (orderCustomer.CustomField2.IsNotEmpty())
+                    {
+                        <div class="m-t-xs">
+                            @SettingsCheckout.CustomShippingField2: <span>@orderCustomer.CustomField2</span>
+                        </div>
+                    }
+                    @if (orderCustomer.CustomField3.IsNotEmpty())
+                    {
+                        <div class="m-t-xs">
+                            @SettingsCheckout.CustomShippingField3: <span>@orderCustomer.CustomField3</span>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    }
+
+}

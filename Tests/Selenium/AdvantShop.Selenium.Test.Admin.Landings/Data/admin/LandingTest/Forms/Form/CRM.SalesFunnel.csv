@@ -1,0 +1,3 @@
+Id;Name;SortOrder;FinalSuccessAction;Enable;LeadAutoCompleteActionType
+1;SalesFunnel1;10;0;true;0
+2;SalesFunnel2;20;1;true;0

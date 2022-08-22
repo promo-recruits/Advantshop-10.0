@@ -1,0 +1,14 @@
+﻿<div>
+    <h3>Источники лидов</h3>
+    <ui-grid-custom grid-unique-id="grid"
+                    grid-row-identificator="'Id'"
+                    grid-on-init="$ctrl.gridOnInit(grid)"
+                    grid-options="$ctrl.gridOptions"
+                    grid-url="'leads/GetLeadsListSources'"
+                    grid-params="{leadsListId: $ctrl.leadsListId}"
+                    grid-extend-ctrl="$ctrl"
+                    grid-filter-enabled="false"
+                    grid-pagination-enabled="false"
+                    grid-selection-enabled="false">
+    </ui-grid-custom>
+</div>

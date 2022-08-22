@@ -1,0 +1,2 @@
+Id;CityId;Name;Description;Address;Phone;BookingIntervalMinutes;SortOrder;Enabled;AccessForAll;IsActiveSmsNotification;ForHowManyMinutesToSendSms;SmsTemplateBeforeStartBooiking;AccessToViewBookingForResourceManagers;AnalyticsAccessForAll
+2;NULL;NewAffiliate;NULL;NULL;NULL;60;0;false;true;false;NULL;NULL;false;true

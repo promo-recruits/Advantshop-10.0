@@ -1,0 +1,57 @@
+﻿@model AdvantShop.Web.Admin.Models.Settings.IPTelephonySettingsModel
+<div class="form-group row">
+    <div class="col-xs-3">
+        <div class="setting-label-wrap">
+            <label for="MangoApiUrl" class="form-label-block">@T("Admin.Settings.Telephony.Mango.ApiUrl")</label>
+        </div>
+    </div>
+    <div class="col-xs-6 flex middle-xs">
+        @Html.TextBoxFor(x => x.MangoApiUrl, new { ng_model = "settingsTelephony.mangoApiUrl", @class = "form-control" })
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Telephony.Mango.ApiUrl")">
+            @T("Admin.Settings.Telephony.Mango.ApiUrlHint")
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3">
+        <div class="setting-label-wrap">
+            <label for="MangoApiKey" class="form-label-block">@T("Admin.Settings.Telephony.Mango.ApiKey")</label>
+        </div>
+    </div>
+    <div class="col-xs-6 flex middle-xs">
+        @Html.TextBoxFor(x => x.MangoApiKey, new { ng_model = "settingsTelephony.mangoApiKey", @class = "form-control" })
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Telephony.Mango.ApiKey")">
+            @T("Admin.Settings.Telephony.Mango.ApiKeyHint")
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3">
+        <div class="setting-label-wrap">
+            <label for="MangoSecretKey" class="form-label-block">@T("Admin.Settings.Telephony.Mango.SecretKey")</label>
+        </div>
+    </div>
+    <div class="col-xs-6 flex middle-xs">
+        @Html.TextBoxFor(x => x.MangoSecretKey, new { ng_model = "settingsTelephony.mangoSecretKey", @class = "form-control" })
+         <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Telephony.Mango.SecretKey")">
+            @T("Admin.Settings.Telephony.Mango.SecretKeyHint")
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3">
+        <div class="setting-label-wrap">
+            <label class="form-label-block">@T("Admin.Settings.Telephony.Mango.ServiceUrl")</label>
+        </div>
+    </div>
+    <div class="col-xs-6" ng-init="settingsTelephony.mangoServiceUrl = '@(SettingsMain.SiteUrl)/mangoadvantshop'">
+        <span ng-bind="settingsTelephony.mangoServiceUrl"></span>
+        <i class="fa fa-clipboard pointer m-l-xs" ng-click="settingsTelephony.copy(settingsTelephony.mangoServiceUrl)" title="@T("Admin.SettingsTelephony.CopyALink")" aria-hidden="true"></i>
+        <help-trigger class="ng-cloak word-spacing" data-title="@T("Admin.Settings.Telephony.Mango.ServiceUrl")">
+            @T("Admin.Settings.Telephony.Mango.ServiceUrlNote")
+        </help-trigger>
+    </div>
+</div>

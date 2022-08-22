@@ -1,0 +1,18 @@
+﻿Id;Name;Enabled;Template;Url;CreatedDate;LandingSiteId;IsMain;PageType;ProductId
+1;Главная;true;ArticleWithCrossSells;glavnaya;06.10.2021 18:07;1;true;1;1
+2;Upsell;true;ArticleWithCrossSells;upsell;06.10.2021 18:07;1;false;3;2
+3;Downsell;true;ArticleWithCrossSells;downsell;06.10.2021 18:07;1;false;5;3
+4;Главная;true;LandingFunnelOrderFreeWithDelivery;glavnaya;2021-10-06 18:07:43.063;2;true;1;1
+5;Upsell;true;LandingFunnelOrderFreeWithDelivery;upsell;06.10.2021 18:07;2;false;3;2
+6;Downsell;true;LandingFunnelOrderFreeWithDelivery;downsell;06.10.2021 18:07;2;false;5;3
+7;Главная;true;LandingFunnelOrderWithDetails;glavnaya;2021-10-06 18:08:01.060;3;true;1;1
+8;Upsell;true;LandingFunnelOrderWithDetails;upsell;06.10.2021 18:08;3;false;3;2
+9;Downsell;true;LandingFunnelOrderWithDetails;downsell;06.10.2021 18:08;3;false;5;3
+10;Главная;true;LandingFunnelOrderWithForm;glavnaya;2021-10-06 18:08:19.027;4;true;1;1
+11;Upsell;true;LandingFunnelOrderWithForm;upsell;06.10.2021 18:08;4;false;3;2
+12;Downsell;true;LandingFunnelOrderWithForm;downsell;06.10.2021 18:08;4;false;5;3
+13;Главная;true;MultyProducts;glavnaya;2021-10-06 18:08:40.037;5;true;1;NULL
+14;Главная;true;MultyProductsShort;glavnaya;06.10.2021 18:09;6;true;1;NULL
+15;Главная;true;VideoWithCrossSells;glavnaya;06.10.2021 18:09;7;true;1;1
+16;Upsell;true;VideoWithCrossSells;upsell;06.10.2021 18:09;7;false;3;2
+17;Downsell;true;VideoWithCrossSells;downsell;06.10.2021 18:09;7;false;5;3

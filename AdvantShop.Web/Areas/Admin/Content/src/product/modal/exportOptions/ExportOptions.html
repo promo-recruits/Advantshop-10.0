@@ -1,0 +1,290 @@
+﻿<form>
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{'Admin.Js.ExportOptions.Title'|translate}}</h2>
+    </div>
+    <div class="modal-body">
+
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.NotesForSale'|translate}}
+                </label>
+
+                <div class="col-xs m-r-md relative">
+                    <input type="text" class="form-control" ng-model="ctrl.data.SalesNote" />
+                    <help-trigger class="ng-cloak help-trigger-icon-abs" data-title={{'Admin.Js.ExportOptions.NotesForSale'|translate}} use-template="true">
+                        <p> {{'Admin.Js.ExportOptions.NotesForYandexMarket'|translate}} </p>
+                        <p> "{{'Admin.Js.ExportOptions.ElementUsedFor'|translate}}" </p>
+                        <p> {{'Admin.Js.ExportOptions.AllowedTextLength'|translate}} </p>
+                        <p> {{'Admin.Js.ExportOptions.OptionalElement'|translate}} </p>
+                        <p> {{'Admin.Js.ExportOptions.ExamplePrepayment'|translate}} </p>
+                        <p><a href="http://www.advantshop.net/help/pages/yandex-market-sales-note" target="_blank"> {{'Admin.Js.ExportOptions.InstructionNotes'|translate}} </a></p>
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.InternationalMarkingCode'|translate}}
+                </label>
+                <div class="col-xs m-r-md relative">
+                    <input type="text" class="form-control" ng-model="ctrl.data.Gtin" />
+                    <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="Google GTIN" use-template="true">
+                        <p>{{'Admin.Js.ExportOptions.ForGoogleMerchantCenter'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.ReadMore'|translate}}</p>
+                        <p><a href="https://support.google.com/merchants/answer/160161?hl=ru#valid" target="_blank">{{'Admin.Js.ExportOptions.GTIN'|translate}}</a></p>
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.CategoryGoogleMerchantCenter'|translate}}
+                </label>
+                <div class="col-xs m-r-md relative">
+                    <input type="text" class="form-control" ng-model="ctrl.data.GoogleProductCategory" />
+                    <help-trigger class="ng-cloak help-trigger-icon-abs" data-title={{'Admin.Js.ExportOptions.GoogleProductClassification'|translate}} use-template="true">
+                        <p>{{'Admin.Js.ExportOptions.AttributeDefinesCategory'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.ForGoogleMerchantCenter'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.ReadMore'|translate}}</p>
+                        <p><a href="https://support.google.com/merchants/answer/160081?hl=ru" target="_blank">{{'Admin.Js.ExportOptions.GoogleProductCategory'|translate}}</a></p>
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.YandexMarketPrefix'|translate}}
+                </label>
+                <div class="col-xs m-r-md relative">
+                    <input type="text" class="form-control" ng-model="ctrl.data.YandexTypePrefix" />
+                    <help-trigger class="ng-cloak help-trigger-icon-abs" data-title={{'Admin.Js.ExportOptions.TypeOrCategory'|translate}} use-template="true">
+                        <p>{{'Admin.Js.ExportOptions.TypePrefix'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.TransferCorrectly'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.OptionalElement'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.ReadMore'|translate}}</p>
+                        <p><a href="https://yandex.ru/support/partnermarket/elements/vendor-name-model.xml" target="_blank">{{'Admin.Js.ExportOptions.OfferName'|translate}}</a></p>
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.YandexMarketModel'|translate}}
+                </label>
+                <div class="col-xs m-r-md relative">
+                    <input type="text" class="form-control" ng-model="ctrl.data.YandexModel" />
+                    <help-trigger class="ng-cloak help-trigger-icon-abs" data-title={{'Admin.Js.ExportOptions.Model'|translate}} use-template="true">
+                        <p> {{'Admin.Js.ExportOptions.ElementModel'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.UsedToTransfer'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.ReadMore'|translate}}</p>
+                        <p><a href="https://yandex.ru/support/partnermarket/elements/vendor-name-model.xml" target="_blank">{{'Admin.Js.ExportOptions.OfferName'|translate}}</a></p>
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.Product.YandexMarketName'|translate}}
+                </label>
+                <div class="col-xs m-r-md relative">
+                    <input type="text" class="form-control" ng-model="ctrl.data.YandexName" />
+                    <help-trigger class="ng-cloak help-trigger-icon-abs" data-title={{'Admin.Js.Product.NameOfProduct'|translate}} use-template="true">
+                        <p>{{'Admin.Js.Product.ElementName'|translate}}</p>
+                        <p>{{'Admin.Js.Product.TransferProductName'|translate}}</p>
+                        <p>{{'Admin.Js.Product.MoreInfo'|translate}}</p>
+                        <p><a href="https://yandex.ru/support/partnermarket/elements/vendor-name-model.xml" target="_blank">{{'Admin.Js.Product.OfferName'|translate}}</a></p>
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.Product.YandexMarketDeliveryDays'|translate}}
+                </label>
+                <div class="col-xs m-r-md relative">
+                    <input type="text" class="form-control" maxlength="5" , ng-model="ctrl.data.YandexDeliveryDays" />
+                    <help-trigger class="ng-cloak help-trigger-icon-abs" data-title={{'Admin.Js.Product.YandexDeliveryDays'|translate}} use-template="true">
+                        <p>{{'Admin.Js.Product.DeliveryDaysPrecept'|translate}}</p>
+                        <p>{{'Admin.Js.Product.ThisParameterUsedForYandexMarketDeliveryDays'|translate}}</p>
+                        <p>{{'Admin.Js.Product.IfProductDeliveryDaysIsEmpty'|translate}}</p>
+                        <p>{{'Admin.Js.Product.MoreInfo'|translate}}</p>
+                        <p><a href="https://yandex.ru/support/partnermarket/elements/delivery-options.html" target="_blank">{{'Admin.Js.Product.YandexDeliveryDaysDocumentation'|translate}}</a></p>
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.Bid'|translate}}
+                </label>
+                <div class="col-xs-3 relative">
+                    <input type="text" class="form-control" ng-model="ctrl.data.Bid" />
+                    <help-trigger class="ng-cloak help-trigger-icon-abs" data-title={{'Admin.Js.ExportOptions.Bid'|translate}} use-template="true">
+                        <p>{{'Admin.Js.ExportOptions.TransferBid'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.ConditionalCentsAsValue'|translate}}</p>
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.DimensionNamingConventions'|translate}}
+                </label>
+                <div class="col-xs-3 relative">
+                    <select type="text" class="form-control" ng-model="ctrl.data.YandexSizeUnit">
+                        <option value="">{{'Admin.Js.ExportOptions.NotChosen'|translate}}</option>
+                        <optgroup label={{'Admin.Js.ExportOptions.ByCountry'|translate}}>
+                            <option value="AU">AU</option>
+                            <option value="DE">DE</option>
+                            <option value="EU">EU</option>
+                            <option value="FR">FR</option>
+                            <option value="Japan">Japan</option>
+                            <option value="INT">INT</option>
+                            <option value="IT">IT</option>
+                            <option value="RU">RU</option>
+                            <option value="UK">UK</option>
+                            <option value="US">US</option>
+                        </optgroup>
+                        <optgroup label={{'Admin.Js.ExportOptions.TypeOfMeasurement'|translate}}>
+                            <option value="INCH">INCH</option>
+                            <option value="Height">Height</option>
+                            <option value="Months">Months</option>
+                            <option value="Round">Round</option>
+                            <option value="Years">Years</option>
+                        </optgroup>
+                    </select>
+                    <help-trigger class="ng-cloak help-trigger-icon-abs" data-title={{'Admin.Js.ExportOptions.Designations'|translate}} use-template="true">
+                        - {{'Admin.Js.ExportOptions.ByCountry'|translate}}:<br />
+                        {{'Admin.Js.ExportOptions.AU'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.DE'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.EU'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.FR'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.Japan'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.INT'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.IT'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.RU'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.UK'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.US'|translate}}<br />
+                        - {{'Admin.Js.ExportOptions.TypeOfMeasurement'|translate}}:<br />
+                        {{'Admin.Js.ExportOptions.INCH'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.Height'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.Months'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.Round'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.Years'|translate}}<br />
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.ProductForAdults'|translate}}
+                </label>
+                <div class="col-xs">
+                    <label class="adv-checkbox-label control-checkbox">
+                        <input type="checkbox" ng-model="ctrl.data.Adult" class="adv-checkbox-input control-checkbox" />
+                        <span class="adv-checkbox-emul"></span>
+                    </label>
+                    <help-trigger class="ng-cloak" data-title={{'Admin.Js.ExportOptions.ProductForAdults'|translate}} use-template="true">
+                        <p>{{'Admin.Js.ExportOptions.ElementAdult'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.ForSexualNeeds'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.OptionalElement'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.NotesForYandexMarketGoogleMerchantCenter'|translate}}</p>
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.ManufacturerWarranty'|translate}}
+                </label>
+                <div class="col-xs">
+                    <label class="adv-checkbox-label control-checkbox">
+                        <input type="checkbox" ng-model="ctrl.data.ManufacturerWarranty" class="adv-checkbox-input control-checkbox" />
+                        <span class="adv-checkbox-emul"></span>
+                    </label>
+                    <help-trigger class="ng-cloak" data-title={{'Admin.Js.ExportOptions.ManufacturerWarranty'|translate}} use-template="true">
+                        <p>{{'Admin.Js.ExportOptions.ElementManufacturerWarranty'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.MarkingProducts'|translate}}</p>
+                        <p>{{'Admin.Js.ExportOptions.OptionalElement'|translate}}</p>
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.YandexProductDiscounted'|translate}}
+                </label>
+                <div class="col-xs">
+                    <label class="adv-checkbox-label control-checkbox">
+                        <input type="checkbox" ng-model="ctrl.data.YandexProductDiscounted" class="adv-checkbox-input control-checkbox" />
+                        <span class="adv-checkbox-emul"></span>
+                    </label>
+                    <help-trigger class="ng-cloak" data-title={{'Admin.Js.ExportOptions.YandexProductDiscounted.HelpTitle'|translate}} use-template="true">
+                        {{'Admin.Js.ExportOptions.YandexProductDiscounted.YouCanPlaceDiscountedProducts'|translate}}<br />
+                        {{'Admin.Js.ExportOptions.YandexProductDiscounted.BothLikeNewAndUsedProducts'|translate}}
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-show="ctrl.data.YandexProductDiscounted">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.YandexProductDiscountCondition'|translate}}
+                </label>
+                <div class="col-xs-3 relative">
+                    <select type="text" class="form-control" ng-model="ctrl.data.YandexProductDiscountCondition" convert-to-number
+                            ng-options="s.value as s.label for s in ctrl.data.YandexDiscountConditions"
+                            ng-required="ctrl.data.YandexProductDiscounted" validation-input-text="{{'Admin.Js.ExportOptions.YandexProductDiscountCondition'|translate}}">
+                    </select>
+                    <help-trigger class="ng-cloak help-trigger-icon-abs" data-title={{'Admin.Js.ExportOptions.YandexProductDiscountCondition.HelpTitle'|translate}} use-template="true">
+                        <b>{{'Admin.Js.ExportOptions.YandexProductDiscountCondition.NewLikeType'|translate}}</b><br />
+                        - {{'Admin.Js.ExportOptions.YandexProductDiscountCondition.NewLikeType.DamagedPackage'|translate}}<br />
+                        - {{'Admin.Js.ExportOptions.YandexProductDiscountCondition.NewLikeType.InIncompleteConfiguration'|translate}}<br />
+                        - {{'Admin.Js.ExportOptions.YandexProductDiscountCondition.NewLikeType.WithScratches'|translate}}<br />
+                        - {{'Admin.Js.ExportOptions.YandexProductDiscountCondition.NewLikeType.DamagedOrDefective'|translate}}<br />
+                        - {{'Admin.Js.ExportOptions.YandexProductDiscountCondition.NewLikeType.Renovated'|translate}}<br />
+                        - {{'Admin.Js.ExportOptions.YandexProductDiscountCondition.NewLikeType.ShowcaseSamples'|translate}}<br />
+                        <b>{{'Admin.Js.ExportOptions.YandexProductDiscountCondition.UsedType'|translate}}</b><br />
+                        {{'Admin.Js.ExportOptions.YandexProductDiscountCondition.UsedType.Workable'|translate}}
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-show="ctrl.data.YandexProductDiscounted">
+            <div class="row middle-xs">
+                <label class="col-xs-3 control-label">
+                    {{'Admin.Js.ExportOptions.YandexProductDiscountReason'|translate}}
+                </label>
+                <div class="col-xs m-r-md relative">
+                    <textarea class="form-control" style="resize:vertical;min-height:100px;" ng-model="ctrl.data.YandexProductDiscountReason" ng-required="ctrl.data.YandexProductDiscounted" validation-input-text="{{'Admin.Js.ExportOptions.YandexProductDiscountReason'|translate}}"></textarea>
+                    <help-trigger class="ng-cloak help-trigger-icon-abs" data-title={{'Admin.Js.ExportOptions.YandexProductDiscountReason.HelpTitle'|translate}} use-template="true">
+                        <b style="color:#F00;">{{'Admin.Js.ExportOptions.YandexProductDiscountReason.Attention'|translate}}</b>
+                        {{'Admin.Js.ExportOptions.YandexProductDiscountReason.InformationMustBeComprehensive'|translate}}
+                    </help-trigger>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-save btn-primary" type="button" data-button-validation-success="ctrl.save()" data-button-validation>{{'Admin.Js.AddEdit.Save'|translate}}</button>
+        <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.AddEdit.Cancel'|translate}}</button>
+    </div>
+</form>

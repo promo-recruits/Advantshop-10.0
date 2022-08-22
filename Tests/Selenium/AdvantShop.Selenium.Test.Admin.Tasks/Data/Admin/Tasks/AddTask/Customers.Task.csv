@@ -1,0 +1,5 @@
+Id;TaskGroupId;AppointedManagerId;Name;Description;Status;Priority;DueDate[DATE];OrderId;CustomerId[GUID];DateCreated[DATE];DateModified[DATE];Accepted;DateAppointed[DATE];IsAutomatic;IsDeferred;SortOrder;Reminder;Reminded
+996;1;1;test1;new test1;0;0;06.04.2015 16:29;NULL;CFC2C33B-1E84-415E-8482-E98156341603;06.04.2015 16:29;06.04.2015 16:29;false;12.11.2016 13:58;false;false;1;0;false
+997;1;1;test2;new test2;0;0;07.04.2015 16:29;NULL;CFC2C33B-1E84-415E-8482-E98156341603;06.04.2015 16:29;06.04.2015 16:29;false;11.11.2016 13:58;false;false;2;0;false
+998;1;1;test3;new test3;0;0;08.04.2015 16:29;NULL;CFC2C33B-1E84-415E-8482-E98156341603;06.04.2015 16:29;06.04.2015 16:29;false;10.11.2016 13:58;false;false;3;0;false
+999;1;1;test4;new test4;0;0;09.04.2015 16:29;NULL;CFC2C33B-1E84-415E-8482-E98156341603;06.04.2015 16:29;06.04.2015 16:29;false;08.11.2016 13:58;false;false;4;0;false

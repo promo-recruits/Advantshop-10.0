@@ -1,0 +1,258 @@
+﻿@model AdvantShop.Web.Admin.Models.Catalog.ExportFeeds.ExportFeedSettingsAvitoModel
+
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.Currency, T("Admin.ExportFeeed.SettingsAvito.Currency"), new { @class = "required" })
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4">
+        @Html.DropDownList("ddlCurrency", new SelectList(Model.Currencies, "Key", "Value", Model.Currency), new { @class = "form-control", ng_init = "exportFeeds.AdvancedSettings.Currency='" + Model.Currency + "'", ng_model = "exportFeeds.AdvancedSettings.Currency" })
+
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.ExportNotAvailable, T("Admin.ExportFeeed.SettingsAvito.ExportNotAvailable"))
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4 relative">
+        <label class="adv-checkbox-label" data-e2e="CsvCategorySort">
+            @Html.CheckBoxFor(x => x.ExportNotAvailable, new { @class = "adv-checkbox-input", ng_init = "exportFeeds.AdvancedSettings.ExportNotAvailable=" + Model.ExportNotAvailable.ToLowerString(), ng_model = "exportFeeds.AdvancedSettings.ExportNotAvailable" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.PublicationDateOffset, T("Admin.ExportFeed.SettingsAvito.PublicationDateOffset"))
+            <span class="text-required"></span>
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4 relative">
+        @Html.TextBoxFor(x => x.PublicationDateOffset, new { @class = "form-control", required = "required", @type = "number", ng_model = "exportFeeds.AdvancedSettings.PublicationDateOffset", validation_input_text = T("Admin.ExportFeeed.SettingsAvito.PublicationDateOffset"), ng_pattern = "/^[0-9]*$/" })
+        @*<help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title="@T("Admin.ExportFeed.Settings.AdditionalUrlTags")">
+                <div class="help-content">
+                    @T("Admin.ExportFeed.Settings.AvailableVariables")
+                    #STORE_NAME#, #STORE_URL#, #PRODUCT_NAME#, #PRODUCT_ID#, #PRODUCT_ARTNO#, #OFFER_ID#
+                </div>
+            </help-trigger>*@
+    </div>
+
+</div>
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.DurationOfPublicationInDays, T("Admin.ExportFeed.SettingsAvito.DurationOfPublicationInDays"))
+            <span class="text-required"></span>
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4 relative">
+        @Html.TextBoxFor(x => x.DurationOfPublicationInDays, new { @class = "form-control", required = "required", @type = "number", ng_model = "exportFeeds.AdvancedSettings.DurationOfPublicationInDays", validation_input_text = T("Admin.ExportFeeed.SettingsAvito.DurationOfPublicationInDays"), ng_pattern = "/^[0-9]*$/" })
+        @*<help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title="@T("Admin.ExportFeed.Settings.AdditionalUrlTags")">
+                <div class="help-content">
+                    @T("Admin.ExportFeed.Settings.AvailableVariables")
+                    #STORE_NAME#, #STORE_URL#, #PRODUCT_NAME#, #PRODUCT_ID#, #PRODUCT_ARTNO#, #OFFER_ID#
+                </div>
+            </help-trigger>*@
+    </div>
+
+</div>
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.PaidPublicationOption, T("Admin.ExportFeed.SettingsAvito.PaidPublicationOption"), new { @class = "required" })
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4 relative">
+        @Html.DropDownList("ddlPaidPublicationOption", new SelectList(Model.ListPaidPublicationOption, "Key", "Value", Model.PaidPublicationOption), new { @class = "form-control", ng_init = "exportFeeds.AdvancedSettings.PaidPublicationOption='" + Model.PaidPublicationOption + "'", ng_model = "exportFeeds.AdvancedSettings.PaidPublicationOption" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title="Тег ListingFee">
+            <div class="help-content">
+                Вариант платного размещения — одно из значений списка:
+                <ul>
+                    <li>«Package» — размещение объявления осуществляется только при наличии подходящего пакета размещения;</li>
+                    <li>«PackageSingle» — при наличии подходящего пакета оплата размещения объявления произойдет с него; если нет подходящего пакета, но достаточно денег на кошельке Avito, то произойдет разовое размещение;</li>
+                    <li>«Single» — только разовое размещение, произойдет при наличии достаточной суммы на кошельке Avito; если есть подходящий пакет размещения, он будет проигнорирован.</li>
+                </ul>
+                Если элемент пуст или отсутствует, то значение по умолчанию — «Package».
+            </div>
+        </help-trigger>
+    </div>
+
+</div>
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.PaidServices, T("Admin.ExportFeed.SettingsAvito.PaidServices"), new { @class = "required" })
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4 relative">
+        @Html.DropDownList("ddlPaidServices", new SelectList(Model.ListPaidServices, "Key", "Value", Model.PaidServices), new { @class = "form-control", ng_init = "exportFeeds.AdvancedSettings.PaidServices='" + Model.PaidServices + "'", ng_model = "exportFeeds.AdvancedSettings.PaidServices" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title="Тег AdStatus">
+            <div class="help-content">
+                Платная услуга, которую нужно применить к объявлению — одно из значений списка:
+                <ul>
+                    <li>«Free» — обычное объявление;</li>
+                    <li>«Premium» — премиум-объявление;</li>
+                    <li>«VIP» — VIP-объявление;</li>
+                    <li>«PushUp» — поднятие объявления в поиске;</li>
+                    <li>«Highlight» — выделение объявления;</li>
+                    <li>«TurboSale»— применение пакета «Турбо-продажа»;</li>
+                    <li>«QuickSale» — применение пакета «Быстрая продажа».</li>
+                </ul>
+                <p>
+                    Если элемент пуст или отсутствует, то статус объявления по умолчанию — «Free».
+                </p>
+                <p>
+                    Для успешного применения платной услуги необходимо наличие денег на Кошельке Avito. Если денег на Кошельке недостаточно для применения услуги, объявление выгружается как обычное (Free).
+                    <br />
+                    Одна платная услуга применяется к одному объявлению не чаще, чем один раз в определенный период времени:
+                    <br />
+                    для услуг «Premium», «VIP», «Highlight» — раз в 7 дней,
+                    <br />
+                    для «PushUp» — раз в 2 дня,
+                    <br />
+                    пакеты услуг «QuickSale», «TurboSale» — раз в 7 дней.
+                    <br />
+                    Если по истечении указанного времени статус объявления в XML все еще отличается от «Free», то услуга будет применена повторно.
+                </p>
+                <p>
+                    Разные услуги для одного объявления активируются независимо друг от друга: одна услуга может быть активирована, пока еще не закончился срок действия другой. За один цикл автозагрузки можно применить только одну услугу.
+                </p>
+            </div>
+        </help-trigger>
+    </div>
+
+</div>
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2 ">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.EmailMessages, T("Admin.ExportFeed.SettingsAvito.EmailMessages"), new { @class = "required" })
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.EmailMessages, new { @class = "adv-checkbox-input", ng_init = "exportFeeds.AdvancedSettings.EmailMessages=" + Model.EmailMessages.ToLowerString(), ng_model = "exportFeeds.AdvancedSettings.EmailMessages" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+        <help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title="Тег AllowEmail">
+            <div class="help-content">
+                Возможность написать сообщение по объявлению через сайт — одно из значений списка:
+                <ul>
+                    <li>«Да»,</li>
+                    <li>«Нет».</li>
+                </ul>
+                Примечание: значение по умолчанию — «Да».
+            </div>
+        </help-trigger>
+    </div>
+
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.ManagerName, T("Admin.ExportFeed.SettingsAvito.ManagerName"))
+            <span class="text-required"></span>
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4 relative">
+        @Html.TextBoxFor(x => x.ManagerName, new { @class = "form-control", required = "required", @maxlength = "40", ng_model = "exportFeeds.AdvancedSettings.ManagerName", validation_input_text = T("Admin.ExportFeed.SettingsAvito.ManagerName") })
+        <help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title="Тег ManagerName">
+            <div class="help-content">
+                <p>Имя менеджера, контактного лица компании по данному объявлению — строка не более 40 символов.</p>
+            </div>
+        </help-trigger>
+    </div>
+
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.Phone, T("Admin.ExportFeed.SettingsAvito.Phone"))
+            <span class="text-required"></span>
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4 relative">
+        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", required = "required", ng_model = "exportFeeds.AdvancedSettings.Phone", validation_input_text = T("Admin.ExportFeeed.SettingsAvito.Phone"), mask_control = "", mask_control_preset = "phone" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title="Тег ContactPhone">
+            <div class="help-content">
+                <p>Контактный телефон — строка, содержащая только один российский номер телефона; должен быть обязательно указан код города или мобильного оператора. Корректные примеры:</p>
+                <ul>
+                    <li>«+7 (495) 777-10-66»</li>
+                    <li>«(81374) 4-55-75»</li>
+                    <li>«8 905 207 04 90»</li>
+                    <li>«+7 905 2070490»</li>
+                    <li>«88123855085»</li>
+                    <li>«9052070490»</li>
+                </ul>
+            </div>
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.Address, T("Admin.ExportFeed.SettingsAvito.Address"))
+            <span class="text-required"></span>
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4 relative">
+        @Html.TextBoxFor(x => x.Address, new { @class = "form-control", required = "required", ng_model = "exportFeeds.AdvancedSettings.Address", validation_input_text = T("Admin.ExportFeed.SettingsAvito.Address"), @maxlength = "250" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title="Тег Address">
+            <div class="help-content">
+                <p>Пример: Россия, Тамбовская область, Моршанск, Лесная улица, 7</p>
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2 ">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.ProductDescriptionType, T("Admin.ExportFeeed.SettingsAvito.ProductDescriptionType"), new { @class = "required" })
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4">
+        @Html.DropDownList("ddlProductDescriptionType", new SelectList(Model.ProductDescriptionTypeList, "Key", "Value", Model.ProductDescriptionType), new { @class = "form-control", ng_init = "exportFeeds.AdvancedSettings.ProductDescriptionType = '" + Model.ProductDescriptionType + "'", ng_model = "exportFeeds.AdvancedSettings.ProductDescriptionType" })
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2 ">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.UnloadProperties, T("Admin.ExportFeed.SettingsAvito.UnloadProperties"))
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.UnloadProperties, new { @class = "adv-checkbox-input", ng_init = "exportFeeds.AdvancedSettings.UnloadProperties=" + Model.UnloadProperties.ToLowerString(), ng_model = "exportFeeds.AdvancedSettings.UnloadProperties" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.Address, T("Admin.ExportFeed.SettingsAvito.DefaultAvitoCategory"))
+            <span class="text-required"></span>
+        </div>
+    </div>
+    <div class="col-xs-5 col-wl-4 relative">
+        @Html.TextBoxFor(x => x.DefaultAvitoCategory, new { @class = "form-control", required = "required", ng_model = "exportFeeds.AdvancedSettings.DefaultAvitoCategory", validation_input_text = T("Admin.ExportFeed.SettingsAvito.DefaultAvitoCategory") })
+        @*<help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title="Тег Address">
+                <div class="help-content">
+                    <p>Пример: Товары для компьютера</p>
+                </div>
+            </help-trigger>*@
+    </div>
+</div>

@@ -1,0 +1,10 @@
+﻿@model AdvantShop.Web.Admin.Models.Orders.Shiptor.OrderActionsModel
+
+@if (Model.ShowSendOrder)
+{
+    <a href="" class="m-t-xs m-b-xs block fs-xs" ng-click="$ctrl.createShiptorOrder()">Передать заказ в Shiptor</a>
+}
+else
+{
+    <span class="m-t-xs m-b-xs block fs-xs">Заказ уже передан в Shiptor</span>
+}

@@ -1,0 +1,4 @@
+Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
+1;1;video;;video;"{""urlVideo"":""https://www.youtube.com/watch?v=CyL7R_1wbHQ"",""heightVideo"":null,""widthVideo"":null}";0
+2;1;title;Первый шаг к приключениям;html;null;100
+3;1;subtitle;Наши главные эксперты команды Дмитрий Шолохов и Евгений Золотов тестируют новую коллекцию в экстремвльных условиях и направилась в Японию. Что из этого получилось смотрите на нашем канале;html;null;200

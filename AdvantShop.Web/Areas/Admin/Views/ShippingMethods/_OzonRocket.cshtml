@@ -1,0 +1,207 @@
+@using AdvantShop.Shipping.OzonRocket
+@using AdvantShop.Shipping.OzonRocket.Api
+@model AdvantShop.Web.Infrastructure.Admin.ShippingMethods.OzonRocketShippingAdminModel
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">ClientId</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.ClientId, new { ng_model = "shippingMethod.Params.ClientId", @class = "form-control", required = "required", validation_input_text = "ClientId" })
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">ClientSecret</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.ClientSecret, new { ng_model = "shippingMethod.Params.ClientSecret", @class = "form-control", required = "required", validation_input_text = "ClientSecret" })
+    </div>
+</div>
+
+@Html.Hidden("ExistApi", null, new { ng_model = "shippingMethod.Params.ExistApi", ng_init = "shippingMethod.Params.ExistApi=" + (Model.ClientId.IsNotEmpty() && Model.ClientSecret.IsNotEmpty()).ToLowerString() + "" })
+<div class="form-group row" ng-if="!shippingMethod.Params.ExistApi">
+    <div class="col-xs-8">
+        <div class="adv-panel-info">
+            После ввода данных доступа к API, необходимо сохранить настройки после чего появятся дополнительные настройки
+        </div>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        Рассчитывать методы доставки
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.ListBoxFor(x => x.DeliveryTypes, Model.ListDeliveryTypes, new { ng_model = "shippingMethod.Params.DeliveryTypes", ng_init = "shippingMethod.Params.DeliveryTypes='" + string.Join(",", Model.DeliveryTypes) + "'", @class = "form-control", required = "required", validation_input_text = "Рассчитывать методы доставки", size = 3 })
+        <input type="hidden" name="DeliveryTypes" value="" ng-if="!shippingMethod.Params.DeliveryTypes.length" />
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="">
+            Можно выбрать несколько вариантов зажав клавиши Shift или Ctrl
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.ExistApi">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span ng-class="{'text-required': @((Model.FromPlaces.Count > 1).ToLowerString())}">
+            Место передачи отправления
+        </span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.DropDownListFor(x => x.FromPlaceId, Model.FromPlaces, 
+            new
+            {
+                ng_model = "shippingMethod.Params.FromPlaceId", 
+                ng_init = "shippingMethod.Params.FromPlaceId='" + Model.FromPlaceId + "'", 
+                @class = "form-control", 
+                ng_required = (Model.FromPlaces.Count > 1).ToLowerString(), 
+                validation_input_text = "Место передачи отправления"
+            })
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.DeliveryTypes && (shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.Postamat)') != -1 || shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.PickPoint)') != -1)">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Отображение ПВЗ</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.DropDownListFor(x => x.TypeViewPoints, Model.ListTypesViewPoints, new { ng_model = "shippingMethod.Params.TypeViewPoints", @class = "form-control", required = "required", validation_input_text = "Отображение ПВЗ" })
+    </div>
+</div>
+
+<div class="form-group row" ng-if="shippingMethod.Params.TypeViewPoints === '@(((int)TypeViewPoints.YaWidget).ToString())' && shippingMethod.Params.DeliveryTypes && (shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.Postamat)') != -1 || shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.PickPoint)') != -1)">
+    <h4 style="font-weight: bold">Параметры виджета</h4>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.TypeViewPoints === '@(((int)TypeViewPoints.YaWidget).ToString())' && shippingMethod.Params.DeliveryTypes && (shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.Postamat)') != -1 || shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.PickPoint)') != -1)">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">API-ключ яндекс.карт</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.YaMapsApiKey, new { @class = "form-control", ng_attr_type = "{{shippingMethod.inputTypeApiKey}}", ng_model = "shippingMethod.Params.YaMapsApiKey", required = "required", validation_input_text = "API-ключ яндекс.карт" })
+        <a class="showhidepass" style="top:0;right:25px;" ng-init="shippingMethod.inputTypeApiKey  = 'password'" ng-click="shippingMethod.inputTypeApiKey  = shippingMethod.inputTypeApiKey  == 'password' ? 'text' : 'password'">
+            <span class="fa" ng-class="(shippingMethod.inputTypeApiKey  == 'password') ? 'fa-eye' : 'fa-eye-slash'"></span>
+        </a>
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="API-ключ яндекс.карт">
+            <a href="https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key" target="_blank">Как получить ключ?</a>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.TypeViewPoints === '@(((int)TypeViewPoints.YaWidget).ToString())' && shippingMethod.Params.DeliveryTypes && (shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.Postamat)') != -1 || shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.PickPoint)') != -1)">
+    <div class="flex-grow-n col-fixed-size-md">
+        Отображать описание схемы проезда
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label form-label-block">
+            @Html.CheckBoxFor(x => x.ShowAddressComment, new { ng_model = "shippingMethod.Params.ShowAddressComment", ng_init = "shippingMethod.Params.ShowAddressComment=" + Model.ShowAddressComment.ToLowerString(), @class = "adv-checkbox-input" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row" ng-if="shippingMethod.Params.TypeViewPoints === '@(((int)TypeViewPoints.OzonRocketWidget).ToString())' && shippingMethod.Params.DeliveryTypes && (shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.Postamat)') != -1 || shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.PickPoint)') != -1)">
+    <h4 style="font-weight: bold">Параметры виджета</h4>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.TypeViewPoints === '@(((int)TypeViewPoints.OzonRocketWidget).ToString())' && shippingMethod.Params.DeliveryTypes && (shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.Postamat)') != -1 || shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.PickPoint)') != -1)">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Токен виджета</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.OzonRocketWidgetToken, new { @class = "form-control", ng_attr_type = "{{shippingMethod.inputTypeWidgetToken}}", ng_model = "shippingMethod.Params.OzonRocketWidgetToken", required = "required", validation_input_text = "Токен виджета" })
+        <a class="showhidepass" style="top:0;right:25px;" ng-init="shippingMethod.inputTypeWidgetToken  = 'password'" ng-click="shippingMethod.inputTypeWidgetToken  = shippingMethod.inputTypeWidgetToken  == 'password' ? 'text' : 'password'">
+            <span class="fa" ng-class="(shippingMethod.inputTypeWidgetToken  == 'password') ? 'fa-eye' : 'fa-eye-slash'"></span>
+        </a>
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="Токен виджета">
+            Необходимо в ЛК в разделе "Профиль" скопировать скрипт виджета доставки и извлеч из него параметр token.<br/>
+            &lt;iframe title=&quot;Ozon widget&quot; style=&quot;...&quot; src=&quot;https://rocket.ozon.ru/lk/widget?token=<span class="alert-info">Значение токена</span>&quot;&gt;...&lt;/iframe&gt;
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.TypeViewPoints === '@(((int)TypeViewPoints.OzonRocketWidget).ToString())' && shippingMethod.Params.DeliveryTypes && (shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.Postamat)') != -1 || shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.PickPoint)') != -1)">
+    <div class="flex-grow-n col-fixed-size-md">
+        Показывать стоимость доставки
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label form-label-block">
+            @Html.CheckBoxFor(x => x.OzonRocketWidgetShowDeliveryPrice, new { ng_model = "shippingMethod.Params.OzonRocketWidgetShowDeliveryPrice", ng_init = "shippingMethod.Params.OzonRocketWidgetShowDeliveryPrice=" + Model.OzonRocketWidgetShowDeliveryPrice.ToLowerString(), @class = "adv-checkbox-input" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.TypeViewPoints === '@(((int)TypeViewPoints.OzonRocketWidget).ToString())' && shippingMethod.Params.DeliveryTypes && (shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.Postamat)') != -1 || shippingMethod.Params.DeliveryTypes.indexOf('@(DeliveryType.PickPoint)') != -1)">
+    <div class="flex-grow-n col-fixed-size-md">
+        Показывать дату доставки
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label form-label-block">
+            @Html.CheckBoxFor(x => x.OzonRocketWidgetShowDeliveryTime, new { ng_model = "shippingMethod.Params.OzonRocketWidgetShowDeliveryTime", ng_init = "shippingMethod.Params.OzonRocketWidgetShowDeliveryTime=" + Model.OzonRocketWidgetShowDeliveryTime.ToLowerString(), @class = "adv-checkbox-input" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row">
+    <h4 style="font-weight: bold">Статусы заказов</h4>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        Синхронизировать статусы заказов из Ozon Rocket
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label form-label-block">
+            @Html.CheckBoxFor(x => x.StatusesSync, new { ng_model = "shippingMethod.Params.StatusesSync", ng_init = "shippingMethod.Params.StatusesSync=" + Model.StatusesSync.ToLowerString(), @class = "adv-checkbox-input" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+@* <div class="form-group row middle-xs" ng-if="shippingMethod.Params.StatusesSync"> *@
+@*     <div class="flex-grow-n col-fixed-size-md font-bold"> *@
+@*         Статусы *@
+@*     </div> *@
+@* </div> *@
+
+<div class="form-group row" ng-if="shippingMethod.Params.StatusesSync">
+    <div class="flex-grow-n col-fixed-size-md">
+        Статусы
+    </div>
+    <div class="col-xs-6 relative">
+        <shipping-ozon-rocket-sync-status method-id="@Model.ShippingMethodId"
+                                          statuses-reference="@Model.StatusesReference">
+        </shipping-ozon-rocket-sync-status>
+    </div>
+</div>
+
+<div class="form-group row">
+    <h4 style="font-weight: bold">Параметры передачи заказа</h4>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        Разрешить частичную выдачу
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label form-label-block">
+            @Html.CheckBoxFor(x => x.AllowPartialDelivery, new { ng_model = "shippingMethod.Params.AllowPartialDelivery", ng_init = "shippingMethod.Params.AllowPartialDelivery=" + Model.AllowPartialDelivery.ToLowerString(), @class = "adv-checkbox-input" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        Разрешить вскрывать отправление до оплаты
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label form-label-block">
+            @Html.CheckBoxFor(x => x.AllowUncovering, new { ng_model = "shippingMethod.Params.AllowUncovering", ng_init = "shippingMethod.Params.AllowUncovering=" + Model.AllowUncovering.ToLowerString(), @class = "adv-checkbox-input" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>

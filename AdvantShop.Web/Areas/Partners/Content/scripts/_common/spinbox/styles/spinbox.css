@@ -1,0 +1,50 @@
+.spinbox-more,
+.spinbox-less {
+  display: block;
+  line-height: 1;
+  padding: 0.125rem 0.3125rem; }
+
+.spinbox-button-disabled {
+  cursor: default; }
+
+.spinbox-input {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield; }
+  .spinbox-input::-webkit-outer-spin-button, .spinbox-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+
+.spinbox-input-wrap {
+  padding-right: 0; }
+
+.spinbox-block {
+  flex-wrap: nowrap; }
+
+.spinbox--mobile {
+  position: relative; }
+  .spinbox--mobile .spinbox-input-wrap {
+    padding-right: 0.625rem; }
+  .spinbox--mobile .spinbox-input {
+    text-align: center; }
+  .spinbox--mobile .spinbox__arrows {
+    width: 0; }
+  .spinbox--mobile .spinbox-less, .spinbox--mobile .spinbox-more {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    font-size: 12px; }
+  .spinbox--mobile .spinbox-less:before, .spinbox--mobile .spinbox-more:before {
+    margin: 0; }
+  .spinbox--mobile .spinbox-less {
+    left: 0; }
+    .spinbox--mobile .spinbox-less:before {
+      content: "\e844"; }
+  .spinbox--mobile .spinbox-more {
+    right: 0; }
+    .spinbox--mobile .spinbox-more:before {
+      content: "\e843"; }

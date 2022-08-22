@@ -1,0 +1,21 @@
+﻿<div class="sticky-page-name" sticky sticky-top="0">
+    <div class="page-name-block sticky-page-name-inner">
+        <div class="page-name-block-item-main">
+            <h1 class="page-name-block-text sticky-page-name-text">
+                {{'Admin.Js.Analytics.SearchQueries'|translate}}
+            </h1>
+        </div>
+        <div class="page-name-block-item-additional">
+
+        </div>
+    </div>
+</div>
+<div class="ibox">
+
+    <ui-grid-custom grid-unique-id="gridSearchQueries"
+                    grid-options="$ctrl.gridOptions"
+                    grid-url="'analytics/getSearchQueriesStatistic'"
+                    grid-selection-enabled="false">
+    </ui-grid-custom>
+
+</div>

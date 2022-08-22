@@ -1,0 +1,4 @@
+Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
+1;1;title;Создавай с Advantshop;html;null;0
+2;1;subtitle;Более 5000 функций для удобных и эффективных продаж;html;null;100
+3;2;logo;;logo;"{""alt"":""��� �������"",""src"":""areas/landing/frontend/images/logotype.png""}";200

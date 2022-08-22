@@ -1,0 +1,6 @@
+﻿Id;LandingId;Name;Value
+1;1;SeoSettings.PageTitle;Анкета
+2;2;SeoSettings.PageTitle;Страница благодарности
+3;3;SeoSettings.PageTitle;Квиз
+4;3;SeoSettings.IgnoreActionParams;True
+5;4;SeoSettings.PageTitle;Квиз

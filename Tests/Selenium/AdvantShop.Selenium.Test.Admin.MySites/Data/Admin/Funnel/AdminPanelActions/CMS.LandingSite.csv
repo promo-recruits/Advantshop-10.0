@@ -1,0 +1,6 @@
+﻿Id;Name;Enabled;Template;Url;DomainUrl;CreatedDate;ScreenShot;ModifiedDate;ScreenShotDate
+1;TestFunnelMultiplePages;true;Default;testfunnel_1;;2021-06-03 18:14:09.080;NULL;03.06.2021 18:19;NULL
+2;TestFunnelSinglePage;true;Default;testfunnel_2;;2021-06-03 18:14:09.080;NULL;03.06.2021 18:19;NULL
+3;TestFunnelForCheckInplace;true;Default;testfunnelforcheckinplace;;2021-06-03 18:14:09.080;NULL;03.06.2021 18:19;NULL
+4;FunnelProductsSinglePage;true;Default;funnelproductssinglepage;;2021-06-03 18:14:09.081;NULL;17.06.2021 17:28;NULL
+5;FunnelProductsMultiPage;true;Default;funnelproductsmultipage;;2021-06-03 18:14:09.082;NULL;17.06.2021 17:40;NULL

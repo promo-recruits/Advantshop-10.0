@@ -1,0 +1,94 @@
+﻿@model AdvantShop.Web.Admin.ViewModels.Booking.Settings.SettingsModel
+
+@if (!Model.IsActiveSmsModule)
+{
+    <div class="form-group text-danger">
+        Внимание! Не установлен или не активирован модуль Смс Информирования. Уведомления не будут отправляться.
+    </div>
+}
+
+<div class="form-group row">
+    <div class="col-xs-2">
+        @Html.LabelFor(x => x.Affiliate.IsActiveSmsNotification, T("Admin.Booking.Settings.SmsNotification.IsActiveSmsNotification"))
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.Affiliate.IsActiveSmsNotification, new { ng_model = "bookingAffiliateSettings.isActiveSmsNotification", @class = "adv-checkbox-input" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row" ng-init="bookingAffiliateSettings.noSendSmsBeforeStartBooiking = @((!Model.Affiliate.ForHowManyMinutesToSendSms.HasValue).ToLowerString())">
+    <div class="col-xs-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.Affiliate.ForHowManyMinutesToSendSms, T("Admin.Booking.Settings.SmsNotification.ForHowManyMinutesToSendSms"))
+        </div>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.Affiliate.ForHowManyMinutesToSendSms, new { @class = "form-control", ng_model = "bookingAffiliateSettings.forHowManyMinutesToSendSms", @type = "number", ng_show = "!bookingAffiliateSettings.noSendSmsBeforeStartBooiking", validation_input_text = T("Admin.Booking.Settings.SmsNotification.ForHowManyMinutesToSendSms") })
+        <label class="adv-checkbox-label">
+            <input type="checkbox" class="adv-checkbox-input control-checkbox"
+                   ng-model="bookingAffiliateSettings.noSendSmsBeforeStartBooiking"
+                   ng-change="bookingAffiliateSettings.onChangeSendSmsBeforeStartBooiking()" />
+            <span class="adv-checkbox-emul" data-e2e="noSendSmsBeforeStartBooiking"></span>
+            не отправлять
+        </label>
+    </div>
+</div>
+
+<div class="form-group row" ng-show = "!bookingAffiliateSettings.noSendSmsBeforeStartBooiking">
+    <div class="col-xs-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.Affiliate.SmsTemplateBeforeStartBooiking, T("Admin.Booking.Settings.SmsNotification.SmsTemplate"))
+        </div>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextAreaFor(x => x.Affiliate.SmsTemplateBeforeStartBooiking, new { @class = "form-control", ng_model = "bookingAffiliateSettings.smsTemplate" })
+        <help-trigger class="ng-cloak m-l-xs">
+            <div class="help-content">
+                Доступны следующие переменные:
+                @foreach (var variable in Model.SmsTemplateVariables)
+            {
+                    <div>@variable.Key - @variable.Value</div>
+                }
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="sticky-page-name m-b-sm" sticky sticky-top="0">
+    <div class="page-name-block sticky-page-name-inner">
+        <div class="page-name-block-item-main">
+            <h1 class="page-name-block-text sticky-page-name-text">
+                Смс шаблоны при смене статуса брони
+            </h1>
+        </div>
+        <div class="page-name-block-item-additional">
+            <ui-modal-trigger data-controller="'ModalAddUpdateSmsTemplateCtrl'" controller-as="ctrl"
+                              on-close="bookingAffiliateSettings.gridBookingSmsTemplates.fetchData()"
+                              size="lg"
+                              backdrop="static"
+                              data-resolve="{params: {'affiliateId': bookingAffiliateSettings.affiliateId}}"
+                              template-url="../areas/admin/content/src/bookingAffiliate/modals/addUpdateSmsTemplate/addUpdateSmsTemplate.html">
+                <button class="btn btn-sm btn-success" type="button" data-e2e="AddSmsTemplate"
+                        disabled ng-disabled="!bookingAffiliateSettings.gridBookingSmsTemplatesInited">
+                    <span class="fa fa-plus"></span>
+                    Добавить шаблон
+                </button>
+            </ui-modal-trigger>
+        </div>
+    </div>
+</div>
+<ui-grid-custom grid-unique-id="gridBookingSmsTemplates"
+                grid-row-identificator="'Id'"
+                grid-on-init="bookingAffiliateSettings.gridBookingSmsTemplatesOnInit(grid)"
+                grid-options="bookingAffiliateSettings.gridBookingSmsTemplatesOptions"
+                grid-url="'bookingAffiliate/getSmsTemplates'"
+                grid-inplace-url="'bookingAffiliate/inplaceSmsTemplate'"
+                grid-params="{affiliateFilterId : bookingAffiliateSettings.affiliateId}"
+                grid-extend-ctrl="bookingAffiliateSettings"
+                > @* grid-search-placeholder="'@T("Admin.Booking.Settings.SmsNotification.Grid.SearchPlaceholder")'" *@
+    <ui-grid-custom-footer class="ui-grid-custom-footer" ng-bind="bookingAffiliateSettings.gridBookingSmsTemplates.gridOptions.TotalString">
+    </ui-grid-custom-footer>
+</ui-grid-custom>

@@ -1,0 +1,37 @@
+﻿
+<h2 class="reports-title m-b">
+    Брони
+</h2>
+<div class="reports-graphic">
+    <div class="booking-analytics-common__list">
+        <div class="booking-analytics-common__list-item"
+             ng-class="{pointer: $ctrl.isShowAllBookings()}"
+             ng-click="$ctrl.showAllBookings()">
+            Доход (сумма всех броней)<br /><span class="booking-analytics-common__value" ng-bind="$ctrl.Data.SumAllBookingsFormated"></span>
+        </div>
+        <div class="booking-analytics-common__list-item"
+             ng-class="{pointer: $ctrl.isShowPaidBookings()}"
+             ng-click="$ctrl.showPaidBookings()">
+            Оплачено (сумма оплаченных броней)<br /><span class="booking-analytics-common__value" ng-bind="$ctrl.Data.SumPaidBookingsFormated"></span>
+        </div>
+        <div class="booking-analytics-common__list-item">
+            Кол-во броней<br /><span class="booking-analytics-common__value" ng-bind="$ctrl.Data.CountAllBookings !== null ? $ctrl.Data.CountAllBookings : '-'"></span>
+        </div>
+        <div class="booking-analytics-common__list-item">
+            Средний чек<br /><span class="booking-analytics-common__value" ng-bind="$ctrl.Data.AverageSumBookingsFormated"></span>
+        </div>
+        <div class="booking-analytics-common__list-item"
+             ng-class="{pointer: $ctrl.isShowCancelledBookings()}"
+             ng-click="$ctrl.showCancelledBookings()">
+            Сумма отмененных броней<br /><span class="booking-analytics-common__value" ng-bind="$ctrl.Data.SumCancelledBookingsFormated"></span>
+        </div>
+        <div class="booking-analytics-common__list-item"
+             ng-class="{pointer: $ctrl.isShowCancelledAndPaidBookings()}"
+             ng-click="$ctrl.showCancelledAndPaidBookings()">
+            Оплачено (сумма по отмененным броням)<br /><span class="booking-analytics-common__value" ng-bind="$ctrl.Data.SumCancelledAndPaidBookingsFormated"></span>
+        </div>
+        <div class="booking-analytics-common__list-item">
+            Кол-во отмененных броней<br /><span class="booking-analytics-common__value" ng-bind="$ctrl.Data.CountCancelledBookings !== null ? $ctrl.Data.CountCancelledBookings : '-'"></span>
+        </div>
+    </div>
+</div>

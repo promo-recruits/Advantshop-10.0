@@ -1,0 +1,28 @@
+﻿Id;LandingId;Name;Value
+1;1;SeoSettings.PageTitle;Продающая статья с допродажами
+2;1;SeoSettings.IgnoreActionParams;True
+3;2;SeoSettings.PageTitle;Поздравляем вас с первым заказом в нашем магазине!
+4;3;SeoSettings.PageTitle;Мы хотим отблагодарить вас за ваш заказ!
+5;4;SeoSettings.PageTitle;TestProduct1
+6;4;SeoSettings.PageKeywords;TestProduct1
+7;4;SeoSettings.IgnoreActionParams;True
+8;5;SeoSettings.PageTitle;Поздравляем вас с первым заказом в нашем магазине!
+9;6;SeoSettings.PageTitle;Мы хотим отблагодарить вас за ваш заказ!
+10;7;SeoSettings.PageTitle;TestProduct1
+11;7;SeoSettings.PageKeywords;TestProduct1
+12;7;SeoSettings.IgnoreActionParams;True
+13;8;SeoSettings.PageTitle;Поздравляем вас с первым заказом в нашем магазине!
+14;9;SeoSettings.PageTitle;Мы хотим отблагодарить вас за ваш заказ!
+15;10;SeoSettings.PageTitle;TestProduct1
+16;10;SeoSettings.PageKeywords;TestProduct1
+17;10;SeoSettings.IgnoreActionParams;True
+18;11;SeoSettings.PageTitle;Поздравляем вас с первым заказом в нашем магазине!
+19;12;SeoSettings.PageTitle;Мы хотим отблагодарить вас за ваш заказ!
+20;13;SeoSettings.PageTitle;Мультитоварная воронка
+21;13;SeoSettings.ShowShoppingCart;True
+22;13;SeoSettings.IgnoreActionParams;True
+23;14;SeoSettings.PageTitle;Мультитоварная воронка
+24;14;SeoSettings.IgnoreActionParams;True
+25;15;SeoSettings.PageTitle;Видеопредложение с допродажами
+26;16;SeoSettings.PageTitle;Поздравляем вас с первым заказом в нашем магазине!
+27;17;SeoSettings.PageTitle;Мы хотим отблагодарить вас за ваш заказ!

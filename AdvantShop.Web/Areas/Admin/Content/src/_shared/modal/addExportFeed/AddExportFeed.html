@@ -1,0 +1,44 @@
+﻿<form>
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{'Admin.Js.AddExportFeed.NewExport'|translate}}</h2>
+    </div>
+    <div class="modal-body">
+        <div>
+            <div class="form-group row">
+                <div class="col-xs-3 control-label">
+                    <span class="text-required">{{'Admin.Js.AddExportFeed.Name'|translate}}</span>
+                </div>
+                <div class="col-xs-9">
+                    <input type="text" placeholder="" ng-model="ctrl.name" class="form-control" data-e2e="ExportAddName" required validation-input-text="{{'Admin.Js.AddExportFeed.Name'|translate}}" autofocus maxlength="250" />
+                </div>
+            </div>
+            <div class="form-group row" ng-if="ctrl.exportfeedTypes.length > 1">
+                <div class="col-xs-3 control-label">
+                    {{'Admin.Js.AddExportFeed.Format'|translate}}:
+                </div>
+                <div class="col-xs-9">
+                    <select data-e2e="ExportAddFormat" ng-model="ctrl.type" ng-options="s.label for s in ctrl.exportfeedTypes track by s.value" class="form-control"></select>
+                    <div class="p-t-xs" ng-if="ctrl.type.value == 'Csv' || ctrl.type.value == 'CsvV2'">
+                        <a href="" ng-href="{{ctrl.type.value == 'Csv' ? 'https://www.advantshop.net/help/pages/export-csv-columns' : 'https://www.advantshop.net/help/pages/export-csv-columns-v2'}}" target="_blank" class="link-academy link-invert">
+                            <span class="adv-panel-info-icon-custom"></span>
+                            <span>{{'Admin.Js.AddExportFeed.InstructionCsv'|translate}} {{ctrl.type.label}}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-xs-3 control-label">
+                    {{'Admin.Js.AddExportFeed.Description'|translate}}
+                </div>
+                <div class="col-xs-9">
+                    <textarea placeholder="" ng-model="ctrl.description" class="form-control" data-e2e="ExportAddDesc" maxlength="250" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-save btn-primary" type="button" data-button-validation-success="ctrl.add()" data-button-validation>{{'Admin.Js.AddEdit.Save'|translate}}</button>
+        <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.AddEdit.Cancel'|translate}}</button>
+    </div>
+</form>

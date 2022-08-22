@@ -1,0 +1,4 @@
+﻿ContactID[GUID];CustomerID[GUID];Name;Country;City;Zone;CountryID;RegionID
+CFC2C33B-1E84-415E-8482-E99156341700;2D14A6B4-ADFB-48E0-8892-84EF5323A106;NameFirst SurnameFirst;Россия;Москва;Московская область;171;42
+CFC2C33B-1E84-415E-8482-E99156341701;8A22DFF6-34D5-4DD8-9C12-884310FD9B4F;NameSecond SurnameSecond;Россия;Ульяновск;Ульяновская область;171;73
+CFC2C33B-1E84-415E-8482-E99156341702;835D82DF-AAA6-4D54-A870-8D353E541AF9;NameThird SurnameThird;Россия;Москва;Московская область;171;42

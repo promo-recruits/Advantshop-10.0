@@ -1,0 +1,14 @@
+﻿<div class="payment-control payment-custom-option">
+    <span>{{ ::'Js.Payment.BillBy.Company' | translate }}</span>
+    <input class="input-small"
+           type="text"
+           data-ng-model="paymentTemplate.payment.CompanyName"
+           data-ng-keyup="paymentTemplate.changePrepare($event, paymentTemplate.payment.CompanyName)" />
+</div>
+<div class="payment-control payment-custom-option">
+    <span>{{ ::'Js.Payment.BillBy.UNP' | translate }}</span>
+    <input class="input-small"
+           type="text"
+           data-ng-model="paymentTemplate.payment.UNP"
+           data-ng-keyup="paymentTemplate.changePrepare($event, paymentTemplate.payment.UNP)" />
+</div>

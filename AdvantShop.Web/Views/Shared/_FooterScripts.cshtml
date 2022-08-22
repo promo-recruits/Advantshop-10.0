@@ -1,0 +1,48 @@
+﻿@{
+    Html.AddBundles(new List<string>()
+{
+"~/vendors/angular/i18n/angular-locale_" + SettingsMain.Language +".js",
+"~/userfiles/" + SettingsMain.Language +".js",
+
+}, "all.js");
+}
+
+@{
+    Html.AddAsset("runtime");
+}
+
+@Html.Partial("_FooterStylesTemplate")
+
+@{Html.AddBundles(new List<string>() { "~/userfiles/extra.css", "~/userfiles/saas.css" }, "all.css");}
+
+<div id="_OcLazyLoadFilesAnchor_"></div> @*Для OcLazyLOad чтоб css и js добавлялись перед ним (чтоб не перезатирали стили шаблона) *@
+
+@Html.RenderAssets(!Request["excludeCriticalCSS"].TryParseBool())
+
+@Html.RenderCssBundle("all.css")
+@Html.RenderJsBundle("all.js")
+@Html.RenderModuleCssBundle("modules.css")
+@Html.RenderModuleJsBundle("modules.js")
+
+@if (SettingsDesign.IsSocialTemplate)
+{
+    <script defer src="https://vk.com/js/api/xd_connection.js?2"></script>
+    <script>
+        window.addEventListener("load", function load(event) {
+            window.removeEventListener("load", load, false);
+
+            VK.init(function () {
+                VK.callMethod("resizeWindow", 1127, document.body.clientHeight);
+                VK.callMethod("scrollWindow", 0, 0);
+            }, null, '5.64');
+        }, false);
+    </script>
+}
+
+@if (InplaceEditorService.DisplayInplace())
+{
+    @Html.Action("Inplace", "Common", new { Enabled = SettingsMain.EnableInplace });
+}
+
+@Html.Action("MobileOverlap", "Mobile")
+@Html.Action("ToMobileIcon", "Mobile")

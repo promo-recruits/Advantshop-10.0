@@ -1,0 +1,20 @@
+﻿@model AdvantShop.Web.Admin.Models.Settings.CommonSettingsModel
+
+<div class="setting-title m-t-none">
+    <h2 class="page-name-block-text sticky-page-name-text m-b-none">@T("Admin.Settings.Index.Feedback")</h2>
+</div>
+
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-2 setting-form-label-wrap__mobile">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Feedback.FeedbackAction")
+        </div>
+    </div>
+    <div class="col-xs-4 flex middle-xs setting-form-input-wrap__mobile">
+        @Html.DropDownListFor(x => x.FeedbackAction, Model.FeedbackActions, new { @class = "form-control", ng_model = "settings.FeedbackAction" })
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Feedback.FeedbackAction")">
+            @T("Admin.Settings.Feedback.FeedbackActionHint")
+        </help-trigger>
+    </div>
+</div>

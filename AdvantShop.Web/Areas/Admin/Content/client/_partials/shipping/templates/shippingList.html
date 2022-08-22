@@ -1,0 +1,94 @@
+﻿<div>
+    <div class="shipping-list" id="{{::shippingList.anchor}}"
+         data-ng-class="{'shipping-progress-after shipping-progress': shippingList.isProgress === true}"
+         data-ng-switch="(shippingList.items != null && shippingList.items.length > 0) || shippingList.isCanAddCustom"
+         ng-model="shippingList.selectShipping" required>
+        <div ng-switch-when="true">
+            <div class="shipping-item" data-ng-repeat="item in shippingList.items | limitTo:shippingList.visibleItems track by item.Id" 
+                 ng-class="{'shipping-progress-after shipping-progress': shippingList.isTemplateReady(item)}">
+                <span class="shipping-item-radio">
+                    <input type="radio" name="shipping" class="custom-input-native shipping-item-custom-input"
+                           data-ng-init="item.Id === shippingList.selectShipping.Id ? shippingList.setSelectedIndex($index) : null"
+                           data-ng-model="shippingList.selectShipping"
+                           data-ng-value="item"
+                           data-ng-change="shippingList.changeShipping(item, $index)" />
+                    <span class="custom-input-radio"
+                          data-ng-click="shippingList.selectShipping === item ? null : shippingList.changeShipping(item, $index)">
+                    </span>
+                </span>
+                <span class="shipping-item-icon"
+                      data-ng-style="{width: shippingList.iconWidth}"
+                      data-ng-click="shippingList.selectShipping === item ? null : shippingList.changeShipping(item, $index)">
+                    <img data-ng-if="item.IconName != null" ng-style="{width: shippingList.iconWidth, maxHeight: shippingList.iconHeight }" data-ng-src="{{item.IconName}}" alt="{{item.Name}}">
+                </span>
+                <div class="shipping-item-info">
+                    <span class="shipping-item-title"
+                          data-ng-click="shippingList.selectShipping === item ? null : shippingList.changeShipping(item, $index)"
+                          data-ng-bind-html="item.Name | sanitize"></span>
+                    <span class="shipping-item-description shipping-item-description--flex cs-t-3"
+                          data-ng-click="shippingList.selectShipping === item ? null : shippingList.changeShipping(item, $index)">
+                        <span data-ng-switch="shippingList.editPrice === true">
+                            <span data-ng-switch-when="false" data-ng-bind="item.FormatRate"></span>
+                            <span data-ng-switch-when="true">
+                                {{ ::'Js.Shipping.Cost' | translate }}: <input type="text" data-ng-focus="shippingList.focusEditPrice(item, $index)" data-ng-model="item.ManualRate" class="shipping-item-input-price" />
+                            </span>
+                        </span>
+
+                        <span data-ng-bind="(item.DeliveryTime != null && item.DeliveryTime.length > 0 &&  item.DeliveryTime !== '0' ? (item.FormatRate != null && item.FormatRate.length > 0  ? ', ' + item.DeliveryTime : item.DeliveryTime) : null)"></span>
+                        <span data-ng-bind="(item.Delivery != null &&  item.Delivery.length > 0 ? ', ' + item.Delivery : null)"></span>
+                    </span>
+                    <div class="shipping-item-description cs-t-3" data-ng-if="item.Desc">
+                        <readmore data-max-height="15" data-speed="1s" data-content="item.Desc | sanitize"></readmore>
+                    </div>
+                    <div class="shipping-item-additional" data-ng-if="item.Template">
+                        <span data-shipping-template data-contact="shippingList.contact" data-is-selected="shippingList.selectShipping === item" 
+                              data-shipping="item" data-template-url="item.Template" data-change-control="shippingList.changeShippingControl(shipping)" 
+                              data-is-admin="shippingList.isAdmin"></span>
+                    </div>
+                </div>
+            </div>
+            <label class="shipping-item" data-ng-if="shippingList.isCanAddCustom">
+                <input type="radio" name="shipping" class="custom-input-native shipping-item-custom-input"
+                       data-ng-model="shippingList.selectShipping"
+                       data-ng-value="shippingList.customShipping"
+                       data-ng-change="shippingList.changeShipping(shippingList.customShipping, $index)" />
+                <span class="custom-input-radio"></span>
+                <span class="shipping-item-icon">
+                    <img data-ng-if="shippingList.customShipping.IconName != null" data-ng-src="{{shippingList.customShipping.IconName}}" ng-style="{width: shippingList.iconWidth, height: shippingList.iconHeight }" alt="">
+                </span>
+                <span class="shipping-item-info">
+                    <span class="form-field-name">
+                        <span class="shipping-item-title">{{ ::'Js.Shipping.IndividualDeliveryMethod' | translate }}</span>
+                        <span class="shipping-item-additional">
+                            <div class="shipping-template-newshipping">
+                                <div class="shipping-template-row">
+                                    <div class="shipping-template-name">{{ ::'Js.Shipping.DeliveryName' | translate }}</div>
+                                    <input type="text" class="input-small"  data-ng-required="shippingList.selectShipping === shippingList.customShipping" data-ng-model="shippingList.customShipping.Name" data-ng-blur="shippingList.changeShipping(shippingList.customShipping)" validation-input-text="{{:: 'Admin.Js.ShippingMethods.Common.ShippingMethodName' | translate}}" />
+                                </div>
+                                <div class="shipping-template-row">
+                                    <div class="shipping-template-name">{{ ::'Js.Shipping.DeliveryCost' | translate }}</div>
+                                    <input type="text" class="input-small" data-ng-required="shippingList.selectShipping === shippingList.customShipping" data-ng-model="shippingList.customShipping.ManualRate" data-ng-blur="shippingList.changeShipping(shippingList.customShipping)" validation-input-text="{{:: 'Admin.Js.ShippingMethods.Common.ShippingMethodManualRate' | translate}}" />
+                                </div>
+                            </div>
+                        </span>
+                    </span>
+                </span>
+            </label>
+        </div>
+        <div ng-switch-when="false" class="shipping-empty">
+            <span ng-bind="shippingList.isProgress === true ? ('Js.Shipping.ShippingMethodsLoading' | translate) : ('Js.Shipping.NoShippingMethods' | translate)"></span>
+        </div>
+    </div>
+    <a href=""
+       class="link-dotted-invert shipping-item-more"
+       data-ng-if="shippingList.items.length > shippingList.countVisibleItems"
+       data-ng-click="shippingList.toggleVisible()"
+       data-ng-switch="shippingList.collapsed">
+        <span data-ng-switch-when="true">
+            {{ ::'Js.Shipping.More' | translate }}
+        </span>
+        <span data-ng-switch-when="false">
+            {{ ::'Js.Shipping.Hide' | translate }}
+        </span>
+    </a>
+</div>

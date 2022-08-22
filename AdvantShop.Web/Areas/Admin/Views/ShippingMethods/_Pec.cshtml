@@ -1,0 +1,184 @@
+﻿@model AdvantShop.Web.Infrastructure.Admin.ShippingMethods.PecShippingAdminModel
+@using AdvantShop.Shipping.Pec
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Логин</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.Login, new { ng_model = "shippingMethod.Params.Login", ng_attr_type = "{{shippingMethod.inputTypeLogin}}", @class = "form-control", required = "required", validation_input_text = "Логин" })
+        <a class="showhidepass" style="top:0;right:25px;" ng-init="shippingMethod.inputTypeLogin = 'password'" ng-click="shippingMethod.inputTypeLogin = shippingMethod.inputTypeLogin == 'password' ? 'text' : 'password'">
+            <span class="fa" ng-class="(shippingMethod.inputTypeLogin == 'password') ? 'fa-eye' : 'fa-eye-slash'"></span>
+        </a>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Ключ API</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.ApiKey, new { ng_model = "shippingMethod.Params.ApiKey", ng_attr_type = "{{shippingMethod.inputTypeApiKey}}", @class = "form-control", required = "required", validation_input_text = "Ключ API" })
+        <a class="showhidepass" style="top:0;right:25px;" ng-init="shippingMethod.inputTypeApiKey  = 'password'" ng-click="shippingMethod.inputTypeApiKey  = shippingMethod.inputTypeApiKey  == 'password' ? 'text' : 'password'">
+            <span class="fa" ng-class="(shippingMethod.inputTypeApiKey  == 'password') ? 'fa-eye' : 'fa-eye-slash'"></span>
+        </a>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Город отправления</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.LocationFrom, new { ng_model = "shippingMethod.Params.LocationFrom", @class = "form-control", required = "required", validation_input_text = "Город отправления" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="Город отправления">
+            Например "Москва" или "Нижний Новгород"
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        Рассчитывать тариф
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.DropDownListFor(x => x.ShowTransportsDelivery, Model.ListShowTransportDelivery, new { ng_model = "shippingMethod.Params.ShowTransportsDelivery", @class = "form-control", required = "required", validation_input_text = "Рассчитывать тариф" })
+        <input type="hidden" name="ShowTransportsDelivery" value="" ng-if="!shippingMethod.Params.ShowTransportsDelivery.length" />
+        @*<help-trigger class="ng-cloak help-trigger-icon-abs" data-title="">
+                Можно выбрать несколько вариантов зажав клавиши Shift или Ctrl
+            </help-trigger>*@
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        Рассчитывать методы доставки
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.ListBoxFor(x => x.DeliveryTypes, Model.ListDeliveryTypes, new { ng_model = "shippingMethod.Params.DeliveryTypes", ng_init = "shippingMethod.Params.DeliveryTypes='" + string.Join(",", Model.DeliveryTypes) + "'", @class = "form-control", required = "required", validation_input_text = "Рассчитывать методы доставки", size = 2 })
+        <input type="hidden" name="DeliveryTypes" value="" ng-if="!shippingMethod.Params.DeliveryTypes.length" />
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="">
+            Можно выбрать несколько вариантов зажав клавиши Shift или Ctrl
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        Со страховкой
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label form-label-block">
+            @Html.CheckBoxFor(x => x.WithInsure, new { ng_model = "shippingMethod.Params.WithInsure", ng_init = "shippingMethod.Params.WithInsure=" + Model.WithInsure.ToLowerString(), @class = "adv-checkbox-input" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.DeliveryTypes && shippingMethod.Params.DeliveryTypes.indexOf('@(((int)TypeDelivery.PVZ).ToString())') != -1">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Отображение ПВЗ</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.DropDownListFor(x => x.TypeViewPoints, Model.ListTypesViewPoints, new { ng_model = "shippingMethod.Params.TypeViewPoints", @class = "form-control", required = "required", validation_input_text = "Отображение ПВЗ" })
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.TypeViewPoints === '@(((int)TypeViewPoints.YaWidget).ToString())' && shippingMethod.Params.DeliveryTypes && shippingMethod.Params.DeliveryTypes.indexOf('@(((int)TypeDelivery.PVZ).ToString())') != -1">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">API-ключ яндекс.карт</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.YaMapsApiKey, new { @class = "form-control", ng_model = "shippingMethod.Params.YaMapsApiKey", required = "required", validation_input_text = "API-ключ яндекс.карт" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="API-ключ яндекс.карт">
+            <a href="https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key" target="_blank">Как получить ключ?</a>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">ИНН отправителя</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.SenderInn, new { ng_model = "shippingMethod.Params.SenderInn", @class = "form-control", required = "required", validation_input_text = "ИНН отправителя" })
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Наименование организации отправителя</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.SenderTitle, new { ng_model = "shippingMethod.Params.SenderTitle", @class = "form-control", required = "required", validation_input_text = "Наименование организации" })
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Форма собственности организации отправителя</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.SenderFs, new { ng_model = "shippingMethod.Params.SenderFs", @class = "form-control", required = "required", validation_input_text = "Форма собственности" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="Форма собственности">
+            Например ЗАО или ООО
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Телефон отправителя</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.SenderPhone, new { ng_model = "shippingMethod.Params.SenderPhone", @class = "form-control", required = "required", validation_input_text = "Телефон", mask_control = "",  mask_control_preset = "phone" })
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        Добавочный номер (к телефону)
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.SenderPhoneAdditional, new { ng_model = "shippingMethod.Params.SenderPhoneAdditional", @class = "form-control", validation_input_text = "Добавочный номер" })
+    </div>
+</div>
+
+@Html.Hidden("ExistApi", (Model.Login + Model.ApiKey), new { ng_model = "shippingMethod.Params.ExistApi" })
+<div class="form-group row" ng-if="!shippingMethod.Params.ExistApi">
+    <div class="col-xs-8">
+        <div class="adv-panel-info">
+            После ввода данных доступа к API, необходимо сохранить настройки, после чего появятся дополнительные настройки
+        </div>
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.ExistApi">
+    <div class="flex-grow-n col-fixed-size-md">
+        Синхронизировать статусы заказов из ПЭК
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label form-label-block">
+            @Html.CheckBoxFor(x => x.StatusesSync, new { ng_model = "shippingMethod.Params.StatusesSync", ng_init = "shippingMethod.Params.StatusesSync=" + Model.StatusesSync.ToLowerString(), @class = "adv-checkbox-input" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.ExistApi && shippingMethod.Params.StatusesSync">
+    <div class="flex-grow-n col-fixed-size-md font-bold">
+        Статусы
+    </div>
+</div>
+
+<div class="form-group row" ng-if="shippingMethod.Params.ExistApi && shippingMethod.Params.StatusesSync">
+    <div class="flex-grow-n col-fixed-size-md">
+        Статусы
+    </div>
+    <div class="col-xs-6 relative">
+        <shipping-pec-sync-status method-id="@Model.ShippingMethodId"
+                                  statuses-reference="@Model.StatusesReference"
+                                  statuses-source="@Model.Statuses">
+        </shipping-pec-sync-status>
+    </div>
+</div>

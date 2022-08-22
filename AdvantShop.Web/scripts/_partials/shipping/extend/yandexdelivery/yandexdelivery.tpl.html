@@ -1,0 +1,8 @@
+﻿<div>
+    <a class="btn btn-xsmall btn-submit" href="javascript:void(0)" data-ydwidget-open>{{ ::'Js.ShippingTemplate.SelectPickupPoint' | translate }}</a>
+    <div data-ng-bind="yandexDelivery.yandexDeliveryShipping.PickpointAddress"></div>
+    <div data-ng-if="yandexDelivery.yandexDeliveryShipping.PickpointAddress == null && yandexDelivery.yandexDeliveryIsSelected" class="shipping-extend-error error-color">
+        {{ ::'Js.ShippingTemplate.SelectPickupPoint.NotSelected' | translate }}
+    </div>
+    <input data-ng-if="yandexDelivery.yandexDeliveryIsSelected" class="shipping-extend-input-hidden" type="text" data-ng-model="yandexDelivery.yandexDeliveryShipping.PickpointAddress" required readonly data-validation-input-text="{{ ::'Js.ShippingTemplate.SelectPickupPoint.NotSelected' | translate }}" />
+</div>

@@ -1,0 +1,8 @@
+﻿@Html.Action("FontsStyles", "Common", new
+{
+    area = "",
+    FileNameSourceList = new List<string>() {
+    "~/fonts/" + AdvantShop.FilePath.FoldersHelper.GetFontFileName(AdvantShop.FilePath.Fonts.Icons),
+    "~/fonts/" + AdvantShop.FilePath.FoldersHelper.GetFontFileName(AdvantShop.FilePath.Fonts.Mobile)
+}
+})

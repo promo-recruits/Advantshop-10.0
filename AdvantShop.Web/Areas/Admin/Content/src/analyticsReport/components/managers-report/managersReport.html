@@ -1,0 +1,26 @@
+﻿
+<table class="table table-striped">
+    <tr>
+        <th>{{'Admin.Js.ManagersReport.Manager'|translate}}</th>
+        <th style="min-width: 60px;">{{'Admin.Js.ManagersReport.E-mail'|translate}}</th>
+        <th>{{'Admin.Js.ManagersReport.NumberOfOrders'|translate}}</th>
+        <th>{{'Admin.Js.ManagersReport.AmountOfOrders'|translate}}</th>
+        <th>{{'Admin.Js.ManagersReport.NumberOfPaidOrders'|translate}}</th>
+        <th>{{'Admin.Js.ManagersReport.AmountOfPaidOrders'|translate}}</th>
+    </tr>
+    <tr ng-repeat="item in $ctrl.Managers track by $index">
+        <td>
+            <sidebar-user-trigger customer-id="item.CustomerId" class="ui-grid-cell-contents">
+                <a href="" class="text-decoration-invert">{{item.Name}}</a>
+            </sidebar-user-trigger>
+        </td>
+        <td>{{item.Email}}</td>
+        <td>{{item.OrdersCount}}</td>
+        <td>{{item.OrdersSum}}</td>
+        <td>{{item.PaidOrdersCount}}</td>
+        <td>{{item.PaidOrdersSum}}</td>
+    </tr>
+    <tr ng-if="$ctrl.Managers == null || $ctrl.Managers.length == 0">
+        <td colspan="5">{{'Admin.Js.AnalyticsReport.NoData'|translate}}</td>
+    </tr>
+</table>

@@ -1,0 +1,159 @@
+﻿@model AdvantShop.Web.Infrastructure.Admin.ShippingMethods.PickPointShippingAdminModel
+@using AdvantShop.Shipping.PickPoint
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Логин</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.Login, new { ng_model = "shippingMethod.Params.Login", ng_attr_type = "{{shippingMethod.inputTypeLogin}}", @class = "form-control", required = "required", validation_input_text = "Логин" })
+        <a class="showhidepass" style="top:0;right:25px;" ng-init="shippingMethod.inputTypeLogin = 'password'" ng-click="shippingMethod.inputTypeLogin = shippingMethod.inputTypeLogin == 'password' ? 'text' : 'password'">
+            <span class="fa" ng-class="(shippingMethod.inputTypeLogin == 'password') ? 'fa-eye' : 'fa-eye-slash'"></span>
+        </a>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Пароль</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.Password, new { ng_model = "shippingMethod.Params.Password", ng_attr_type = "{{shippingMethod.inputTypePassword}}", @class = "form-control", required = "required", validation_input_text = "Пароль" })
+        <a class="showhidepass" style="top:0;right:25px;" ng-init="shippingMethod.inputTypePassword = 'password'" ng-click="shippingMethod.inputTypePassword = shippingMethod.inputTypePassword == 'password' ? 'text' : 'password'">
+            <span class="fa" ng-class="(shippingMethod.inputTypePassword == 'password') ? 'fa-eye' : 'fa-eye-slash'"></span>
+        </a>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Номер договора</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.Ikn, new { ng_model = "shippingMethod.Params.Ikn", @class = "form-control", required = "required", validation_input_text = "Номер договора" })
+    </div>
+</div>
+
+@*<div class="form-group row middle-xs">
+        <div class="flex-grow-n col-fixed-size-md">
+            <span class="text-required">Город отправления</span>
+        </div>
+        <div class="col-xs-6 relative">
+            @Html.TextBoxFor(x => x.FromCity, new { ng_model = "shippingMethod.Params.FromCity", @class = "form-control", required = "required", validation_input_text = "Город отправления" })
+        </div>
+    </div>
+
+    <div class="form-group row middle-xs">
+        <div class="flex-grow-n col-fixed-size-md">
+            Регион города отправления
+        </div>
+        <div class="col-xs-6 relative">
+            @Html.TextBoxFor(x => x.FromRegion, new { ng_model = "shippingMethod.Params.FromRegion", @class = "form-control", required = "required", validation_input_text = "Регион города отправления" })
+        </div>
+    </div>*@
+@if (Model.Login.IsNotEmpty() && Model.Password.IsNotEmpty() && Model.Ikn.IsNotEmpty())
+{
+    <div class="form-group row middle-xs">
+        <div class="flex-grow-n col-fixed-size-md">
+            <span class="text-required">Город отправления</span>
+        </div>
+        <div class="col-xs-6 relative">
+            @Html.DropDownListFor(x => x.FromCityId, Model.Cities, new { ng_model = "shippingMethod.Params.FromCityId", @class = "form-control", required = "required", validation_input_text = "Город отправления" })
+        </div>
+    </div>
+}
+else
+{
+    <div class="form-group row">
+        <div class="col-xs-8">
+            <div class="adv-panel-info">
+                После ввода данных доступа к API, необходимо сохранить настройки после чего появятся дополнительные настройки.
+            </div>
+        </div>
+    </div>
+}
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Тип сдачи отправления</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.DropDownListFor(x => x.GettingType, Model.GettingTypes, new { ng_model = "shippingMethod.Params.GettingType", @class = "form-control", required = "required", validation_input_text = "Тип сдачи отправления" })
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Режим доставки</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.DropDownListFor(x => x.DeliveryMode, Model.DeliveryModes, new { ng_model = "shippingMethod.Params.DeliveryMode", @class = "form-control", required = "required", validation_input_text = "Режим доставки" })
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">Отображение ПВЗ</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.DropDownListFor(x => x.TypeViewPoints, Model.ListTypesViewPoints, new { ng_model = "shippingMethod.Params.TypeViewPoints", @class = "form-control", required = "required", validation_input_text = "Отображение ПВЗ" })
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.TypeViewPoints === '@(((int)TypeViewPoints.YaWidget).ToString())'">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">API-ключ яндекс.карт</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.YaMapsApiKey, new { @class = "form-control", ng_attr_type = "{{shippingMethod.inputTypeApiKey}}", ng_model = "shippingMethod.Params.YaMapsApiKey", required = "required", validation_input_text = "API-ключ яндекс.карт" })
+        <a class="showhidepass" style="top:0;right:25px;" ng-init="shippingMethod.inputTypeApiKey  = 'password'" ng-click="shippingMethod.inputTypeApiKey  = shippingMethod.inputTypeApiKey  == 'password' ? 'text' : 'password'">
+            <span class="fa" ng-class="(shippingMethod.inputTypeApiKey  == 'password') ? 'fa-eye' : 'fa-eye-slash'"></span>
+        </a>
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="API-ключ яндекс.карт">
+            <a href="https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key" target="_blank">Как получить ключ?</a>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.TypeViewPoints === '@(((int)TypeViewPoints.YaWidget).ToString())'">
+    <div class="flex-grow-n col-fixed-size-md">
+        Отображать описание схемы проезда
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label form-label-block">
+            @Html.CheckBoxFor(x => x.ShowAddressComment, new { ng_model = "shippingMethod.Params.ShowAddressComment", ng_init = "shippingMethod.Params.ShowAddressComment=" + Model.ShowAddressComment.ToLowerString(), @class = "adv-checkbox-input" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        Синхронизировать статусы заказов из PickPoint
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label form-label-block">
+            @Html.CheckBoxFor(x => x.StatusesSync, new { ng_model = "shippingMethod.Params.StatusesSync", ng_init = "shippingMethod.Params.StatusesSync=" + Model.StatusesSync.ToLowerString(), @class = "adv-checkbox-input" })
+            <span class="adv-checkbox-emul"></span>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-if="shippingMethod.Params.StatusesSync">
+    <div class="flex-grow-n col-fixed-size-md font-bold">
+        Статусы
+    </div>
+</div>
+
+<div class="form-group row" ng-if="shippingMethod.Params.StatusesSync">
+    <div class="flex-grow-n col-fixed-size-md">
+        Статусы
+    </div>
+    <div class="col-xs-6 relative">
+        <shipping-pickpoint-sync-status method-id="@Model.ShippingMethodId"
+                                        statuses-reference="@Model.StatusesReference"
+                                        statuses-source="@Model.Statuses">
+        </shipping-pickpoint-sync-status>
+    </div>
+</div>

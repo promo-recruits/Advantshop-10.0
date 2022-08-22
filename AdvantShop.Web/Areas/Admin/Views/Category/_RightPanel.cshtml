@@ -1,0 +1,192 @@
+﻿@model AdvantShop.Web.Admin.Models.Catalog.Categories.AdminCategoryModel
+
+<div class="flex-grow-n block-additional-parameters-col">
+    <div class="ibox category-block block-additional-parameters">
+        <div class="ibox-content category-content block-additional-parameters-content block-additional-parameters-content--padding-mid border_none">
+            <h3 class="category-title">@T("Admin.Category.RightPanel.Display")</h3>
+            <div class="block-additional-parameters-row">
+                <div class="block-additional-parameters-name">
+                    @T("Admin.Category.Index.SortOrder")
+                </div>
+                <div class="block-additional-parameters-value flex middle-xs">
+                    @Html.TextBoxFor(x => x.SortOrder, new { @class = "form-control", required = "required", ng_model = "category.sortOrder" })
+                    <help-trigger class="ng-cloak word-spacing m-l-xs" data-title="@T("Admin.Category.RightPanel.SortingOrder")">
+                        @T("Admin.Category.RightPanel.SequenceNumberOfaCategory")
+                    </help-trigger>
+                </div>
+            </div>
+            <div class="block-additional-parameters-row">
+                <div class="block-additional-parameters-name">
+                    @T("Admin.Category.RightPanel.SubcategoryDisplayType")
+                </div>
+                <div class="block-additional-parameters-value flex middle-xs">
+                    @Html.DropDownListFor(x => x.DisplayStyle, Model.DisplayStyles, new { @class = "form-control", ng_model = "category.displayStyle", ng_init = "category.displayStyle='" + Model.DisplayStyle + "'" })
+
+                    <help-trigger class="ng-cloak word-spacing m-l-xs" data-title="@T("Admin.Category.RightPanel.SubcategoryDisplayType")">
+                        @T("Admin.Category.RightPanel.SubcategoryInThisCategory")
+                    </help-trigger>
+                </div>
+            </div>
+            <div class="block-additional-parameters-row">
+                <div class="block-additional-parameters-name">
+                    @T("Admin.Category.RightPanel.DefaultSorting")
+                </div>
+                <div class="block-additional-parameters-value flex middle-xs">
+                    @Html.DropDownListFor(x => x.Sorting, Model.Sortings, new { @class = "form-control", ng_model = "category.sorting", ng_init = "category.sorting='" + (int)Model.Sorting + "'" })
+
+                    <help-trigger class="ng-cloak word-spacing m-l-xs" data-title="@T("Admin.Category.RightPanel.DefaultSorting")">
+                        @T("Admin.Category.RightPanel.DefaultOption")
+                    </help-trigger>
+                </div>
+            </div>
+            <div class="block-additional-parameters-row">
+
+                <div class="block-additional-parameters-name">
+                    @T("Admin.Category.RightPanel.DisplayManufacturers")
+                    <help-trigger class="ng-cloak word-spacing" data-title="@T("Admin.Category.RightPanel.DisplayManufacturers")">
+                        @T("Admin.Category.RightPanel.OptionTurnOnOf")
+                    </help-trigger>
+                </div>
+                <div class="block-additional-parameters-value">
+                    <label class="adv-radio-label">
+                        @T("Admin.Yes")
+                        @Html.RadioButtonFor(x => x.DisplayBrandsInMenu, true, new { @class = "adv-radio-input", ng_model = "category.displayBrandsInMenu" })
+                        <span class="adv-radio-emul"></span>
+                    </label>
+                    <label class="adv-radio-label">
+                        @T("Admin.No")
+                        @Html.RadioButtonFor(x => x.DisplayBrandsInMenu, false, new { @class = "adv-radio-input", ng_model = "category.displayBrandsInMenu" })
+                        <span class="adv-radio-emul"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="block-additional-parameters-row form-group">
+                <div class="block-additional-parameters-name">
+                    @T("Admin.Category.RightPanel.DisplayTwoLevels")
+                    <help-trigger class="ng-cloak word-spacing" data-title="@T("Admin.Category.RightPanel.DisplayTwoLevels")">
+                        @T("Admin.Category.RightPanel.DisplayTreeLevelsInMenu")
+                        <br />
+                        @T("Admin.Category.RightPanel.TwoLevelsMorePreferable")
+                    </help-trigger>
+                </div>
+                <div class="i-checks block-additional-parameters-value">
+                    <label class="adv-radio-label">
+                        @T("Admin.Yes")
+                        @Html.RadioButtonFor(x => x.DisplaySubCategoriesInMenu, true, new { @class = "adv-radio-input", ng_model = "category.displaySubCategoriesInMenu" })
+                        <span class="adv-radio-emul"></span>
+                    </label>
+                    <label class="adv-radio-label">
+                        @T("Admin.No")
+                        @Html.RadioButtonFor(x => x.DisplaySubCategoriesInMenu, false, new { @class = "adv-radio-input", ng_model = "category.displaySubCategoriesInMenu" })
+                        <span class="adv-radio-emul"></span>
+                    </label>
+
+                </div>
+            </div>
+            @if (!Model.IsEditMode || Model.CategoryId != 0)
+            {
+                <div class="block-additional-parameters-row">
+                    <div class="block-additional-parameters-name">
+                        @T("Admin.Category.RightPanel.HideInTheMenu")
+                        <help-trigger class="ng-cloak word-spacing" data-title="@T("Admin.Category.RightPanel.HideInTheMenu")">
+                            @T("Admin.Category.RightPanel.IfCategoryHide")<br>
+                            @T("Admin.Category.RightPanel.CategoryIsHidden")<br>
+                            @T("Admin.Category.RightPanel.TransitionURLWorks")<br>
+                            @T("Admin.Category.RightPanel.AllCategoriesGoods")<br>
+                            @T("Admin.Category.RightPanel.GoodsLinks")
+                        </help-trigger>
+                    </div>
+                    <div class="block-additional-parameters-value">
+                        <label class="adv-radio-label">
+                            @T("Admin.Yes")
+                            @Html.RadioButtonFor(x => x.Hidden, true, new { @class = "adv-radio-input", ng_model = "category.hidden" })
+                            <span class="adv-radio-emul"></span>
+                        </label>
+                        <label class="adv-radio-label">
+                            @T("Admin.No")
+                            @Html.RadioButtonFor(x => x.Hidden, false, new { @class = "adv-radio-input", ng_model = "category.hidden" })
+                            <span class="adv-radio-emul"></span>
+                        </label>
+                    </div>
+                </div>
+            }
+
+            @if (!Model.IsEditMode || Model.CategoryId != 0)
+            {
+                <div class="block-additional-parameters-row">
+                    <div class="block-additional-parameters-name">
+                        @T("Admin.Category.RightPanel.ShowOnMainPage")
+                    </div>
+                    <div class="block-additional-parameters-value">
+                        <label class="adv-radio-label">
+                            @T("Admin.Yes")
+                            @Html.RadioButtonFor(x => x.ShowOnMainPage, true, new { @class = "adv-radio-input", ng_model = "category.showOnMainPage" })
+                            <span class="adv-radio-emul"></span>
+                        </label>
+                        <label class="adv-radio-label">
+                            @T("Admin.No")
+                            @Html.RadioButtonFor(x => x.ShowOnMainPage, false, new { @class = "adv-radio-input", ng_model = "category.showOnMainPage" })
+                            <span class="adv-radio-emul"></span>
+                        </label>
+                    </div>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(Model.ModifiedDate) || !string.IsNullOrEmpty(Model.ModifiedBy))
+            {
+                <div class="block-additional-parameters-row">
+                    <div>
+                        @T("Admin.Product.Edit.Changed")
+                        <div class="m-b-xs">
+                            @Model.ModifiedDate @Model.ModifiedBy
+                        </div>
+                        
+                        @if (SettingsMain.TrackProductChanges)
+                        {
+                            <ui-modal-trigger size="lg"
+                                              data-controller="'ModalChangeHistoryCtrl'"
+                                              controller-as="ctrl"
+                                              template-url="../areas/admin/content/src/_shared/change-history-modal/changeHistory.html"
+                                              data-resolve="{'params': {'objId': @Model.CategoryId, 'type': 'category'}}">
+                                <a class="" href="">История изменения</a>
+                            </ui-modal-trigger>
+                        }
+                    </div>
+                </div>
+            }
+
+            @if (Model.IsEditMode)
+            {
+                @Html.RenderModules("admin_category_rightpanel_bottom", new { categoryId = Model.CategoryId })
+            }
+        </div>
+    </div>
+
+    @if (Model.IsTagsVisible)
+    {
+        <div class="ibox category-block block-additional-parameters ng-cloak">
+            <div class="ibox-content category-content block-additional-parameters-content block-additional-parameters-content--padding-mid border_none">
+                <h3 class="category-title">@T("Admin.Category.RightPanel.Tags")</h3>
+                <ui-select multiple
+                           tagging="category.tagTransform"
+                           sortable="true"
+                           ng-init="@(Model.IsEditMode ? "category.loadTags(" + Model.CategoryId + ", form)" : string.Empty)"
+                           ng-model="category.selectedTags">
+                    <ui-select-match placeholder="@T("Admin.Category.RightPanel.SelectTags")">{{$item.value}}</ui-select-match>
+                    <ui-select-choices repeat="tag in category.tags | filter:$select.search">
+                        {{tag.value}}
+                    </ui-select-choices>
+                </ui-select>
+                @*select для отправки данных через обычный post *@
+                <div ng-repeat="option in category.selectedTags track by $index">
+                    <input type="hidden" name="tags[{{$index}}].id" value="{{option.id}}" />
+                    <input type="hidden" name="tags[{{$index}}].value" value="{{option.value}}" />
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.IsEditMode)
+    {
+        @Html.RenderModules("admin_category_right", new { categoryId = Model.CategoryId })
+    }
+</div>

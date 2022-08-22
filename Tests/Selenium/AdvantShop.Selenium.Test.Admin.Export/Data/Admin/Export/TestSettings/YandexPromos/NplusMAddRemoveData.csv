@@ -1,0 +1,36 @@
+testType;Yandex;
+defaultExportType;xml;
+text252;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquipeex e;
+npmPromoType;"type=\""n plus m\"""
+testName1;NplusMAdd;
+npm1Name;NplusMAdd11;
+npm1Name2;NplusMAdd12;
+npm1Description;Description1;
+npm1Url;"http://advantshop.net";
+testName2;NplusMAdd1Edit;
+npm2Name1;NplusMAdd1Edit;
+npm2Description1;Description2;
+npm2Url1;"http://advantshop.net";
+npm2Name2;NplusMAdd1Edit_edited;
+npm2Description2;"";
+npm2Url2;"";
+testName3;NplusMAdd1Remove;
+testName4;NplusMAdd1Validate;
+npm4Name1;NplusMAdd1Validate;
+npm4Url1;"http://advantshop.net";
+npm4ProductsID;1,2,10
+npm4ProductsDisabledID;6,7,8
+testName5;NplusMAdd1Display
+npm5Desc;Description1;
+npm5Url;Url1
+npm5ProductID;1,2,3
+npm5CategoryID;1,2,3
+npm5RQuantity;5
+npm5FQuantity;2
+npm5ProductCount;13
+npm5QuantityContent1;"<required-quantity>5</required-quantity><free-quantity>2</free-quantity>"
+npm5ProductContent1;"<product offer-id=\""1\"" /><product offer-id=\""2\"" /><product offer-id=\""3\"" />"
+npm5PurchaseContent1;"<required-quantity>5</required-quantity><free-quantity>2</free-quantity><product offer-id=\""1\"" /><product offer-id=\""2\"" /><product offer-id=\""3\"" />"
+npm5QuantityContent2;"<required-quantity>2</required-quantity><free-quantity>1</free-quantity>"
+npm5ProductContent2;"<product category-id=\""1\"" /><product category-id=\""2\"" /><product category-id=\""3\"" />"
+npm5PurchaseContent2;"<required-quantity>2</required-quantity><free-quantity>1</free-quantity><product category-id=\""1\"" /><product category-id=\""2\"" /><product category-id=\""3\"" />"

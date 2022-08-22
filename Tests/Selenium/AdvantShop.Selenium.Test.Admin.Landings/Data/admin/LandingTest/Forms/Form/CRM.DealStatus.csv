@@ -1,0 +1,6 @@
+Id;Name;SortOrder;Color;Status
+1;New;10;8bc34a;0
+2;CallClient;20;ffc73e;0
+3;SetKP;30;1ec5b8;0
+4;DealConcluded;40;null;1
+5;DealCanceled;50; b0b3c5;2

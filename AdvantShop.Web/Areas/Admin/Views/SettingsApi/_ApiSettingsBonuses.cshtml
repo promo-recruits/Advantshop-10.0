@@ -1,0 +1,589 @@
+﻿@model AdvantShop.Web.Admin.Models.Settings.APISettingsModel
+
+<div class="api-item get">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">GET</span>
+        <span class="path">/api/bonus-cards/{id}</span>
+        <span class="description">Получение бонусной карты по номеру</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            GET @Model.BonusesGetUrl
+        </div>
+        {id} - номер карты
+        <h3 class="m-t-sm">Пример ответа</h3>
+        <pre class="m-t-sm">{
+    "cardId": 961640,        // номер бонусной карты   (long)
+    "amount": 200,           // кол-во бонусов         (decimal)
+    "percent": 3,            // процент карты          (decimal)
+    "gradeName": "Гостевой", // название грейда        (string)
+    "gradeId": 1,            // id грейда              (int)            
+    "isBlocked": false       // заблокирована ли карта (bool)
+}
+</pre>
+        <div class="m-t-sm">
+            <h3>Пример ответа с ошибкой</h3>
+            <pre class="m-t-sm">{
+    "status": "error",
+    "errors": "У покупателя нет бонусной карты"
+}
+</pre>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="api-item post">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">POST</span>
+        <span class="path">/api/bonus-cards/add</span>
+        <span class="description">Создание бонусной карты для покупателя</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            POST @Model.BonusesAddUrl
+        </div>
+        customerId - id покупателя, для которого надо создать бонусную карту
+        <h3 class="m-t-sm">Запрос</h3>
+        <pre class="m-t-sm">{ "customerId": "889d82df-aaa5-4d54-a870-8d123e541af9" }</pre>
+
+        <h3 class="m-t-sm">Пример ответа</h3>
+        <pre class="m-t-sm">{
+    "cardId": 123,
+    "amount": 0,
+    "percent": 3,
+    "gradeName": "Гостевой",
+    "gradeId": 1,
+    "isBlocked": false
+}
+</pre>
+        <div class="m-t-sm">
+            <h3>Пример ответа с ошибкой</h3>
+            <pre class="m-t-sm">{
+    "status": "error",
+    "errors": "У покупателя уже есть бонусная карта"
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+<div class="api-item post">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">POST</span>
+        <span class="path">/api/bonus-cards/{id}/main-bonuses/accept</span>
+        <span class="description">Начисление основных бонусов</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            POST @Model.BonusesMainBonusesAcceptUrl
+        </div>
+        Запрос
+        <div class="row-tb">
+            <div class="row m-b-xs">
+                <div class="col-xs-2">amount</div>
+                <div class="col-xs-1">int</div>
+                <div class="col-xs">Кол-во бонусов</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">reason</div>
+                <div class="col-xs-1">string</div>
+                <div class="col-xs">Причина начисления бонусов</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">sendSms</div>
+                <div class="col-xs-1">bool</div>
+                <div class="col-xs">Уведомлять покупателя по смс</div>
+            </div>
+        </div>
+        <h3 class="m-t-sm">Пример запроса</h3>
+        <pre class="m-t-sm">{
+    "amount": 100,
+    "reason": "С Днем Рождения!",
+    "sendSms": false,
+}
+</pre>
+        <h3 class="m-t-sm">Пример ответа</h3>
+        <pre class="m-t-sm">{
+    "status": "ok"
+}
+</pre>
+    </div>
+</div>
+
+<div class="api-item post">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">POST</span>
+        <span class="path">/api/bonus-cards/{id}/main-bonuses/substract</span>
+        <span class="description">Списание основных бонусов</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            POST @Model.BonusesMainBonusesSubstractUrl
+        </div>
+        Запрос
+        <div class="row-tb">
+            <div class="row m-b-xs">
+                <div class="col-xs-2">amount</div>
+                <div class="col-xs-1">int</div>
+                <div class="col-xs">Кол-во бонусов</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">reason</div>
+                <div class="col-xs-1">string</div>
+                <div class="col-xs">Причина списания бонусов</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">sendSms</div>
+                <div class="col-xs-1">bool</div>
+                <div class="col-xs">Уведомлять покупателя по смс</div>
+            </div>
+        </div>
+        <h3 class="m-t-sm">Пример запроса</h3>
+        <pre class="m-t-sm">{
+    "amount": 100,
+    "reason": "Списание бонусов",
+    "sendSms": false,
+}
+</pre>
+        <h3 class="m-t-sm">Пример ответа</h3>
+        <pre class="m-t-sm">{
+    "status": "ok"
+}
+</pre>
+    </div>
+</div>
+
+
+<div class="api-item get">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">GET</span>
+        <span class="path">/api/bonus-cards/{id}/additional-bonuses</span>
+        <span class="description">Получение дополнительных бонусов</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            GET @Model.BonusesAdditionalBonusesUrl
+        </div>
+
+        В ответ приходит список дополнительных бонусов.
+        <div class="row-tb">
+            <div class="row m-b-xs">
+                <div class="col-xs-2">id</div>
+                <div class="col-xs-1">int</div>
+                <div class="col-xs">id доп. бонуса</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">name</div>
+                <div class="col-xs-1">string</div>
+                <div class="col-xs">Наименование</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">amount</div>
+                <div class="col-xs-1">decimal</div>
+                <div class="col-xs">Кол-во бонусов</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">startDate</div>
+                <div class="col-xs-1">datetime?</div>
+                <div class="col-xs">Действует от (не обяз.)</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">endDate</div>
+                <div class="col-xs-1">datetime?</div>
+                <div class="col-xs">Действует включительно до (не обяз.)</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">description</div>
+                <div class="col-xs-1">string</div>
+                <div class="col-xs">Описание (не обяз.)</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">status</div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs">Статус</div>
+            </div>
+        </div>
+        <h3 class="m-t-sm">Пример ответа</h3>
+        <pre class="m-t-sm">[
+    {
+        "id": 1,
+        "name": "Начислить дополнительные бонусы",
+        "amount": 100,
+        "startDate": "2021-11-15T00:00:00",
+        "endDate": "2021-11-30T00:00:00",
+        "description": "Описание",
+        "status": 0
+    },
+    {
+        "id": 2,
+        "name": "Начислить дополнительные бонусы 2",
+        "amount": 500,
+        "startDate": null,
+        "endDate": null,
+        "description": null,
+        "status": 0
+    }
+]
+</pre>
+
+    </div>
+</div>
+
+<div class="api-item post">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">POST</span>
+        <span class="path">/api/bonus-cards/{id}/additional-bonuses/accept</span>
+        <span class="description">Начисление дополнительных бонусов</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            POST @Model.BonusesAdditionalBonusesAcceptUrl
+        </div>
+        Запрос
+        <div class="row-tb">
+            <div class="row m-b-xs">
+                <div class="col-xs-2">name</div>
+                <div class="col-xs-1">string</div>
+                <div class="col-xs">Наименование</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">amount</div>
+                <div class="col-xs-1">decimal</div>
+                <div class="col-xs">Кол-во бонусов</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">reason</div>
+                <div class="col-xs-1">string</div>
+                <div class="col-xs">Причина начисления</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">startDate</div>
+                <div class="col-xs-1">datetime?</div>
+                <div class="col-xs">Действует от (не обяз.)</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">endDate</div>
+                <div class="col-xs-1">datetime?</div>
+                <div class="col-xs">Действует включительно до (не обяз.)</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">sendSms</div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs">Уведомлять покупателя по смс</div>
+            </div>
+        </div>
+        <h3 class="m-t-sm">Пример запроса</h3>
+        <pre class="m-t-sm">{
+    "name": "Начислить дополнительные бонусы на др",
+    "amount": 100,
+    "reason": "С Днем Рождения!",
+    "startDate": "2021-11-15T00:00:00",
+    "endDate": "2021-11-30T00:00:00",
+    "sendSms": false,
+}
+</pre>
+        <h3 class="m-t-sm">Пример ответа</h3>
+        <pre class="m-t-sm">{
+    "status": "ok"
+}
+</pre>
+    </div>
+</div>
+
+<div class="api-item post">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">POST</span>
+        <span class="path">/api/bonus-cards/{id}/additional-bonuses/substract</span>
+        <span class="description">Списание дополнительных бонусов</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            POST @Model.BonusesAdditionalBonusesSubstractUrl
+        </div>
+        Запрос
+        <div class="row-tb">
+            <div class="row m-b-xs">
+                <div class="col-xs-2">additionalBonusId</div>
+                <div class="col-xs-1">int</div>
+                <div class="col-xs">id доп. бонуса</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">amount</div>
+                <div class="col-xs-1">decimal</div>
+                <div class="col-xs">Кол-во бонусов</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">reason</div>
+                <div class="col-xs-1">string</div>
+                <div class="col-xs">Причина начисления</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">sendSms</div>
+                <div class="col-xs-1">bool</div>
+                <div class="col-xs">Отсылать смс покупателю</div>
+            </div>
+        </div>
+        <h3 class="m-t-sm">Пример запроса</h3>
+        <pre class="m-t-sm">{
+    "additionalBonusId": 1,
+    "amount": 100,
+    "reason": "Списание бонусов",
+    "sendSms": false,
+}
+</pre>
+        <h3 class="m-t-sm">Пример ответа</h3>
+        <pre class="m-t-sm">{
+    "status": "ok"
+}
+</pre>
+    </div>
+</div>
+
+<div class="api-item get">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">GET</span>
+        <span class="path">/api/bonus-cards/{id}/transactions</span>
+        <span class="description">Список транзакций по карте с пагинацией</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            GET @Model.BonusesTransactionsUrl
+        </div>
+
+        <h3 class="m-t-sm">Пример ответа</h3>
+        <pre class="m-t-sm">{
+    "transactions": [
+        {
+            "balance": 111.0000,
+            "createOn": "2021-11-16T16:44:43.253",
+            "amount": 111.0000,
+            "basis": "Основание",
+            "operationType": "AddAdditionBonus",
+            "purchaseId": null
+        },
+        {
+            "balance": 123456.0000,
+            "createOn": "2021-11-16T16:44:10.39",
+            "amount": 123456.0000,
+            "basis": "Основание",
+            "operationType": "AddMainBonus",
+            "purchaseId": null
+        }
+    ],
+    "pagination": {
+        "count": 2,
+        "currentPage": 1,
+        "totalCount": 2,
+        "totalPageCount": 1
+    }
+}
+</pre>
+
+    </div>
+</div>
+
+
+<div class="setting-title">
+    <h3>Бонусная система. Настройки</h3>
+</div>
+
+<div class="api-item get">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">GET</span>
+        <span class="path">/api/bonus-cards/settings</span>
+        <span class="description">Настройки бонусной системы</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            GET @Model.BonusesSettingsUrl
+        </div>
+
+        Ответ.
+        <div class="row-tb">
+            <div class="row m-b-xs">
+                <div class="col-xs-2">isEnabled</div>
+                <div class="col-xs">Активность бонусной системы</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">smsEnabled</div>
+                <div class="col-xs">Разрешить ведомлять по смс</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">cardNumberFrom</div>
+                <div class="col-xs">
+                    Диапазон карт от.<br />
+                    Бонусные карты генерируруется случайным образом в диапазоне "Диапазон карт от" до "Диапазон карт до".
+                    Не делайте его слишком маленьким, иначе сгенерировать новую карту не получится.
+                </div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">cardNumberTo</div>
+                <div class="col-xs">Диапазон карт до</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">bonusGradeId</div>
+                <div class="col-xs">id грейда</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">grades</div>
+                <div class="col-xs">Список грейдов</div>
+            </div>
+
+            <div class="row m-b-xs">
+                <div class="col-xs-2">maxOrderPercent</div>
+                <div class="col-xs">Максимальный % заказа, который можно оплатить бонусами. От 0 до 100.</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">bonusType</div>
+                <div class="col-xs">Начислять и списывать по. id типа</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">bonusTypes</div>
+                <div class="col-xs">Список типов для опции "Начислять и списывать по"</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">bonusTextBlock</div>
+                <div class="col-xs">Основной текст на странице бонусной системы</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">bonusRightTextBlock</div>
+                <div class="col-xs">Текст в правом блоке на странице бонусной системы</div>
+            </div>
+            <div class="row m-b-xs">
+                <div class="col-xs-2">disallowUseWithCoupon</div>
+                <div class="col-xs">Запретить применение бонусов при активированном купоне</div>
+            </div>
+        </div>
+
+        <h3 class="m-t-sm">Пример ответа</h3>
+        <pre class="m-t-sm">{
+    "smsEnabled": false,
+    "cardNumberFrom": 100000,
+    "cardNumberTo": 999999,
+    "bonusGradeId": 1,
+    "grades": [
+        {
+            "label": "Гостевой",
+            "value": "1",
+            "selected": true
+        },
+        {
+            "label": "Бронзовый",
+            "value": "2",
+            "selected": false
+        },
+        {
+            "label": "Серебряный",
+            "value": "3",
+            "selected": false
+        },
+        {
+            "label": "Золотой",
+            "value": "4",
+            "selected": false
+        },
+        {
+            "label": "Платиновый",
+            "value": "5",
+            "selected": false
+        }
+    ],
+    "isEnabled": true,
+    "maxOrderPercent": 100.0,
+    "bonusType": 1,
+    "bonusTypes": [
+        {
+            "label": "Стоимость товаров и доставки",
+            "value": "0",
+            "selected": false
+        },
+        {
+            "label": "Стоимость товаров",
+            "value": "1",
+            "selected": false
+        }
+    ],
+    "bonusTextBlock": "",
+    "bonusRightTextBlock": "",
+    "disallowUseWithCoupon": false
+}
+</pre>
+
+
+    </div>
+</div>
+
+<div class="api-item post">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">POST</span>
+        <span class="path">/api/bonus-cards/settings</span>
+        <span class="description">Сохранение настроек бонусной системы</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            POST @Model.BonusesSettingsUrl
+        </div>
+
+
+        <h3 class="m-t-sm">Пример запроса</h3>
+        <pre class="m-t-sm">{
+    "smsEnabled": false,
+    "cardNumberFrom": 100000,
+    "cardNumberTo": 999999,
+    "bonusGradeId": 1,
+    "grades": [
+        {
+            "label": "Гостевой",
+            "value": "1",
+            "selected": true
+        },
+        {
+            "label": "Бронзовый",
+            "value": "2",
+            "selected": false
+        },
+        {
+            "label": "Серебряный",
+            "value": "3",
+            "selected": false
+        },
+        {
+            "label": "Золотой",
+            "value": "4",
+            "selected": false
+        },
+        {
+            "label": "Платиновый",
+            "value": "5",
+            "selected": false
+        }
+    ],
+    "isEnabled": true,
+    "maxOrderPercent": 100.0,
+    "bonusType": 1,
+    "bonusTypes": [
+        {
+            "label": "Стоимость товаров и доставки",
+            "value": "0",
+            "selected": false
+        },
+        {
+            "label": "Стоимость товаров",
+            "value": "1",
+            "selected": false
+        }
+    ],
+    "bonusTextBlock": "",
+    "bonusRightTextBlock": "",
+    "disallowUseWithCoupon": false
+}
+</pre>
+        <h3 class="m-t-sm">Пример ответа</h3>
+        <pre class="m-t-sm">{
+    "status": "ok"
+}
+</pre>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.swipe-line {
+  overflow: hidden;
+}
+
+.swipe-line__content {
+  min-width: 100%;
+}
+
+.swipe-line__inner,
+.swipe-line__inner.block-content {
+  display: flex;
+  position: relative;
+  will-change: transform;
+}
+
+.swipe-line-animate {
+  transition: all ease 0.3s;
+}

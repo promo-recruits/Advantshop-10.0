@@ -1,0 +1,13 @@
+﻿Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
+1;1;title;Создавай с AdvantShop;html;null;0
+2;1;text;Простой инструмент для онлайн-продаж. Зарабатывайте больше, используя различные каналы продаж, и выстраивайте правильные отношения с клиентом.;html;null;100
+3;2;logo;;logo;"{""alt"":""Мой магазин"",""src"":""areas/landing/frontend/images/logotype.png""}";0
+4;2;phone;8 (800) 550-83-13;html;null;100
+5;2;phone_mobile;88005508313;phonemobile;null;200
+6;2;email;info@mysite.ru;html;null;300
+7;2;menuHeader;;menu;"{""font_size"":16,""menu_items_spacing"":20,""style"":{""font-size"":""16px"",""padding-left"":""20px"",""padding-right"":""20px""}}";400
+8;3;title;Вдохновляйся идеями;html;null;0
+9;3;subtitle;Реализуй все с Advantshop;html;null;100
+10;3;text;Простой инструмент для онлайн-продаж. Зарабатывайте больше, используя различные каналы продаж, и выстраивайте правильные отношения с клиентом.;html;null;200
+11;4;title;Создавай с Advantshop;html;null;0
+12;4;subtitle;Реализуй все с Advantshop;html;null;100

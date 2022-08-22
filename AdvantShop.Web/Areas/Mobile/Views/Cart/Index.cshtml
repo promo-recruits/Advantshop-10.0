@@ -1,0 +1,27 @@
+﻿
+@{
+    Html.AddAsset("cart");
+    var hasItems = ViewBag.CartHasItems is bool && (bool)ViewBag.CartHasItems;
+}
+
+@if (!hasItems && AdvantShop.Helpers.MobileHelper.IsMobileEnabled())
+{
+    <style>
+        #layout {
+            height: 100vh !important;
+        }
+    </style>
+}
+<div class="page-title-row cart-title-row">
+    <div class="cart-title page-title">
+        <h1 class="main-title">@T("Cart.Index.ShoppingCart")</h1>
+    </div>
+</div>
+<div data-module data-key="fullcartmessage" class="cart-fullcartmessage">
+    @Html.RenderModules("fullcartmessage")
+</div>
+<div data-cart-mobile-full class="@(hasItems ? "" : "cart-not-product")"></div>
+@Html.StaticBlock("shoppingcart")
+@Html.RenderModules("shoppingcart")
+
+@Html.RenderModules("shoppingcart_after")

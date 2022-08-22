@@ -1,0 +1,82 @@
+a.social {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  font-size: 16px;
+  margin: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+a.social .social__name {
+  display: none;
+  font-size: 13px;
+}
+a.social:hover {
+  color: #fff;
+  text-decoration: none;
+}
+a.social--call {
+  background-color: #055a98;
+}
+a.social--call:hover {
+  background-color: #0786e2;
+}
+a.social--vkontakte {
+  background-color: #3b4a5f;
+}
+a.social--vkontakte:hover {
+  background-color: #586f8e;
+}
+a.social--whatsapp {
+  background-color: #00e676;
+}
+a.social--whatsapp:hover {
+  background-color: #34ff9c;
+}
+a.social--viber {
+  background-color: #7b42a9;
+}
+a.social--viber:hover {
+  background-color: #a070c7;
+}
+a.social--facebook {
+  background-color: #3f5c96;
+}
+a.social--facebook:hover {
+  background-color: #6482be;
+}
+a.social--youtube {
+  background-color: red;
+}
+a.social--youtube:hover {
+  background-color: #ff4d4d;
+}
+a.social--twitter {
+  background-color: #56abee;
+}
+a.social--twitter:hover {
+  background-color: #9ccef5;
+}
+a.social--instagram {
+  background-color: #d10869;
+}
+a.social--instagram:hover {
+  background-color: #f72e8f;
+}
+a.social--telegram {
+  background-color: #35ace1;
+}
+a.social--telegram:hover {
+  background-color: #78c7eb;
+}
+a.social--odnoklassniki {
+  background-color: #ee8208;
+}
+a.social--odnoklassniki:hover {
+  background-color: #f9a74a;
+}

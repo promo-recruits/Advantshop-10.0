@@ -1,0 +1,7 @@
+﻿@model AdvantShop.Web.Admin.Models.Triggers.TriggerEditModel
+@{
+    Layout = "~/Areas/Admin/Views/Triggers/_TriggersLayout.cshtml";
+}
+
+<trigger-edit id="@(Model.Id != null ? Model.Id.ToString() : "")" event-type="@((int)Model.EventType)"></trigger-edit>
+

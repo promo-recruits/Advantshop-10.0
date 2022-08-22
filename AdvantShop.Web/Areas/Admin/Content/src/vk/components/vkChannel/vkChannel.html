@@ -1,0 +1,203 @@
+﻿
+    <div ng-if="$ctrl.isLoadded && $ctrl.isPreviewShow" class="flex middle-xs m-l-lg ng-cloak" style="height:100%;">
+
+        <div class="row">
+            <div class="col-xs-6">
+                <h1 class="bold">
+                    Продавайте товары через ВКонтакте
+                </h1>
+
+                <div class="m-t m-b-xs bold-title bold f-s-18">Выгружайте товары во ВКонтакте</div>
+                <div>Автоматически загружайте товары из интернет-магазина в ваше сообщество ВКонтакте. Если вы удалите товар, измените фото, цену или название — все мгновенно обновится в товарах ВКонтакте.</div>
+
+                <div class="m-t m-b-xs bold-title bold f-s-18">Получайте заказы из ВКонтакте</div>
+                <div>Когда клиент оформит заказ во ВКонтакте, вы сразу увидите его в AdvantShop и сможете его обработать, не переключаясь между платформами.</div>
+
+                <div class="m-t m-b-xs bold-title bold f-s-18">Общайтесь с клиентами</div>
+                <div>Все сообщения и комментарии из ВКонтакте приходят прямо в админку AdvantShop. Вы точно не пропустите ни одного обращения.</div>
+
+                <div class="m-t-lg">
+                    <a href="" class="btn btn-success btn-md" ng-click="$ctrl.connectVk()">Подключить аккаунт ВКонтакте</a>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <img src="../areas/admin/content/src/vk/components/vkchannel/images/prev_img.png" />
+            </div>
+        </div>
+    </div>
+<div ng-if="!$ctrl.isPreviewShow" class="ng-cloak">
+    <div class="balance__padding-page balance__padding-page--bg-white">
+        <div class="main-panel-page">
+            <div class="sticky-page-name p-b-n" sticky sticky-top="0">
+                <div class="page-name-block sticky-page-name-inner">
+                    <div class="page-name-block-item-main">
+                        <h1 class="page-name-block-text page-name-block-text--bigger sticky-page-name-text m-b-xs">
+                            {{'Admin.Js.VkChannel.Title'|translate}}
+                        </h1>
+                        <a ng-if="$ctrl.group != null" href="https://vk.com/{{$ctrl.group.ScreenName}}" target="_blank">
+                            {{'Admin.Js.VkChannel.OpenGroup'|translate}}
+                        </a>
+                    </div>
+                    <div class="page-name-block-item-additional">
+                        <a href="" class="link-danger" ng-click="$ctrl.removeChannel()">{{'Admin.Js.VkChannel.RemoveChannel'|translate}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="balance__padding-page balance__padding-page--m-t-n">
+        <div class="balance-block balance-block--content balance-block--content-right">
+            <div class="ibox ng-cloak" ng-switch="$ctrl.groupId == null || $ctrl.groupName == null">
+                <div ng-switch-when="true">
+                    <div class="row">
+                        <div class="col-xs-slim" style="width: 200px; padding-top:23px;">
+                            Подключение группы
+                        </div>
+                        <div class="col-xs">
+                            <div class="ibox-content" style="max-width: 1000px;">
+                                <vk-auth redirect-url="$ctrl.redirectUrl"></vk-auth>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-switch-when="false">
+                    <uib-tabset active uid="tabs" on-select-batch="$ctrl.floatHeader = tab.heading;">
+
+                        <uib-tab index="'export'" heading="Выгрузка товаров в ВКонтакте" classes="ng-tab" removable="true">
+                            <vk-market-categories></vk-market-categories>
+
+                            <div class="m-t">
+                                <a href="" ng-click="$ctrl.export()" ng-if="$ctrl.IsExportRun != true" class="btn btn-sm btn-success">Выгрузить сейчас</a>
+
+                                <div ng-if="$ctrl.Total != null && $ctrl.Total != 0" class="m-t-md">
+                                    <uib-progressbar max="$ctrl.Total" value="$ctrl.Current">
+                                        <span style="color: white; white-space: nowrap;"><span ng-bind="$ctrl.Current"></span> / <span ng-bind="$ctrl.Total"></span></span>
+                                    </uib-progressbar>
+                                </div>
+                                <div ng-if="$ctrl.Error != null && $ctrl.Error.length > 0">
+                                    Выгужено {{$ctrl.Current}}/{{$ctrl.Total}}<br>
+                                    Ошибка: {{$ctrl.Error}}
+                                </div>
+                            </div>
+
+                            <div class="m-t-sm">
+                                <a href="" class="btn btn-sm btn-success" ng-click="$ctrl.deleteAllProducts()">Удалить все товары из ВКонтакте</a>
+                            </div>
+
+                            <div class="m-t" ng-if="$ctrl.Reports != null && $ctrl.Reports.length > 0">
+                                <div class="m-b-xs">
+                                    Отчеты с ошибками
+                                </div>
+                                <div class="m-b-xs" ng-repeat="report in $ctrl.Reports">
+                                    <a href="../content/vkmarket/{{report}}" target="_blank">{{report}}</a>
+                                </div>
+                            </div>
+
+                        </uib-tab>
+
+                        <uib-tab index="'import'" heading="Загрузка товаров из ВКонтакте" classes="ng-tab" removable="true">
+                            <vk-market-import-settings></vk-market-import-settings>
+                        </uib-tab>
+
+                        <uib-tab index="'crm'" heading="Настройки" classes="ng-tab" removable="true">
+                            <div>
+                                <span class="vk-lead-photo">
+                                    <img ng-if="$ctrl.group != null && $ctrl.group.Photo100 != null" ng-src="{{$ctrl.group.Photo100}}" style="width: 40px;height: 40px" class="vk-message-photo-img m-r-xs" />
+                                </span>
+                                <a href="https://vk.me/club{{$ctrl.groupId}}" target="_blank" class="vk-group-name">
+                                    {{$ctrl.groupName}}
+                                </a>
+                                <a href="" ng-click="$ctrl.deleteGroup()" class="m-l">{{'Admin.Js.VkAuth.RemoveBinding'|translate}}</a>
+                            </div>
+
+                            <div class="m-t-lg">
+
+                                <div class="setting-title">
+                                    <h3>Настройки</h3>
+                                </div>
+
+                                <div class="form-group row" ng-if="$ctrl.groupMessageErrorStatus != null">
+                                    <div class="col-xs-12">
+                                        <span style="color:red">
+                                            {{$ctrl.groupMessageErrorStatus}}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-xs-3">
+                                        {{'Admin.Js.VkAuth.Funnel'|translate}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <select ng-model="$ctrl.salesFunnelId"
+                                                ng-options="item.Id as item.Name for item in $ctrl.salesFunnels"
+                                                ng-change="$ctrl.saveSettings()" class="form-control"></select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-xs-3">
+                                        Создавать лид из личных сообщений
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="adv-checkbox-label">
+                                            <input class="adv-checkbox-input" type="checkbox" ng-model="$ctrl.createLeadFromMessages" ng-change="$ctrl.saveSettings()" />
+                                            <span class="adv-checkbox-emul"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-xs-3">
+                                        Создавать лид из комментариев
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="adv-checkbox-label">
+                                            <input class="adv-checkbox-input" type="checkbox" ng-model="$ctrl.createLeadFromComments" ng-change="$ctrl.saveSettings()" />
+                                            <span class="adv-checkbox-emul"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-xs-3">
+                                        Создавать заказы из ВКонтакте в магазине
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="adv-checkbox-label">
+                                            <input class="adv-checkbox-input" type="checkbox" ng-model="$ctrl.syncOrdersFromVk" ng-change="$ctrl.saveSettings()" />
+                                            <span class="adv-checkbox-emul"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div ng-if="!$ctrl.authByUser" class="m-t" style="display: none">
+                                <div class="m-b-sm">
+                                    {{'Admin.Js.VkAuth.Must'|translate}}
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-xs-3">
+                                        <input type="text" class="form-control input-small" ng-model="$ctrl.login" placeholder="{{'Admin.Js.VkAuth.Login'|translate}}" />
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <input type="password" class="form-control input-small" ng-model="$ctrl.password" placeholder="{{'Admin.Js.VkAuth.Password'|translate}}" />
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <a href="" ng-click="$ctrl.authVkByLoginPassword()" class="btn btn-sm btn-success">{{'Admin.Js.VkAuth.OK'|translate}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-if="$ctrl.authByUser" class="m-t">
+                                <a href="" ng-click="$ctrl.deleteVkByLoginPassword()">Удалить привязку к личной странице</a>
+                            </div>
+                        </uib-tab>
+
+                    </uib-tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+﻿Id;Name;Enabled;Template;Url;CreatedDate;LandingSiteId;IsMain;PageType;ProductId
+1;Главная;true;Questionnaire;glavnaya;06.10.2021 17:52;1;true;1;NULL
+2;Страница благодарности;true;Questionnaire;stranitsa-blagodarnosti;2021-10-06 17:52:28.000;1;false;6;NULL
+3;Главная;true;QuizFunnelNew;glavnaya;06.10.2021 17:52;2;true;1;NULL
+4;Квиз;true;QuizFunnelNew;kviz;06.10.2021 17:52;2;false;2;NULL

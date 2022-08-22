@@ -1,0 +1,34 @@
+﻿<div class="ui-grid-custom-selection-action">
+    <div class="btn-group" ng-if="$ctrl.gridMenuItems != null && $ctrl.gridMenuItems.length > 0">
+        <button type="button" data-e2e="gridSelectionDropdownButton" data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle">{{'Admin.Js.GridCustomSelectionAction.SelectAnAction'|translate}}<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li ng-repeat="item in $ctrl.gridMenuItems track by $index" ng-hide="item.hide">
+                <a class="ui-grid-custom-selection-action-link" href="" ng-bind="item.text" data-e2e="gridSelectionDropdownItem" data-e2e-grid-selection-dropdown-index="{{$index}}" bind-html-compile="item.template" ng-click="$ctrl.select(item)"></a>
+            </li>
+            <li>
+                <a class="ui-grid-custom-selection-action-link" href="" data-e2e="gridSelectionDropdownItem" data-e2e-grid-selection-dropdown-index="{{$ctrl.gridMenuItems.length}}" ng-click="$ctrl.select({preset: 'unselectVisible'})"><span ng-bind="::'Admin.Js.GridCustomSelectionAction.RemoveSelectionFromVisible'|translate"></span></a>
+            </li>
+            <li>
+                <a class="ui-grid-custom-selection-action-link" href="" data-e2e="gridSelectionDropdownItem" data-e2e-grid-selection-dropdown-index="{{$ctrl.gridMenuItems.length + 1}}" ng-click="$ctrl.select({preset: 'unselectAll'})"><span ng-bind="::'Admin.Js.GridCustomSelectionAction.RemoveSelection'|translate"></span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="btn-group-vertical ui-grid-custom-selection-info">
+        <span data-ng-bind="'Admin.Js.GridCustomSelectionAction.SelectedRows'|translate"></span>
+        <span ng-switch="$ctrl.gridOptions.multiSelect && $ctrl.isSelectedAll && $ctrl.unselectedRows.length === 0" class="btn-group-vertical">
+            <span ng-switch-when="false">
+                <span class="ui-grid-custom-selection-count" ng-bind="$ctrl.isSelectedAll ? $ctrl.totalItemsSelected : $ctrl.storageSelectedRows.length" data-e2e="gridSelectionSelectedCount"></span>
+                    <span ng-if="$ctrl.gridOptions.multiSelect"><a href="" ng-click="$ctrl.selectAllRows($event)" data-e2e="gridSelectionSelectAllFn">{{'Admin.Js.GridCustomSelectionAction.SelectedAll'|translate}}</a></span>
+            </span>
+            <span ng-switch-when="true">
+                <span class="ui-grid-custom-selection-count" ng-bind="$ctrl.totalItemsSelected" data-e2e="gridSelectionSelectedCount"></span>
+                <span ng-if="$ctrl.gridOptions.multiSelect">
+                    <a href="" ng-click="$ctrl.clearSelectedRows()" data-e2e="gridSelectionDeselectAllFn">{{'Admin.Js.GridCustomSelectionAction.UnselectAll'|translate}}</a>
+                </span>
+                </span>
+        </span>
+    </div>
+</div>
+
+
+

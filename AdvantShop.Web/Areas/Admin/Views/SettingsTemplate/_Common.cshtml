@@ -1,0 +1,485 @@
+﻿@using AdvantShop.Design
+@model AdvantShop.Web.Admin.Models.Settings.Templates.SettingsTemplateModel
+
+
+@* Дизайн и представление *@
+<div class="setting-title m-t-none">
+    <h3>@T("Admin.Design.Index.SettingTitle")</h3>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Design.Index.Theme")
+        </div>
+    </div>
+    <div class="col-xs-2 relative">
+        <select class="form-control"
+                ng-model="settingsTemplate.CurrentTheme"
+                ng-options="item.Title for item in settingsTemplate.designData.Themes"
+                ng-change="settingsTemplate.changeDesign('@eDesign.Theme', settingsTemplate.CurrentTheme.Name)"></select>
+    </div>
+    <div class="col-xs-3 relative">
+        <div class="m-t-xs">
+            <a href="" class="select-add" accept="application/zip" ngf-drop ngf-max-size="5MB" ngf-select=""
+               ngf-change="settingsTemplate.addDesign($files, $file, $newFiles, $duplicateFiles, $invalidFiles, $event, '@eDesign.Theme')">@T("Admin.Design.Index.Add")</a>
+
+            <a href="design/theme?design=@(eDesign.Theme)&theme={{settingsTemplate.CurrentTheme.Name}}"
+               ng-if="settingsTemplate.CurrentTheme.Name !== '_none'"
+               class="select-delete"
+               title="@T("Admin.Design.Index.Edit")">
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+            <a href="" class="select-delete"
+               ng-if="settingsTemplate.CurrentTheme.Name !== '_none' && settingsTemplate.CurrentTheme.Custom"
+               ng-click="settingsTemplate.deleteDesign('@eDesign.Theme', settingsTemplate.CurrentTheme.Name)">
+                <i class="fa fa-times"></i>
+            </a>
+            <help-trigger class="ng-cloak m-l-xs m-t-n-xxs m-b-xxs" use-template="true" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Design.Index.Theme")">
+                <div class="help-content">
+                    @Html.Action("FilesHelpText", "Common", new { type = AdvantShop.Helpers.EAdvantShopFileTypes.Zip, maxFileSize = "5MB" })
+                    <br />
+                    <br />
+                    @T("Admin.Design.Index.ThemeHote")
+                </div>
+            </help-trigger>
+        </div>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Design.Index.Background")
+        </div>
+    </div>
+    <div class="col-xs-2 relative">
+        <select class="form-control"
+                ng-model="settingsTemplate.CurrentBackGround"
+                ng-options="item.Title for item in settingsTemplate.designData.BackGrounds"
+                ng-change="settingsTemplate.changeDesign('@eDesign.Background', settingsTemplate.CurrentBackGround.Name)"></select>
+    </div>
+    <div class="col-xs-3 relative">
+        <div class="m-t-xs">
+            <a href="" class="select-add" accept="application/zip" ngf-drop ngf-max-size="5MB" ngf-select=""
+               ngf-change="settingsTemplate.addDesign($files, $file, $newFiles, $duplicateFiles, $invalidFiles, $event, '@eDesign.Background')">@T("Admin.Design.Index.Add")</a>
+
+            <a href="design/theme?design=@(eDesign.Background)&theme={{settingsTemplate.CurrentBackGround.Name}}"
+               ng-if="settingsTemplate.CurrentBackGround.Name !== '_none'"
+               class="select-delete"
+               title="@T("Admin.Design.Index.Edit")">
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+            <a href="" class="select-delete"
+               ng-if="settingsTemplate.CurrentBackGround.Name !== '_none' && settingsTemplate.CurrentBackGround.Custom"
+               ng-click="settingsTemplate.deleteDesign('@eDesign.Background', settingsTemplate.CurrentBackGround.Name)">
+                <i class="fa fa-times"></i>
+            </a>
+            <help-trigger class="ng-cloak m-l-xs m-t-n-xxs m-b-xxs" use-template="true" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Design.Index.Background")">
+                <div class="help-content">
+                    @Html.Action("FilesHelpText", "Common", new { type = AdvantShop.Helpers.EAdvantShopFileTypes.Zip, maxFileSize = "5MB" })
+                    <br />
+                    <br />
+                    @T("Admin.Design.Index.BackgroundHote")
+                </div>
+            </help-trigger>
+        </div>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Design.Index.ColorScheme")
+        </div>
+    </div>
+    <div class="col-xs-2 relative">
+        <select class="form-control"
+                ng-model="settingsTemplate.CurrentColorScheme"
+                ng-options="item.Title for item in settingsTemplate.designData.ColorSchemes"
+                ng-change="settingsTemplate.changeDesign('@eDesign.Color', settingsTemplate.CurrentColorScheme.Name)"></select>
+    </div>
+    <div class="col-xs-3 relative">
+        <div class="m-t-xs">
+            <a href="" class="select-add" accept="application/zip" ngf-drop ngf-max-size="5MB" ngf-select=""
+               ngf-change="settingsTemplate.addDesign($files, $file, $newFiles, $duplicateFiles, $invalidFiles, $event, '@eDesign.Color')">@T("Admin.Design.Index.Add")</a>
+
+            <a href="design/theme?design=@(eDesign.Color)&theme={{settingsTemplate.CurrentColorScheme.Name}}"
+               class="select-delete"
+               title="@T("Admin.Design.Index.Edit")">
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+
+            <a href="" class="select-delete"
+               ng-if="settingsTemplate.CurrentColorScheme.Name !== '_none' && settingsTemplate.CurrentColorScheme.Custom"
+               ng-click="settingsTemplate.deleteDesign('@eDesign.Color', settingsTemplate.CurrentColorScheme.Name)" title="@T("Admin.Design.Index.Delete")">
+                <i class="fa fa-times"></i>
+            </a>
+            <help-trigger class="ng-cloak m-l-xs m-t-n-xxs m-b-xxs" use-template="true" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Design.Index.ColorScheme")">
+                <div class="help-content">
+                    @Html.Action("FilesHelpText", "Common", new { type = AdvantShop.Helpers.EAdvantShopFileTypes.Zip, maxFileSize = "5MB" })
+                    <br />
+                    <br />
+                    @T("Admin.Design.Index.ColorSchemeHote")
+                </div>
+            </help-trigger>
+        </div>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.MainPageModeTitle")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        @Html.DropDownListFor(x => x.MainPageMode, Model.MainPageModeOptions, new { @class = "form-control", ng_model = "settingsTemplate.MainPageMode" })
+        <help-trigger class="help-trigger-icon-abs m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Template.MainPageModeTitle")">
+            <div class="help-content">@T("Admin.Settings.Template.MainPageModeHint")</div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.MenuStyleTitle")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        @Html.DropDownListFor(x => x.MenuStyle, Model.MenuStyleOptions, new { @class = "form-control", ng_model = "settingsTemplate.MenuStyle" })
+        <help-trigger class="help-trigger-icon-abs m-l-xs" data-title="@T("Admin.Settings.Template.MenuStyleTitle")">
+            <div class="help-content">@T("Admin.Settings.Template.MenuStyleHint")</div>
+        </help-trigger>
+    </div>
+</div>
+
+@if (Model.TopPanel == null)
+{
+    <div class="form-group row">
+        <div class="col-xs-3 col-wl-2">
+            <div class="setting-label-wrap">
+                @T("Admin.Settings.Template.SearchBlockLocationTitle")
+            </div>
+        </div>
+        <div class="col-xs-4 relative">
+            @Html.DropDownListFor(x => x.SearchBlockLocation, Model.SearchBlockLocationOptions, new { @class = "form-control", ng_model = "settingsTemplate.SearchBlockLocation" })
+            <help-trigger class="help-trigger-icon-abs m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Template.SearchBlockLocationTitle")">
+                <div class="help-content">@T("Admin.Settings.Template.SearchBlockLocationHint")</div>
+            </help-trigger>
+        </div>
+    </div>
+}
+@if (Model.TopPanel != null)
+{
+    <div class="form-group row">
+        <div class="col-xs-3 col-wl-2">
+            <div class="setting-label-wrap">
+                @T("Admin.Settings.Template.TopPanelTitle")
+            </div>
+        </div>
+        <div class="col-xs-4 relative">
+            @Html.DropDownListFor(x => x.TopPanel, Model.TopPanelOptions, new { @class = "form-control", ng_model = "settingsTemplate.TopPanel" })
+        </div>
+    </div>
+}
+@if (Model.Header != null)
+{
+    <div class="form-group row">
+        <div class="col-xs-3 col-wl-2">
+            <div class="setting-label-wrap">
+                @T("Admin.Settings.Template.HeaderTitle")
+            </div>
+        </div>
+        <div class="col-xs-4 relative">
+            @Html.DropDownListFor(x => x.Header, Model.HeaderOptions, new { @class = "form-control", ng_model = "settingsTemplate.Header" })
+        </div>
+    </div>
+}
+@if (Model.TopMenu != null)
+{
+    <div class="form-group row">
+        <div class="col-xs-3 col-wl-2">
+            <div class="setting-label-wrap">
+                @T("Admin.Settings.Template.TopMenuTitle")
+            </div>
+        </div>
+        <div class="col-xs-4 relative">
+            @Html.DropDownListFor(x => x.TopMenu, Model.TopMenuOptions, new { @class = "form-control", ng_model = "settingsTemplate.TopMenu" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-xs-3 col-wl-2">
+            <div class="setting-label-wrap">
+                @T("Admin.Settings.SystemSettings.HideGeneralMenu")
+            </div>
+        </div>
+        <div class="col-xs-4 relative">
+            <label class="adv-checkbox-label">
+                @Html.CheckBoxFor(x => x.TopMenuVisibility, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.TopMenuVisibility" })
+                <span class="adv-checkbox-emul" data-e2e="RecentlyViewVisibility"></span>
+            </label>
+        </div>
+    </div>
+}
+
+@* Отображать блоки *@
+<div class="setting-title setting-title__m-t-md">
+    <h3>@T("Admin.Settings.Template.Display")</h3>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.RecentlyViewVisibilityTitle")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.RecentlyViewVisibility, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.RecentlyViewVisibility" })
+            <span class="adv-checkbox-emul" data-e2e="RecentlyViewVisibility"></span>
+        </label>
+        <help-trigger class="ng-cloak p-l-sm" classes="'setting__catolog-popover-custom'" data-title='@T("Admin.Settings.Template.RecentlyViewVisibilityTitle")'>
+            @T("Admin.Settings.Template.RecentlyViewVisibilityHint")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.WishListVisibilityTitle")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.WishListVisibility, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.WishListVisibility" })
+            <span class="adv-checkbox-emul" data-e2e="WishListVisibility"></span>
+        </label>
+        <help-trigger class="ng-cloak p-l-sm" classes="'setting__catolog-popover-custom'" data-title='@T("Admin.Settings.Template.WishListVisibilityTitle")'>
+            @T("Admin.Settings.Template.WishListVisibilityHint")
+        </help-trigger>
+    </div>
+</div>
+
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.SystemSettings.IsStoreClosed")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.IsStoreClosed, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.IsStoreClosed" })
+            <span data-e2e="IsStoreClosed" class="adv-checkbox-emul"></span>
+        </label>
+        <help-trigger class="ng-cloak p-l-sm" data-title='@T("Admin.Settings.SystemSettings.IsStoreClosed")'>
+            @T("Admin.Settings.SystemSettings.IsStoreClosedNote")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.SystemSettings.EnableInplace")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.EnableInplace, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.EnableInplace" })
+            <span data-e2e="EnableInplace" class="adv-checkbox-emul"></span>
+        </label>
+        <help-trigger class="ng-cloak p-l-sm" data-title='@T("Admin.Settings.SystemSettings.EnableInplace")'>
+            @T("Admin.Settings.SystemSettings.EnableInplaceNote")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.SystemSettings.DisplayToolBarBottom")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.DisplayToolBarBottom, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.DisplayToolBarBottom" })
+            <span data-e2e="DisplayToolBarBottom" class="adv-checkbox-emul"></span>
+        </label>
+        <help-trigger class="ng-cloak p-l-sm" data-title='@T("Admin.Settings.SystemSettings.DisplayToolBarBottom")'>
+            @T("Admin.Settings.SystemSettings.DisplayToolBarBottomNote")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.SystemSettings.DisplayCityInTopPanel")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.DisplayCityInTopPanel, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.DisplayCityInTopPanel" })
+            <span data-e2e="DisplayCityInTopPanel" class="adv-checkbox-emul"></span>
+        </label>
+        <help-trigger class="ng-cloak p-l-sm" data-title='@T("Admin.Settings.SystemSettings.DisplayCityInTopPanel")'>
+            @T("Admin.Settings.SystemSettings.DisplayCityInTopPanelNote")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row" ng-if="!settingsTemplate.DisplayCityInTopPanel">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.SystemSettings.DefaultCityIfNotAutodetect")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        @Html.TextBoxFor(x => x.DefaultCityIfNotAutodetect, new { @class = "form-control", ng_model = "settingsTemplate.DefaultCityIfNotAutodetect" })
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.SystemSettings.ShowCopyright")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowCopyright, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowCopyright" })
+            <span data-e2e="ShowCopyright" class="adv-checkbox-emul"></span>
+        </label>
+        <help-trigger class="ng-cloak p-l-sm" data-title='@T("Admin.Settings.SystemSettings.ShowCopyright")'>
+            @T("Admin.Settings.SystemSettings.ShowCopyrightNote")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.CopyrightText, T("Admin.Settings.Template.CopyrightText"))
+        </div>
+    </div>
+    <div class="col-xs-9 col-wl-10">
+        @Html.TextAreaFor(x => x.CopyrightText, new { @class = "wysiwyg", ckeditor = "", ng_model = "settingsTemplate.CopyrightText" })
+        <p>@T("Admin.Settings.Template.VariableCopyrightText")</p>
+    </div>
+</div>
+
+
+<div class="setting-title setting-title__m-t-md">
+    <h3>@T("Admin.Settings.SystemSettings.Other")</h3>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.AdditionalHeadMetaTag, T("Admin.Settings.SystemSettings.AdditionalHeadMetaTag"))
+        </div>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.AdditionalHeadMetaTag, new { @class = "form-control", ng_model = "settingsTemplate.AdditionalHeadMetaTag" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title='@T("Admin.Settings.SystemSettings.AdditionalHeadMetaTag")'>
+            @T("Admin.Settings.SystemSettings.AdditionalHeadMetaTagNote")
+            <br><br>
+            @T("Admin.Settings.SystemSettings.AdditionalHeadMetaTagNoteLink")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-9">
+        <div class="adv-panel-info">
+            <a data-e2e="AdditionalHeadTag" href="http://www.advantshop.net/help/pages/add-tag-head" target="_blank">
+                @T("Admin.SettingsSystem.SystemCommon.InstructionAdditionalTagInHead")
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="setting-title setting-title__m-t-md">
+    <h3>@T("Admin.Settings.SystemSettings.CustomersNotifications")</h3>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.ShowUserAgreementText, T("Admin.Settings.Checkout.ShowUserAgreementTextField"))
+        </div>
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowUserAgreementText, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowUserAgreementText" })
+            <span data-e2e="ShowUserAgreementText" class="adv-checkbox-emul"></span>
+        </label>
+        <help-trigger class="ng-cloak p-l-sm" data-title='@T("Admin.Settings.Checkout.ShowUserAgreementTextField")'>
+            @T("Admin.Settings.SystemSettings.ShowUserAgreementTextNote")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.AgreementDefaultChecked, T("Admin.Settings.Checkout.AgreementDefaultChecked"))
+        </div>
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.AgreementDefaultChecked, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.AgreementDefaultChecked" })
+            <span data-e2e="AgreementDefaultChecked" class="adv-checkbox-emul"></span>
+        </label>
+        <help-trigger class="ng-cloak p-l-sm" data-title='@T("Admin.Settings.Checkout.AgreementDefaultChecked")'>
+            @T("Admin.Settings.Checkout.AgreementDefaultCheckedHint")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.UserAgreementText, T("Admin.Settings.Checkout.UserAgreementText"))
+        </div>
+    </div>
+    <div class="col-xs-9">
+        @Html.TextAreaFor(x => x.UserAgreementText, new { @class = "wysiwyg", ckeditor = "", ng_model = "settingsTemplate.UserAgreementText" })
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.DisplayCityBubble, T("Admin.Settings.SystemSettings.DisplayCityBubble"))
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.DisplayCityBubble, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.DisplayCityBubble" })
+            <span data-e2e="DisplayCityBubble" class="adv-checkbox-emul"></span>
+        </label>
+        <help-trigger class="ng-cloak p-l-sm" data-title='@T("Admin.Settings.SystemSettings.DisplayCityBubble")'>
+            @T("Admin.Settings.SystemSettings.DisplayCityBubbleNote")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.ShowCookiesPolicyMessage, T("Admin.Settings.SystemSettings.ShowCookiesPolicyMessage"))
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowCookiesPolicyMessage, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowCookiesPolicyMessage" })
+            <span data-e2e="ShowCookiesPolicyMessage" class="adv-checkbox-emul"></span>
+        </label>
+        <help-trigger class="ng-cloak p-l-sm" classes="'setting__catolog-popover-custom'" data-title='@T("Admin.Settings.SystemSettings.ShowCookiesPolicyMessage")'>
+            @T("Admin.Settings.SystemSettings.ShowCookiesPolicyMessageNote")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.CookiesPolicyMessage, T("Admin.Settings.SystemSettings.CookiesPolicyMessage"))
+        </div>
+    </div>
+    <div class="col-xs-9">
+        @Html.TextAreaFor(x => x.CookiesPolicyMessage, new { @class = "wysiwyg", ckeditor = "", ng_model = "settingsTemplate.CookiesPolicyMessage" })
+        <p>@T("Admin.SettingsSystem.SystemCommon.VariableStoreUrl")</p>
+    </div>
+</div>
+

@@ -1,0 +1,113 @@
+﻿@using System.Web.Mvc.Html
+@model AdvantShop.Web.Admin.Models.Settings.BonusSettingsModel
+
+<div class="form-group row">
+    <div class="col-xs-3">
+        @T("Admin.SettingsBonus.Index.Enable")
+    </div>
+    <div class="col-xs-9">
+        <div class="form-group label-wrap">
+            <label class="adv-checkbox-label category-label">
+                @Html.CheckBoxFor(x => x.IsEnabled, new { @class = "form-control adv-checkbox-input", ng_model = "settingBonus.IsEnabled" })
+                <span class="adv-checkbox-emul"></span>
+            </label>
+            @if (Model.IsEnabled)
+            {
+                @Html.RouteLink(T("Admin.Settings.SettingsBonus.GoToGetBonusCardPage").ToString(), "GetBonusCardRoute")
+            }
+        </div>
+    </div>
+</div>
+<div ng-show="settingBonus.IsEnabled">
+    <h3 class="m-b-md">@T("Admin.Settings.SettingsBonus.Default")</h3>
+    <div class="form-group row">
+        <div class="col-xs-3">
+            @T("Admin.Settings.SettingsBonus.BonusGradeId")
+        </div>
+        <div class="col-xs-4">
+            @Html.DropDownListFor(x => x.BonusGradeId, Model.Grades, new { @class = "form-control", ng_model = "settingBonus.BonusGradeId" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-xs-3">
+            @T("Admin.SettingsBonus.Index.RangeOfCardsFrom")
+        </div>
+        <div class="col-xs-4">
+            @Html.TextBoxFor(x => x.CardNumFrom, new { @class = "form-control", ng_model = "settingBonus.CardNumFrom", textcomplete = "", required = "required", validation_input_text = T("Admin.SettingsBonus.Index.RangeOfCardsFrom").ToString() })
+        </div>
+    </div>
+    <div class="form-group row m-b-lg">
+        <div class="col-xs-3">
+            @T("Admin.SettingsBonus.Index.RangeOfCardsTo")
+        </div>
+        <div class="col-xs-4">
+            @Html.TextBoxFor(x => x.CardNumTo, new { @type = "number", @maxlength = "20", @class = "form-control", ng_model = "settingBonus.CardNumTo", textcomplete = "", required = "required", validation_input_text = T("Admin.SettingsBonus.Index.RangeOfCardsTo").ToString() })
+        </div>
+    </div>
+    <div class="form-group row m-b-lg">
+        <div class="col-xs-3">
+            @T("Admin.SettingsBonus.Index.AccrueAndWriteOff")
+        </div>
+        <div class="col-xs-4">
+            @Html.DropDownListFor(x => x.BonusType, Model.BonusTypes, new { @class = "form-control", ng_model = "settingBonus.BonusType" })
+        </div>
+    </div>
+    <div class="form-group row m-b-lg">
+        <div class="col-xs-3">
+            @T("Admin.SettingsBonus.Index.MaximumPercentageOfBonuses")
+        </div>
+        <div class="col-xs-4">
+            @Html.TextBoxFor(x => x.MaxOrderPercent, new { @type = "number", @min = "1", @max = "100", @class = "form-control", ng_model = "settingBonus.MaxOrderPercent", textcomplete = "", required = "required", validation_input_text = T("Admin.SettingsBonus.Index.MaximumPercentageOfBonuses").ToString() })
+        </div>
+    </div>
+
+    <div class="form-group row m-b-lg">
+        <div class="col-xs-3">
+            @T("Admin.SettingsBonus.Index.ProhibitUseOfBonuses")
+        </div>
+        <div class="col-xs-9">
+            <div class="form-group label-wrap">
+                <label class="adv-checkbox-label category-label">
+                    @Html.CheckBoxFor(x => x.ForbidOnCoupon, new { @class = "form-control adv-checkbox-input", ng_model = "settingBonus.ForbidOnCoupon" })
+                    <span class="adv-checkbox-emul"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row m-b-lg">
+        <div class="col-xs-3">
+            @T("Admin.SettingsBonus.Index.MainText")
+        </div>
+        <div class="col-xs-9">
+            @Html.TextAreaFor(x => x.BonusTextBlock, new { @class = "wysiwyg", ckeditor = "", ng_model = "settingBonus.BonusTextBlock" })
+        </div>
+    </div>
+
+    <div class="form-group row m-b-lg">
+        <div class="col-xs-3">
+            @T("Admin.SettingsBonus.Index.TextInRightBlock")
+        </div>
+        <div class="col-xs-9">
+            @Html.TextAreaFor(x => x.BonusRightTextBlock, new { @class = "wysiwyg", ckeditor = "", ng_model = "settingBonus.BonusRightTextBlock" })
+        </div>
+    </div>
+
+    <h3 class="m-b-md">Sms</h3>
+    <div class="form-group row m-b-lg">
+        <div class="col-xs-3">
+            @T("Admin.SettingsBonus.Index.Enable")
+        </div>
+        <div class="col-xs-4">
+
+            <div class="form-group label-wrap">
+                <label class="adv-checkbox-label category-label">
+                    @Html.CheckBoxFor(x => x.SmsEnabled, new { @class = "form-control adv-checkbox-input", ng_model = "settingBonus.SmsEnabled" })
+                    <span class="adv-checkbox-emul"></span>
+                </label>
+
+            </div>
+        </div>
+    </div>
+
+</div>

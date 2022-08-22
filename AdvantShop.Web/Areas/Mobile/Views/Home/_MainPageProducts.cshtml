@@ -1,0 +1,20 @@
+﻿@using AdvantShop.Core.Services.Configuration.Settings
+@model AdvantShop.Areas.Mobile.Models.Home.MainPageProductsMobileViewModel
+
+@if (Model.MainPageCatalogView == SettingsMobile.eMainPageCatalogView.Vertical)
+{
+    <div class="catalog-view" data-product-view-mode data-name="mobileModern" data-view-list-name="mobileModern" data-is-mobile="true" data-default-view-mode="@SettingsMobile.DefaultCatalogView.ToString().ToLower()">
+        <div class="catalog-view__product-item-wrap">
+            @Html.Partial("_ProductViewItems", Model.Products)
+        </div>
+    </div>
+}
+else
+{
+    var cssClass = "panel cs-l-1 cs-br-1 link-text-decoration-none inked ink-dark cs-l-2 cs-br-1 mainpage-products__content-item";
+    Model.Products.WrapCssClass = cssClass;
+    <div class="mainpage-products__content scroll-always-visible">
+        @Html.Partial("_ProductViewItems", Model.Products)
+    </div>
+}
+

@@ -1,0 +1,10 @@
+﻿@model AdvantShop.Web.Admin.ViewModels.Home.StatisticsDashboardViewModel
+
+<div class="statistics-data">
+    <div class="statistics-data__date">
+        Заказы на  <a href="#" class="statistics-data__date-trigger">cегодня</a>
+    </div>
+    <div class="statistics-data__content">
+        <span class="statistics-data__sum">@Model.TotalOrdersTodayPrice</span> <span class="statistics-data__count">(@Model.TotalOrdersTodayCount заказов)</span>
+    </div>
+</div>

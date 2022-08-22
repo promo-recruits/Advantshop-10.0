@@ -1,0 +1,20 @@
+.breadcrumb--admin {
+  /*font-size: 12px;*/
+}
+
+.breadcrumb__item--admin {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.breadcrumb__link--admin {
+  color: #676a6c;
+  text-decoration: none;
+}
+.breadcrumb__link--admin:hover {
+  text-decoration: underline;
+}
+.breadcrumb__link--admin svg {
+  margin-right: 5px;
+}

@@ -1,0 +1,45 @@
+testType;Yandex;
+defaultExportType;xml;
+text252;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquipeex e;
+garPromoType;"type=\""gift with purchase\"""
+testName1;GiftAdd;
+gar1Name;Gift1;
+gar1Name2;Gift2;
+gar1Description;Description1;
+gar1Url;"http://advantshop.net";
+testName2;GiftEdit;
+gar2Name1;GiftEdit;
+gar2Description1;Description2;
+gar2Url1;"http://advantshop.net";
+gar2Product1;1
+gar2Gift1;2
+gar2Name2;GiftEdit_edited;
+gar2Description2;"";
+gar2Url2;"";
+gar2Product2;3;
+gar2Gift2;4
+testName3;GiftRemove;
+testName4;GiftValidate;
+gar4Name1;GiftValidate;
+gar4Url1;"http://advantshop.net";
+gar4Products;1,2,3
+gar4Gifts;4,5
+gar4ProductsDisabledID;12,13,14
+testName5;GiftDisplay
+gar5Name1;GiftDisplay1
+gar5Name2;GiftDisplay2
+gar5Quantity1;23;
+gar5Desc1;Description1;
+gar5Url1;Url1
+gar5ProductsID;2,3,23
+gar5GiftsID;10,15,21
+gar5ProductCount;9
+gar5PromoCount;3
+gar5PromoCount2;1
+gar5GiftContent;"<gifts><gift id=\""15\""><name>TestProduct15</name><picture>http://my-shop.ru/pictures/product/big/1501_big.jpg</picture></gift><gift id=\""21\""><name>TestProduct21</name><picture>http://my-shop.ru/images/nophoto_big.jpg</picture></gift></gifts>"
+gar5Purchase1;"<required-quantity>23</required-quantity><product offer-id=\""2\"" />"
+gar5Purchase2;"<required-quantity>1</required-quantity><product offer-id=\""3\"" />"
+gar5Purchase3;"<required-quantity>1</required-quantity><product offer-id=\""23\"" />"
+gar5PromoGifts1;"<promo-gift offer-id=\""10\"" />"
+gar5PromoGifts2;"<promo-gift gift-id=\""15\"" />"
+gar5PromoGifts3;"<promo-gift gift-id=\""21\"" />"

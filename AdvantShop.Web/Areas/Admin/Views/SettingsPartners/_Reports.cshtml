@@ -1,0 +1,75 @@
+﻿@using AdvantShop.Core.Services.Partners
+@model AdvantShop.Web.Admin.Models.Settings.Partners.PartnersSettingsModel
+@{
+    var partnersUrl = Url.AbsoluteRouteUrl("Partners_Home");
+}
+
+<div class="setting-title m-t-none">
+    <h3>Ограничения выплат партнерам</h3>
+    <div>
+        Условия, при которых партнер может вывести средства с баланса.<br />
+        Партнерам, выполнившим условия и накопившим достаточную сумму на балансе, автоматически каждый месяц 1-го числа будет отправлен акт-отчет.
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-2">
+        <div class="setting-label-wrap">
+            Минимальное количество клиентов
+        </div>
+    </div>
+    <div class="col-xs-2">
+        @Html.TextBoxFor(x => x.PayoutMinCustomersCount, new { type = "number", @class = "form-control", ng_model = "settingsPartners.payoutMinCustomersCount" })
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-2">
+        <div class="setting-label-wrap">
+            Минимальный баланс
+        </div>
+    </div>
+    <div class="col-xs-2">
+        @Html.TextBoxFor(x => x.PayoutMinBalance, new { type = "number", @class = "form-control", ng_model = "settingsPartners.payoutMinBalance" })
+    </div>
+</div>
+<div class="setting-title">
+    <h3>Акт-отчеты партнеров</h3>
+</div>
+<div class="form-group row">
+    <div class="col-xs-2">
+        <div class="setting-label-wrap">
+            Комиссия на вывод средств, % (для физ. лиц)
+        </div>
+    </div>
+    <div class="col-xs-2">
+        @Html.TextBoxFor(x => x.PayoutCommissionNaturalPerson, new { type = "number", @class = "form-control", ng_model = "settingsPartners.payoutCommissionNaturalPerson" })
+    </div>
+</div>
+<div class="ng-cloak">
+    @foreach (EPartnerType type in Enum.GetValues(typeof(EPartnerType)).Cast<EPartnerType>().Where(x => x != EPartnerType.None))
+    {
+        <div class="form-group row">
+            <div class="col-xs-2">
+                <div class="setting-label-wrap">
+                    Шаблон акт-отчета (@type.Localize())
+                </div>
+            </div>
+            <div class="col-xs-10">
+                <button class="btn btn-action btn-sm" type="button" ngf-drop ngf-max-size="15MB" ngf-select=""
+                        accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                        ngf-change="settingsPartners.saveActTplFile($files, $file, $newFiles, $duplicateFiles, $invalidFiles, $event, '@type')">
+                    <i class="fa fa-upload"></i>&nbsp;&nbsp;<span class="bold">Загрузить новый шаблон</span>
+                </button>
+                <help-trigger class="ng-cloak m-l-xs" ng-if="settingsPartners.actTplsHelpText" use-template="true">
+                    <div class="help-content" ng-bind="settingsPartners.actTplsHelpText"></div>
+                </help-trigger>
+                <ui-modal-trigger data-controller="settingsPartners.modalTplDescription" controller-as="ctrl" size="lg"
+                                    data-resolve="{params: { type: '@type'}}"
+                                    template-url="../areas/admin/content/src/settingsTemplatesDocx/modal/descriptionTemplate/descriptionTemplate.html">
+                    <a href="" class="edit link-decoration-none m-l-sm">Посмотреть описание шаблона</a>
+                </ui-modal-trigger>
+                <a href="@Url.Action("GetActReportTplFile", "SettingsPartners", new { type = type.ToString() })" class="link-decoration-none m-l-sm">Скачать</a>
+                <a href="" ng-if="settingsPartners.tplFiles['@type']" class="link-decoration-none m-l-sm" ng-click="settingsPartners.setDefaultTpl('@type')">Восстановить по умолчанию</a>
+            </div>
+        </div>
+    }
+</div>

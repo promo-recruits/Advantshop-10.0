@@ -1,0 +1,13 @@
+﻿<div class="ibox">
+    <div class="ibox-content">
+        <ui-grid-custom grid-unique-id="gridFunnelBookings"
+                        grid-filter-enabled="false"
+                        grid-selection-enabled="false"
+                        grid-params="{orderSourceId: $ctrl.orderSourceId}"
+                        grid-options="$ctrl.gridBookingsOptions"
+                        grid-url="'booking/getListForCustomer'"
+                        grid-on-init="$ctrl.gridOnInit(grid)"
+                        grid-extend-ctrl="$ctrl">
+        </ui-grid-custom>
+    </div>
+</div>

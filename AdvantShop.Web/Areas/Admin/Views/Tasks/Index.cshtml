@@ -1,0 +1,93 @@
+﻿@using AdvantShop.Web.Admin.Models.Tasks;
+@using AdvantShop.Core.Common.Extensions;
+@using AdvantShop.Core.Services.Admin
+
+@model AdvantShop.Web.Admin.ViewModels.Tasks.TasksListViewModel
+@{
+    Layout = "~/Areas/Admin/Views/Tasks/_TasksLayout.cshtml";
+
+    var pageUrl = Model.TaskGroupId.HasValue
+        ? Url.RouteUrl("Admin_project", new { taskGroupId = Model.TaskGroupId })
+        : Url.Action("Index");
+    var sTaskGroupId = Model.TaskGroupId.HasValue ? Model.TaskGroupId.ToString() : "null";
+}
+
+<div ng-init="tasks.init(@Model.UseKanban.ToLowerString(), '@Model.SelectTasks', '@Model.PreFilter.ToString().ToLower()', @sTaskGroupId, @CustomerContext.CurrentCustomer.IsAdmin.ToLowerString())">
+    @if (!Model.UseKanban)
+    {
+        <div class="ibox m-n">
+            <div class="tasks-navbar">
+                <ul class="nav nav-tabs nav-collapse-tab">
+                    @foreach (TasksPreFilterType item in Model.PreFilterTypes)
+                    {
+                        <li class="ng-tab nav-item@(Model.PreFilter == item ? " active" : "")">
+                            <a href="" class="nav-link" ng-click="tasks.goToTab($event, '@(pageUrl + (item != TasksPreFilterType.None ? "?filterby=" + item.ToString().ToLower() : ""))')">
+                                @item.Localize()
+                                <span class="leads-count-label" ng-if="tasks.grid.gridOptions.TasksCount['@item.ToString()']" ng-bind="tasks.grid.gridOptions.TasksCount['@item.ToString()']"></span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="ibox">
+            <div class="ibox-content no-top-border">
+                <ui-grid-custom grid-unique-id="grid"
+                                grid-row-identificator="'Id'"
+                                grid-on-init="tasks.gridOnInit(grid)"
+                                grid-options="tasks.gridOptions"
+                                grid-params="tasks.gridParams"
+                                grid-url="'tasks/gettasks'"
+                                grid-inplace-url="'tasks/inplacetask'"
+                                grid-extend-ctrl="tasks">
+                    <ui-grid-custom-footer class="ui-grid-custom-footer" ng-bind="tasks.grid.gridOptions.TotalString">
+                    </ui-grid-custom-footer>
+                </ui-grid-custom>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="ibox m-n">
+            <div class="ibox-content p-t-sm p-l-sm p-b-xs" style="padding-left: 10px;">
+                <label class="adv-radio-label">
+                    @T("Admin.Tasks.Index.All")
+                    <input ng-model="tasks.selectTasks" ng-change="tasks.toggleViewTasks(tasks.selectTasks)" value="all" class="adv-radio-input" name="radioTask" type="radio">
+                    <span data-e2e="AllTasks" class="adv-radio-emul"></span>
+                </label>
+                <label class="adv-radio-label">
+                    @T("Admin.Tasks.Index.MyTasks") <span ng-bind="'(' + tasks.kanban.kanbanObj.AssignedToMeTasksCount + ')'"></span>
+                    <input ng-model="tasks.selectTasks" ng-change="tasks.toggleViewTasks(tasks.selectTasks)" value="assignedtome" class="adv-radio-input" name="radioTask" type="radio">
+                    <span data-e2e="MyTasks" class="adv-radio-emul"></span>
+                </label>
+                <label class="adv-radio-label">
+                    @T("Admin.Tasks.Index.TasksAssignedByMe") <span ng-bind="'(' + tasks.kanban.kanbanObj.AppointedByMeTasksCount + ')'"></span>
+                    <input ng-model="tasks.selectTasks" value="appointedbyme" ng-change="tasks.toggleViewTasks(tasks.selectTasks)" class="adv-radio-input" name="radioTask" type="radio">
+                    <span data-e2e="AppointedMe" class="adv-radio-emul"></span>
+                </label>
+                <label class="adv-radio-label">
+                    @T("Admin.Tasks.Index.TasksObservedByMe") <span ng-bind="'(' + tasks.kanban.kanbanObj.ObservedByMeTasksCount + ')'"></span>
+                    <input ng-model="tasks.selectTasks" value="observedbyme" ng-change="tasks.toggleViewTasks(tasks.selectTasks)" class="adv-radio-input" name="radioTask" type="radio">
+                    <span data-e2e="AppointedMe" class="adv-radio-emul"></span>
+                </label>
+            </div>
+        </div>
+
+        <kanban data-sort-options="tasks.sortableOptions"
+                fetch-url="'tasks/getkanban'"
+                fetch-column-url="'tasks/getkanbancolumn'"
+                kanban-on-init="tasks.kanbanOnInit(kanban)"
+                extend-ctrl="tasks"
+                kanban-column-defs="tasks.gridOptions.columnDefs"
+                kanban-on-filter-init="tasks.kanbanOnFilterInit(filter)"
+                kanban-params="tasks.gridParams"
+                modal-add-params="{'taskGroupId': @sTaskGroupId}"
+                card-template-url="../areas/admin/content/src/_shared/kanban/template/tasks/task-card.html"
+                no-cards-template-url="../areas/admin/content/src/_shared/kanban/template/tasks/no-tasks.html"
+                kanban-column-classes="['tasks-kanban-column']"
+                class="task-kanban"
+                uid="kanban"
+                kanban-sticky-top="@(AdminAreaTemplate.Current == null ? 70 : 60)">
+        </kanban>
+    }
+</div>

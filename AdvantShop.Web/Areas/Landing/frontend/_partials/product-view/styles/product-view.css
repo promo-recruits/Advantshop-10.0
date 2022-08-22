@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/*>480 - смартфоны*/
+/*>768 - планшеты*/
+/*>1024 - нетбуки, ноутбуки*/
+/*>1200 - десктоп*/
+/*>1600 - десктоп*/
+.product-gift-image .gifts-list-container {
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+}
+.product-gift-image .gifts-list .gift-txt {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  text-align: left;
+}
+.product-gift-image .gifts-list .gift-img {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.products-view-label-gift {
+  background-color: #cd0303;
+}
+
+.prod-gift-icon {
+  height: 46.6px;
+  width: 50.6px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: url("../../../../images/gift/giftIcon.png") no-repeat top left/100% 100%;
+}
+
+.gift-icon-small {
+  height: 23.3px;
+  width: 25.3px;
+  left: 100%;
+  bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .product-gifts-info.product-gifts-info--abs {
+    position: absolute;
+    right: 0;
+  }
+
+  .product-gifts-info__title {
+    display: none;
+  }
+}
+@media (max-width: 769px) {
+  .product-gifts-info.product-gifts-info--abs {
+    position: static;
+    right: auto;
+  }
+
+  .product-gifts-info__title {
+    text-align: center;
+    display: block;
+  }
+
+  .product-gift-image {
+    height: auto;
+    width: auto;
+    background: none;
+    position: static;
+    z-index: 1;
+    bottom: auto;
+    right: auto;
+  }
+  .product-gift-image .gifts-list-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .product-gift-image .gifts-list {
+    display: block;
+    box-shadow: none;
+    width: auto;
+    position: static;
+    top: auto;
+    transform: translateY(0);
+    right: auto;
+  }
+  .product-gift-image .gifts-list::after, .product-gift-image .gifts-list::before {
+    display: none;
+  }
+}

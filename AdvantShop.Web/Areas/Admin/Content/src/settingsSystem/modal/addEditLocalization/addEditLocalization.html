@@ -1,0 +1,48 @@
+﻿<form>
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{'Admin.Js.SettingsSystem.AddALocalization'|translate}}</h2>
+    </div>
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-3 control-label">
+                        <span class="text-required">
+                            {{'Admin.Js.SettingsSystem.Key'|translate}}
+                        </span>
+                    </label>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" ng-model="ctrl.ResourceKey" required validation-input-text="{{'Admin.Js.SettingsSystem.Key'|translate}}" autofocus />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-3 control-label">
+                        <span class="text-required">
+                            {{'Admin.Js.SettingsSystem.Language'|translate}}
+                        </span>
+                    </label>
+                    <div class="col-xs-9">
+                        <select class="form-control" ng-model="ctrl.langSelected" ng-options="s.Text for s in ctrl.Langs track by s.Value" required validation-input-text="{{'Admin.Js.SettingsSystem.Language'|translate}}">
+                            <option value="">{{'Admin.Js.SettingsTasks.HeNotSelected'|translate}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-3 control-label"><span class="text-required">{{'Admin.Js.SettingsSystem.Value'|translate}}</span></label>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" ng-model="ctrl.ResourceValue" required validation-input-text="{{'Admin.Js.SettingsSystem.Value'|translate}}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-save btn-primary" ladda="ctrl.btnSleep" type="button" data-button-validation-success="ctrl.saveLocalization()" data-button-validation>{{'Admin.Js.SettingsTasks.Save'|translate}}</button>
+        <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.SettingsTasks.Cancel'|translate}}</button>
+    </div>
+</form>

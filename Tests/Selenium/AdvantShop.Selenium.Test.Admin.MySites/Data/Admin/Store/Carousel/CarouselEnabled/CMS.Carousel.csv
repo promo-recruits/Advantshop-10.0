@@ -1,0 +1,7 @@
+CarouselID;URL;SortOrder;Enabled;DisplayInOneColumn;DisplayInTwoColumns;DisplayInMobile;Blank
+1;products/test-product1;1;true;true;false;true;true
+2;products/test-product2;2;true;true;false;true;true
+3;products/test-product3;3;true;true;false;true;true
+4;products/test-product4;4;true;false;true;false;true
+5;products/test-product5;5;true;false;true;false;false
+6;products/test-product6;6;true;false;true;false;false

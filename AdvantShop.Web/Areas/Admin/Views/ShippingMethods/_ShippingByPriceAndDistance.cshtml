@@ -1,0 +1,60 @@
+﻿@using AdvantShop.Repository.Currencies
+@model AdvantShop.Web.Infrastructure.Admin.ShippingMethods.ShippingByPriceAndDistanceShippingAdminModel
+
+
+    <div class="form-group row">
+        <div class="flex-grow-n col-fixed-size-md">
+            <span>@T("Admin.ShippingMethods.ShipByPriceDistance.DependingONTheCostAndDistance")</span>
+        </div>
+        <div class="col-xs-8 relative">
+            <shipping-by-price-limit method-id="@Model.ShippingMethodId"
+                                        price-limit="@Model.PriceLimit">
+            </shipping-by-price-limit>
+        </div>
+    </div>
+
+    <div class="form-group row middle-xs">
+        <div class="flex-grow-n col-fixed-size-md">
+            <span>@T("Admin.ShippingMethods.ShipByPriceDistance.MaximumDistance")</span>
+        </div>
+        <div class="col-xs-2 relative">
+            @Html.TextBoxFor(x => x.MaxDistance, new { ng_model = "shippingMethod.Params.MaxDistance", @class = "form-control" })
+            <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="@T("Admin.ShippingMethods.ShipByPriceDistance.MaximumDistance")">
+                @T("Admin.ShippingMethods.ShipByPriceDistance.MaximumDistanceKm")
+            </help-trigger>
+        </div>
+    </div>
+
+    <div class="form-group row middle-xs">
+        <div class="flex-grow-n col-fixed-size-md">
+            <span>@T("Admin.ShippingMethods.ShipByPriceDistance.DeliveryTime")</span>
+        </div>
+        <div class="col-xs-6 relative">
+            @Html.TextBoxFor(x => x.DeliveryTime, new { ng_model = "shippingMethod.Params.DeliveryTime", @class = "form-control" })
+            <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="@T("Admin.ShippingMethods.ShipByPriceDistance.DeliveryTime")">
+                @T("Admin.ShippingMethods.ShipByPriceDistance.DeliveryTimeAsPeriodOfTime")<br><br>
+                @T("Admin.ShippingMethods.ShipByPriceDistance.ForExample2days")
+            </help-trigger>
+        </div>
+    </div>
+
+
+<div class="shipping-item-settings-header inline content-header m-b-md">
+    @T("Admin.ShippingMethods.ShipByPriceDistance.DefaultProductValues")
+</div>
+
+
+    <div class="form-group row middle-xs">
+        <div class="flex-grow-n col-fixed-size-md">
+            <span class="text-required">@T("Admin.ShippingMethods.ShipByPriceDistance.DefaultDistance")</span>
+        </div>
+        <div class="col-xs-6 relative">
+            @Html.TextBoxFor(x => x.DefaultDistance, new { ng_model = "shippingMethod.Params.DefaultDistance", @class = "form-control", required = "required", validation_input_text = T("Admin.ShippingMethods.ShipByPriceDistance.Distance") })
+            <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="@T("Admin.ShippingMethods.ShipByPriceDistance.ProductWeight")">
+                @T("Admin.ShippingMethods.ShipByPriceDistance.DistanceWillSpecifiedValue")<br /><br />
+                @T("Admin.ShippingMethods.ShipByPriceDistance.ValueInKm")<br /><br />
+                @T("Admin.ShippingMethods.ShipByPriceDistance.ForExample1")
+            </help-trigger>
+        </div>
+    </div>
+

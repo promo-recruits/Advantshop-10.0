@@ -1,0 +1,121 @@
+﻿@import "../../../../../../styles/_settings.scss", "../../../../../../styles/functions/_util.scss";
+
+$colors-viewer-item-margin: rem-calc(2px);
+
+.color-viewer-item {
+    line-height: 0;
+    font-size: 0;
+    display: inline-block;
+    padding: rem-calc(1px);
+    /*margin: rem-calc(1px);*/
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px transparent solid;
+    vertical-align: middle;
+}
+
+.color-viewer-item, .color-viewer-inner {
+    border-radius: $border-radius-small;
+    position: relative;
+    cursor: pointer;
+}
+
+.color-viewer-alt .color-viewer-inner {
+    width: auto !important;
+    height: auto !important;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1;
+    background: transparent !important;
+    border: 0;
+}
+
+.color-viewer-inner {
+    display: inline-flex;
+    background-repeat: no-repeat;
+    margin: 2px;
+    background-size: 100% 100%;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.color-viewer-header {
+    font-size: $font-size-normal;
+    margin-bottom: $vertical-interval-xsmall;
+}
+
+.carousel-colors-wrap {
+    text-align: center;
+
+    .carousel-inner {
+        padding: 0;
+        /*padding: 0 1px;*/
+    }
+}
+
+.color-viewer-list,
+.color-viewer {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+}
+
+.carousel-colors {
+    padding: 0 rem-calc(20px);
+
+    &.carousel-nav-not-show {
+        padding: 0;
+    }
+
+    .color-viewer-list {
+        flex-wrap: nowrap;
+    }
+}
+
+.carousel-colors:not(.carousel-nav-not-show) .carousel-inner,
+.products-view-tile .carousel-colors .carousel-inner{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.products-view .carousel-colors.carousel-initilized {
+    display: block;
+    max-width: 100%;
+}
+.products-view-tile .carousel-colors.carousel-initilized {
+    display: block;
+}
+
+.color-viewer-item-block {
+    border: 1px transparent solid;
+    display: inline-flex;
+    cursor: pointer;
+    border-radius: .1875rem;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.color-viewer-item-wrap {
+    padding: 2px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.color-viewer-item-name {
+    font-size: 14px;
+    box-sizing: border-box;
+    line-height: normal;
+}
+
+.color-viewer-inner + .color-viewer-item-name {
+    padding-left: 5px;
+}
+.color-viewer__color-selected-name{
+    flex-basis: 100%;
+}

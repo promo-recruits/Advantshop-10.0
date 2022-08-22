@@ -1,0 +1,97 @@
+﻿@model AdvantShop.Web.Admin.Models.Landings.LandingAdminSiteSettings
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            Html-код для вставки внутрь HEAD
+        </div>
+    </div>
+    <div class="col-xs-8 relative">
+        @Html.TextAreaFor(x => x.BlockInHead, new {@class = "form-control", ng_model = "landingSite.settings.BlockInHead", rows="12" })
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            Html-код для вставки внутрь BODY
+        </div>
+    </div>
+    <div class="col-xs-8 relative">
+        @Html.TextAreaFor(x => x.BlockInBodyBottom, new {@class = "form-control", ng_model = "landingSite.settings.BlockInBodyBottom", rows = "12"})
+    </div>
+</div>
+
+
+@if (!AdvantShop.Trial.TrialService.IsTrialEnabled)
+{
+    <div class="form-group row">
+        <div class="col-xs-3 col-wl-2">
+            <div class="setting-label-wrap">
+                Скрыть копирайт
+            </div>
+        </div>
+        <div class="col-xs-8 relative">
+            <label class="adv-checkbox-label"  data-e2e="HideCopyright">
+                @Html.CheckBoxFor(x => x.HideAdvantshopCopyright, new { @class = "adv-checkbox-input", ng_model = "landingSite.settings.HideAdvantshopCopyright" })
+                <span class="adv-checkbox-emul"></span>
+            </label>
+        </div>
+    </div>
+}
+
+<div class="setting-title">
+    <h3>Яндекс.Метрика</h3>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            Номер счётчика в метрике
+        </div>
+    </div>
+    <div class="col-xs-8 relative">
+        @Html.TextBoxFor(x => x.YandexCounterId, new {@class = "form-control", ng_model = "landingSite.settings.YandexCounterId" })
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            Код счетчика
+        </div>
+    </div>
+    <div class="col-xs-8 relative">
+        @Html.TextAreaFor(x => x.YandexCounterHtml, new { @class = "form-control", ng_model = "landingSite.settings.YandexCounterHtml", rows = "12" })
+    </div>
+</div>
+
+<div class="setting-title">
+    <h3>Google Analytics</h3>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            Аккаунт Google Analytics <br>(строка вида: 12345678-1)
+        </div>
+    </div>
+    <div class="col-xs-8 relative">
+        @Html.TextBoxFor(x => x.GoogleCounterId, new {@class = "form-control", ng_model = "landingSite.settings.GoogleCounterId" })
+    </div>
+</div>
+
+<div class="setting-title">
+    <h3>Google Tag Manager</h3>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            Идентификатор контейнера
+        </div>
+    </div>
+    <div class="col-xs-8 relative">
+        @Html.TextBoxFor(x => x.GoogleTagManagerId, new { @class = "form-control", ng_model = "landingSite.settings.GoogleTagManagerId" })
+    </div>
+</div>

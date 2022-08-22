@@ -1,0 +1,128 @@
+﻿@model List<AdvantShop.Customers.CustomerFieldWithValue>
+@{
+    /* рендерится сервером, сохраняется сервером или ангуляром */
+    string modelPrefix = ViewBag.CustomerFieldModelPrefix ?? "customer";
+    string onChange = ViewBag.CustomerFieldOnChange ?? null;
+    bool igonreRequired = ViewBag.CustomerFieldIgnoreRequired ?? false;  // игнорируем обязательность поля
+    string readOnlyCtrl = ViewBag.ReadOnlyCtrl ?? "false";
+}
+
+@if (Model != null && Model != null)
+{
+    for (int i = 0; i < Model.Count; i++)
+    {
+        var field = Model[i];
+        var ngmodel = modelPrefix + ".customerfieldsJs[" + i + "].value";
+        var ngchange = onChange;
+        var ngoptions = onChange != null ? "{debounce: 500}" : null;
+        var ngrequired = (!igonreRequired && field.Required).ToLowerString();
+
+        var attributes = new Dictionary<string, object>()
+        {
+            {"class", "form-control"},
+            {"ng-model", ngmodel},
+            {"ng-required", ngrequired},
+            {"validation-input-text", field.Name}
+        };
+
+        if (ngchange != null)
+        {
+            attributes.Add("ng-change", ngchange);
+            attributes.Add("ng-model-options", ngoptions);
+        }
+
+        var init = modelPrefix + ".customerfieldsJs[" + i + "].id=" + field.Id + "; " +
+                   modelPrefix + ".customerfieldsJs[" + i + "].fieldType=" + (int)field.FieldType;
+
+        <div class="form-group custom-fields-row-wrap">
+            <div class="custom-fields-row">
+                <div class="custom-fields-col custom-fields-col-name">
+                    <label class="control-label text-left m-b-xs">
+                        @Html.Raw(ngrequired.Equals("true") ? "<span class=\"text-required\">" + field.Name + "</span>" : field.Name)
+                    </label>
+                </div>
+
+                <div class="custom-fields-col custom-fields-col-value" ng-init="@init">
+
+                    @if (field.FieldType == CustomerFieldType.Text)
+                    {
+                        attributes.Add("ng-readonly", readOnlyCtrl);
+                        attributes.Add("ng-init", ngmodel + "='" + field.Value + "'");
+                        @Html.TextBoxSuggest("customerfields[" + i + "].value", field.Value, attributes, field.Id)
+                    }
+                    else if (field.FieldType == CustomerFieldType.Number)
+                    {
+                        attributes.Add("type", "text");
+                        attributes.Add("pattern", @"^[\d,\.]*$");
+                        attributes.Add("ng-readonly", readOnlyCtrl);
+                        attributes.Add("ng-init", ngmodel + "='" + field.Value + "'");
+                        @Html.TextBox("customerfields[" + i + "].value", field.Value, attributes)
+                    }
+                    else if (field.FieldType == CustomerFieldType.TextArea)
+                    {
+                        attributes.Add("ng-readonly", readOnlyCtrl);
+                        attributes.Add("style", "resize: vertical;");
+                        attributes.Add("ng-init", ngmodel + "='" + field.Value + "'");
+                        @Html.TextAreaSuggest("customerfields[" + i + "].value", field.Value, attributes, field.Id)
+                    }
+                    else if (field.FieldType == CustomerFieldType.Date)
+                    {
+                        <div class="input-group" ng-flatpickr fp-opts="{dateFormat: 'd.m.Y', startDateFormat:'Y-m-d', wrap: true}">
+                            <span class="flatpickr-custom-wrap">
+                                <input ng-disabled="@readOnlyCtrl"
+                                       type="text"
+                                       ng-flatpickr-input
+                                       id="customerfields_@(i)_value"
+                                       name="customerfields[@(i)].value"
+                                       class="form-control"
+                                       ng-model="@ngmodel"
+                                       ng-required="@ngrequired"
+                                       @Html.Raw(ngchange != null ? "ng-change='" + ngchange + "'" : "")
+                                       validation-input-text="@field.Name"
+                                       ng-init="@ngmodel='@(field.Value)'">
+                                <span class="flatpickr-custom-clear" data-close data-clear><i class="fas fa-times"></i></span>
+                            </span>
+                            <span class="input-group-addon" data-toggle><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                    }
+                    else if (field.FieldType == CustomerFieldType.Select)
+                    {
+                        var fieldValues = field.Values;
+                        var selectedValue = "";
+
+
+                        if (field.Required == false)
+                        {
+                            fieldValues.Insert(0, new SelectListItem()
+                            {
+                                Text = "––––",
+                                Value = ""
+                            });
+                        }
+
+                        if (field.Value != null && (field.Required == true || field.Value != ""))
+                        {
+                            selectedValue = field.Value;
+                            if (fieldValues.Find(x => x.Value == selectedValue) == null)
+                            {
+                                fieldValues.Insert(0, new SelectListItem() { Text = selectedValue, Value = selectedValue });
+                            }
+                        }
+                        else
+                        {
+                            var firstValue = fieldValues.FirstOrDefault();
+                            selectedValue = firstValue != null ? firstValue.Value : "";
+                        }
+
+                        attributes.Add("ng-init", ngmodel + "='" + selectedValue + "'");
+                        attributes.Add("ng-disabled", readOnlyCtrl);
+                        @Html.DropDownList("customerfields[" + i + "].value", fieldValues, attributes)
+                    }
+
+                    @Html.Hidden("customerfields[" + i + "].FieldType", field.FieldType)
+                    @Html.Hidden("customerfields[" + i + "].id", field.Id)
+                </div>
+            </div>
+        </div>
+    }
+}

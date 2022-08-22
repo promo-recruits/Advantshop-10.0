@@ -1,0 +1,224 @@
+﻿@model AdvantShop.ViewModel.PreOrder.PreOrderViewModel
+@{
+    Html.AddAsset("preorder");
+}
+@{
+    var product = Model.Offer.Product;
+}
+
+<div class="preorder-page">
+    <div class="page-title-row details-title-row">
+        <div class="preorder-title page-title cs-bg-4--mobile">
+            <h1 class="main-title">@T("PreOrder.Index.Header") - @product.Name</h1>
+        </div>
+    </div>
+    @if (!Model.IsLanding)
+    {
+        @Html.Action("BreadCrumbs", "Common", new { Model.BreadCrumbs })
+    }
+    <div class="mobile-container-fluid">
+        <div class="row">
+            @if (Model.CanOrderByRequest)
+            {
+                <div class="col-xs-12 col-sm-8 col-p-v">
+                    <div class="preorder-text">
+                        @Html.StaticBlock("requestOnProduct")
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-10">
+                            @using (Html.BeginRouteForm("preorder", FormMethod.Post, new { @class = "preorder-form", name = "preorderForm", novalidate = "novalidate" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <label class="row middle-xs">
+                                    <span class="col-xs-6 col-sm-4 vertical-interval-small">
+                                        <span class="form-field-name input-required vertical-interval-small">@T("PreOrder.Index.Amount")</span>
+                                    </span>
+                                    <span class="col-xs-6 col-sm">
+                                        <span class="form-field-input vertical-interval-small" data-ng-init="preorder.amount=@Model.Amount.ToInvariantString()">
+                                            <span data-spinbox
+                                                  class="preorder-page-product-amount"
+                                                  data-value="preorder.amount"
+                                                  data-step="@product.Multiplicity.ToInvariantString()"
+                                                  data-max="@product.MaxAmount.ToInvariantString(Int16.MaxValue)"
+                                                  data-min="@Model.ProdMinAmount.ToInvariantString()"></span>
+
+                                            @Html.TextBox("amount", Model.Amount, new { @class = "hidden", data_ng_model = "preorder.amount", type = "number" })
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="row middle-xs">
+                                    <span class="col-xs-12 col-sm-4">
+                                        <span class="form-field-name input-required vertical-interval-small">@T("PreOrder.Index.FirstName")</span>
+                                    </span>
+                                    <span class="col-xs-12 col-sm-8">
+                                        <span class="form-field-input vertical-interval-small">
+                                            @Html.TextBox("firstName", Model.FirstName, new { @class = "input-small", data_ng_model = "preorder.firstname", required = "true" })
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="row middle-xs">
+                                    <span class="col-xs-12 col-sm-4">
+                                        <span class="form-field-name vertical-interval-small">@T("PreOrder.Index.LastName")</span>
+                                    </span>
+                                    <span class="col-xs-12 col-sm-8">
+                                        <span class="form-field-input vertical-interval-small">
+                                            @Html.TextBox("lastName", Model.LastName, new { @class = "input-small", data_ng_model = "preorder.lastname" })
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="row middle-xs">
+                                    <span class="col-xs-12 col-sm-4">
+                                        <span class="form-field-name input-required vertical-interval-small">E-mail:</span>
+                                    </span>
+                                    <span class="col-xs-12 col-sm-8">
+                                        <span class="form-field-input vertical-interval-small">
+                                            @Html.TextBox("email", Model.Email, new { @class = "input-small", data_ng_model = "preorder.email", required = "true", type = "email", pattern = "^([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+)|(admin)$", })
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="row middle-xs">
+                                    <span class="col-xs-12 col-sm-4">
+                                        <span class="form-field-name input-required vertical-interval-small">@T("PreOrder.Index.Phone")</span>
+                                    </span>
+                                    <span class="col-xs-12 col-sm-8">
+                                        <span class="form-field-input vertical-interval-small">
+                                            @*Html.TextBox("phone", Model.Phone, new { @class = "input-small", data_ng_model = "preorder.phone", required = "true", type = "tel" })*@
+                                            @Html.TextBox("phone", Model.Phone, new
+                                       {
+                                           @class = "input-small",
+                                           type = "tel",
+                                           placeholder = "{{ :: 'Js.Phone.PhonePlaceholder' | translate }}",
+                                           data_mask_control = SettingsMain.EnablePhoneMask.ToLowerString(),
+                                           data_mask_control_preset = "phone",
+                                           data_ng_required = "true",
+                                           data_ng_model = "checkout.newCustomer.phone",
+                                       })
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="row middle-xs">
+                                    <span class="col-xs-12 col-sm-4">
+                                        <span class="form-field-name vertical-interval-small">@T("PreOrder.Index.Comment")</span>
+                                    </span>
+                                    <span class="col-xs-12 col-sm-8">
+                                        <span class="form-field-input vertical-interval-small">
+                                            @Html.TextArea("comment", null, new { @class = "textarea-middle", data_ng_model = "preorder.comment" })
+                                        </span>
+                                    </span>
+                                </label>
+                                if (SettingsCheckout.IsShowUserAgreementText)
+                                {
+                                    <label class="row middle-xs">
+                                        <span class="col-xs-12 col-sm-4">
+                                        </span>
+                                        <span class="col-xs-12 col-sm-8">
+                                            <span class="form-field-input vertical-interval-xsmall">
+                                                @Html.CheckBox("Agreement", new { data_ng_model = "checkout.newCustomer.agreement", @class = "custom-input-native", data_ng_init = "checkout.newCustomer.agreement = " + SettingsCheckout.AgreementDefaultChecked.ToLowerString(), required = "required" })
+                                                <span class="custom-input-checkbox"></span>
+                                                @Html.Raw(SettingsCheckout.UserAgreementText)
+                                            </span>
+                                        </span>
+                                    </label>
+                                }
+                                if (SettingsMain.EnableCaptchaInPreOrder)
+                                {
+                                    <label class="row middle-xs">
+                                        <span class="col-xs-12 col-sm-4">
+                                            <span class="form-field-name  input-required vertical-interval-small">@T("Captcha.Code")</span>
+                                        </span>
+                                        <span class="col-xs-12 col-sm-8">
+                                            <span class="form-field-input vertical-interval-small">
+                                                @Html.Captcha("preorder.captcha")
+                                            </span>
+                                        </span>
+                                    </label>
+                                }
+                                @Html.Hidden("offerId", Model.Offer.OfferId)
+                                @Html.HiddenFor(m => m.OptionsHash)
+                                <input type="hidden" name="isLanding" id="isLanding" value="@Model.IsLanding.ToLowerString()" />
+                                <label class="row middle-xs">
+                                    <span class="col-xs-12 col-sm-8 col-sm-offset-4">
+                                        <span class="form-field-input vertical-interval-small">
+                                            <button type="button" data-ladda="preorder.isValid" class="btn btn-small btn-submit" data-button-validation="preorder.validateInput()" data-button-validation-success="preorder.submit(FormCtrl)">@T("PreOrder.Index.Send")</button>
+                                        </span>
+                                    </span>
+                                </label>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                @T("PreOrder.Index.CantBeOrdered")
+            }
+            @if (!Model.IsLanding)
+            {
+                <div class="col-xs-12  col-sm-4 col-p-v">
+                    <div class="preorder-product">
+                        <div class="h1">
+                            @Html.Raw(product.Name)
+                        </div>
+                        <figure class="gallery-picture">
+                            <a href='@Url.RouteUrl("Product", new { url = product.UrlPath })'>
+                                <img src="@Model.ImageSrc" alt="@Html.Encode(product.Name)" title="@Html.Encode(product.Name)" class="gallery-picture-obj" width="@SettingsPictureSize.MiddleProductImageWidth" height="@SettingsPictureSize.MiddleProductImageHeight" />
+                            </a>
+                        </figure>
+                        <div class="details-row">
+                            <div class="products-view-meta">
+                                <ul class="products-view-meta-list text-align-center">
+                                    @if (@Model.ManufacturerName.IsNotEmpty())
+                                    {
+                                        <li class="products-view-meta-item">
+                                            <span class="cs-t-1">
+                                                @T("PreOrder.Index.Brand"):
+                                                <a href='@Url.RouteUrl("Brand", new {url = Model.ManufacturerUrl})'>@Model.ManufacturerName</a>
+                                            </span>
+                                        </li>
+                                    }
+                                    @if (@Model.EnabledReviewsCount)
+                                    {
+                                        <li class="products-view-meta-item cs-br-1"><a href='@Url.RouteUrl("Product", new {url = product.UrlPath})#reviews'>@Model.ReviewsCount</a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="details-row preorder-avalable-wrap">
+                            <span class="availability @(Model.Offer.Amount > 0 ? "available" : "not-available")">
+                                @if (@Model.Offer.Amount > 0)
+                                {
+                                    @T("PreOrder.Index.Available")
+                                }
+                                else
+                                {
+                                    @T("PreOrder.Index.NotAvailable")
+                                }
+                            </span>
+                        </div>
+                        <div class="details-row preorder-rating-wrap">
+                            @Html.Action("Rating", "Common", new { objId = product.ProductId, Rating = product.ManualRatio ?? product.Ratio })
+                        </div>
+                        <div class="details-row preorder-price-wrap">
+                            @Html.Raw(Model.PreparedPrice)
+                        </div>
+                        @if (Model.Offer.Color != null)
+                        {
+                            <div class="details-row">
+                                @Html.Raw(SettingsCatalog.ColorsHeader + ": " + Model.Offer.Color.ColorName)
+                            </div>
+                        }
+                        @if (Model.Offer.Size != null)
+                        {
+                            <div class="details-row">
+                                @Html.Raw(SettingsCatalog.SizesHeader + ": " + Model.Offer.Size.SizeName)
+                            </div>
+                        }
+                        <div>
+                            @Html.Raw(Model.OptionsRendered)
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

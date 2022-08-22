@@ -1,0 +1,135 @@
+.block-user .form-field-name, .forgot-container .form-field-name, .registration-block .form-field-name {
+  padding-right: 0.625rem;
+  display: inline-block;
+}
+.block-user .form-field-name, .block-user .form-field-input, .forgot-container .form-field-name, .forgot-container .form-field-input, .registration-block .form-field-name, .registration-block .form-field-input {
+  display: block;
+}
+.block-user .btn, .forgot-container .btn, .registration-block .btn {
+  cursor: pointer;
+}
+.block-user .btn-middle, .forgot-container .btn-middle, .registration-block .btn-middle {
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 0.75rem;
+}
+.block-user .btn, .forgot-container .btn, .registration-block .btn {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  border: 0;
+  text-align: center;
+  border-radius: 0.3125rem;
+  line-height: 1.3;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.block-user .btn-action, .forgot-container .btn-action, .registration-block .btn-action {
+  color: #fff;
+  background: #4b4f58;
+}
+.block-user .btn-action:hover, .forgot-container .btn-action:hover, .registration-block .btn-action:hover {
+  color: #fff;
+  background: #575b66;
+}
+.block-user .btn-action:active, .forgot-container .btn-action:active, .registration-block .btn-action:active {
+  color: #fff;
+  background: #3f434a;
+}
+.block-user .btn-action:disabled, .block-user .btn-action.btn-disabled, .forgot-container .btn-action:disabled, .forgot-container .btn-action.btn-disabled, .registration-block .btn-action:disabled, .registration-block .btn-action.btn-disabled {
+  color: #94969b;
+  background: #e2e3e4;
+}
+.block-user .btn-submit, .forgot-container .btn-submit, .registration-block .btn-submit {
+  color: #fff;
+  background: #0662c1;
+}
+.block-user .btn-submit:hover, .forgot-container .btn-submit:hover, .registration-block .btn-submit:hover {
+  color: #fff;
+  background: #076fda;
+}
+.block-user .btn-submit:active, .forgot-container .btn-submit:active, .registration-block .btn-submit:active {
+  color: #fff;
+  background: #0555a8;
+}
+.block-user .btn-submit:disabled, .block-user .btn-submit.btn-disabled, .forgot-container .btn-submit:disabled, .forgot-container .btn-submit.btn-disabled, .registration-block .btn-submit:disabled, .registration-block .btn-submit.btn-disabled {
+  color: #94969b;
+  background: #e2e3e4;
+}
+.block-user .vertical-interval-xsmall, .forgot-container .vertical-interval-xsmall, .registration-block .vertical-interval-xsmall {
+  margin: 0.3125rem 0;
+}
+.block-user .input-required, .forgot-container .input-required, .registration-block .input-required {
+  position: relative;
+}
+.block-user input[type=text], .block-user input[type=password], .block-user input[type=search], .block-user input[type=email], .block-user input[type=number], .block-user input[type=tel], .block-user input[type=url], .block-user textarea, .forgot-container input[type=text], .forgot-container input[type=password], .forgot-container input[type=search], .forgot-container input[type=email], .forgot-container input[type=number], .forgot-container input[type=tel], .forgot-container input[type=url], .forgot-container textarea, .registration-block input[type=text], .registration-block input[type=password], .registration-block input[type=search], .registration-block input[type=email], .registration-block input[type=number], .registration-block input[type=tel], .registration-block input[type=url], .registration-block textarea {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px #e2e3e4 solid;
+  vertical-align: middle;
+  width: 100%;
+  appearance: none;
+  box-shadow: none;
+}
+.block-user .input-small, .forgot-container .input-small, .registration-block .input-small {
+  padding: 0.5625rem;
+}
+.block-user a, .forgot-container a, .registration-block a {
+  color: #1779fa;
+}
+.block-user a:hover, .forgot-container a:hover, .registration-block a:hover {
+  color: #0459c8;
+}
+.block-user a:active, .forgot-container a:active, .registration-block a:active {
+  color: #1779fa;
+}
+
+.auth-container .link-forget, .auth-container .link-registartion {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+.auth-container .link-forget {
+  margin-right: 10px;
+}
+
+.auth-container, .forgot-container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.registration-block, .forgot-container {
+  flex: 1 0 auto;
+  position: relative;
+}
+
+.forgot-container {
+  margin: 0 auto;
+}
+
+.forgot-title, .registration-block__title, .auth-block__title {
+  line-height: 1.33;
+  font-weight: 300;
+}
+
+.btn-forgot {
+  margin-bottom: 5px;
+}
+
+.registration-block {
+  padding-bottom: 30px;
+}
+
+@media (min-width: 64em) {
+  .forgot-container {
+    max-width: 70%;
+  }
+
+  .forgot-container__form-block,
+.forgot-container__description-block {
+    width: 50%;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+}

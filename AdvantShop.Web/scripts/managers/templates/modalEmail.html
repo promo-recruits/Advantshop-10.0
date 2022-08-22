@@ -1,0 +1,65 @@
+﻿<div class="row">
+    <div class="col-xs-12" ng-switch="managers.currentFormEmail">
+        <div ng-switch-when="main">
+            <label class="row middle-xs">
+
+            </label>
+            <label class="row middle-xs form-field-control">
+                <span class="col-xs-4 form-field-name-wrap">
+                    <span class="form-field-name vertical-interval-middle input-required" data-translate="Js.Managers.Name"></span>
+                </span>
+                <span class="col-xs form-field-input-wrap">
+                    <span class="form-field-input vertical-interval-middle">
+                        <input type="text" id="managersRequestName" class="input-small" data-ng-model="managers.clientname" required />
+                    </span>
+                </span>
+            </label>
+            <label class="row middle-xs form-field-control">
+                <span class="col-xs-4 form-field-name-wrap">
+                    <span class="form-field-name vertical-interval-middle input-required">Email</span>
+                </span>
+                <span class="col-xs form-field-input-wrap">
+                    <span class="form-field-input vertical-interval-middle">
+                        <input type="email" id="managersRequestEmail" class="input-small" data-ng-model="managers.email" required />
+                    </span>
+                </span>
+            </label>
+            <label class="row middle-xs form-field-control">
+                <span class="col-xs-4 form-field-name-wrap">
+                    <span class="form-field-name vertical-interval-middle input-required" data-translate="Js.Managers.EmailText"></span>
+                </span>
+                <span class="col-xs form-field-input-wrap">
+                    <span class="form-field-input vertical-interval-middle">
+                        <textarea id="managersRequestPhone" class="input-small" data-ng-model="managers.emailtext" style="height: 100px" required></textarea>
+                    </span>
+                </span>
+            </label>
+
+            <label class="row middle-xs vertical-interval-middle form-field-control" data-ng-if="::managers.IsShowUserAgreementText">
+                <span class="col-xs-4 form-field-name-wrap form-field-checkbox-empty-label-wrap">
+                    <span class="form-field-name"></span>
+                </span>
+                <span class="col-xs-8 form-field-input-wrap">
+                    <span class="form-field-input">
+                        <input type="checkbox"
+                               data-ng-model="managers.useragreement"
+                               data-ng-init="managers.useragreement = managers.AgreementDefaultChecked"
+                               name="managersEmailUserAgreement"
+                               id="managersEmailUserAgreement"
+                               value=""
+                               class="input-small custom-input-native required"
+                               data-ng-required="true" />
+                        <span class="custom-input-checkbox">
+                        </span>
+                        <span class="custom-input-text" data-ng-bind-html="::managers.UserAgreementText"></span>
+                    </span>
+                </span>
+            </label>
+        </div>
+
+        <div ng-switch-when="final">
+            <span  data-translate="Js.Managers.EmailFinalText"></span>
+        </div>
+
+    </div>
+</div>

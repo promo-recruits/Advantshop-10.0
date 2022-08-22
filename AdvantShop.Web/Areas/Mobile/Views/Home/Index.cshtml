@@ -1,0 +1,98 @@
+﻿@using AdvantShop.CMS;
+@model AdvantShop.Areas.Mobile.Models.Home.HomeMobileViewModel
+@{
+    Html.AddAsset("home");
+}
+
+@Html.Partial("_HomeHead", Model)
+
+<div id="content">
+    @Html.StaticBlock("mainpage_before_carousel")
+    @Html.Action("Carousel", "Home")
+    @Html.RenderModules("mobile_after_carousel")
+
+    @if (!StaticBlockService.GetPagePartByKeyWithCache("TextOnMain").Content.Contains("Это тег H1"))
+    {
+        <div class="mobile-content-padding">
+            @Html.StaticBlock("TextOnMain")
+        </div>
+    }
+
+    @Html.RenderModules("mainpage_block")
+    @Html.Action("CatalogRootsOnMain", "Catalog")
+    @Html.RenderModules("mainpage_products_before")
+
+    @if (Model.Bestsellers != null && Model.Bestsellers.Products.Count > 0)
+    {
+        <section class="mainpage-products mainpage-products--best cs-t-1">
+            <div class="mainpage-products__header">
+                <div class="mainpage-products__header-title">@T("Home.MainPageProducts.BestSellersTitle")</div>
+                <div class="mainpage-products__all">
+                    <a class="mainpage-products__all-link" href="@Url.AbsoluteRouteUrl("ProductList", new {type = "best"})">@T("Home.MainPageProducts.BestSellersAllLink")</a>
+                </div>
+            </div>
+            <div class="bestsellers-section__content">
+                @Html.Action("MainPageProducts", "Home", new { products = Model.Bestsellers })
+            </div>
+        </section>
+    }
+
+    @if (Model.NewProducts != null && Model.NewProducts.Products.Count > 0)
+    {
+        <section class="novelty-section mainpage-products">
+            <div class="cs-t-5 mainpage-products__header">
+                <div class="mainpage-products__header-title">
+                    <i class="icon-star-empty-before"></i>
+                    @T("Home.MainPageProducts.NewProductsTitle")
+                </div>
+                <div class="mainpage-products__all">
+                    <a class="mainpage-products__all-link" href="@Url.AbsoluteRouteUrl("ProductList", new { type = !Model.NewArrivals ? "new" : "newarrivals" })">@T("Home.MainPageProducts.NewProductsAllLink")</a>
+                </div>
+            </div>
+            <div class="novelty-section__content">
+                @Html.Action("MainPageProducts", "Home", new { products = Model.NewProducts })
+            </div>
+        </section>
+    }
+
+    @if (Model.Sales != null && Model.Sales.Products.Count > 0)
+    {
+        <section class="sale-section mainpage-products">
+            <div class="cs-t-9 mainpage-products__header">
+                <div class="mainpage-products__header-title">
+                    @T("Home.MainPageProducts.SalesTitle")
+                </div>
+                <div class="mainpage-products__all">
+                    <a class="mainpage-products__all-link" href="@Url.AbsoluteRouteUrl("ProductList", new {type = "sale"})">@T("Home.MainPageProducts.SalesAllLink")</a>
+                </div>
+            </div>
+            <div class="sale-section__content">
+                @Html.Action("MainPageProducts", "Home", new { products = Model.Sales })
+            </div>
+        </section>
+    }
+
+    @foreach (var productList in Model.ProductLists)
+    {
+        <section class="prodList-section mainpage-products">
+            <div class=" cs-t-9 mainpage-products__header">
+                <div class="mainpage-products__header-title">
+                    <a href="@Url.AbsoluteRouteUrl("ProductList", new {type = "list", list = productList.Id})">@Html.Raw(productList.Title)</a>
+                </div>
+                <div class="mainpage-products__all">
+                    <a class="mainpage-products__all-link" href="@Url.AbsoluteRouteUrl("ProductList", new {type = "list", list = productList.Id})">@T("Home.MainPageProducts.AllProducts")</a>
+                </div>
+            </div>
+            <div class="prodList-section__content">
+                @Html.Action("MainPageProducts", "Home", new { products = productList })
+            </div>
+        </section>
+    }
+
+    @Html.RenderModules("mainpage_products")
+
+    <div class="mobile-content-padding">
+        @Html.StaticBlock("TextOnMain2")
+    </div>
+    @Html.Action("NewsSubscriptionSlim", "News", new { area = "" })
+</div>

@@ -1,0 +1,252 @@
+
+.create__site-page {
+    .create-balance__block--title-wrap {
+        display: flex;
+        align-items: center;
+        margin: 0 16px 30px;
+        padding: 10px 0;
+        justify-content: center;
+    }
+
+
+
+    .create-balance__block,
+    .create__sites-balance__block {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .create-balance__block--content {
+
+        .ng-tab > a {
+            border-radius: 4px;
+            padding: 5px 12px;
+            margin-right: 0px;
+            background-color: transparent;
+            color: #2f4050;
+            border: 0;
+        }
+
+        .nav-tabs > li.active > a {
+            border-width: 0;
+            background-color: #1A051D;
+            color: #fff;
+        }
+    }
+
+
+    .create__sites-balance__block {
+        .carousel-main-next-custom,
+        .carousel-main-prev-custom {
+            display: none;
+        }
+
+        .create__sites-right-block,
+        .create__sites-left-block {
+            min-width: 100%;
+        }
+
+        .create__sites-right-block {
+            margin-bottom: 40px;
+            padding: 0;
+        }
+
+        .create__site-img-wrap {
+            max-height: 370px;
+            overflow: hidden;
+            border-bottom: 1px solid #eaecef;
+
+            img {
+                border-bottom: none;
+            }
+        }
+
+        .create__site-img-wrap:before, .create__site-img-wrap:after {
+            content: none;
+        }
+    }
+
+    .carousel-dots-item-inner {
+        background-color: black;
+    }
+
+    .breadcrumb__link-block {
+        margin-bottom: 0;
+    }
+
+    .create__site-page-title {
+        flex-grow: 1;
+    }
+
+    .page-name-block-text,
+    .create__site-page-title {
+        text-align: center;
+    }
+
+    .create__sites-block-content {
+        flex-wrap: wrap;
+
+        .col-xs-slim {
+            max-width: 100%;
+            margin-bottom: 40px;
+        }
+    }
+
+    .create__sites-right-block {
+        order: -1;
+    }
+
+    .last-item {
+        padding: 0 0 42px;
+        max-width: 100%;
+    }
+
+    .tab-pane.active {
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+.create__site-page-title {
+    margin: 0;
+    line-height: 1;
+}
+
+.create-site-h {
+    margin-left: 0;
+}
+
+.pages-site {
+    display: none;
+}
+
+.balance__padding-page {
+    background-color: transparent;
+    margin: 0
+}
+
+.create__site-page {
+    .balance__padding-page--header {
+        position: sticky;
+        top: 0;
+        background-color: #FAFAFB;
+        z-index: 100;
+    }
+}
+
+.dashboard-page__link {
+    color: #2f4050;
+}
+
+.page-name-block-item-main {
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding-right: 0;
+    text-align: center;
+    margin-right: -0.625rem;
+}
+
+.dashboard-balance__block {
+    padding-top: 0px;
+    margin-left: 0.625rem;
+    margin-right: 0.625rem;
+
+    .sticky-page-name {
+        margin-right: -0.625rem;
+        margin-left: -0.625rem;
+        z-index: 100;
+    }
+}
+
+.dashboard-site__block {
+    padding: 0;
+}
+
+.dashboard__list-sites {
+    margin-top: 40px;
+}
+
+.dashboard-site .landing-link-iframe {
+    max-width: calc(100vw - 34px);
+    border: none;
+    border-radius: 8px 8px 0 0;
+}
+
+.dashboard-site__block {
+    .col-xs-slim {
+        padding: 0px;
+    }
+}
+
+.dashboard-site-content {
+    padding: 16px 8px;
+}
+
+.dashboard-site-name {
+    margin-bottom: 0;
+
+    a {
+        font-size: 16px;
+        font-weight: 500;
+        text-align: left;
+        color: #1A051D;
+    }
+}
+
+.dashboard-site--secondary-text {
+    font-size: 11px;
+    font-weight: 400;
+    text-align: left;
+    color: #ACAEAF;
+    display: block;
+}
+
+.dashboard-site-actions {
+    .link-alternative {
+        color: #1A051D;
+        text-decoration: none;
+    }
+}
+
+.dashboard-btn__block {
+    margin-top: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .btn-submit {
+        flex-grow: 1;
+    }
+}
+
+.dashboard-btn-main__site {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: 14px;
+}
+
+.dashboard-btn-main__site--active {
+    color: #00C48C;
+}
+
+.link-alternative--delete {
+    color: #FF647C;
+    text-decoration: none;
+}
+
+.dashboard-site-actions {
+    margin-bottom: 25px;
+}
+
+.dashboard-site-domain__text {
+    display: block;
+}
+
+.add-new-site-wrap{
+    display:inline;
+}
+
+.add-new-site {
+    width: 100%;
+}

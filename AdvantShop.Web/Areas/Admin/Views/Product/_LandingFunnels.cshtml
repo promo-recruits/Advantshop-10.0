@@ -1,0 +1,89 @@
+﻿@using AdvantShop.Core.Services.Admin
+@model AdvantShop.Web.Admin.Models.Catalog.Products.AdminProductModel
+@{
+    bool isAdminV3 = AdminAreaTemplate.Current != null;
+}
+<div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="inline product-setting-title content-header">
+                    @T("Admin.Product.LandingFunnels.AdditionalSales")
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="form-group row">
+            <div class="col-xs-12" ng-init="product.getLandingFunnelLink()">
+                <div ng-if="product.landingFunnelLink == null" class="ng-cloak">
+                    <div class="m-b">
+                        <p>После оформления заказа клиент может быть перенаправлен на воронку с допродажами, где он сможет дополнить заказ нужными товарами.</p>
+                        <p>
+                            Первой показывается страница с товаром Cross Sell - это товар, который дополняет основной товар. Если клиент соглашается добавить его, то он сразу же переходит на страницу благодарности. Если же клиент отказывается от Cross Sell, то он переходит на страницу с Down Sell - это товар с более низкой ценой, но высокой маржинальностью. Это может быть более дешевый аналог Cross Sell.
+                        </p>
+                    </div>
+                    <div>
+                        @if (Model.IsLandingFunnelsEnabled)
+                        {
+                            <ui-modal-trigger data-controller="'ModalAddLandingSiteCtrl'" controller-as="ctrl" size="lg"
+                                              template-url="../areas/admin/content/src/_shared/modal/addLandingSite/addLandingSite.html"
+                                              data-resolve="{data: {'additionalSalesProductId': @Model.ProductId, 'productId': @Model.ProductId, 'lpType': 'ProductCrossSellDownSell', 'template': 'ProductCrossSellDownSell'}}"
+                                              data-on-close="product.onAddLandingFunnelLink()">
+                                <a href="" data-e2e="ProductLanding" class="btn btn-sm btn-success">
+                                    @T("Admin.Product.LandingFunnels.CreateLandingFunnel")
+                                </a>
+                            </ui-modal-trigger>
+                            if (Model.HasFunnels)
+                            {
+                                <ui-modal-trigger data-controller="'ModalChooseLandingFunnelCtrl'" controller-as="ctrl" size="lg"
+                                                  template-url="../areas/admin/content/src/product/modal/chooseLandingFunnel/chooseLandingFunnel.html"
+                                                  data-on-close="product.onAddExistingLandingFunnel(result)">
+                                    <a href="" class="btn btn-sm btn-action">
+                                        Выбрать существую воронку
+                                    </a>
+                                </ui-modal-trigger>
+                            }
+                        }
+                        else if (isAdminV3)
+                        {
+                            if (CustomerContext.CurrentCustomer.IsAdmin)
+                            {
+                                <ui-modal-trigger data-controller="'ModalSalesChannelsCtrl'" controller-as="ctrl"
+                                                  template-url="../areas/admin/content/src/_shared/modal/salesChannels/salesChannels.html"
+                                                  class="sidebar-unit-modal-trigger"
+                                                  window-class="simple-modal modal-sales-channels"
+                                                  data-resolve="{data: {'selectedChannelTypeStr': 'funnel'}}">
+                                    <a href="" data-e2e="InstallLandingFunnels" class="btn btn-sm btn-success">
+                                        @T("Admin.Product.LandingFunnels.InstallLandingFunnels")
+                                    </a>
+                                </ui-modal-trigger>
+                            }
+                            else
+                            {
+                                <a href="" class="btn btn-sm btn-action disabled">
+                                    Воронки продаж не подключены
+                                </a>
+                            }
+                        }
+                        else
+                        {
+                            <a href="settingssystem#?systemTab=applications" data-e2e="InstallLandingFunnels" class="btn btn-sm btn-success">
+                                @T("Admin.Product.LandingFunnels.InstallLandingFunnels")
+                            </a>
+                        }
+                    </div>
+                </div>
+                <div ng-if="product.landingFunnelLink != null" class="ng-cloak">
+                    <div>
+                        <h3>Воронка допродаж:</h3>
+                    </div>
+                    <a href="{{product.landingFunnelLink}}" target="_blank">{{product.landingFunnelLink}}</a>
+                    <a href="" ng-click="product.deleteLinkLandingFunnel()" class="link-invert m-l-xs">Отвязать воронку</a>
+                    <a href="" ng-click="product.deleteLandingFunnel()" class="link-danger m-l-xs">Удалить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
