@@ -1,0 +1,65 @@
+testType;Yandex;
+defaultExportType;xml;
+pepCouponValueCur1;100
+pepCouponCur;RUB
+pepCouponType;"type=\""promo code\"""
+testName1;PromocodePAll
+pep1CategoryCount1;6
+pep1PromosCount1;2
+pep1Promos11;"<product offer-id=\""11\"" /><product category-id=\""3\"" />"
+pep1Promos12;"<product offer-id=\""1\"" /><product category-id=\""2\"" />"
+pep1CategoryCount2;3
+pep1PromosCount2;2
+pep1Promos21;"<product category-id=\""3\"" />"
+pep1Promos22;"<product offer-id=\""11\"" />"
+testName2;PromocodePCat
+pep2CategoryId;4; все товары из этой категории
+pep2Product21;TestProduct3; промокод для товаров из разных категорий
+pep2Product22;TestProduct10; промокод для товаров из разных категорий
+pep2Product23;TestProduct12; промокод для товаров из разных категорий
+pep2Product31;TestProduct6; промокод для неактивных товаров
+pep2Product32;TestProduct7; промокод для неактивных товаров
+pep2Product4;TestProduct27; промокод из неактивной категории
+pep2CategoryCount;6
+pep2PromosCount;2
+pep2Promos1;"<product offer-id=\""16\"" /><product offer-id=\""17\"" />"
+pep2Promos2;"<product offer-id=\""3\"" /><product offer-id=\""10\"" /><product offer-id=\""12\"" />"
+pep2Promos31;"<product offer-id=\""6\"" />"
+pep2Promos32;"<product offer-id=\""7\"" />"
+pep2Promos4;"<product offer-id=\""27\"" />"; ожидается фэйл
+testName3;PromocodePSelected;выбраны категории 3, 6
+pep3Product1;TestProduct26; промокод для товаров из включенных категорий
+pep3Product21;TestProduct11; промокод для товаров из разных категорий
+pep3Product22;TestProduct12; промокод для товаров из разных категорий
+pep3Product23;TestProduct16; промокод для товаров из разных категорий
+pep3Product3;TestProduct5; промокод для товаров из невключенных категорий
+pep3CategoryCount;2
+pep3PromosCount;2
+pep3Promos1;"<product offer-id=\""26\"" />"
+pep3Promos2;"<product offer-id=\""11\"" /><product offer-id=\""12\"" />"
+pep3Promos3;"<product offer-id=\""5\"" />"; false!!!
+testName4;PromocodePExcluded;выбраны категории 3, 6
+pep4Excluded1;TestProduct15
+pep4Excluded2;TestProduct26
+pep4CategoryId;3; все товары из этой категории
+pep4Product1;TestProduct26; исключенный товар
+pep4CategoryCount;2
+pep4PromosCount;2
+pep4PromosCount2;2
+pep4Promos11;"<product offer-id=\""11\"" /><product offer-id=\""12\"" /><product offer-id=\""13\"" /><product offer-id=\""14\"" /><product offer-id=\""1001\"" />"
+pep4Promos12;"<product offer-id=\""11\"" /><product offer-id=\""12\"" /><product offer-id=\""13\"" /><product offer-id=\""14\"" />"
+pep4Promos2;"<product offer-id=\""26\"" />"; false!!!
+pep4Promos31;"<product offer-id=\""1001\"" />"; true
+pep4Promos32;"<product category-id=\""3\"" /><product category-id=\""6\"" />";
+testName5;PromocodePModifications;выбран только 9-тый товар
+pep5Product;TestProduct9;
+pep5ModifCount;4
+pep5ProductID1;9
+pep5ProductID2;9
+pep5ProductID3;9,21,22,23;
+testName6;PromocodePDisabled;для 6, 7, 8 продуктов
+pep6Product1;TestProduct6;
+pep6Product2;TestProduct7;
+pep6Product3;TestProduct8;
+pep6Product4;TestProduct10;//нужен, чтобы выгрузка была не пустой
+pep6Promos;"<product offer-id=\""6\"" /><product offer-id=\""7\"" /><product offer-id=\""8\"" />"

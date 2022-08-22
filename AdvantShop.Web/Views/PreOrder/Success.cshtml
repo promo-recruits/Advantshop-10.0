@@ -1,0 +1,24 @@
+﻿@{
+    Html.AddAsset("preorder");
+}
+<div class="site-body-cell preorder-success">
+    <div class="page-title-row details-title-row">
+        <div class="preorder-title page-title">
+            <h1 class="main-title">@T("PreOrder.LinkByCode.Header")</h1>
+        </div>
+    </div>
+    <div class="mobile-container-fluid">
+        <div class="row">
+            <div class="col-xs preorder-success-txt">
+                @Html.StaticBlock("requestOnProductSuccess")
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            $(document).trigger("send_preorder");
+        }, 2000);
+    })
+</script>

@@ -1,0 +1,193 @@
+﻿@model AdvantShop.Web.Admin.Models.Settings.APISettingsModel
+
+<div class="setting-title m-t-none">
+    <h2 class="page-name-block-text sticky-page-name-text">@T("Admin.Settings.API.Key")</h2>
+</div>
+<div class="row">
+    <div class="col-xs-2">
+        @T("Admin.Settings.API.Key")
+    </div>
+    <div class="col-xs-7">
+        @Html.TextBoxFor(x => x.Key, new { @class = "form-control", ng_model = "settings.Key" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title="@T("Admin.Settings.API.Key")">
+            <div class="help-content">
+                @T("Admin.SettingsApi.Index.ApiKey")<br>
+                <br>
+                @T("Admin.SettingsApi.Index.NoteIfYouRegenerate")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-7">
+         <a href="" ng-click="settings.generateApiKey()">@T("Admin.SettingsApi.Index.GenerateApiKey")</a>
+    </div>
+</div>
+
+<div class="setting-title">
+    <h3>@T("Admin.SettingsApi.Index.Lead")</h3>
+</div>
+<div>
+    <div class="api-item post">
+        <div class="api-item__header" ng-click="settings.showDetails($event)">
+            <span class="method">POST</span>
+            <span class="path">/api/leads/add</span>
+            <span class="description">@T("Admin.SettingsApi.Index.CreateLead")</span>
+        </div>
+        <div class="details">
+            <div class="m-b">
+                POST @Model.LeadAddUrl
+            </div>
+
+            @T("Admin.SettingsApi.Index.JsonExample")
+<pre class="m-t-sm">{
+    "FirstName": "@T("Admin.SettingsApi.Index.Ivan")",             // @T("Admin.SettingsApi.Index.Name")
+    "LastName": "@T("Admin.SettingsApi.Index.Ivanov")",            // @T("Admin.SettingsApi.Index.LastName")
+    "Patronymic": "@T("Admin.SettingsApi.Index.Ivanovich")",        // @T("Admin.SettingsApi.Index.Patronymic")
+    "Phone": "790000000",            // @T("Admin.SettingsApi.Index.Phone")
+    "Email": "ivan@gmail.com",       // email
+    "CustomerId": "",                // @T("Admin.SettingsApi.Index.UserID")
+    "DiscountValue": "100",          // @T("Admin.SettingsApi.Index.DiscountNumber")
+    "DiscountPercent": "0",          // @T("Admin.SettingsApi.Index.DiscountPercentage")
+    "Description": "lead from api",  // @T("Admin.SettingsApi.Index.Description")
+    "Source": "",                    // @T("Admin.SettingsApi.Index.LeadSource")
+    "FunnelId": 1,                   // @T("Admin.SettingsApi.Index.SalesFunnelID")
+    "Sum": "0",                      // @T("Admin.SettingsApi.Index.ProductsAmount")
+    "Products": [                    // @T("Admin.SettingsApi.Index.ArrayOfProducts")
+        {                            // @T("Admin.SettingsApi.Index.ProductFoundByArticle")
+		    "ArtNo": "977",
+		    "Name": "@T("Admin.SettingsApi.Index.Shoes")",
+		    "Amount": 1,
+		    "Price": 1500
+	    }
+    ]
+}
+</pre>
+            <div class="m-t-sm">
+                @T("Admin.SettingsApi.Index.AtLeast1FieldMustBeSpecified")
+            </div>
+
+            <div class="m-t-sm">
+                @T("Admin.SettingsApi.Index.InCaseOfSuccess")
+<pre class="m-t-sm">{
+    "leadId": 1,
+    "status": "ok",
+    "errors": "",
+    "warnings": ""
+}
+</pre>
+                <div class="m-t-sm">
+                    @T("Admin.SettingsApi.Index.InCaseOfFailure")
+<pre class="m-t-sm">{
+    "status": "error",
+    "errors": "@T("Admin.SettingsApi.Index.RequiredFields")"
+}
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="api-item get">
+        <div class="api-item__header" ng-click="settings.showDetails($event)">
+            <span class="method">GET</span>
+            <span class="path">/api/vk</span>
+            <span class="description">@T("Admin.SettingsApi.Index.IntegrationWithVk")</span>
+        </div>
+        <div class="details">
+            <div class="m-b">
+                GET @Model.VkUrl
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="setting-title">
+    <h3>@T("Admin.SettingsApi.Index.Order")</h3>
+</div>
+<div>
+    @Html.Partial("_ApiSettingsOrders")
+</div>
+
+
+<div class="setting-title">
+    <h3>@T("Admin.SettingsApi.Index.Customers")</h3>
+</div>
+<div>
+    @Html.Partial("_ApiSettingsCustomers")
+</div>
+
+<div class="setting-title">
+    <h3>Менеджер</h3>
+</div>
+<div class="api-item get">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">GET</span>
+        <span class="path">/api/managers</span>
+        <span class="description">@T("Admin.SettingsApi.Index.Managers")</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            GET @Model.ManagersUrl
+        </div>
+    </div>
+</div>
+
+<div class="setting-title">
+    <h3>Группа покупателей</h3>
+</div>
+<div class="api-item get">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">GET</span>
+        <span class="path">/api/customergroups</span>
+        <span class="description">@T("Admin.SettingsApi.Index.CustomerGroups")</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            GET @Model.CustomerGroupsUrl
+        </div>
+    </div>
+</div>
+
+<div class="setting-title">
+    <h3>Бонусная система</h3>
+</div>
+<div>
+    @Html.Partial("_ApiSettingsBonuses")
+</div>
+
+<div class="setting-title">
+    <h3>Бонусная система. Грейды</h3>
+</div>
+<div class="api-item get">
+    <div class="api-item__header" ng-click="settings.showDetails($event)">
+        <span class="method">GET</span>
+        <span class="path">/api/bonus-grades</span>
+        <span class="description">Получить грейды</span>
+    </div>
+    <div class="details">
+        <div class="m-b">
+            GET @Model.GradesUrl
+        </div>
+        <h3 class="m-t-sm">Пример ответа</h3>
+        <pre class="m-t-sm">[
+    {
+        "id": 1,              // Идентификатор
+        "name": "Гостевой",   // Название
+        "bonusPercent": 3,    // Процент начисления бонусов
+        "sortOrder": 0,       // Сортировка
+        "purchaseBarrier": 0  // Порог для перехода на след. гейд
+    },
+    {
+        "id": 2,
+        "name": "Бронзовый",
+        "bonusPercent": 5,
+        "sortOrder": 1,
+        "purchaseBarrier": 5000
+    }
+]
+</pre>
+    </div>
+</div>

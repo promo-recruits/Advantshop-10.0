@@ -1,0 +1,30 @@
+﻿@using AdvantShop.Core.Services.Admin
+@{
+    Layout = "~/Areas/Admin/Views/Store/_StoreLayout.cshtml";
+}
+<div class="row">
+    <div class="col-xs-3 col-wl-2">
+        @Html.Partial("CatalogLeftMenu")
+
+        <product-lists-menu on-init="mainpageproducts.initProductLists(productLists)"
+                            on-change="mainpageproducts.onChangeList(list)">
+        </product-lists-menu>
+        <div>
+            <ui-modal-trigger data-controller="'ModalAddEditProductListCtrl'" controller-as="ctrl" size="lg"
+                              template-url="../areas/admin/content/src/productlists/modal/addEditProductList/addEditProductList.html"
+                              data-on-close="mainpageproducts.onAddList(result)">
+                <button class="btn btn-sm btn-success btn--margin-left" type="button" data-e2e="productListAdd">
+                    <span class="fa fa-plus"></span> @T("Admin.ProductLists.Index.AddList")
+                </button>
+            </ui-modal-trigger>
+        </div>
+        
+    </div>
+    <div class="col-xs-9 col-wl-10">
+        <div class="ibox">
+            <div class="ibox-content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>

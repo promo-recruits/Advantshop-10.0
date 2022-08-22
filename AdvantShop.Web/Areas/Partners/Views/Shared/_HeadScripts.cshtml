@@ -1,0 +1,52 @@
+﻿@using AdvantShop.Design
+
+@{
+    Html.AddBundles(new List<string>
+    {
+        "~/vendors/jquery/jquery-3.5.1.min.js"
+    }, "_head.js");
+}
+@Html.RenderJsBundle("_head.js")
+
+@* Critical CSS. It should be <14kb *@
+<style>.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important}form{display:block}</style>
+
+@{
+    var staticPath = "~/areas/partners/content/";
+
+    var cssBundle = "partners_main.css";
+    Html.AddBundles(new List<string>()
+    {
+        "~/design/colors/_none/styles/styles.css",
+        "~/design/themes/_none/styles/styles.css"
+    }, cssBundle);
+
+    Html.AddBundles(new List<string>
+    {
+        "~/fonts/fonts.partners.css",
+
+        "~/vendors/flexboxgrid/flexboxgrid.css",
+        "~/vendors/flexboxgrid/ext/flexboxgridExt.css",
+
+        "~/vendors/normalize/normalize.css",
+        staticPath + "styles/general.css",
+
+        staticPath + "styles/common/buttons.css",
+        staticPath + "styles/common/headers.css",
+        staticPath + "styles/common/icons.css",
+        staticPath + "styles/common/custom-input.css",
+        staticPath + "styles/common/inputs.css",
+
+        staticPath + "styles/partials/price.css",
+
+        staticPath + "styles/partials/menu-top.css",
+        staticPath + "styles/partials/table-info.css",
+        staticPath + "styles/partials/toolbar-top.css",
+
+        staticPath + "styles/common.css",
+        staticPath + "styles/account.css",
+
+    }, cssBundle);
+}
+@Html.RenderCssBundle(cssBundle)
+@Html.StaticBlock("head", onlyContent: true)

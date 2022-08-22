@@ -1,0 +1,31 @@
+﻿<form name="formAddProduct" novalidate>
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{'Admin.Js.AddProduct.AddingProduct'|translate}}</h2>
+    </div>
+    <div class="modal-body">
+        <div class="m-b">
+            {{'Admin.Js.AddProduct.Category'|translate}}
+
+            <span class="error-color" ng-show="formAddProduct.inputCategoryName.$invalid">{{'Admin.Js.AddProduct.SelectACategory'|translate}}</span>
+            <input type="text" class="input-ghost" name="inputCategoryName" required ng-model="ctrl.categoryName" ng-hide="formAddProduct.inputCategoryName.$invalid" input-ghost validation-input-text="{{'Admin.Js.AddProduct.SelectACategory'|translate}}" />
+
+            <ui-modal-trigger data-controller="'ModalChangeParentCategoryCtrl'" controller-as="ctrl"
+                              data-on-close="ctrl.changeCategory(result)"
+                              data-resolve="{showRoot: true, selected:0, currentId:0}"
+                              template-url="../areas/admin/content/src/category/modal/changeParentCategory/ChangeParentCategory.html">
+                <a href="" class="edit">{{'Admin.Js.AddProduct.Select'|translate}}</a>
+            </ui-modal-trigger>
+        </div>
+        <div class="m-b">
+            {{'Admin.Js.AddProduct.ProductName'|translate}} <span class="text-required"></span>
+        </div>
+        <div>
+            <input type="text" placeholder="" ng-model="ctrl.name" class="form-control" data-e2e="inputProductName" required autofocus ng-keyup="formAddProduct.$valid && $event.keyCode === 13 && ctrl.addProduct()" validation-input-text="{{'Admin.Js.AddProduct.ProductName'|translate}}" />
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-save btn-primary" type="button" data-button-validation data-button-validation-success="ctrl.addProduct()" ladda="ctrl.btnLoading">{{'Admin.Js.AddProduct.Add'|translate}}</button>
+        <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.AddProduct.Cancel'|translate}}</button>
+    </div>
+</form>

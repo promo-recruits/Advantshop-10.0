@@ -1,0 +1,47 @@
+﻿@model AdvantShop.Areas.AdminMobile.Models.Orders.GraphicViewModel
+@section Sidebar
+{
+    @Html.Action("Sidebar", "Sidebar")
+}
+@section Header
+{
+    @Html.Action("Header", "Home", new { className = "blue", href = "", title = T("AdminMobile.Orders.Graphics.Graphics").ToString() })
+}
+<div id="content">
+    <div class="graph-wrapper" ng-controller="GraphicsCtrl as graphicsCtrl">
+        <div class="common-input-wrapper">
+            <div class="datetimepicker-wrap">
+                <span ng-flatpickr fp-opts="{dateFormat: 'd.m.Y', startDateFormat: 'Y-m-d', wrap: true, enableTime: false}" fp-on-change="graphicsCtrl.updateGraph(selectedDates, dateStr, instance)"
+                      data-ng-init="graphicsCtrl.dateFrom='@Model.DateFrom.ToString("o")'">
+                    <span class="flatpickr-custom-wrap">
+                        <input type="text" class="input-small" ng-flatpickr-input ng-model="graphicsCtrl.dateFrom" data-mask-control data-mask-control-preset="date">
+                        <span class="flatpickr-custom-clear" data-close data-clear><i class="fas fa-times"></i></span>
+                    </span>
+                    <span class="input-group-addon" data-toggle><i class="fas fa-calendar-alt"></i></span>
+                </span>
+            </div>
+            <div class="graphic-input-header">
+                |
+            </div>
+            <div class="datetimepicker-wrap">
+                <span ng-flatpickr fp-opts="{dateFormat: 'd.m.Y', startDateFormat: 'Y-m-d', wrap: true, enableTime: false}" fp-on-change="graphicsCtrl.updateGraph(selectedDates, dateStr, instance)"
+                      data-ng-init="graphicsCtrl.dateTo='@Model.DateTo.ToString("o")'">
+                    <span class="flatpickr-custom-wrap">
+                        <input type="text" class="input-small" ng-flatpickr-input ng-model="graphicsCtrl.dateTo" data-mask-control data-mask-control-preset="date">
+                        <span class="flatpickr-custom-clear" data-close data-clear><i class="fas fa-times"></i></span>
+                    </span>
+                    <span class="input-group-addon" data-toggle><i class="fas fa-calendar-alt"></i></span>
+                </span>
+            </div>
+        </div>
+        <label class="paid-chk">
+            @Html.CheckBoxFor(x => x.Paid, new { @class = "custom-input-native", ng_click = "graphicsCtrl.updateGraph()", data_ng_model = "graphicsCtrl.paid" })
+            <span class="custom-input-checkbox"></span>
+            <span class="custom-input-text">@T("AdminMobile.Orders.Graphics.Paid")</span>
+        </label>
+        <div id="chartWeek" style="width: 99%; height: 190px;" data-plugin="chart"
+             data-chart="@Model.DataChart"
+             data-chart-options="{xaxis : {mode: 'time',timeformat: '%d %b',min: @Model.Min,max: @Model.Max}}">
+        </div>
+    </div>
+</div>

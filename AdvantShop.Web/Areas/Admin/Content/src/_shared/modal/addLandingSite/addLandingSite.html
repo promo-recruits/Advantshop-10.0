@@ -1,0 +1,719 @@
+﻿<form novalidate>
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">Новая воронка</h2>
+    </div>
+    <div class="modal-body funnel-modal-content-new-item">
+        <div class="form-horizontal m-r m-l">
+
+            <div ng-if="ctrl.lpType == 'OneProductUpSellDownSell'">
+                <div class="form-group" ng-if="ctrl.step == 1">
+                    <h2 class="m-t-none">Основной товар</h2>
+                    <div>
+                        На основе данных выбранного товара будет сгенерирована первая страница воронки.
+                    </div>
+                    <div class="m-t-sm">
+                        <add-product-landing on-close="ctrl.addProduct(result, 3, ctrl.trackEventCreateFreeShippingFunnelStep2)"
+                                             setting-selectvizr="{multiSelect: false,value: {itemsSelected: ctrl.productId}}"
+                                             products="ctrl.product">
+                        </add-product-landing>
+                    </div>
+
+                    <div class="m-t-sm">
+                        <switch-on-off checked="ctrl.showCrossSells"
+                                       on-change="ctrl.onChangeSwitcher(checked)"
+                                       theme="blue"
+                                       label="Выбрать товары допродаж (Upsell, Downsell)">
+                        </switch-on-off>
+                    </div>
+
+                    <div ng-if="ctrl.checkBoxDownsellUpsselModel.showCrossSells" class="m-t flex">
+                        <div>
+                            <h2 class="m-t-none">Допродажа 1 (Upsell)</h2>
+                            <div>
+                                Выберите товар, который будет предложено добавить в заказ в дополнение к основному товару
+                            </div>
+                            <div class="m-t-sm">
+                                <add-product-landing on-close="ctrl.addUpsellProduct(result, 5, ctrl.trackEventCreateFreeShippingFunnelStep3)"
+                                                     setting-selectvizr="{multiSelect: false, value: {itemsSelected: ctrl.upsellProductId}}"
+                                                     products="ctrl.upsellProduct">
+                                </add-product-landing>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="m-t-none">Допродажа 2 (Downsell)</h2>
+                            <div>
+                                Выберите товар, который будет предложен в случае отказа от первой допродажи
+                            </div>
+
+                            <div class="m-t-sm">
+                                <add-product-landing on-close="ctrl.addDownsellProduct(result, 6, ctrl.trackEventCreateFreeShippingFunnelStep5)"
+                                                     setting-selectvizr="{multiSelect: false, value: {itemsSelected: ctrl.downsellProductId}}"
+                                                     products="ctrl.downsellProduct">
+                                </add-product-landing>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-t-md products-for-funnel-button">
+                        <button type="button" data-e2e="LandingSiteNext" class="btn btn-sm btn-success"
+                                ng-click="ctrl.validateAndGo(6);ctrl.trackEventCreateFreeShippingFunnelStep2();"
+                                ng-disabled="ctrl.productId==null">
+                            Продолжить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-if="ctrl.step == 6">
+                    <div>
+                        <h4>Название воронки</h4>
+                        <div>
+                            <input type="text" ng-model="ctrl.name" ng-keydown="ctrl.onKeydownAddLandingSite($event, ctrl.name, 7)" class="form-control" data-e2e="LandingSiteName" autofocus="" />
+                        </div>
+                        <div class="m-t-md products-for-funnel-button">
+                            <button type="button" data-e2e="LandingSiteNext" ng-click="ctrl.step = 7; ctrl.addLandingSite()" ng-disabled="ctrl.name == null || ctrl.name.length == 0" class="btn btn-sm btn-success">
+                                Продолжить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" ng-if="ctrl.step == 7" style="padding:56px 0 0 0;">
+                    <h2 class="m-t-none"><i class="fa fa-spinner fa-spin fa-fw"></i> Установка воронки</h2>
+                    <span ng-init="ctrl.trackEventCreateFreeShippingFunnelStepFinal();"></span>
+                </div>
+            </div>
+
+            <div ng-if="ctrl.lpType == 'CollectContacts'">
+                <div class="form-group" ng-if="ctrl.step == 1">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="m-t-sm">Сбор контактов "Статья"</h2>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="m-t-sm">
+                                <a href="" ng-click="ctrl.step = 10" class="btn inline btn-sm btn-success m-t-sm" data-e2e="LandingSiteNext">Продолжить</a>
+                                <a class="btn btn-sm btn-default link-invert inline middle-cell m-l-sm m-t-sm" magnific-popup="" href="./../areas/admin/content/images/landing/scheme2.png">
+                                    Схема воронки
+                                </a>
+                                <a href="http://demo7.advantshop.net/lp/statya-1" target="_blank" class="inline middle-cell m-l-sm m-t-sm">
+                                    Демо воронки
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="ctrl.template == 'CollectContactsForAccess'">
+
+                <div class="form-group" ng-if="ctrl.step == 1">
+                    <h2 class="m-t-none">Действие после заполнения формы</h2>
+
+                    <div class="m-t">
+                        <div class="m-b-xs">Переход в</div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <select id="ModalAddLandingSiteSelectPostAction"
+                                        ng-model="ctrl.postAction"
+                                        ng-options="item.value as item.label for item in ctrl.postActions"
+                                        ng-change="ctrl.changePostAction()"
+                                        class="form-control">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="m-t-md products-for-funnel-button">
+                            <button type="button" ng-click="ctrl.step = 2;" class="btn btn-sm btn-success" data-e2e="LandingSiteNext">
+                                Продолжить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-if="ctrl.step == 2">
+                    <h2 class="m-t-none">Действие после заполнения формы</h2>
+
+                    <div class="m-t">
+                        <div ng-switch="ctrl.postAction">
+                            <div ng-switch-when="1">
+                                <div class="m-b-sm">
+                                    Выберите категорию
+                                </div>
+                                <div>
+                                    <div data-js-tree
+                                         data-show-root
+                                         data-tree-ajax="catalog/categoriestree?categoryIdSelected={{ctrl.postActionCategoryId}}"
+                                         data-tree-core="" data-tree-events="select_node:ctrl.selectPostActionCategory"></div>
+                                </div>
+                            </div>
+                            <div ng-switch-when="2">
+                                <div class="m-b-sm">
+                                    Воронка
+                                </div>
+                                <div ng-init="ctrl.getPostActionFunnels();">
+                                    <select ng-model="ctrl.postActionFunnelSiteId"
+                                            id="ModalAddLandingSiteSelectPostFunnel"
+                                            ng-options="item.value as item.label for item in ctrl.funnels"
+                                            class="form-control"></select>
+                                </div>
+                            </div>
+                            <div ng-switch-when="3">
+                                <div class="m-b-sm">Укажите URL:</div>
+                                <input type="text" ng-model="ctrl.postActionUrl" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="m-t-md products-for-funnel-button">
+                            <button type="button" class="btn btn-sm btn-default m-r" data-e2e="LandingSiteBack" ng-click="ctrl.step=1">
+                                Назад
+                            </button>
+
+                            <button type="button" class="btn btn-sm btn-success" data-e2e="LandingSiteNext"
+                                    ng-click="ctrl.step = 10;"
+                                    ng-disabled="ctrl.postActionCategoryId == null && ctrl.postActionFunnelSiteId == null && ctrl.postActionUrl == null">
+                                Продолжить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="ctrl.template == 'Article'">
+
+                <div class="form-group" ng-if="ctrl.step == 1">
+                    <h2 class="m-t-none">Укажите ссылку на специальное предложение</h2>
+
+                    <div class="m-t">
+                        <div class="m-b-xs">Переход в</div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <select ng-model="ctrl.postAction"
+                                        id="ModalAddLandingSiteSelectPostActionUrl"
+                                        ng-options="item.value as item.label for item in ctrl.postActions"
+                                        ng-change="ctrl.changePostAction()"
+                                        class="form-control"></select>
+                            </div>
+                        </div>
+
+                        <div class="m-t-md products-for-funnel-button">
+                            <button type="button" ng-click="ctrl.step = 2;" class="btn btn-sm btn-success" data-e2e="LandingSiteNext">
+                                Продолжить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-if="ctrl.step == 2">
+                    <h2 class="m-t-none">Укажите ссылку на специальное предложение</h2>
+
+                    <div class="m-t">
+                        <div ng-switch="ctrl.postAction">
+                            <div ng-switch-when="1">
+                                <div class="m-b-sm">
+                                    Выберите категорию
+                                </div>
+                                <div>
+                                    <div data-js-tree
+                                         data-show-root
+                                         data-tree-ajax="catalog/categoriestree?categoryIdSelected={{ctrl.postActionCategoryId}}"
+                                         data-tree-core="" data-tree-events="select_node:ctrl.selectPostActionCategory"></div>
+                                </div>
+                            </div>
+                            <div ng-switch-when="2">
+                                <div class="m-b-sm">
+                                    Воронка
+                                </div>
+                                <div ng-init="ctrl.getPostActionFunnels();">
+                                    <select ng-model="ctrl.postActionFunnelSiteId"
+                                            ng-options="item.value as item.label for item in ctrl.funnels"
+                                            class="form-control"></select>
+                                </div>
+                            </div>
+                            <div ng-switch-when="3">
+                                <div class="m-b-sm">Укажите URL:</div>
+                                <input type="text" ng-model="ctrl.postActionUrl" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="m-t-md products-for-funnel-button">
+                            <button type="button" class="btn btn-sm btn-default m-r" data-e2e="LandingSiteBack" ng-click="ctrl.step=1">
+                                Назад
+                            </button>
+
+                            <button type="button" class="btn btn-sm btn-success" data-e2e="LandingSiteNext"
+                                    ng-click="ctrl.step = 10;"
+                                    ng-disabled="ctrl.postActionCategoryId == null && ctrl.postActionFunnelSiteId == null && ctrl.postActionUrl == null">
+                                Продолжить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="ctrl.lpType == 'MultyProducts' && (ctrl.template == 'MultyProducts' || ctrl.template == 'MultyProductsKnowPrice')">
+                <div class="form-group" ng-if="ctrl.step == 1">
+                    <div>
+                        <h2 class="m-t-none m-b">Шаг 1. Выберите товары для воронки</h2>
+                        <div ng-init="ctrl.multyFunnelMode = 'products'">
+                            <div class="m-b-xs">
+                                <label class="adv-radio-label">
+                                    <span style="font-size: 14px;">
+                                        Выбрать несколько товаров для воронки
+                                    </span>
+                                    <input class="adv-radio-input" ng-model="ctrl.multyFunnelMode" type="radio" value="products" ng-click="ctrl.setMultyFunnelMode()">
+                                    <span class="adv-radio-emul"></span>
+                                </label>
+                            </div>
+                            <div class="m-b-xs">
+                                <label class="adv-radio-label">
+                                    <span style="font-size: 14px;">
+                                        Выбрать категории для воронки
+                                    </span>
+                                    <input class="adv-radio-input" ng-model="ctrl.multyFunnelMode" type="radio" value="categories" ng-click="ctrl.setMultyFunnelMode()">
+                                    <span class="adv-radio-emul"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="m-t-sm">
+                            <div ng-if="ctrl.multyFunnelMode == 'products'">
+                                <add-product-landing on-close="ctrl.addProductsWithDelay(result, 10)"
+                                                     settings-selectvizr="{value: {itemsSelected: ctrl.productIds}}"
+                                                     products="ctrl.products">
+                                </add-product-landing>
+                            </div>
+                            <div ng-if="ctrl.multyFunnelMode == 'categories'">
+
+                                <div>
+                                    <div ng-repeat="item in ctrl.categories" class="row m-b-xs">
+                                        <div class="col-xs-5">
+                                            {{item.Name}}
+                                        </div>
+                                        <div>
+                                            <a class="link-invert link-decoration-none fas fa-times" ng-click="ctrl.removeCategory(item.CategoryId)" href=""></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <ui-modal-trigger data-controller="'ModalSelectCategoriesCtrl'" controller-as="ctrl"
+                                                  template-url="../areas/admin/content/src/_shared/modal/selectCategories/selectCategories.html"
+                                                  data-resolve="{'params': { 'selectedIds': ctrl.categoryIds}}"
+                                                  data-on-close="ctrl.addCategories(result, 10)">
+                                    <div class="product-pic-list-item pointer">
+                                        <div class="product-block">
+                                            <div class="product-block-content product-block-content--max-height">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 42 42" style="enable-background: new 0 0 42 42;" xml:space="preserve" width="61px" height="61px">
+                                                <polygon points="42,19 23,19 23,0 19,0 19,19 0,19 0,23 19,23 19,42 23,42 23,23 42,23 " fill="#eaeced"></polygon>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </ui-modal-trigger>
+                            </div>
+
+                            <div class="m-t-md products-for-funnel-button">
+                                <button type="button" ng-click="ctrl.step = 10;" class="btn btn-sm btn-success" data-e2e="LandingSiteNext">
+                                    Продолжить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="ctrl.lpType == 'MultyProducts' && ctrl.template == 'MultyProductsWithCategories'">
+                <div class="form-group" ng-if="ctrl.step == 1">
+                    <div>
+                        <h2 class="m-t-none">Шаг 1. Выберите категории товаров для воронки</h2>
+                        <div class="m-t-sm">
+                            <div>
+                                <div ng-repeat="item in ctrl.categories" class="row m-b-xs">
+                                    <div class="col-xs-5">
+                                        {{item.Name}}
+                                    </div>
+                                    <div>
+                                        <a class="link-invert link-decoration-none fas fa-times" ng-click="ctrl.removeCategory(item.CategoryId)" href=""></a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <ui-modal-trigger data-controller="'ModalSelectCategoriesCtrl'" controller-as="ctrl"
+                                              template-url="../areas/admin/content/src/_shared/modal/selectCategories/selectCategories.html"
+                                              data-resolve="{'params': { 'selectedIds': ctrl.categoryIds}}"
+                                              data-on-close="ctrl.addCategories(result, 10)">
+                                <div class="product-pic-list-item pointer">
+                                    <div class="product-block">
+                                        <div class="product-block-content product-block-content--max-height">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 42 42" style="enable-background: new 0 0 42 42;" xml:space="preserve" width="61px" height="61px">
+                                            <polygon points="42,19 23,19 23,0 19,0 19,19 0,19 0,23 19,23 19,42 23,42 23,23 42,23 " fill="#eaeced"></polygon>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </ui-modal-trigger>
+
+                            <div class="m-t-md products-for-funnel-button">
+                                <button type="button" ng-click="ctrl.step = 10;" class="btn btn-sm btn-success" data-e2e="LandingSiteNext">
+                                    Продолжить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="ctrl.lpType == 'MultyProducts' && (ctrl.template == 'VideoWithCrossSells' || ctrl.template == 'ArticleWithCrossSells')">
+                <div class="form-group" ng-if="ctrl.step == 1">
+                    <h2 class="m-t-none">Основной товар</h2>
+                    <div>
+                        На основе данных выбранного товара будет сгенерирована первая страница воронки.
+                    </div>
+                    <div class="m-t-sm">
+                        <add-product-landing on-close="ctrl.addProduct(result, 3)"
+                                             setting-selectvizr="{multiSelect: false,value: {itemsSelected: ctrl.productId}}"
+                                             products="ctrl.product">
+                        </add-product-landing>
+                    </div>
+
+                    <div class="m-t-sm">
+                        <switch-on-off checked="ctrl.checkBoxDownsellUpsselModel.showCrossSells"
+                                       theme="blue"
+                                       on-change="ctrl.onChangeSwitcher(checked)"
+                                       label="Выбрать товары допродаж (Upsell, Downsell)">
+                        </switch-on-off>
+                    </div>
+
+                    <div ng-if="ctrl.checkBoxDownsellUpsselModel.showCrossSells" class="m-t flex">
+                        <div>
+                            <h2 class="m-t-none">Допродажа 1 (Upsell)</h2>
+                            <div>
+                                Выберите товар, который будет предложено добавить в заказ в дополнение к основному товару
+                            </div>
+                            <div class="m-t-sm">
+                                <add-product-landing on-close="ctrl.addUpsellProduct(result, 5)"
+                                                     setting-selectvizr="{multiSelect: false, value: {itemsSelected: ctrl.upsellProductId}}"
+                                                     products="ctrl.upsellProduct">
+                                </add-product-landing>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="m-t-none">Допродажа 2 (Downsell)</h2>
+                            <div>
+                                Выберите товар, который будет предложен в случае отказа от первой допродажи
+                            </div>
+                            <div class="m-t-sm">
+                                <add-product-landing on-close="ctrl.addDownsellProduct(result, 10)"
+                                                     setting-selectvizr="{multiSelect: false, value: {itemsSelected: ctrl.downsellProductId}}"
+                                                     products="ctrl.downsellProduct">
+                                </add-product-landing>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-t-md products-for-funnel-button">
+                        <button type="button" data-e2e="LandingSiteNext" class="btn btn-sm btn-success"
+                                ng-click="ctrl.validateAndGo(10)"
+                                ng-disabled="ctrl.productId==null">
+                            Продолжить
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="ctrl.lpType == 'MultyProducts' && ctrl.template != 'CollectContactsForAccess' && ctrl.template != 'MultyProducts' && ctrl.template != 'MultyProductsKnowPrice' && ctrl.template != 'MultyProductsWithCategories' && ctrl.template != 'VideoWithCrossSells' && ctrl.template != 'ArticleWithCrossSells'">
+                <div class="form-group" ng-if="ctrl.step == 1">
+                    <div>
+                        <h2 class="m-t-none">Шаг 1. Выберите товары для воронки</h2>
+                        <div>
+                            Выберите несколько товаров для воронки.
+                        </div>
+                        <div class="m-t-sm">
+                            <add-product-landing on-close="ctrl.addProductsWithDelay(result, 10)"
+                                                 settings-selectvizr="{value: {itemsSelected: ctrl.productIds}}"
+                                                 products="ctrl.products">
+                            </add-product-landing>
+
+                            <div class="m-t-md products-for-funnel-button">
+                                <button type="button" ng-click="ctrl.step = 10;" class="btn btn-sm btn-success" data-e2e="LandingSiteNext">
+                                    Продолжить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="ctrl.lpType == 'Couponator' || ctrl.lpType == 'CouponatorOrder' || ctrl.lpType == 'LandingFunnel' || ctrl.lpType == 'LandingFunnelOrder' || ctrl.lpType == 'VideoLandingFunnel' || ctrl.lpType == 'VideoLandingFunnelOrder'">
+
+                <div class="form-group" ng-if="ctrl.step == 1 && ctrl.template == 'Lottery'">
+                    <h2 class="m-t-none">Основной товар</h2>
+                    <div>
+                        На основе данных выбранного товара будет сгенерирована первая страница воронки.
+                    </div>
+                    <div class="m-t-sm">
+                        <add-product-landing on-close="ctrl.addProductWithDelay(result, 10)"
+                                             setting-selectvizr="{multiSelect: false, value: {itemsSelected: ctrl.productId}}"
+                                             products="ctrl.product">
+                        </add-product-landing>
+
+                        <div class="m-t-md products-for-funnel-button">
+                            <button type="button" ng-click="ctrl.step = 10" ng-disabled="ctrl.productId == null" class="btn btn-sm btn-success" data-e2e="LandingSiteNext">
+                                Продолжить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-if="ctrl.step == 1 && (ctrl.template == 'LandingFunnelOrderSet' || ctrl.template == 'LandingFunnelOrderSetWithForm')">
+                    <h2 class="m-t-none">Выберите товары для воронки</h2>
+                    <div>
+                        Выберите несколько товаров для воронки.
+                    </div>
+                    <div class="m-t-sm">
+                        <add-offer-landing on-close="ctrl.addOffersWithDelay(result, 10)"
+                                           settings-selectvizr="{value: {itemsSelected: ctrl.offerIds}}"
+                                           offers="ctrl.offers">
+                        </add-offer-landing>
+                    </div>
+
+                    <div class="m-t-sm">
+                        <switch-on-off checked="ctrl.checkBoxDownsellUpsselModel.showCrossSells"
+                                       theme="blue"
+                                       on-change="ctrl.onChangeSwitcher(checked)"
+                                       label="Выбрать товары допродаж (Upsell, Downsell)">
+                        </switch-on-off>
+                    </div>
+
+                    <div ng-if="ctrl.checkBoxDownsellUpsselModel.showCrossSells" class="m-t flex">
+                        <div>
+                            <h2 class="m-t-none">Допродажа 1 (Upsell)</h2>
+                            <div>
+                                Выберите товар, который будет предложено добавить в заказ в дополнение к основному товару
+                            </div>
+                            <div class="m-t-sm">
+                                <add-product-landing on-close="ctrl.addUpsellProduct(result, 3)"
+                                                     setting-selectvizr="{multiSelect: false, value: {itemsSelected: ctrl.upsellProductId}}"
+                                                     products="ctrl.upsellProduct">
+                                </add-product-landing>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="m-t-none">Допродажа 2 (Downsell)</h2>
+                            <div>
+                                Выберите товар, который будет предложен в случае отказа от первой допродажи
+                            </div>
+
+                            <div class="m-t-sm">
+                                <add-product-landing on-close="ctrl.addDownsellProduct(result, 10)"
+                                                     setting-selectvizr="{multiSelect: false, value: {itemsSelected: ctrl.downsellProductId}}"
+                                                     products="ctrl.downsellProduct">
+                                </add-product-landing>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-t-md products-for-funnel-button">
+                        <button type="button" ng-click="ctrl.validateAndGo(10)" ng-disabled="ctrl.offers == null || ctrl.offers.length == 0" class="btn btn-sm btn-success" data-e2e="LandingSiteNext">
+                            Продолжить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-if="ctrl.step == 1 && ctrl.template != 'Lottery' && ctrl.template != 'LandingFunnelOrderSet' && ctrl.template != 'LandingFunnelOrderSetWithForm'">
+                    <h2 class="m-t-none">Основной товар</h2>
+                    <div>
+                        На основе данных выбранного товара будет сгенерирована первая страница воронки.
+                    </div>
+                    <div class="m-t-sm">
+                        <add-product-landing on-close="ctrl.addProduct(result, 3)"
+                                             setting-selectvizr="{multiSelect: false,value: {itemsSelected: ctrl.productId}}"
+                                             products="ctrl.product">
+                        </add-product-landing>
+                    </div>
+
+                    <div class="m-t-sm">
+                        <switch-on-off checked="ctrl.checkBoxDownsellUpsselModel.showCrossSells"
+                                       theme="blue"
+                                       on-change="ctrl.onChangeSwitcher(checked)"
+                                       label="Выбрать товары допродаж (Upsell, Downsell)">
+                        </switch-on-off>
+                    </div>
+
+                    <div ng-if="ctrl.checkBoxDownsellUpsselModel.showCrossSells" class="m-t flex">
+                        <div>
+                            <h2 class="m-t-none">Допродажа 1 (Upsell)</h2>
+                            <div>
+                                Выберите товар, который будет предложено добавить в заказ в дополнение к основному товару
+                            </div>
+                            <div class="m-t-sm">
+                                <add-product-landing on-close="ctrl.addUpsellProduct(result, 5)"
+                                                     setting-selectvizr="{multiSelect: false, value: {itemsSelected: ctrl.upsellProductId}}"
+                                                     products="ctrl.upsellProduct">
+                                </add-product-landing>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="m-t-none">Допродажа 2 (Downsell)</h2>
+                            <div>
+                                Выберите товар, который будет предложен в случае отказа от первой допродажи
+                            </div>
+
+                            <div class="m-t-sm">
+                                <add-product-landing on-close="ctrl.addDownsellProduct(result, 10)"
+                                                     setting-selectvizr="{multiSelect: false, value: {itemsSelected: ctrl.downsellProductId}}"
+                                                     products="ctrl.downsellProduct">
+                                </add-product-landing>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-t-md products-for-funnel-button">
+                        <button type="button" data-e2e="LandingSiteNext" class="btn btn-sm btn-success"
+                                ng-click="ctrl.validateAndGo(10)"
+                                ng-disabled="ctrl.productId==null">
+                            Продолжить
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="ctrl.lpType == 'ProductCrossSellDownSell' && (ctrl.step == 0 || ctrl.step == 1)">
+                <div class="form-group">
+                    <h2 class="m-t-none">Основной товар</h2>
+                    
+                    <div ng-if="ctrl.step == 0">
+                        <div>
+                            На основе данных выбранного товара будет сгенерирована первая страница воронки.
+                        </div>
+                        <div class="m-t-sm">
+                            <add-product-landing on-close="ctrl.addProduct(result, 1)"
+                                                 setting-selectvizr="{multiSelect: false,value: {itemsSelected: ctrl.productId}}"
+                                                 products="ctrl.product">
+                            </add-product-landing>
+                        </div>
+                    </div>
+                    <div ng-if="ctrl.step != 0">
+                        <div class="m-t m-b-lg">
+                            {{ctrl.productCrossSell.Name}}
+                        </div>
+                    </div>
+
+                    <div class="m-t-sm">
+                        <switch-on-off checked="ctrl.checkBoxDownsellUpsselModel.showCrossSells"
+                                       theme="blue"
+                                       on-change="ctrl.onChangeSwitcher(checked)"
+                                       label="Выбрать товары допродаж (Upsell, Downsell)">
+                        </switch-on-off>
+                    </div>
+                </div>
+                
+                <div ng-if="ctrl.checkBoxDownsellUpsselModel.showCrossSells" class="m-t flex">
+                    <div>
+                        <h2 class="m-t-none">Допродажа 1 (Upsell)</h2>
+                        <div>
+                            Выберите товар, который будет предложено добавить в заказ в дополнение к основному товару
+                        </div>
+                        <div class="m-t-sm">
+                            <add-product-landing on-close="ctrl.addUpsellProduct(result, 2)"
+                                                    setting-selectvizr="{multiSelect: false, value: {itemsSelected: ctrl.upsellProductId}}"
+                                                    products="ctrl.upsellProduct">
+                            </add-product-landing>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="m-t-none">Допродажа 2 (Downsell)</h2>
+                        <div>
+                            Выберите товар, который будет предложен в случае отказа от первой допродажи
+                        </div>
+
+                        <div class="m-t-sm">
+                            <add-product-landing on-close="ctrl.addDownsellProduct(result, 10)"
+                                                    setting-selectvizr="{multiSelect: false, value: {itemsSelected: ctrl.downsellProductId}}"
+                                                    products="ctrl.downsellProduct">
+                            </add-product-landing>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-t-md products-for-funnel-button">
+                    <button type="button" data-e2e="LandingSiteNext" class="btn btn-sm btn-success"
+                            ng-click="ctrl.validateAndGo(10)"
+                            ng-disabled="ctrl.productId==null">
+                        Продолжить
+                    </button>
+                </div>
+            </div>
+
+            <div ng-if="ctrl.template == 'CompanySiteWithCatalog'">
+                <div class="form-group" ng-if="ctrl.step == 1">
+                    <div>
+                        <h2 class="m-t-none m-b">Выберите категории для воронки</h2>
+                        <div class="m-t-sm">
+                            <div>
+                                <div ng-repeat="item in ctrl.categories" class="row m-b-xs">
+                                    <div class="col-xs-5">
+                                        {{item.Name}}
+                                    </div>
+                                    <div>
+                                        <a class="link-invert link-decoration-none fas fa-times" ng-click="ctrl.removeCategory(item.CategoryId)" href=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<ui-modal-trigger data-controller="'ModalAddCategoryCtrl'" controller-as="ctrl"
+                                              data-on-close="ctrl.addCategoriesWithoutSubCats(result, 10)"
+                                              data-resolve="{showRoot: true}"
+                                              template-url="../areas/admin/content/src/_shared/modal/addCategory/AddCategory.html">-->
+
+                                <ui-modal-trigger data-controller="'ModalSelectCategoriesCtrl'" controller-as="ctrl"
+                                                  template-url="../areas/admin/content/src/_shared/modal/selectCategories/selectCategories.html"
+                                                  data-resolve="{'params': { 'selectedIds': ctrl.categoryIds}}"
+                                                  data-on-close="ctrl.addCategories(result, 10)">
+                                    <div class="product-pic-list-item pointer">
+                                        <div class="product-block">
+                                            <div class="product-block-content product-block-content--max-height">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 42 42" style="enable-background: new 0 0 42 42;" xml:space="preserve" width="61px" height="61px">
+                                                <polygon points="42,19 23,19 23,0 19,0 19,19 0,19 0,23 19,23 19,42 23,42 23,23 42,23 " fill="#eaeced"></polygon>
+                                            </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ui-modal-trigger>
+
+                                <div class="m-t-md products-for-funnel-button">
+                                    <button type="button" ng-click="ctrl.step = 10;" class="btn btn-sm btn-success" data-e2e="LandingSiteNext">
+                                        Продолжить
+                                    </button>
+                                </div>
+</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group" ng-if="ctrl.step == 10">
+                <div>
+                    <h2 class="m-b-md m-t-none" ng-if="ctrl.lpType=='None'">Пустой шаблон</h2>
+                    <h2 class="m-b-md m-t-none" ng-if="ctrl.lpType=='CollectContacts'">Сбор контактов "Статья"</h2>
+                    <h4>Название воронки</h4>
+                    <div>
+                        <input type="text" ng-model="ctrl.name" ng-keydown="ctrl.onKeydownAddLandingSite($event, ctrl.name, 100)" class="form-control" data-e2e="LandingSiteName" autofocus="" />
+                    </div>
+                    <div class="m-t-md products-for-funnel-button">
+                        <button type="button" data-e2e="LandingSiteNext" ng-click="ctrl.step = 100; ctrl.addLandingSite()" ng-disabled="ctrl.name == null || ctrl.name.length == 0" class="btn btn-sm btn-success">
+                            Продолжить
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" ng-if="ctrl.step == 100" style="padding:56px 0 0 0;">
+                <h2 class="m-t-none"><i class="fa fa-spinner fa-spin fa-fw"></i> Установка воронки</h2>
+            </div>
+
+        </div>
+    </div>
+</form>

@@ -1,0 +1,22 @@
+﻿@model AdvantShop.Web.Admin.ViewModels.Shared.Common.MetaVariablesDescriptionModel
+<div>
+    <p>
+        @T("Admin.Common.MetaVariables.AvailableVariables")<br />
+
+        @foreach (var item in Model.MetaVariables)
+        {
+            <div>
+                @item.Value - @item.Text
+            </div>
+        }
+    </p>
+    <p>
+        @T("Admin.Common.MetaVariables.VariablesOnThePage")
+    </p>
+</div>
+@if (Model.ShowInstruction)
+{
+    <div class="adv-panel-info">
+        <a href="http://www.advantshop.net/help/pages/settings-of-seo-module" target="_blank">@T("Admin.Common.MetaVariables.Manual")</a>
+    </div>
+}

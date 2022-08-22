@@ -1,0 +1,63 @@
+﻿@model AdvantShop.Web.Admin.ViewModels.Emailings.TriggerAnalyticsViewModel
+@{
+    Layout = "~/Areas/Admin/Views/Triggers/_TriggersLayout.cshtml";
+}
+
+@Html.Back("Триггер \"" + Model.Name + "\"", Url.Action("Edit", "Triggers", new { id = Model.TriggerId }))
+
+<div class="sticky-page-name" sticky sticky-top="0">
+    <div class="page-name-block sticky-page-name-inner">
+        <div class="page-name-block-item-main">
+            <h1 class="page-name-block-text sticky-page-name-text">@T("Admin.Analytics.EmailingAnalytics")</h1>
+        </div>
+    </div>
+</div>
+@if (!SettingsMail.UseAdvantshopMail)
+{
+    @Html.Partial("AnalyticsUnavailable")
+}
+else
+{
+    <div data-oc-lazy-load="[{files: ['../areas/admin/content/vendors/chart/Chart.bundle.min.js', '../areas/admin/content/vendors/angular-chart/angular-chart.min.js'], serie: true}]">
+        <div data-ng-init="triggerAnalytics.init(@Model.TriggerId)">
+            <div class="row m-b-xs">
+                <div class="col-xs-12">
+                    Временной интервал:
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="input-group inline" ng-flatpickr fp-opts="{dateFormat: 'd.m.Y', startDateFormat: 'Y-m-d', wrap: true}" fp-on-change="triggerAnalytics.fetch()">
+                        <span class="flatpickr-custom-wrap">
+                            <input type="text" class="form-control" ng-flatpickr-input ng-model="triggerAnalytics.dateFrom">
+                        </span>
+                        <span class="input-group-addon" data-toggle><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <div class="inline" style="">-</div>
+                    <div class="input-group inline" ng-flatpickr fp-opts="{dateFormat: 'd.m.Y', startDateFormat: 'Y-m-d', wrap: true}" fp-on-change="triggerAnalytics.fetch()">
+                        <span class="flatpickr-custom-wrap">
+                            <input type="text" class="form-control" ng-flatpickr-input ng-model="triggerAnalytics.dateTo">
+                        </span>
+                        <span class="input-group-addon" data-toggle><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @foreach (var action in Model.TriggerActions)
+        {
+            <emailing-analytics emailing-id="@action.EmailingId"
+                                email-subject="@action.EmailSubject"
+                                send-time="@(action.TimeDelay == null || action.TimeDelay.Interval == 0 ? "сразу" : string.Format("через {0} {1}", action.TimeDelay.Interval, action.TimeDelay.Numeral()))"
+                                chart-data="triggerAnalytics.Data['@action.EmailingId'].ChartData"
+                                statuses-data="triggerAnalytics.Data['@action.EmailingId'].StatusesData"
+                                email-log-url="'@UrlService.GetUrl("adminv2/emailings/log/" + action.EmailingId)#?grid='"
+                                email-date-from="triggerAnalytics.dateFrom"
+                                email-date-to="triggerAnalytics.dateTo"
+                                hide-flatpickr="true"
+                                hide-come-back-link="true"
+                                grid-name="grid">
+            </emailing-analytics>
+        }
+    </div>
+}

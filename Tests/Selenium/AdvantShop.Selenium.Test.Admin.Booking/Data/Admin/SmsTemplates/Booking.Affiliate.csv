@@ -1,0 +1,2 @@
+Id;CityId;Name;Description;Address;Phone;BookingIntervalMinutes;SortOrder;Enabled;AccessForAll;IsActiveSmsNotification;ForHowManyMinutesToSendSms;SmsTemplateBeforeStartBooiking;AnalyticsAccessForAll;AccessToViewBookingForResourceManagers
+1;NULL;Main affiliate;Description of affiliate;Address;+7(999)852-25-58;60;0;true;true;false;NULL;NULL;true;false

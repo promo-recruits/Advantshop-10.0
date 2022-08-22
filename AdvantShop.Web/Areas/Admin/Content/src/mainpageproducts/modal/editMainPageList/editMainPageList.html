@@ -1,0 +1,91 @@
+﻿<form>
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{ ctrl.mode == "add" ? ('Admin.Js.EditMainPageList.Adding'|translate) : ('Admin.Js.EditMainPageList.Editing'|translate) }}</h2>
+    </div>
+    <div class="modal-body">
+        <div class="form-group row">
+            <div class="col-xs-12">
+                <label class="adv-checkbox-label">
+                    <input type="checkbox" ng-model="ctrl.data.ShowOnMainPage" class="adv-checkbox-input control-checkbox" />
+                    <span class="adv-checkbox-emul"></span>
+                    {{'Admin.Js.EditMainPageList.ShowOnMainPage'|translate}}
+                </label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-xs-12">
+                <label class="adv-checkbox-label">
+                    <input type="checkbox" ng-model="ctrl.data.ShuffleList" class="adv-checkbox-input control-checkbox" />
+                    <span class="adv-checkbox-emul"></span>
+                    {{'Admin.Js.EditMainPageList.ShuffleList'|translate}}
+                </label>
+                <help-trigger class="ng-cloak m-l-xs" use-template="true" data-title="{{'Admin.Js.EditMainPageList.ShuffleList'|translate}}">
+                    <div class="help-content" ng-bind-html="'Admin.Js.EditMainPageList.ShuffleListHint'|translate"></div>
+                </help-trigger>
+            </div>
+        </div>
+        <div class="form-group row" ng-if="ctrl.typeStr == 'new' && ctrl.data.ShowOnMainPage">
+            <div class="col-xs-12">
+                <label class="adv-checkbox-label">
+                    <input type="checkbox" ng-model="ctrl.data.DisplayLatestProductsInNewOnMainPage" class="adv-checkbox-input control-checkbox" />
+                    <span class="adv-checkbox-emul"></span>
+                    {{'Admin.Js.MainPageProductsStore.Index.DisplayLatestProducts'|translate}}
+                </label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xs-2 control-label">{{'Admin.Js.EditMainPageList.Description'|translate}}</label>
+            <div class="col-xs-10">
+                <textarea ng-model="ctrl.data.Description" class="wysiwyg" ckeditor></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-xs-offset-2">
+                <label class="adv-checkbox-label">
+                    <input type="checkbox" ng-model="ctrl.data.UseDefaultMeta" class="adv-checkbox-input control-checkbox" />
+                    <span class="adv-checkbox-emul"></span>
+                    {{'Admin.Js.EditMainPageList.UseDefaultMeta'|translate}}
+                </label>
+            </div>
+        </div>
+        <div class="brand-seo-custom-block ng-cloak m-t-md" ng-if="!ctrl.data.UseDefaultMeta">
+            <div class="form-group row">
+                <label class="col-xs-2 control-label text-required">{{'Admin.Js.EditMainPageList.H1'|translate}}</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" ng-model="ctrl.data.H1" 
+                           required="required" validation-input-text={{'Admin.Js.EditMainPageList.H1'|translate}} />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xs-2 control-label text-required">{{'Admin.Js.EditMainPageList.MetaHeader'|translate}}</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" ng-model="ctrl.data.Title"
+                           required="required" validation-input-text={{'Admin.Js.EditMainPageList.MetaHeader'|translate}} />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xs-2 control-label">{{'Admin.Js.EditMainPageList.MetaKeywords'|translate}}</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" ng-model="ctrl.data.MetaKeywords" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xs-2 control-label">{{'Admin.Js.EditMainPageList.MetaDescription'|translate}}</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" ng-model="ctrl.data.MetaDescription" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xs-2 control-label"></label>
+                <div class="col-xs-10">
+                    {{'Admin.Js.EditMainPageList.SEOAvailableVariables'|translate}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-save btn-primary" type="button" data-button-validation-success="ctrl.save()" data-button-validation>{{'Admin.Js.AddEdit.Save'|translate}}</button>
+        <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.AddEdit.Cancel'|translate}}</button>
+    </div>
+</form>

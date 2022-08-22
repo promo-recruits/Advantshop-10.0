@@ -1,0 +1,22 @@
+﻿@model AdvantShop.Core.Services.SalesChannels.SalesChannel
+@{
+    var showLeftAndRight = !string.IsNullOrEmpty(Model.PreviewLeftText) && !string.IsNullOrEmpty(Model.PreviewRightText);
+}
+<div ng-init="modules.module = {StringId:'@Model.ModuleStringId', Id:'@Model.ModuleId', Version:'@Model.ModuleVersion'}; modules.previewPage = true;"
+     class="flex middle-xs m-l-lg" 
+     style="height: 100%">
+    <div class="row">
+        <div class="col-xs-@(showLeftAndRight ? "6" : "12")">
+            @Html.Raw(Model.PreviewLeftText)
+            <div class="m-t-lg">
+                <a href="" class="btn btn-success btn-md" ng-click="modules.installModule(modules.module)">@Model.PreviewButtonText</a>
+            </div>
+        </div>
+        @if (showLeftAndRight)
+        {
+            <div class="col-xs-6">
+                @Html.Raw(Model.PreviewRightText)
+            </div>
+        }
+    </div>
+</div>

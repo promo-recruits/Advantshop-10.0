@@ -1,0 +1,122 @@
+.inplace-initialized[data-inplace-rich] {
+    position: relative;
+    border-radius: 0.3125rem;
+}
+
+    .inplace-initialized[data-inplace-rich]:after {
+        position: absolute;
+        top: -0.3125rem;
+        bottom: -0.3125rem;
+        right: -0.3125rem;
+        display: block;
+        width: 1.5625rem;
+        border-radius: 0 0.3125rem 0.3125rem 0;
+        background: #eee url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZmlsbD0iIzcwNzA3MCIgZD0iTTQyMi45NTMsMTc2LjAxOWMwLjU0OS0wLjQ4LDEuMDktMC45NzUsMS42MTItMS40OThsMjEuNzcyLTIxLjc3MmMxMi44ODMtMTIuODgzLDEyLjg4My0zMy43NzEsMC00Ni42NTQNCgkJbC00MC40MzQtNDAuNDM0Yy0xMi44ODMtMTIuODgzLTMzLjc3MS0xMi44ODMtNDYuNjUzLDBsLTIxLjc3MiwyMS43NzJjLTAuNTIzLDAuNTIzLTEuMDE4LDEuMDY0LTEuNDk4LDEuNjEzTDQyMi45NTMsMTc2LjAxOXoiLz48cG9seWdvbiBmaWxsPSIjNzA3MDcwIiBwb2ludHM9IjExNC4zMTcsMzk3LjY4NCAxNTcuMzE3LDQ0MC42ODQgMTA2LjY1OCw0NDguMzQyIDU2LDQ1NiA2My42NTgsNDA1LjM0MSA3MS4zMTYsMzU0LjY4MyIvPjxwb2x5Z29uIGZpbGw9IiM3MDcwNzAiIHBvaW50cz0iMzQ5LjE0MywxMjUuNTM1IDExOC45ODIsMzU1LjY5NCAxMDYuNTQxLDM0My4yNTMgMzM2LjcwMSwxMTMuMDk0IDMyNC4yNiwxMDAuNjUzIDgxLjY1OSwzNDMuMjUzIA0KCQkxNjguNzQ3LDQzMC4zNDEgNDExLjM0OCwxODcuNzQiLz48L2c+PC9zdmc+") center center no-repeat;
+        background-size: 95% auto;
+        content: "";
+        visibility: hidden;
+    }
+
+    .inplace-initialized[data-inplace-rich]:hover {
+        -webkit-box-shadow: 0 0 0 0.3125rem #fff, 0 0 0.3125rem 0.3125rem #ccc;
+        box-shadow: 0 0 0 0.3125rem #fff, 0 0 0.3125rem 0.3125rem #ccc;
+        background: #fff;
+    }
+
+        .inplace-initialized[data-inplace-rich]:hover:after {
+            display: block;
+            visibility: visible;
+        }
+
+    .inplace-initialized[data-inplace-rich]:focus {
+        outline: none;
+    }
+
+        .inplace-initialized[data-inplace-rich]:focus:after {
+            display: none;
+        }
+
+    .inplace-initialized[data-inplace-rich].inplace-offset {
+        border-radius: 0.3125rem 0 0 0.3125rem;
+    }
+
+        .inplace-initialized[data-inplace-rich].inplace-offset:focus {
+            border-radius: 0.3125rem;
+            outline: none;
+        }
+
+        .inplace-initialized[data-inplace-rich].inplace-offset:after {
+            right: auto;
+            left: 100%;
+            -webkit-box-shadow: 0 0 0.3125rem 0 #ccc;
+            box-shadow: 0 0 0.3125rem 0 #ccc;
+        }
+
+    .inplace-initialized[data-inplace-rich]:not(.inplace-rich-simple) {
+        min-width: 6.25rem;
+        min-height: 0.75rem;
+    }
+
+.inplace-rich-simple br {
+    display: none;
+}
+
+.inplace-rich-empty {
+    font-style: italic;
+    /*color: #4b4f58;*/
+}
+
+.cke_focus {
+    outline: none;
+    -webkit-box-shadow: 0 0 0 0.3125rem #fff, 0 0 0.3125rem 0.3125rem #ccc;
+    box-shadow: 0 0 0 0.3125rem #fff, 0 0 0.3125rem 0.3125rem #ccc;
+    background-color: #fff;
+}
+
+[data-inplace-rich]:hover {
+    background-color: #fff;
+}
+
+.inplace-buttons {
+    position: absolute;
+    z-index: 8000;
+    border: 0.0625rem #ccc solid;
+    border-radius: 0 0 0.3125rem 0.3125rem;
+    background: #eee;
+}
+
+.inplace-buttons-item {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.875rem !important;
+    line-height: 1 !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(30%, #fdfdfd), to(#f3f3f3));
+    background: linear-gradient(to bottom, white 0%, #fdfdfd 30%, #f3f3f3 100%);
+    border-radius: 0.3125rem;
+    border: 0.0625rem #ccc solid;
+    position: relative;
+    margin: 0.3125rem 0.3125rem;
+    color: #4b4f58 !important;
+}
+
+    .inplace-buttons-item:before {
+        margin: 0.125rem;
+    }
+
+.inplace-buttons-rich {
+    margin: 0.3125rem 0 0 0;
+}
+
+.cke_focus.inplace-offset {
+    min-width: 6.25rem;
+    display: inline-block;
+    -webkit-transition: min-width linear 0.3s;
+    transition: min-width linear 0.3s;
+}
+
+.inplace-obj.cke_focus, .inplace-obj:hover {
+    background-color: #fff;
+    color: #000;
+    position: relative;
+    z-index: 5;
+}

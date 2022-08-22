@@ -1,0 +1,4 @@
+﻿Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
+1;1;title;Контакты;html;null;0
+2;1;subtitle;Как с нами связаться;html;null;100
+3;1;text;<p class='lp-font-size--large'>+7 (800) 333-68-03</p><p>г. Москва, ул. Облукова, 5<br>info@advantshop.ru</p>;html;null;200

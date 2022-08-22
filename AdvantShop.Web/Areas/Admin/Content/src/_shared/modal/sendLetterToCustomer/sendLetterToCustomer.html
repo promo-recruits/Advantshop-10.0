@@ -1,0 +1,74 @@
+﻿<form>
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title" ng-bind="ctrl.getModalTitle()"></h2>
+    </div>
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <div class="form-group" ng-if="ctrl.error != null">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div ng-bind-html="ctrl.error" class="error-red"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-12 col-sm-3 control-label">
+                        <span class="text-required">
+                            {{'Admin.Js.SendLetterToCustomer.EmailTemplate'|translate}}
+                        </span>
+                    </label>
+                    <div class="col-xs-12 col-sm-9 control-label">
+                        <select data-e2e="AnswerTemplate" ng-model="ctrl.mailAnswerTemplate" class="form-control" ng-options="item as item.Name for item in ctrl.templates track by item.TemplateId" ng-change="ctrl.getLetterFormat()">
+                            <option label="{{'Admin.Js.SendLetterToCustomer.Empty'|translate}}" value="-1">{{'Admin.Js.SendLetterToCustomer.Empty'|translate}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-12 col-sm-3 control-label">
+
+                    </label>
+                    <div class="col-xs-9 control-label">
+                        <a href="settingsmail#?notifyTab=templates" data-e2e="EditTemplate" target="_blank">{{'Admin.Js.SendLetterToCustomer.EditingTemplates'|translate}}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-12 col-sm-3 control-label">
+                        <span class="text-required">
+                            {{'Admin.Js.SendLetterToCustomer.LetterSubject'|translate}}
+                        </span>
+                    </label>
+                    <div class="col-xs-12 col-sm-9 control-label">
+                        <input data-e2e="SubjectMail" type="text" ng-model="ctrl.subject" class="form-control" required autofocus validation-input-text="{{'Admin.Js.SendLetterToCustomer.LetterSubject'|translate}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-12 col-sm-3 control-label">
+                        <span class="text-required">
+                            {{'Admin.Js.SendLetterToCustomer.LetterText'|translate}}
+                        </span>
+                    </label>
+                    <div class="col-xs-12 col-sm-9 control-label" style="min-height: 400px;">
+                        <div ng-if="ctrl.showCkeditor !== false">
+                            <textarea ng-model="ctrl.text" class="wysiwyg" ckeditor="{height: 250}" required validation-input-text="{{'Admin.Js.SendLetterToCustomer.LetterSubject'|translate}}"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-save btn-primary" type="button" ladda="ctrl.btnLoading" ng-disabled="ctrl.error != null" data-button-validation-success="ctrl.send()" data-button-validation>{{'Admin.Js.SendLetterToCustomer.Send'|translate}}</button>
+        <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.SendLetterToCustomer'|translate}}</button>
+    </div>
+</form>

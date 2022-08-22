@@ -1,0 +1,48 @@
+﻿<div>
+    <div class="form-group">
+        <div>
+            <div class="input-group">
+                <input type="password" name="disablingChromeAutoFill" autocomplete="new-password" hidden />
+                <div data-ng-class="{'input-group-addon full-width' : !$ctrl.gridSearchVisible}">
+                    <input data-e2e="gridFilterSearch" class="form-control input-sm" data-autofocus="$ctrl.searchAutofocus" type="text" placeholder="{{::$ctrl.gridSearchPlaceholder}}"
+                           data-ng-model="$ctrl.gridSearchText" ng-if="$ctrl.gridSearchVisible"
+                           ng-keyup="$ctrl.onApplySearch([{name:'search', value: $ctrl.gridSearchText}], null, $event)" autocomplete="off" />
+                </div>
+                <div class="input-group-btn">
+                    <div class="btn-group ui-grid-filter-block__btn-container" ng-if="$ctrl.columns.length > 0">
+                        <button type="button" class="btn btn-sm btn-success btn--slim  btn--icon ui-grid-filter-block__btn--mobile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 512 512">
+                                <path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path>
+                            </svg>
+                        </button>
+                        <!--<select class="ui-grid-filter-block__list--mobile">
+        <option data-e2e="gridFilterDropdownItem" ng-repeat="menuItem in $ctrl.checkVisibleMenuItem($ctrl.columns)" data-e2e-filter-dropdown-name="{{menuItem.name}}" ng-bind="menuItem.filter.placeholder" ng-click="$ctrl.addFilterBlock(menuItem)"></option>
+    </select>-->
+                        <select class="ui-grid-filter-block__list--mobile" ng-model="$ctrl.filterSelected" ng-change="$ctrl.addFilterBlock($ctrl.filterSelected)" ng-options="menuItem.filter.placeholder for  menuItem in $ctrl.checkVisibleMenuItem($ctrl.columns)"></select>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-success btn--slim btn--icon" ng-click="$ctrl.onApplySearch([{name:'search', value: $ctrl.gridSearchText}], null, $event)">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 11h-.79l-.28-.27A6.471 6.471 0 0013 6.5 6.5 6.5 0 106.5 13c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L17.49 16l-4.99-5zm-6 0C4.01 11 2 8.99 2 6.5S4.01 2 6.5 2 11 4.01 11 6.5 8.99 11 6.5 11z" fill="currentColor" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-group-addon ui-grid-custom-filter-total" ng-if="$ctrl.hiddenTotalItemsCount !== true && $ctrl.gridOptions.totalItems != null"
+                     ng-class="{'full-width': !$ctrl.gridSearchVisible}"
+                     ng-bind="('Admin.Js.UiGridCustomFilter.FoundEntries'|translate) + $ctrl.gridOptions.totalItems"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-wl-3" ng-repeat="blockItem in $ctrl.blocks">
+                <ui-grid-custom-filter-block data-e2e="gridFilterBlock"
+                                             data-e2e-grid-filter-block-name="{{blockItem.name}}"
+                                             class="ibox"
+                                             block-type="blockItem.filter.type"
+                                             item="blockItem"
+                                             on-apply="$ctrl.onApplyBlock(params, item)"
+                                             on-close="$ctrl.onClose(name, item)"></ui-grid-custom-filter-block>
+            </div>
+        </div>
+    </div>
+</div>

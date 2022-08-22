@@ -1,0 +1,41 @@
+﻿@model AdvantShop.Web.Admin.Models.Settings.IPTelephonySettingsModel
+<div class="form-group row">
+    <div class="col-xs-3">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.YandexApiKey, T("Admin.Settings.Telephony.Yandex.ApiKey"), new { @class = "form-label-block" })
+        </div>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.YandexApiKey, new { ng_model = "settingsTelephony.yandexApiKey", @class = "form-control" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="@T("Admin.Settings.Telephony.Yandex.ApiKey")">
+            @T("Admin.Settings.Telephony.Yandex.ApiKeyNote")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3">
+        <div class="setting-label-wrap">
+            @Html.LabelFor(x => x.YandexMainUserKey, T("Admin.Settings.Telephony.Yandex.MainUserKey"), new { @class = "form-label-block" })
+        </div>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.YandexMainUserKey, new { ng_model = "settingsTelephony.yandexMainUserKey", @class = "form-control" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="@T("Admin.Settings.Telephony.Yandex.MainUserKey")">
+            @T("Admin.Settings.Telephony.Yandex.MainUserKeyNote")
+        </help-trigger>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3">
+        <div class="setting-label-wrap">
+            <label class="form-label-block">@T("Admin.Settings.Telephony.Yandex.ServiceUrl")</label>
+        </div>
+    </div>
+    <div class="col-xs-6" ng-init="settingsTelephony.yandexServiceUrl = '@(SettingsMain.SiteUrl)/yandextelephony/pushnotification'">
+        <span ng-bind="settingsTelephony.yandexServiceUrl"></span>
+        <i class="fa fa-clipboard pointer m-l-xs" ng-click="settingsTelephony.copy(settingsTelephony.yandexServiceUrl)" title="@T("Admin.SettingsTelephony.CopyALink")" aria-hidden="true"></i>
+        <help-trigger class="ng-cloak word-spacing" data-title="@T("Admin.Settings.Telephony.Yandex.ServiceUrl")">
+            @T("Admin.Settings.Telephony.Yandex.ServiceUrlNote")
+        </help-trigger>
+    </div>
+</div>

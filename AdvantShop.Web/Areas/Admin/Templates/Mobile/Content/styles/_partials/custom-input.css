@@ -1,0 +1,29 @@
+.custom-input-decorator {
+  position: relative;
+  overflow: hidden;
+}
+.custom-input-decorator__native {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  z-index: 0;
+}
+.custom-input-decorator__trigger {
+  position: relative;
+  z-index: 5;
+  display: inline-block;
+  vertical-align: middle;
+  pointer-events: none;
+}
+.custom-input-decorator__select {
+  display: inline-flex;
+  align-items: center;
+}
+.custom-input-decorator__select-chevron-icon {
+  display: block;
+}

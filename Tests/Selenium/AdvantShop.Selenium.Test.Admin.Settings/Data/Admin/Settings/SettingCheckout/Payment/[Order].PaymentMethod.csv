@@ -1,0 +1,10 @@
+﻿PaymentMethodID;Name;Enabled;SortOrder;Description;PaymentType;CurrencyId
+747;Подарочный сертификат;true;1000;Заказ будет оплачен сертификатом;GiftCertificate;4
+843;Наложенный платеж;true;1000;;CashOnDelivery;4
+844;Оплата наличными при получении заказа в пункте выдачи;true;1000;;PickPoint;4
+951;Наличными курьеру;true;0;Наличными курьеру;Cash;4
+952;Банковский перевод для физ. лиц;true;0;Банковский перевод для физ. лиц;SberBank;4
+953;Банковский перевод для юр. лиц;true;0;Банковский перевод для юр. лиц;Bill;4
+959;Пластиковая карта;true;0;;WalletOneCheckout;4
+961;Электронные деньги (Яндекс Деньги, WebMoney, Qiwi);true;0;;WalletOneCheckout;4
+962;Терминалы оплаты;true;0;;WalletOneCheckout;4

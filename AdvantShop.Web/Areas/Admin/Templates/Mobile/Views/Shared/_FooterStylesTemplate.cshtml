@@ -1,0 +1,15 @@
+﻿@using AdvantShop.Core.Services.Admin
+@{
+    var jsBundleName = "all_admin_mobile" + (AdminAreaTemplate.Current == "adminv2" ? "" : "_v3") + (SettingsDesign.IsMobileTemplate ? "_mobile" : "") + ".js";
+    var staticPathMobile = "~/areas/admin/templates/mobile/content/";
+
+    Html.AddBundles(new List<string>()
+    {
+        "~/scripts/_mobile/full-height-mobile/full-height-mobile.component.js",
+        staticPathMobile + "src/_shared/is-mobile/is-mobile.js",
+        staticPathMobile + "src/_shared/details/details.js",
+        staticPathMobile + "src/_shared/swipe-line/swipe-line.js",
+        staticPathMobile + "src/_app/dependencyList.js"
+    },
+        jsBundleName);
+}

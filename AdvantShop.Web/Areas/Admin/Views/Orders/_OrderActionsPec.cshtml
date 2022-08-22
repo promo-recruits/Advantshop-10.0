@@ -1,0 +1,10 @@
+﻿@model AdvantShop.Web.Admin.Models.Orders.Pec.OrderActionsModel
+
+@if (Model.ShowSendOrder)
+{
+    <a href="" class="m-t-xs m-b-xs block fs-xs" ng-click="$ctrl.createPecOrder()">Передать заказ в ПЭК</a>
+}
+@if (Model.ShowCancelOrder)
+{
+    <a href="" class="m-t-xs m-b-xs block fs-xs" ng-click="$ctrl.cancelPecOrder()">Отменить заказ в ПЭК</a>
+}

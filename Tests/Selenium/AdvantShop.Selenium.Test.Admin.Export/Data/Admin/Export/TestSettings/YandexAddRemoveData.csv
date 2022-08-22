@@ -1,0 +1,30 @@
+text252;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex e;;;
+add1;Export1;;;
+default1;ExportDefault;;;
+required1;ExportRequired;;;
+validation1;ExportValidation;;;
+edit1;Export2;;;
+edit1d;Export2Description;;;
+edit2;Export2_modified;;;
+edit3;Export2_twice_modified;;;
+remove1;ExportR1;;;
+remove2;ExportR2;;;
+defaultExportType;xml;;;
+exportType2;yml;;;
+defaultCurrency;RUB;;;
+validationVal1;zero;ошибка(параметры интервала);ошибка(для интервала);ошибка(для наценки)
+validationVal2;,;ошибка;;ошибка(для наценки)
+validationVal3;0.6;округление до v4(параметры интервала);ошибка(для интервала);
+validationVal4;1;результат v3;;
+validationVal5;-3.2;ошибка;;
+validationVal6;23,6;ошибка;;
+validationVal7;23;успешный результат, +результат v8;успешно(для интервала);
+validationVal8;22;без сохранения;;
+validationVal9;59,6;ошибка;;
+validationVal10;59;успешный результат, +результат v11;;
+validationVal11;58;без сохранения;;
+validationVal12;-1;ошибка;для интервала;
+validationVal13;0;успешно, выгрузка каждый час;для интервала;
+validationVal14;.;ошибка ;;пустота(для наценки)
+ShopName;ShopName;;;
+CompanyName;CompanyName;;;

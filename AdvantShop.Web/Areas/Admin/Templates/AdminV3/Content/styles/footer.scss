@@ -1,0 +1,20 @@
+﻿.site-footer__copyright{
+  margin-right: 25px;
+}
+
+.site-footer__links{
+  display: flex;
+  align-items: center;
+}
+.site-footer__social-link{
+  color: rgba(34,40,49,.56);
+  display: inline-block;
+  
+    &:hover{
+      color:#263238;
+    }
+}
+
+.site-footer__social-icon{
+  vertical-align: middle;
+}

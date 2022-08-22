@@ -1,0 +1,30 @@
+﻿@using AdvantShop.Core.Services.Admin
+@using AdvantShop.Core.Services.Bonuses.Sms
+@{
+    if (AdminAreaTemplate.IsAdminv3())
+    {
+        Layout = "~/Areas/Admin/Templates/" + AdminAreaTemplate.Current + "/Views/BonusSystem/_BonusSystemLayout.cshtml";
+    }
+}
+
+<div class="sticky-page-name m-t-n-xs m-b-xs " sticky sticky-top="0">
+    <div class="page-name-block sticky-page-name-inner">
+        <div class="page-name-block-item-main flex middle-xs">
+            <h2 class="m-r-xs  sticky-page-name-text m-t-none">
+                @T("Admin.SmsTemplates.SmsLog.Title")
+            </h2>
+        </div>
+    </div>
+</div>
+
+<div class="ibox">
+    <div class="ibox-content">
+        <ui-grid-custom grid-unique-id="gridlog"
+                        grid-on-init="smstemplates.gridlogOnInit(gridlog)"
+                        grid-options="smstemplates.gridlogOptions"
+                        grid-url="'smstemplates/getsmslogs'"
+                        grid-filter-enabled="true"
+                        grid-selection-enabled="false">
+        </ui-grid-custom>
+    </div>
+</div>

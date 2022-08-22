@@ -1,0 +1,261 @@
+﻿<form novalidate name="formAddLead">
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{'Admin.Js.AddLead.NewLead'|translate}}</h2>
+    </div>
+    <div class="modal-body task-modal-content-new-item" ng-init="ctrl.form = formAddLead">
+        <div class="form-horizontal m-r m-l">
+            <div class="form-group">
+                <h2 class="m-n bold">
+                    {{'Admin.Js.AddLead.Customer'|translate}}
+                </h2>
+            </div>
+
+            <div class="form-group" ng-if="ctrl.customerId != null">
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{'Admin.Js.AddLead.CustomerSelected'|translate}} <a href="customers/view/{{ctrl.customerId}}{{ctrl.clientCode ? ('?code=' + ctrl.clientCode) : ''}}" target="_blank" data-e2e="LeadCustomer">{{ctrl.firstName}} {{ctrl.lastName}} {{ctrl.phone}} {{ctrl.email}} {{ctrl.clientCode}}</a>
+                        <a class="link-invert link-decoration-none fas fa-times" href="" ng-click="ctrl.clearCustomer()" data-e2e="LeadCustomerDelete"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="row">
+                            <label class="col-xs-12 control-label m-b-xs">
+                                {{'Admin.Js.AddLead.Lastname'|translate}}
+                            </label>
+                            <div class="col-xs-12">
+                                <input type="text" class="form-control" ng-model="ctrl.lastName"
+                                       autofocus
+                                       autocomplete="false"
+                                       uib-typeahead="item for items in ctrl.findCustomer($viewValue)"
+                                       typeahead-on-select="ctrl.selectCustomer($item)"
+                                       typeahead-template-url="../areas/admin/content/src/_shared/modal/addLead/find-customer.html"
+                                       typeahead-focus-first="false"
+                                       data-e2e="LeadLastName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="row">
+                            <label class="col-xs-12 control-label m-b-xs">
+                                <span class="text-required">{{'Admin.Js.AddLead.FirstName'|translate}}</span>
+                            </label>
+                            <div class="col-xs-12">
+                                <input type="text" class="form-control" ng-model="ctrl.firstName" required validation-input-text="{{'Admin.Js.AddLead.FirstName'|translate}}"
+                                       uib-typeahead="item for items in ctrl.findCustomer($viewValue)"
+                                       autocomplete="false"
+                                       typeahead-on-select="ctrl.selectCustomer($item)"
+                                       typeahead-template-url="../areas/admin/content/src/_shared/modal/addLead/find-customer.html"
+                                       typeahead-focus-first="false"
+                                       data-e2e="LeadFirstName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="row">
+                            <label class="col-xs-12 control-label m-b-xs">
+                                {{'Admin.Js.AddLead.Patronymic'|translate}}
+                            </label>
+                            <div class="col-xs-12">
+                                <input type="text" class="form-control" ng-model="ctrl.patronymic"
+                                       uib-typeahead="item for items in ctrl.findCustomer($viewValue)"
+                                       autocomplete="false"
+                                       typeahead-on-select="ctrl.selectCustomer($item)"
+                                       typeahead-template-url="../areas/admin/content/src/_shared/modal/addLead/find-customer.html"
+                                       typeahead-focus-first="false"
+                                       data-e2e="LeadPatronymic" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <label class="col-xs-12 control-label m-b-xs">
+                                {{'Admin.Js.AddLead.Organization'|translate}}
+                            </label>
+                            <div class="col-xs-12">
+                                <input type="text" class="form-control" ng-model="ctrl.organization" validation-input-text="{{'Admin.Js.AddLead.Organization'|translate}}"
+                                       uib-typeahead="item for items in ctrl.findCustomer($viewValue)"
+                                       autocomplete="false"
+                                       typeahead-on-select="ctrl.selectCustomer($item)"
+                                       typeahead-template-url="../areas/admin/content/src/_shared/modal/addLead/find-customer.html"
+                                       typeahead-focus-first="false"
+                                       data-e2e="LeadOrganization" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <label class="col-xs-12 control-label m-b-xs">
+                                <span class="text-required">{{'Admin.Js.AddLead.Phone'|translate}}</span>
+                            </label>
+                            <div class="col-xs-12">
+                                <input type="text" 
+                                       class="form-control" 
+                                       ng-model="ctrl.phone" 
+                                       required 
+                                       validation-input-text="{{'Admin.Js.AddLead.Phone'|translate}}"
+                                       data-mask-control
+                                       data-mask-control-preset="phone"
+                                       uib-typeahead="item for items in ctrl.findCustomer($viewValue)"
+                                       autocomplete="false"
+                                       typeahead-on-select="ctrl.selectCustomer($item)"
+                                       typeahead-template-url="../areas/admin/content/src/_shared/modal/addLead/find-customer.html"
+                                       typeahead-focus-first="false"
+                                       data-e2e="LeadPhoneNum" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <label class="col-xs-12 control-label m-b-xs">
+                                Email
+                            </label>
+                            <div class="col-xs-12">
+                                <input type="email" class="form-control" ng-model="ctrl.email"
+                                       pattern="^([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)|(admin)$"
+                                       uib-typeahead="item for items in ctrl.findCustomer($viewValue)"
+                                       autocomplete="false"
+                                       typeahead-on-select="ctrl.selectCustomer($item)"
+                                       typeahead-template-url="../areas/admin/content/src/_shared/modal/addLead/find-customer.html"
+                                       validation-input-text="Email"
+                                       typeahead-focus-first="false"
+                                       data-e2e="LeadEmail" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <customer-fields customerfields-js="ctrl.customerFields" customer-id="ctrl.customerId" class="custom-fields-2-cols" on-init="ctrl.onCustomerFieldsInit(reloadFn)"></customer-fields>
+            </div>
+
+            <div class="form-group">
+                <div class="divider-form"></div>
+            </div>
+
+            <div class="form-group">
+                <h2 class="m-n bold">
+                    {{'Admin.Js.AddLead.Lead'|translate}}
+                </h2>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-2 control-label">
+                        {{'Admin.Js.AddLead.Products'|translate}}
+                    </label>
+                    <div class="col-xs-10 control-label">
+
+                        <div class="m-b" ng-if="ctrl.products == null || ctrl.products.length == 0" data-e2e="LeadNoProducts">
+                            {{'Admin.Js.AddLead.NoProducts'|translate}}
+                        </div>
+                        <div class="m-b" ng-if="ctrl.products != null && ctrl.products.length > 0">
+                            <table class="table table-striped table-striped-custom" data-e2e="LeadAddItemsTable">
+                                <tr>
+                                    <th>{{'Admin.Js.AddLead.Name'|translate}}</th>
+                                    <th style="width: 90px">{{'Admin.Js.AddLead.Quantity'|translate}}</th>
+                                    <th style="width: 120px">{{'Admin.Js.AddLead.Price'|translate}}</th>
+                                    <th style="width: 30px"></th>
+                                </tr>
+                                <tr ng-repeat="item in ctrl.products track by $index">
+                                    <td data-e2e="LeadItemArtNoName">{{item.ArtNo}} - {{item.Name}}</td>
+                                    <td style="width: 90px">
+                                        <input type="number" class="form-control" ng-model="item.Amount" ng-change="ctrl.changeProductAmount()" data-e2e="LeadItemAmount" />
+                                    </td>
+                                    <td><span data-e2e="LeadItemPrice" ng-bind-html="item.PreparedPrice | sanitize"></span></td>
+                                    <td><a data-e2e="LeadItemRemove" href="" ng-click="ctrl.removeTempProduct($index)" class="link-invert link-decoration-none fas fa-times"></a></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <ui-modal-trigger size="xs-11" data-controller="'ModalOffersSelectvizrCtrl'" data-controller-as="ctrl"
+                                          data-on-close="ctrl.addItems(result)"
+                                          template-url="../areas/admin/content/src/_shared/modal/offers-selectvizr/offersSelectvizrModal.html">
+                            <a class="btn btn-sm btn-success" href="" data-e2e="LeadItemAdd">
+                                {{'Admin.Js.AddLead.Add'|translate}}
+                            </a>
+                        </ui-modal-trigger>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-2 control-label">
+                        {{'Admin.Js.AddLead.Description'|translate}}
+                    </label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" ng-model="ctrl.description" data-e2e="LeadDescription" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row middle-xs">
+                    <label class="col-xs-2 control-label">
+                        {{'Admin.Js.AddLead.Budget'|translate}}
+                    </label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" ng-model="ctrl.sum" ng-readonly="ctrl.products != null && ctrl.products.length > 0" data-e2e="LeadSum" validation-input-float validation-input-text="{{'Admin.Js.AddLead.Budget'|translate}}" />
+                    </div>
+                    <div class="col-xs-1 control-label" data-e2e="LeadCurrency">
+                        {{ctrl.currencySymbol}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-2 control-label">
+                        {{'Admin.Js.AddLead.SalesFunnel'|translate}}
+                    </label>
+                    <div class="col-xs-4">
+                        <select ng-model="ctrl.salesFunnelId" ng-options="s as s.label for s in ctrl.salesFunnels" ng-change="ctrl.changeSalesFunnel()" class="form-control" data-e2e="LeadSalesFunnel"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-2 control-label">
+                        {{'Admin.Js.AddLead.DealStage'|translate}}
+                    </label>
+                    <div class="col-xs-4">
+                        <select ng-model="ctrl.dealStatus" ng-options="s as s.label for s in ctrl.statuses" class="form-control" data-e2e="LeadDealStatus"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-2 control-label">
+                        {{'Admin.Js.AddLead.Manager'|translate}}
+                    </label>
+                    <div class="col-xs-4">
+                        <select ng-model="ctrl.manager" ng-options="s as s.label for s in ctrl.managers" class="form-control" data-e2e="LeadManager">
+                            <option value="">{{'Admin.Js.AddLead.SelectAManager'|translate}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-if="ctrl.salesFunnelId">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <lead-fields leadfields-js="ctrl.leadFields" sales-funnel-id="ctrl.salesFunnelId.value" class="block m-n custom-fields-two-columns" on-init="ctrl.leadFieldsReloadFn = reloadFn"></lead-fields>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-save btn-primary" type="submit" button-validation button-validation-success="ctrl.addLead(); ctrl.btnLoading = true" ladda="ctrl.btnLoading" data-e2e="LeadAdd">{{'Admin.Js.AddLead.Add'|translate}}</button>
+        <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.AddLead.Cancel'|translate}}</button>
+    </div>
+</form>

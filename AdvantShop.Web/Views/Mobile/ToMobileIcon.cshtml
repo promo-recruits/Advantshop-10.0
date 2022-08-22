@@ -1,0 +1,10 @@
+﻿@model AdvantShop.ViewModel.Mobile.MobileOverlapViewModel
+<div data-oc-lazy-load="[{files: [@Html.RenderAssetFilesList("mobileOverlap", "")]}]">
+    <div @Html.Raw(Model.ToolbarEnabled ? "class='toolbarEnabled container go-to-mobile-block'" : "")>
+        <div data-ng-controller="mobileOverlapCtrl as mOverlap">
+            <a data-ng-click="mOverlap.goToMobile()" class="desktopGoToMobile cs-br-1">
+                <i class="icon-mobile-after"></i>Перейти на мобильную версию
+            </a>
+        </div>
+    </div>
+</div>

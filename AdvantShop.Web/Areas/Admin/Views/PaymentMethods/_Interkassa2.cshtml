@@ -1,0 +1,49 @@
+﻿@model AdvantShop.Web.Infrastructure.Admin.PaymentMethods.Interkassa2PaymentModel
+
+
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">@T("Admin.PaymentMethods.Interkassa2.IdentifierInterkassa2")</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.ShopId, new { ng_model = "paymentMethod.Parameters.ShopId", @class = "form-control", required = "required", validation_input_text = T("Admin.PaymentMethods.Interkassa2.IdentifierInterkassa2").ToString() })
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="@T("Admin.PaymentMethods.Interkassa2.IdentifierInterkassa2")">
+            @T("Admin.PaymentMethods.Interkassa2.IdentifireRegisteredInInterkassa2")
+        </help-trigger>
+    </div>
+</div>
+
+
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        @T("Admin.PaymentMethods.Interkassa2.CheckSignature")
+    </div>
+    <div class="col-xs-6 relative">
+        <label class="adv-checkbox-label form-label-block">
+            @Html.CheckBoxFor(x => x.IsCheckSign, new {ng_model = "paymentMethod.Parameters.IsCheckSign", ng_init = "paymentMethod.Parameters.IsCheckSign=" + Model.IsCheckSign.ToLowerString(), @class = "adv-checkbox-input"})
+            <span class="adv-checkbox-emul"></span>
+        </label>
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="@T("Admin.PaymentMethods.Interkassa2.CheckSignature")">
+            @T("Admin.PaymentMethods.Interkassa2.Security")
+        </help-trigger>
+    </div>
+</div>
+
+
+
+<div class="form-group row middle-xs">
+    <div class="flex-grow-n col-fixed-size-md">
+        <span class="text-required">@T("Admin.PaymentMethods.Interkassa2.SecretKey")</span>
+    </div>
+    <div class="col-xs-6 relative">
+        @Html.TextBoxFor(x => x.SecretKey, new { ng_model = "paymentMethod.Parameters.SecretKey", @class = "form-control", required = "required", validation_input_text = T("Admin.PaymentMethods.Interkassa2.SecretKey").ToString() })
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="@T("Admin.PaymentMethods.Interkassa2.SecretKey")">
+            @T("Admin.PaymentMethods.Interkassa2.IfOptionIsActive")
+        </help-trigger>
+    </div>
+</div>
+
+
+

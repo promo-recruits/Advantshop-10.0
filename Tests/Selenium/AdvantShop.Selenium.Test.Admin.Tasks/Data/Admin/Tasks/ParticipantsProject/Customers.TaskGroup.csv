@@ -1,0 +1,10 @@
+Id;Name;SortOrder;DateCreated[DATE];DateModified[DATE];Enabled;IsPrivateComments
+1;group1;1;08.08.2016 15:07;08.08.2016 15:07;true;false
+2;group2;1;08.08.2016 15:07;08.08.2016 15:07;true;false
+3;group3;2;08.08.2016 15:07;08.08.2016 15:07;true;false
+4;group4;3;08.08.2016 15:07;08.08.2016 15:07;true;false
+5;group5;4;08.08.2016 15:07;08.08.2016 15:07;true;false
+6;group6;5;08.08.2016 15:07;08.08.2016 15:07;true;false
+7;group7;6;08.08.2016 15:07;08.08.2016 15:07;true;false
+8;group8;7;08.08.2016 15:07;08.08.2016 15:07;true;false
+9;group9;8;08.08.2016 15:07;08.08.2016 15:07;true;false

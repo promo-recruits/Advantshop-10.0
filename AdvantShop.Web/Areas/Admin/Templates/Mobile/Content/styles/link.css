@@ -1,0 +1,62 @@
+a, .link {
+  color: #2d9cee;
+  text-decoration: underline;
+  cursor: pointer;
+}
+a:hover, .link:hover {
+  color: #676a6c;
+  text-decoration: none;
+}
+
+.link-invert, .ui-grid-custom-service-icon {
+  color: #676a6c;
+}
+.link-invert:hover, .ui-grid-custom-service-icon:hover {
+  color: #0084F4;
+}
+
+.link-decoration-none {
+  text-decoration: none;
+}
+.link-decoration-none:hover {
+  text-decoration: none;
+}
+
+.link-decoration-invert {
+  text-decoration: none;
+}
+.link-decoration-invert:hover {
+  text-decoration: underline;
+}
+
+.link-disabled {
+  color: #ccc;
+}
+
+.link-alt {
+  color: #bdc3c7;
+}
+.link-alt:hover {
+  color: #0084F4;
+}
+
+.link-danger {
+  color: red;
+}
+.link-danger:hover {
+  color: #676a6c;
+}
+
+.link-terna {
+  color: #1A051D;
+}
+.link-terna:hover {
+  color: #0084F4;
+}
+
+.link-dashed {
+  text-decoration: dashed;
+}
+.link-dashed:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,18 @@
+﻿Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
+1;1;title;Расписание;html;null;0
+2;1;subtitle;Advantshop предлагает широкий выбор специлистов;html;null;100
+3;2;title;Вдохновляйся идеями;html;null;0
+4;2;subtitle;Реализуй все с Advantshop;html;null;100
+5;2;text;"Текст, от латинского textus «ткань; сплетение, связь, сочетание» — зафиксированная на каком-либо материальном носителе человеческая мысль; в общем плане связная и полная последовательность символов.";html;null;200
+6;2;picture;;picture;"{""src"":""./areas/landing/frontend/images/texts/textImage.jpg"",""class"":""""}";300
+7;3;title;Вдохновляйся идеями;html;null;0
+8;3;subtitle;Реализуй все с Advantshop;html;null;100
+9;3;text;Простой инструмент для онлайн-продаж. Зарабатывайте больше, используя различные каналы продаж, и выстраивайте правильные отношения с клиентом.;html;null;200
+10;4;title;Создавай с Advantshop;html;null;0
+11;4;subtitle;Реализуй все с Advantshop;html;null;100
+12;5;logo;;logo;"{""alt"":""Мой магазин"",""src"":""areas/landing/frontend/images/logotype.png""}";0
+13;5;phone;8 (800) 550-83-13;html;null;100
+14;5;phone_mobile;88005508313;phonemobile;null;200
+15;5;email;info@mysite.ru;html;null;300
+16;5;callback;;button;"{""text"":""Обратный звонок"",""style"":{}}";400
+17;5;menuHeader;;menu;"{""font_size"":16,""menu_items_spacing"":20,""style"":{""font-size"":""16px"",""padding-left"":""20px"",""padding-right"":""20px""}}";500

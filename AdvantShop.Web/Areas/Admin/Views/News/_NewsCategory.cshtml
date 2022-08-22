@@ -1,0 +1,12 @@
+﻿<div ng-controller="NewsCategoryCtrl as newsCategory">
+    <ui-grid-custom grid-unique-id="gridCategories"
+                    grid-row-identificator="'NewsCategoryId'"
+                    grid-options="newsCategory.gridOptions"
+                    grid-on-init="newsCategory.gridOnInit(grid)"
+                    grid-url="'newsCategory/getNewsCategory'"
+                    grid-inplace-url="'newsCategory/inplaceNewsCategory'"
+                    grid-extend-ctrl="newsCategory">
+        <ui-grid-custom-footer class="ui-grid-custom-footer" ng-bind="newsCategory.grid.gridOptions.TotalString">
+        </ui-grid-custom-footer>
+    </ui-grid-custom>
+</div>

@@ -1,0 +1,59 @@
+﻿@model AdvantShop.Web.Admin.Models.Catalog.Products.AdminProductModel
+
+<div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="inline product-setting-title content-header">
+                    Свойства товара в авито
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" data-oc-lazy-load="'@(UrlService.GetUrl("Areas/Admin/Content/src/avito/avito.js"))'">
+        <div class="form-group row" ng-controller="AvitoCtrl as avito">
+            <div class="col-lg-12" ng-init="avito.getProperties(@Model.ProductId)">
+                <div class="m-b-sm">
+                    <a href="http://autoload.avito.ru/format/" target="_blank">Описание формата файла автовыгрузки Авито</a>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-xs-4">
+                        Название свойства в файле экспорта Авито
+                    </div>
+                    <div class="col-xs-4">
+                        Значение свойства
+                    </div>
+                </div>
+                <div class="ng-cloak" ng-if="avito.AvitoProductProperties.length > 0 ">
+                    <div class="form-group row" ng-repeat="avitoPropertyPair in avito.AvitoProductProperties">
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control" value="{{avitoPropertyPair.PropertyName}}" ng-model="avito.AvitoProductProperties[$index].PropertyName" placeholder="свойство" validation-input-not-cyrillic validation-input-text="Название свойства в файле экспорта Авито" />
+                        </div>
+
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control" value="{{avitoPropertyPair.PropertyValue}}" ng-model="avito.AvitoProductProperties[$index].PropertyValue" placeholder="значение свойства" />
+                        </div>
+                        <div class="col-xs-4 flex middle-xs">
+                            <a class="link-danger m-r-xs" ng-click="avito.deleteProductPropertyPair($index)">
+                                Удалить
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-sm btn-success m-r-sm" ng-click="avito.addPropertyPair(@Model.ProductId)">
+                    Добавить свойство
+                </button>
+
+
+                <div class="m-t m-b">
+                    <a href="" class="btn btn-sm btn-action" ng-click="avito.saveProperties(@Model.ProductId)" data-button-validation ng-disabled="avitoForm.$invalid">
+                        Сохранить настройки свойств в авито
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

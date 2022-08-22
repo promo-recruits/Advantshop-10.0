@@ -1,0 +1,41 @@
+help-trigger {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.help-trigger-icon-wrap {
+  height: 12px;
+  display: block;
+}
+
+.help-trigger-icon {
+  color: #676a6c;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 12px;
+  width: 20px;
+  display: flex;
+  vertical-align: middle;
+  font-size: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-trigger-icon-abs {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.help-trigger-icon--svg {
+  display: inline-block;
+  font-size: inherit;
+  height: 100%;
+  overflow: visible;
+  vertical-align: -0.125em;
+  width: 0.75em;
+}

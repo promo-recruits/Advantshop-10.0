@@ -1,0 +1,16 @@
+﻿<div class="onoffswitch onoffswitch--blue">
+    <input type="checkbox"
+           name="{{$ctrl.id}}"
+           value="{{$ctrl.checked ? 'true' : 'false'}}"
+           class="onoffswitch__input"
+           data-ng-model="$ctrl.checked"
+           data-ng-change="$ctrl.onChange({checked:$ctrl.checked})"
+           data-e2e="switchOnOffInput"
+           id="{{$ctrl.id}}" />
+    <label class="onoffswitch__label"
+           data-e2e="switchOnOffLabel"
+           data-ng-click="$ctrl.click($ctrl.checked, $ctrl.id)"
+           for="{{($ctrl.readonly != true ? $ctrl.id : '')}}">
+           <span data-ng-bind-html="$ctrl.label"></span>
+    </label>
+</div>

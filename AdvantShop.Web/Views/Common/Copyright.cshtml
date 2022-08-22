@@ -1,0 +1,9 @@
+﻿@model AdvantShop.Models.Common.CopyrightModel
+@if (Model.Visible)
+{
+    <div class="copyright-block">
+
+        @Html.Raw(Model.Text)
+
+    </div>
+}

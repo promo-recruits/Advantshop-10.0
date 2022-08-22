@@ -1,0 +1,842 @@
+﻿@model AdvantShop.Web.Admin.Models.Settings.Templates.SettingsTemplateModel
+
+<div class="setting-title m-t-none">
+    <h3>@T("Admin.Settings.Template.CountCategoriesTitle")</h3>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.CountCategoriesInLineTitle")
+        </div>
+    </div>
+    <div class="col-xs-1 relative">
+        @Html.TextBoxFor(x => x.CountCategoriesInLine, new { @class = "form-control input-small", ng_model = "settingsTemplate.CountCategoriesInLine" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Template.CountCategoriesInLineTitle")">
+            @T("Admin.SettingsCatalog.CatalogCommon.CountCategoriesInLineNote")
+        </help-trigger>
+    </div>
+</div>
+
+<div class="setting-title setting-title__m-t-md">
+    <h3>@T("Admin.Settings.Catalog.ProductsDisplaying")</h3>
+</div>
+
+<div class="form-group row" ng-hide="settingsTemplate.isHidden('ShowQuickView')">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowQuickView")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowQuickView, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowQuickView" })
+            <span class="adv-checkbox-emul" data-e2e="ShowQuickView"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Catalog.ShowQuickView")">
+            @T("Admin.SettingsCatalog.CatalogCommon.ShowQuickViewNote")
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ProductsPerPage")
+        </div>
+    </div>
+    <div class="col-xs-1 relative">
+        @Html.TextBoxFor(x => x.ProductsPerPage, new { @class = "form-control input-small", ng_model = "settingsTemplate.ProductsPerPage" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs" data-title="@T("Admin.Settings.Catalog.ProductsPerPage")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.OptionDetermines")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.CountCatalogProductInLineTitle")
+        </div>
+    </div>
+    <div class="col-xs-1 relative">
+        @Html.TextBoxFor(x => x.CountCatalogProductInLine, new { @class = "form-control input-small", ng_model = "settingsTemplate.CountCatalogProductInLine" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Template.CountCatalogProductInLineTitle")">
+            <div class="help-content">
+                @T("Admin.Settings.Template.CountCatalogProductInLineNote")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row" ng-hide="settingsTemplate.isHidden('ShowProductsCount')">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowProductsCount")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowProductsCount, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowProductsCount" })
+            <span class="adv-checkbox-emul" data-e2e="ShowProductsCount"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.ShowProductsCount")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.IfOption")<b>@T("Admin.SettingsCatalog.CatalogCommon.IsEnable")</b>@T("Admin.SettingsCatalog.CatalogCommon.InTheClientPart")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row" ng-hide="settingsTemplate.isHidden('DisplayCategoriesInBottomMenu')">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowCategoriesInBottomMenu")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.DisplayCategoriesInBottomMenu, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowCategoriesInBottomMenu" })
+            <span class="adv-checkbox-emul" data-e2e="DisplayCategoriesInBottomMenu"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title=" @T("Admin.Settings.Catalog.ShowCategoriesInBottomMenu") ">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.ShowOrNot")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row" ng-hide="settingsTemplate.isHidden('ShowProductArtNo')">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowProductArtNo")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowProductArtNo, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowProductArtNo" })
+            <span class="adv-checkbox-emul" data-e2e="ShowProductArtNo"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.ShowProductArtNo")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.ShowArticleInTile")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row middle-xs" ng-hide="settingsTemplate.isHidden('EnableProductRating')">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.EnableProductRating")
+        </div>
+    </div>
+    <div class="col-xs" style="max-width:60px;">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.EnableProductRating, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.EnableProductRating" })
+            <span class="adv-checkbox-emul" data-e2e="EnableProductRating"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.EnableProductRating")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.ShowOrNotStars")
+            </div>
+        </help-trigger>
+    </div>
+    <div class="col-xs row middle-xs relative" ng-if="settingsTemplate.EnableProductRating">
+        <label class="col-xs" style="max-width: 280px;">
+            @T("Admin.Settings.Catalog.SetAllProductsManualRatio"):
+        </label>
+        <input type="number" pattern="[0-9]*" class="form-control col-xs-2" style="max-width: 50px;" ng-model="settingsTemplate.ManualRatio" bs-modifiable="false" />
+        <input type="button" class="btn btn-sm btn-action col-xs-2 m-l-sm" ng-disabled="settingsTemplate.ManualRatio == null" ng-click="settingsTemplate.setAllProductsManualRatio()" value="@T("Admin.Settings.Catalog.SetAllProductsManualRatioBtn")" />
+        <help-trigger class="ng-cloak m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Catalog.SetAllProductsManualRatio")">
+            <div class="help-content">
+                @T("Admin.Settings.Catalog.SetAllProductsManualRatioNote")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row" ng-hide="settingsTemplate.isHidden('EnableCompareProducts')">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.EnableCompareProducts")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.EnableCompareProducts, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.EnableCompareProducts" })
+            <span class="adv-checkbox-emul" data-e2e="EnableCompareProducts"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.EnableCompareProducts")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.DeterminesDisplayOrNot")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row" ng-hide="settingsTemplate.isHidden('EnablePhotoPreviews')">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.EnablePhotoPreviews")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.EnablePhotoPreviews, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.EnablePhotoPreviews" })
+            <span class="adv-checkbox-emul" data-e2e="EnablePhotoPreviews"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.EnablePhotoPreviews")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.HoverMouseOnProduct")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row" ng-hide="settingsTemplate.isHidden('ShowCountPhoto')">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowCountPhoto")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowCountPhoto, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowCountPhoto" })
+            <span class="adv-checkbox-emul" data-e2e="ShowCountPhoto"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.ShowCountPhoto")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.OptionDisplaySmallIcon")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row" ng-hide="settingsTemplate.isHidden('ShowOnlyAvalible')">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowOnlyAvalible")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowOnlyAvalible, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowOnlyAvalible" })
+            <span class="adv-checkbox-emul" data-e2e="ShowOnlyAvalible"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.ShowOnlyAvalible")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.OptionToDisplayProductsAreNotAvailable")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row" ng-hide="settingsTemplate.isHidden('MoveNotAvaliableToEnd')">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.MoveNotAvaliableToEnd")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.MoveNotAvaliableToEnd, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.MoveNotAvaliableToEnd" })
+            <span class="adv-checkbox-emul" data-e2e="MoveNotAvaliableToEnd"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.MoveNotAvaliableToEnd")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.OptionToMoveProductsInTheEndList")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row" ng-hide="settingsTemplate.isHidden('ShowNotAvaliableLable')">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowNotAvaliableLable")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowNotAvaliableLable, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowNotAvaliableLable" })
+            <span class="adv-checkbox-emul" data-e2e="ShowNotAvaliableLable"></span>
+        </label>
+    </div>
+</div>
+
+<div class="setting-title setting-title__m-t-md">
+    <h3>@T("Admin.Settings.Catalog.HeadFilters")</h3>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowFilter")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.FilterVisibility, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.FilterVisibility" })
+            <span class="adv-checkbox-emul" data-e2e="FilterVisibility"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Catalog.ShowFilter")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.ShowFilterNote")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowPriceFilter")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowPriceFilter, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowPriceFilter" })
+            <span class="adv-checkbox-emul" data-e2e="ShowPriceFilter"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.ShowPriceFilter")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.FilterByPrice")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowProducerFilter")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowProducerFilter, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowProducerFilter" })
+            <span class="adv-checkbox-emul" data-e2e="ShowProducerFilter"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.ShowProducerFilter")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.ManufacturersFilter")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowSizeFilter")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowSizeFilter, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowSizeFilter" })
+            <span class="adv-checkbox-emul" data-e2e="ShowSizeFilter"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.ShowSizeFilter")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.FilterBySize")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowColorFilter")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowColorFilter, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowColorFilter" })
+            <span class="adv-checkbox-emul" data-e2e="ShowColorFilter"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.ShowColorFilter")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.FilterByColor")<br>
+                @T("Admin.SettingsCatalog.CatalogCommon.ColorsDisplayedLikeCubes")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ShowPropertiesFilterInProductList")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ShowPropertiesFilterInProductList, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ShowPropertiesFilterInProductList" })
+            <span class="adv-checkbox-emul" data-e2e="ShowPropertiesFilterInProductList"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.ShowPropertiesFilterInProductList")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.ShowPropertiesFilterInProductListNote")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ExluderingFilters")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ExcludingFilters, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ExluderingFilters" })
+            <span class="adv-checkbox-emul" data-e2e="ExcludingFilters"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.ExluderingFiltersHote")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.MarkedGray")<br>
+                <br>
+                @T("Admin.SettingsCatalog.CatalogCommon.AllowsToUnderstand")<br>
+                <br>
+                @T("Admin.SettingsCatalog.CatalogCommon.OptionRequiresMoreResources")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="setting-title setting-title__m-t-md">
+    <h3>@T("Admin.Settings.Catalog.SizesAndColors")</h3>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.SizesHeader")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        @Html.TextBoxFor(x => x.SizesHeader, new { @class = "form-control", ng_model = "settingsTemplate.SizesHeader" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title='@T("Admin.Settings.Catalog.SizesHeader")'>
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.SpecifyNameForSize")
+                <br>
+                @T("Admin.SettingsCatalog.CatalogCommon.ExampleVolume")
+                <br><br>
+                @T("Admin.Settings.Catalog.SizesHeaderLink")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ColorsHeader")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        @Html.TextBoxFor(x => x.ColorsHeader, new { @class = "form-control", ng_model = "settingsTemplate.ColorsHeader" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title='@T("Admin.Settings.Catalog.ColorsHeader")'>
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.SpecifyNameForColor")
+                <br>
+                @T("Admin.SettingsCatalog.CatalogCommon.ExampleTexture")
+                <br><br>
+                @T("Admin.Settings.Catalog.ColorsHeaderLink")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ColorsViewMode")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        @Html.DropDownListFor(x => x.ColorsViewMode, Model.ColorsViewModes, new { @class = "form-control", ng_model = "settingsTemplate.ColorsViewMode" })
+        <help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title='@T("Admin.Settings.Catalog.ColorsViewMode")'>
+            <div class="help-content">
+                @T("Admin.Settings.Catalog.ColorsViewModeHint")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.ColorsPictureInCatalog")
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Width")
+        </div>
+        <div class="input-group m-b-sm">
+            @Html.TextBoxFor(x => x.ColorIconWidthCatalog, new { @class = "form-control", ng_model = "settingsTemplate.ColorIconWidthCatalog", type = "number", min = "10", max = "1000", style = "width:120px;", validation_input_text = T("Admin.Settings.Catalog.ColorsPictureWidth") })
+            <span class="paramUnit">px</span>&nbsp;
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Height")
+        </div>
+        <div class="flex middle-xs">
+            <div class="input-group">
+                @Html.TextBoxFor(x => x.ColorIconHeightCatalog, new { @class = "form-control", ng_model = "settingsTemplate.ColorIconHeightCatalog", type = "number", min = "10", max = "1000", style = "width:120px;", validation_input_text = T("Admin.Settings.Catalog.ColorsPictureHeight") })
+                <span class="paramUnit">px</span>
+            </div>
+            <help-trigger class="ng-cloak" data-title="@T("Admin.Settings.Template.ColorsPictureInCatalog")">
+                <div class="help-content">
+                    @T("Admin.Settings.Template.ColorsPictureHelp")
+                    <br /><br />
+                    @T("Admin.Settings.Template.ColorsPictureHelpLink")
+                </div>
+            </help-trigger>
+        </div>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.ColorsPictureInDetails")
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Width")
+        </div>
+        <div class="input-group m-b-sm">
+            @Html.TextBoxFor(x => x.ColorIconWidthDetails, new { @class = "form-control", ng_model = "settingsTemplate.ColorIconWidthDetails", type = "number", min = "10", max = "1000", style = "width:120px;", validation_input_text = T("Admin.Settings.Catalog.ColorsPictureWidth") })
+            <span class="paramUnit">px</span>&nbsp;
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Height")
+        </div>
+        <div class="flex middle-xs">
+            <div class="input-group">
+                @Html.TextBoxFor(x => x.ColorIconHeightDetails, new { @class = "form-control", ng_model = "settingsTemplate.ColorIconHeightDetails", type = "number", min = "10", max = "1000", style = "width:120px;", validation_input_text = T("Admin.Settings.Catalog.ColorsPictureHeight") })
+                <span class="paramUnit">px</span>
+            </div>
+            <help-trigger class="ng-cloak" data-title="@T("Admin.Settings.Template.ColorsPictureInDetails")">
+                <div class="help-content">
+                    @T("Admin.Settings.Template.ColorsPictureHelp")
+                    <br /><br />
+                    @T("Admin.Settings.Template.ColorsPictureHelpLink")
+                </div>
+            </help-trigger>
+        </div>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.ComplexFilter")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.ComplexFilter, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.ComplexFilter" })
+            <span class="adv-checkbox-emul" data-e2e="ComplexFilter"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.ComplexFilterHote")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.PhotoCorrespondingSelectedColor")
+                <br>
+                <br>
+                @T("Admin.SettingsCatalog.CatalogCommon.ThisOptionRequiers")
+                <br>
+                <br>
+                @T("Admin.Settings.Catalog.ComplexFilterLink")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="setting-title setting-title__m-t-md">
+    <h3>@T("Admin.Settings.Catalog.ButtonText")</h3>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.BuyButtonText")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        @Html.TextBoxFor(x => x.BuyButtonText, new { @class = "form-control", ng_model = "settingsTemplate.BuyButtonText" })
+        <label class="adv-checkbox-label m-t-xs">
+            @Html.CheckBoxFor(x => x.DisplayBuyButton, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.DisplayBuyButton" })
+            @T("Admin.Settings.Catalog.DisplayButton")
+            <span class="adv-checkbox-emul" data-e2e="DisplayBuyButton"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" style="margin-top:7px" data-title="@T("Admin.Settings.Catalog.DisplayButton")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.ShowAddButton")<br>
+                <br>
+                @T("Admin.SettingsCatalog.CatalogCommon.OwnTextForButton")<br>
+                <br>
+                @T("Admin.SettingsCatalog.CatalogCommon.ExampleBuy")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.PreOrderButtonText")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        @Html.TextBoxFor(x => x.PreOrderButtonText, new { @class = "form-control", ng_model = "settingsTemplate.PreOrderButtonText" })
+        <label class="adv-checkbox-label m-t-xs m-t-xs">
+            @Html.CheckBoxFor(x => x.DisplayPreOrderButton, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.DisplayPreOrderButton" })
+            @T("Admin.Settings.Catalog.DisplayButton")
+            <span class="adv-checkbox-emul" data-e2e="DisplayPreOrderButton"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" style="margin-top:7px" data-title="@T("Admin.Settings.Catalog.DisplayButton")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.ShowButtonForOrder")<br>
+                <br>
+                @T("Admin.SettingsCatalog.CatalogCommon.OwnTextForButton")<br>
+                <br>
+                @T("Admin.SettingsCatalog.CatalogCommon.ExampleOrder")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="setting-title setting-title__m-t-md">
+    <h3>@T("Admin.Settings.Catalog.CatalogView")</h3>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.DefaultCatalogView")
+        </div>
+    </div>
+    <div class="col-xs-4 relative">
+        @Html.DropDownListFor(x => x.DefaultCatalogView, Model.DefaultViewList, new { @class = "form-control", ng_model = "settingsTemplate.DefaultCatalogView" })
+        <label class="adv-checkbox-label m-t-xs">
+            @Html.CheckBoxFor(x => x.EnableCatalogViewChange, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.EnableCatalogViewChange" })
+            @T("Admin.Settings.Catalog.EnableCatalogViewChange")
+            <span class="adv-checkbox-emul" data-e2e="EnableCatalogViewChange"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" style="margin-top:7px" data-title="@T("Admin.Settings.Catalog.EnableCatalogViewChange")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.KindOfDisplayForProducts")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Catalog.DefaultSearchView")
+        </div>
+    </div>
+    <div class="col-xs-4">
+        @Html.DropDownListFor(x => x.DefaultSearchView, Model.DefaultViewList, new { @class = "form-control", ng_model = "settingsTemplate.DefaultSearchView" })
+        <label class="adv-checkbox-label m-t-xs">
+            @Html.CheckBoxFor(x => x.EnableSearchViewChange, new { @class = "adv-checkbox-input", ng_model = "settingsTemplate.EnableSearchViewChange" })
+            @T("Admin.Settings.Catalog.EnableCatalogViewChange")
+            <span class="adv-checkbox-emul" data-e2e="EnableSearchViewChange"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" style="margin-top:7px" data-title="@T("Admin.Settings.Catalog.EnableCatalogViewChange")">
+            <div class="help-content">
+                @T("Admin.SettingsCatalog.CatalogCommon.KindOfDisplayForResults")
+            </div>
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row" style="margin-top: 33px">
+    <div class="col-xs-3 col-wl-2">
+        <h3 style="margin-top: 0">@T("Admin.Design.Index.ResizeGoodsPicturesTitle")</h3>
+    </div>
+    <div class="col-xs-4 relative">
+        <a href="" ng-if="!settingsTemplate.startResizePictures" ng-click="settingsTemplate.resizePictures()">@T("Admin.Design.Index.ResizeGoodsPictures")</a>
+        <cm-stat ng-if="settingsTemplate.startResizePictures" on-tick="settingsTemplate.cmStatOnTick(data)">
+            <uib-progressbar max="cmStat.entity.Total" value="cmStat.entity.Processed">
+                <span style="color:white; white-space:nowrap;"><span ng-bind="cmStat.entity.Processed"></span> / <span ng-bind="cmStat.entity.Total"></span></span>
+            </uib-progressbar>
+        </cm-stat>
+        <help-trigger class="ng-cloak m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Design.Index.ResizeGoodsPictures")">
+            @T("Admin.SettingsCatalog.CatalogCommon.ResizeGoodsPicturesNote")
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.BigProductImage")
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Width")
+        </div>
+        <div class="input-group m-b-sm">
+            @Html.TextBoxFor(x => x.BigProductImageWidth, new { @class = "form-control", ng_model = "settingsTemplate.BigProductImageWidth", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.BigProductImage") })
+            <span class="paramUnit">px</span>&nbsp;
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Height")
+        </div>
+        <div class="input-group">
+            @Html.TextBoxFor(x => x.BigProductImageHeight, new { @class = "form-control", ng_model = "settingsTemplate.BigProductImageHeight", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.BigProductImage") })
+            <span class="paramUnit">px</span>
+        </div>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.MiddleProductImage")
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Width")
+        </div>
+        <div class="input-group m-b-sm">
+            @Html.TextBoxFor(x => x.MiddleProductImageWidth, new { @class = "form-control", ng_model = "settingsTemplate.MiddleProductImageWidth", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.MiddleProductImage") })
+            <span class="paramUnit">px</span>&nbsp;
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Height")
+        </div>
+        <div class="input-group">
+            @Html.TextBoxFor(x => x.MiddleProductImageHeight, new { @class = "form-control", ng_model = "settingsTemplate.MiddleProductImageHeight", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.MiddleProductImage") })
+            <span class="paramUnit">px</span>
+        </div>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.SmallProductImage")
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Width")
+        </div>
+        <div class="input-group m-b-sm">
+            @Html.TextBoxFor(x => x.SmallProductImageWidth, new { @class = "form-control", ng_model = "settingsTemplate.SmallProductImageWidth", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.SmallProductImage") })
+            <span class="paramUnit">px</span>&nbsp;
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Height")
+        </div>
+        <div class="input-group">
+            @Html.TextBoxFor(x => x.SmallProductImageHeight, new { @class = "form-control", ng_model = "settingsTemplate.SmallProductImageHeight", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.SmallProductImage") })
+            <span class="paramUnit">px</span>
+        </div>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.XSmallProductImage")
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Width")
+        </div>
+        <div class="input-group m-b-sm">
+            @Html.TextBoxFor(x => x.XSmallProductImageWidth, new { @class = "form-control", ng_model = "settingsTemplate.XSmallProductImageWidth", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.XSmallProductImage") })
+            <span class="paramUnit">px</span>&nbsp;
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Height")
+        </div>
+        <div class="input-group">
+            @Html.TextBoxFor(x => x.XSmallProductImageHeight, new { @class = "form-control", ng_model = "settingsTemplate.XSmallProductImageHeight", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.XSmallProductImage") })
+            <span class="paramUnit">px</span>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.BigCategoryImage")
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Width")
+        </div>
+        <div class="input-group m-b-sm">
+            @Html.TextBoxFor(x => x.BigCategoryImageWidth, new { @class = "form-control", ng_model = "settingsTemplate.BigCategoryImageWidth", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.BigCategoryImage") })
+            <span class="paramUnit">px</span>&nbsp;
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Height")
+        </div>
+        <div class="input-group">
+            @Html.TextBoxFor(x => x.BigCategoryImageHeight, new { @class = "form-control", ng_model = "settingsTemplate.BigCategoryImageHeight", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.BigCategoryImage") })
+            <span class="paramUnit">px</span>
+        </div>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Template.SmallCategoryImage")
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Width")
+        </div>
+        <div class="input-group m-b-sm">
+            @Html.TextBoxFor(x => x.SmallCategoryImageWidth, new { @class = "form-control", ng_model = "settingsTemplate.SmallCategoryImageWidth", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.SmallCategoryImage") })
+            <span class="paramUnit">px</span>&nbsp;
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="m-b-xs">
+            @T("Admin.Settings.Template.Height")
+        </div>
+        <div class="input-group">
+            @Html.TextBoxFor(x => x.SmallCategoryImageHeight, new { @class = "form-control", ng_model = "settingsTemplate.SmallCategoryImageHeight", type = "number", min = "10", max = "100000", style = "width:120px;", validation_input_text = T("Admin.Settings.Template.SmallCategoryImage") })
+            <span class="paramUnit">px</span>
+        </div>
+    </div>
+</div>
+
+

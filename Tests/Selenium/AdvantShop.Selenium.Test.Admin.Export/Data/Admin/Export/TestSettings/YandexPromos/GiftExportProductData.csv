@@ -1,0 +1,51 @@
+testType;Yandex;
+defaultExportType;xml;
+gpPromoType;"type=\""gift with purchase\"""
+testName1-2;YandexGiftNotAvailable = YandexGiftDisabled+YandexGiftNoPrice
+gp1Products;1,4;//первый - акт, 2 - неакт
+gp1Gifts;11,12;//первый - акт, 2 - неакт
+gp1GiftContent;"<gifts><gift id=\""11\""><name>TestProduct11</name><picture>http://my-shop.ru/pictures/product/big/291_big.jpg</picture></gift></gifts>"
+gp1GiftContentNotActive;"<gifts><gift id=\""12\""><name>TestProduct12</name><picture>http://my-shop.ru/pictures/product/big/292_big.jpg</picture></gift><gift id=\""14\""><name>TestProduct14</name><picture>http://my-shop.ru/pictures/product/big/294_big.jpg</picture></gift></gifts>"
+gp1Purchase;"<required-quantity>1</required-quantity><product offer-id=\""1\"" />"
+gp1PurchaseNotActive;"<required-quantity>1</required-quantity><product offer-id=\""4\"" />"
+gp1PromoGift;"<promo-gift gift-id=\""11\"" />"
+gp1PromoGiftNotActive;"<promo-gift gift-id=\""12\"" />"
+gp2Products;1,6;//первый - акт, 2 - неакт
+gp2Gifts;11,14;//первый - акт, 2 - неакт
+gp2Purchase;"<required-quantity>1</required-quantity><product offer-id=\""1\"" />"
+gp2PurchaseNotActive;"<required-quantity>1</required-quantity><product offer-id=\""6\"" />"
+gp2PromoGiftNotActive;"<promo-gift gift-id=\""14\"" />"
+testName3;YandexGiftPreOrder
+gp3Products;1,5;//первый - акт, 2 - неакт
+gp3Gifts;11,13;//первый - акт, 2 - неакт
+gp3GiftContent;"<gifts><gift id=\""11\""><name>TestProduct11</name><picture>http://my-shop.ru/pictures/product/big/291_big.jpg</picture></gift></gifts>"
+gp3GiftContentNotActive;"<gifts><gift id=\""13\""><name>TestProduct13</name><picture>http://my-shop.ru/pictures/product/big/293_big.jpg</picture></gift></gifts>"
+gp3Purchase;"<required-quantity>1</required-quantity><product offer-id=\""1\"" />"
+gp3PurchaseNotActive;"<required-quantity>1</required-quantity><product offer-id=\""5\"" />"
+gp3PromoGift;"<promo-gift gift-id=\""11\"" />"
+gp3PromoGiftNotActive;"<promo-gift gift-id=\""13\"" />"
+testName4;YandexGiftModifications
+gp4Product;9
+gp4GiftsArtNo;11,16-1,16-2
+gp4GiftsID;11,16,162
+gp4GiftContent1;"<gifts><gift id=\""162\""><name>TestProduct16</name><picture>http://my-shop.ru/images/nophoto_big.jpg</picture></gift></gifts>"
+gp4Purchase1;"<required-quantity>1</required-quantity><product offer-id=\""9\"" />"
+gp4PromoGift1;"<promo-gift offer-id=\""11\"" />,<promo-gift offer-id=\""16\"" />,<promo-gift gift-id=\""162\"" />"
+gp4Purchase2;"<required-quantity>1</required-quantity><product offer-id=\""9\"" /><product offer-id=\""91\"" /><product offer-id=\""92\"" /><product offer-id=\""93\"" />"
+gp4PromoGift2;"<promo-gift offer-id=\""11\"" />,<promo-gift offer-id=\""16\"" />,<promo-gift offer-id=\""162\"" />"
+gp4GiftContent3;"<gifts><gift id=\""11\""><name>TestProduct11</name><picture>http://my-shop.ru/pictures/product/big/291_big.jpg</picture></gift><gift id=\""16\""><name>TestProduct16</name><picture>http://my-shop.ru/images/nophoto_big.jpg</picture></gift><gift id=\""162\""><name>TestProduct16</name><picture>http://my-shop.ru/images/nophoto_big.jpg</picture></gift></gifts>"
+gp4PromoGift3;"<promo-gift gift-id=\""11\"" />,<promo-gift gift-id=\""16\"" />,<promo-gift gift-id=\""162\"" />"
+gp4GiftContent4;"<gifts><gift id=\""162\""><name>TestProduct16</name><picture>http://my-shop.ru/images/nophoto_big.jpg</picture></gift></gifts>"
+gp4Purchase4;"<required-quantity>1</required-quantity><product offer-id=\""9\"" />"
+gp4PromoGift4;"<promo-gift offer-id=\""11\"" />,<promo-gift offer-id=\""16-1\"" />,<promo-gift gift-id=\""162\"" />"
+gp4Purchase5;"<required-quantity>1</required-quantity><product offer-id=\""9\"" /><product offer-id=\""9-1\"" /><product offer-id=\""9-2\"" /><product offer-id=\""9-3\"" />"
+gp4PromoGift5;"<promo-gift offer-id=\""11\"" />,<promo-gift offer-id=\""16-1\"" />,<promo-gift offer-id=\""16-2\"" />"
+gp4GiftContent6;"<gifts><gift id=\""11\""><name>TestProduct11</name><picture>http://my-shop.ru/pictures/product/big/291_big.jpg</picture></gift><gift id=\""16\""><name>TestProduct16</name><picture>http://my-shop.ru/images/nophoto_big.jpg</picture></gift><gift id=\""162\""><name>TestProduct16</name><picture>http://my-shop.ru/images/nophoto_big.jpg</picture></gift></gifts>"
+gp4PromoGift6;"<promo-gift gift-id=\""11\"" />,<promo-gift gift-id=\""16\"" />,<promo-gift gift-id=\""162\"" />"
+testName5;YandexExcluded
+gp5Product;1
+gp5Gift;10
+gp5Purchase;"<required-quantity>1</required-quantity><product offer-id=\""1\"" />"
+gp5PromoGift1;"<promo-gift offer-id=\""10\"" />"
+gp5GiftContent;"<gifts><gift id=\""10\""><name>TestProduct10</name><picture>http://my-shop.ru/pictures/product/big/290_big.jpg</picture></gift></gifts>"
+gp5PromoGift2;"<promo-gift gift-id=\""10\"" />"

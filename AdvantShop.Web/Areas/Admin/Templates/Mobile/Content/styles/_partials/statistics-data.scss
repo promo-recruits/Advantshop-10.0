@@ -1,0 +1,26 @@
+﻿.statistics-data {
+    margin-bottom: 35px;
+
+    &__sum {
+        font-weight: bold;
+        font-size: 34px;
+    }
+
+    &__count,
+    &__date {
+        color: #ACAEAF;
+    }
+
+    &____date-trigger {
+        font-weight: bold;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+
+    &__count{
+        padding-left: 15px;
+    }
+}

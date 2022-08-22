@@ -1,0 +1,15 @@
+﻿@using AdvantShop.Core.Services.Admin
+@{
+    var staticPath = "~/" + UrlService.GetAdminStaticPath();
+    var jsBundleName = "all_admin_new" + (AdminAreaTemplate.Current == "adminv2" ? "" : "_v3") + (SettingsDesign.IsMobileTemplate ? "_mobile" : "") + ".js";
+
+    //Html.RemoveBundle(staticPath + "src/_partials/sidebar-user/sidebarUser.js", jsBundleName);
+
+    var staticPathV3 = "~/areas/admin/templates/adminv3/content/";
+
+    Html.AddBundles(new List<string>()
+    {
+        //staticPathV3 + "src/_partials/sidebar-user/sidebarUser.js",
+    },
+        jsBundleName);
+}

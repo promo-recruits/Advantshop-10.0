@@ -1,0 +1,6 @@
+Id;Name;SortOrder;FinalSuccessAction;NotSendNotificationsOnLeadCreation;Enable;NotSendNotificationsOnLeadChanged;LeadAutoCompleteActionType
+1;SalesFunnel1;1;0;NULL;true;NULL;0
+2;SalesFunnel2;2;0;NULL;true;NULL;0
+3;SalesFunnel3;3;0;NULL;true;NULL;0
+4;SalesFunnel4;4;0;NULL;true;NULL;0
+5;SalesFunnel5;5;0;NULL;true;NULL;0

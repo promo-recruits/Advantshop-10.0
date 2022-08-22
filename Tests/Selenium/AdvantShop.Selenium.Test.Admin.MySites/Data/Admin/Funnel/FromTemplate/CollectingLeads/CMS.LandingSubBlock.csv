@@ -1,0 +1,121 @@
+﻿Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
+1;1;title;Наша команда;html;null;0
+2;1;subtitle;Advantshop предлагает широкий кадровый резерв специалистов;html;null;100
+3;2;title;<strong>Как выбрать тандыр для загородного дома?</strong>;html;null;0
+4;2;subtitle;Реализуй все с Advantshop;html;null;100
+5;3;title;Вдохновляйся идеями;html;null;0
+6;3;subtitle;Реализуй все с Advantshop;html;null;100
+7;3;picture;;picture;"{""src"":""areas/landing/templates/articleLead/images/pic.jpg"",""class"":"""",""type"":""image""}";200
+8;4;title;Вдохновляйся идеями;html;null;0
+9;4;subtitle;Реализуй все с Advantshop;html;null;100
+10;4;text;"<div> <div><span style=""font-weight:700;""><span class=""lp-font-size--large"">Для ответа на вопрос, какой тандыр купить для дачи, следует описать его назначение, отличия и свойства.</span></span></div> </div>";html;null;200
+11;5;title;Вдохновляйся идеями;html;null;0
+12;5;subtitle;Реализуй все с Advantshop;html;null;100
+13;5;text;"<div> <div> <div> <div> <div style=""text-align: left;""><a href=""""><img src=""areas/landing/templates/articleLead/images/counter.png"" /></a></div>  <div style=""text-align: left;""> <p><span style=""color:#000000;""><span class=""lp-font-size--middle""><strong>Елена Волкова&nbsp;</strong>- 18 января 2020&nbsp; 17:01</span></span></p> </div> </div> </div> </div> </div> ";html;null;200
+14;6;title;Вдохновляйся идеями;html;null;0
+15;6;subtitle;Реализуй все с Advantshop;html;null;100
+16;6;text;"<div style=""text-align: left;"">Тандыр &ndash; это особая печь, имеющая древне-восточное происхождение. Существует огромное количество её разновидностей, но все они связаны общим принципом приготовления: после загрузки продукты не поджариваются на углях, а запекаются от жара стенки. Но прежде, чем начинать готовиться к тратам, нужно точно знать, как выбрать тандыр с наиболее подходящими под определённые требования параметрами.</div>  <div style=""text-align: left;"">&nbsp;</div>  <div style=""text-align: left;"">Если вы выбираете тандыр для дачи или выездов на природу в большой компании, то используйте большие утепленные модели со значительными объемами загрузки, которые будут одинаково хорошо функционировать в любое время года. Для них не страшны трещины и такие приспособления применяются для приготовления блюд, требующих длительного томления (например: плов, баранья нога).</div> ";html;null;200
+17;7;title;Вдохновляйся идеями;html;null;0
+18;7;subtitle;Реализуй все с Advantshop;html;null;100
+19;7;text;"<em>&nbsp;Продукты в тандыре не жарятся, как на мангале, а равномерно пропекаются, потому тандыр нельзя рассматривать как замену классическому дачному мангалу.&nbsp;</em>";html;null;200
+20;9;title;Вдохновляйся идеями;html;null;0
+21;9;subtitle;Реализуй все с Advantshop;html;null;100
+22;9;text;"<h3 style=""text-align: left;"">Какой тандыр купить?</h3>  <p style=""text-align: left;"">Существует множество критериев и факторов, определяющих покупку конкретной печки. Решить какой тандыр подходит именно вам можно, если обозначить для себя его предназначение: какие блюда чаще всего будут готовиться и как часто. В домашнем использовании абсолютными лидерами становятся блюда из мяса, овощей, плов и т.д.</p> ";html;null;200
+23;10;title;Вдохновляйся идеями;html;null;0
+24;10;subtitle;Реализуй все с Advantshop;html;null;100
+25;10;text;"<h3 style=""text-align: left;"">Что готовят в тандыре?</h3>  <p style=""text-align: left;"">В Тандыре можно легко приготовить шашлык, мясо, рыбу, овощи, лепешки, запечь баранью ногу, пиццу. Это всегда: полезная и качественная еда, разнообразие блюд, удобство в приготовлении и возможность готовить в любое время года, независимо от погоды. Огонь разжигается внутри тандыра, при этом нагревая стенки, которые равномерно отдадут тепло для приготовления блюд. Вам не нужно будет переворачивать мясо, или крутить шампура и тушить огонь, как на мангале. Жар от разогретых стенок тандыра обжарит продукты равномерно со всех сторон, закрытая конструкция не даст пересушить мясо, блюда получаются сочными.</p> ";html;null;200
+26;11;title;Вдохновляйся идеями;html;null;0
+27;11;subtitle;Реализуй все с Advantshop;html;null;100
+28;12;title;Вдохновляйся идеями;html;null;0
+29;12;subtitle;Реализуй все с Advantshop;html;null;100
+30;12;text;"<h3 style=""text-align: left;"">Тандыр &laquo;Персия&raquo;</h3>  <p style=""text-align: left;"">Тандыр ручной работы &ldquo;Персия&rdquo; отлично подойдет для загородных домов и дач. Изготовлен?из?натуральной?огнеупорной?глины. Данный?тандыр?-?это?100%-ая?ручная?работа.?Все?элементы?уникальны.?</p>  <p style=""text-align: left;"">Роскошный, премиальный и невероятно красивый тандыр &ldquo;Персия&rdquo; станет поистине лучшим украшением вашего загородного дома или дачи.</p>  <p style=""text-align: left;"">Тандыр оснащен кованой подставкой для крышки, которая одновременно является дровницей и подвесом для каминных аксессуаров, это наша &nbsp;разработка, такого еще не делал никто. Также &ldquo;Персия&rdquo; укомплектован уникальным подвесом для шампуров со сковородой для овощей, картофеля и грибов: теперь вам не надо доставать шампур по одному, вы извлекаете все блюда одним движением руки.</p>";html;null;200
+31;14;title;Создавай с Advantshop;html;null;0
+32;14;subtitle;Более 5000 функций для удобных и эффективных продаж;html;null;100
+33;15;phone-email;<span class='lp-footer-social__phone'>+7 (800) 333-68-03</span>;html;null;0
+34;15;copyright;Следите за новыми выпусками в соцсетях:;html;null;100
+35;15;address;Россия, г. Москва, ул. Облукова, д.5;html;null;200
+36;16;title;Получи скидку 10%;html;null;0
+37;16;subtitle;Ваше персональное предложение со скидкой закончится через:;html;null;100
+38;17;title;<div> <div><strong>FURNITURE 24/7</strong></div> </div> ;html;null;0
+39;17;subtitle;<div> <div> <div>Бесплатная доставка офисной мебели на заказы от 1500 рублей</div> </div> </div> ;html;null;100
+40;17;text1;"<div>А также <span style=""color:#e74c3c;""><strong>скидка 10%</strong></span> на первый заказ!</div> ";html;null;200
+41;17;text2;Введите свой e-mail и мы вышлем вам промокод на скидку;html;null;300
+42;18;title;Получи скидку 10%;html;null;0
+43;18;subtitle;Ваше персональное предложение со скидкой закончится через:;html;null;100
+44;19;title;<div> <div><strong>FURNITURE 24/7</strong></div> </div> ;html;null;0
+45;19;subtitle;<div> <div> <div>Бесплатная доставка офисной мебели на заказы от 1500 рублей</div> </div> </div> ;html;null;100
+46;19;text1;"<div>А также <span style=""color:#e74c3c;""><strong>скидка 10%</strong></span> на первый заказ!</div> ";html;null;200
+47;19;text2;Введите свой e-mail и мы вышлем вам промокод на скидку;html;null;300
+48;20;title;Получи скидку 10%;html;null;0
+49;20;subtitle;Ваше персональное предложение со скидкой закончится через:;html;null;100
+50;21;title;<div> <div><strong>FURNITURE 24/7</strong></div> </div> ;html;null;0
+51;21;subtitle;<div> <div> <div>Бесплатная доставка офисной мебели на заказы от 1500 рублей</div> </div> </div> ;html;null;100
+52;21;text1;"<div>А также <span style=""color:#e74c3c;""><strong>скидка 10%</strong></span> на первый заказ!</div> ";html;null;200
+53;21;text2;Введите свой e-mail и мы вышлем вам промокод на скидку;html;null;300
+54;22;title;Заголовок Exit-PopUp;html;null;0
+55;22;subtitle;Ваше персональное предложение со скидкой закончится через:;html;null;100
+56;24;title;"<h3><span style=""font-weight:800;""><span class=""font-size-48--adaptive"">Мы знаем, как увеличить ваши продажи. Узнайте и вы!</span></span></h3>";html;null;0
+57;24;subtitle;Реализуй все с Advantshop;html;null;100
+58;24;text;"<div>Смотрите мастер-класс &quot;Как запустить сверхприбыльный онлайн-бизнес в рекордно короткие сроки&quot;.&nbsp;&nbsp;Это уникальный формат, ничего подобного в России еще никто не делает.&nbsp;</div>";html;null;200
+59;25;title;"<span class=""font-size-30--adaptive""><span style=""font-weight:800;"">Что будет в этом мастер-классе:</span></span>";html;null;0
+60;25;text;"<span class=""font-size-18--adaptive""><span style=""font-weight:300;"">Мы дадим полную систему запуска сверхприбыльного онлайн-бизнеса. Главная особенность этого формата в том, что мы на ваших глазах будем запускать полноценный проект &mdash; от выбора ниши до заполнения всех страниц, продающих текстов и т. п.</span></span>";html;null;100
+61;25;video;;video;"{""urlVideo"":""https://youtu.be/9Bay-2a2Mkk"",""heightVideo"":null,""widthVideo"":null,""autoplayVideo"":false,""asBackground"":false,""insertionMethod"":""link"",""upload"":{""urlVideo"":null}}";200
+62;26;title;"<div style=""text-align: left;""><b>А также</b></div>";html;null;0
+63;26;subtitle;Реализуй все с Advantshop;html;null;100
+64;27;video;;video;"{""urlVideo"":""https://youtu.be/JQavvu2AFa8"",""heightVideo"":null,""widthVideo"":null}";0
+65;27;title;Как запустить сверхприбыльный онлайн-бизнес в рекордно короткие сроки?;html;null;100
+66;27;subtitle;Наши главные эксперты команды Дмитрий Шолохов и Евгений Золотов тестируют новую коллекцию в экстремвльных условиях и направилась в Японию. Что из этого получилось смотрите на нашем канале;html;null;200
+67;29;title;Бесплатная консультация;html;null;0
+68;29;subtitle;Advantshop предлагает широкий кадровый резерв специалистов;html;null;100
+69;30;title;Создавай с Advantshop;html;null;0
+70;30;subtitle;Более 5000 функций для удобных и эффективных продаж;html;null;100
+71;31;title;<div><strong>Спасибо! Ваша заявка на рассмотрении.</strong></div>;html;null;0
+72;31;subtitle;Реализуй все с Advantshop;html;null;100
+73;31;text;"<div>Мы, так же как и вы, избирательны в контактах.<br/> Именно поэтому у нас есть свои критерии для сотрудничества.<br />Надеемся, что вы наш идеальный кандидат.&nbsp;<br />Ожидайте, мы с вами свяжемся!</div>";html;null;200
+74;32;title;25 обязательных вещей для Вашей фотостудии;html;null;0
+75;32;subtitle;Реализуй все с Advantshop;html;null;100
+76;33;title;Вдохновляйся идеями;html;null;0
+77;33;subtitle;Реализуй все с Advantshop;html;null;100
+78;33;header;"<div style=""text-align: center;"">Спасибо</div>";html;null;200
+79;33;content;"<p style=""text-align: center;"">Проверьте почту, мы отправили Вам обещанный документ.</p>";html;null;300
+80;34;title;Электронная книга в подарок;html;null;0
+81;34;subtitle;Реализуй все с Advantshop;html;null;100
+82;34;text;"Оставьте свой email и получите электронную книгу &quot;15 примеров дизайна в разработке сайтов&quot; прямо сейчас.";html;null;200
+83;34;picture;;picture;"{""src"":""areas/landing/Templates/ContactForEBook/images/pic.jpg"",""type"":""image""}";300
+84;35;title;На Ваш email отправлено письмо со ссылкой для скачивания бесплатной книги;html;null;0
+85;35;subtitle;Как с нами связаться;html;null;100
+86;35;text;"<div> <p class=""lp-font-size--large"">Проверьте почту, книга уже там.</p> </div> ";html;null;200
+87;36;title;<strong>20% скидка</strong> на первый заказ натуральной косметики;html;null;0
+88;36;subtitle;Реализуй все с Advantshop;html;null;100
+89;36;text;Скидка действует на ассортимент Косметики в Интернет-магазине herbal-cosmetics.ru. Акиция действительна только для новых клиентов.;html;null;200
+90;36;picture;;picture;"{""src"":""areas/landing/Templates/CouponWithDiscount/images/pic.jpg"",""class"":"""",""type"":""image""}";300
+91;37;title;Вдохновляйся идеями;html;null;0
+92;37;subtitle;Реализуй все с Advantshop;html;null;100
+93;37;main_text;"<div style=""text-transform:uppercase;""><span style=""font-weight:400;""><span class=""font-size-16--adaptive""><strong>Поздравляем!</strong> Вам предоставлен <strong>купон на 20%.</strong> Вы сможете использовать его в нашем интернет-магазине <a href=""//mydomain123.ru"" target=""_blank"">Мой магазин</a></span></span></div> ";html;null;200
+94;37;text;"<span style=""font-size:18px;""><strong>Код купона, который нужно будет ввести на странице оформления заказа</strong></span>";html;null;300
+95;37;price;"<div style=""text-align:center; background-color: rgb(216, 216, 216);""><span style=""color: rgb(101, 187, 177); font-weight: bold; text-transform:uppercase;"">20-HERBAL-OFF</span></div> ";html;null;400
+96;38;title;Создавай с Advantshop;html;null;0
+97;38;subtitle;Более 5000 функций для удобных и эффективных продаж;html;null;100
+98;39;title;"<div><span style=""color:#e74c3c;"">Выиграй</span> <span style=""color:#e74c3c;"">бесплатный</span> TestProduct3</div>";html;null;0
+99;39;subtitle;Реализуй все с Advantshop;html;null;100
+100;39;text;briefDesc3;html;null;200
+101;39;picture;;picture;"{""src"":""pictures/product/middle/4472_middle.jpg"",""class"":"""",""type"":""image""}";300
+102;41;title;<div>Условия розыгрыша</div>;html;null;0
+103;41;subtitle;Реализуй все с Advantshop;html;null;100
+104;41;text;"<div>1. Подписаться на соц. сети: <a href=""https://vk.com/advantshop"" target=""_blank"">ВКонтакте</a>, <a href=""https://www.instagram.com/advantshop/"" target=""_blank"">Instagram</a>, <a href=""https://www.youtube.com/channel/UCR9o2YJ2sOJwuV1sR1eqaSw"" target=""_blank"">YouTube</a>.</div>  <div>&nbsp;</div>  <div>2. Найти запись в соц. сетях про данный розыгрыш, поставить постам лайки, сделать репосты (кроме YouTube) и написать в комментарии.</div>";html;null;200
+105;43;title;Мы в соц. сетях;html;null;0
+106;43;subtitle;Реализуй все с Advantshop;html;null;100
+107;44;title;<div>Ваша заявка принята</div>;html;null;0
+108;44;subtitle;Реализуй все с Advantshop;html;null;100
+109;44;text;"<div> <div>Розыгрыш состоится 01.01.2021, следите за новостями.</div>  <div>&nbsp;</div>  <div>Розыгрыш проводит Интернет-магазин Мой магазин</div> </div> ";html;null;200
+110;45;title;Создавай с Advantshop;html;null;0
+111;45;subtitle;Более 5000 функций для удобных и эффективных продаж;html;null;100
+112;47;title;"<div style=""line-height:1.5;""><span style=""font-weight:700;""><span class=""font-size-38--adaptive"">Как выбрать бюджетный велосипед?</span></span></div>";html;null;0
+113;47;subtitle;"<div> <div class=""lp-h3--margin-none lp-h3--color lp-h3"" style=""line-height:1.5;""><span class=""font-size-22--adaptive"">Обращаю внимание на некоторые нюансы при выборе</span></div>  <div class=""lp-h3--margin-none lp-h3--color lp-h3"" style=""line-height:1.5;""><span class=""font-size-22--adaptive""><span class=""font-size-20--adaptive"">нового бюджетного велосипеда</span></span></div> </div> ";html;null;100
+114;48;title;Создавай с Advantshop;html;null;0
+115;48;subtitle;Более 5000 функций для удобных и эффективных продаж;html;null;100
+116;49;phone-email;"<div> <div class=""lp-h2--margin-none lp-h2--color lp-h2"" style=""line-height:1;""><span class=""font-size-16--adaptive""><span style=""font-weight:600;""><span class=""font-size-24--adaptive""><span class=""font-size-18--adaptive""><span class=""lp-footer-social__phone"">+7 (800) 333-68-03</span></span></span></span></span></div> </div> ";html;null;0
+117;49;copyright;"<div><span class=""lp-font-size--xsmall"">&copy; 2021 Разработано в Advantshop</span></div> ";html;null;100
+118;49;address;"<div> <div style=""line-height:1;""><span class=""lp-font-size--xsmall"">г. Москва, ул. Корунковой, 25</span></div> </div>";html;null;200
+119;50;title;"<div style=""line-height:1.5;""><span style=""font-weight:700;""><span class=""font-size-40--adaptive"">Вело Лайфхаки</span></span></div>";html;null;0
+120;50;subtitle;"<div style=""line-height:1.5;""><span class=""font-size-22--adaptive"">Советы для велосипедистов, с которыми станет чуток комфортней</span></div> ";html;null;100

@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/*>480 - смартфоны*/
+/*>768 - планшеты*/
+/*>1024 - нетбуки, ноутбуки*/
+/*>1200 - десктоп*/
+/*>1600 - десктоп*/
+.lp-form__title {
+  line-height: 1.33;
+}
+.lp-form__title--vertical, .lp-form__title--horizontal {
+  /*font-size: 24px;*/
+}
+.lp-form__subtitle {
+  font-size: 18px;
+}
+.lp-form__wrap {
+  flex-wrap: nowrap;
+}
+.lp-form__body--vertical {
+  margin-top: 20px;
+}
+.lp-form__subtitle--horizontal {
+  margin-top: 48px;
+}
+.lp-form__subtitle--vertical, .lp-form__field, .lp-form__submit-block {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.lp-form__agreement {
+  margin: 20px 0;
+  font-size: 18px;
+}
+.lp-form__content--success {
+  padding: 30px;
+}
+.lp-form__field-label {
+  margin-bottom: 10px;
+}
+
+.lp-form-in-modal {
+  width: 500px;
+}
+
+@media (min-width: 48em) {
+  .lp-form--vertical {
+    /*font-size: 36px;*/
+  }
+  .lp-form--horizontal .lp-textarea {
+    height: 50px;
+  }
+}
+.lp-form__picture-item {
+  padding-bottom: 8px;
+  color: #dedede;
+}
+
+.lp-form__picture {
+  vertical-align: middle;
+}
+
+.lp-form__picture-item-wrap {
+  position: relative;
+  border: 1px solid currentColor;
+}
+
+.lp-form__picture-delete {
+  border: 0;
+  padding: 0;
+  background: transparent none;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  cursor: pointer;
+}
+
+.lp-form__picture-button-add {
+  border: 0;
+  background: transparent none;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 50px;
+  line-height: 1;
+  border: 1px solid #dedede;
+  color: currentColor;
+  cursor: pointer;
+  min-height: 80px;
+}
+
+.ng-submitted.ng-dirty .ng-invalid.lp-form__picture-button-add {
+  border-color: #f15959;
+}
+
+.form-field-name, .form-field-input {
+  display: block;
+}

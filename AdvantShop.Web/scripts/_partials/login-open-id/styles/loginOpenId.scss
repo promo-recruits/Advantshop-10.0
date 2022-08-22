@@ -1,0 +1,156 @@
+﻿@import '../../../../styles/variables.scss';
+
+.auth-social {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    &__title {
+        font-size: 24px;
+        padding: 0;
+        flex-basis: 100%;
+    }
+
+    &__favorite-btns-wrap {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+    }
+
+    &__btn {
+        display: inline-flex;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15px;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    &__btn-icon {
+        display: flex;
+
+        svg {
+            display: block;
+        }
+    }
+
+
+    &__btn-text {
+        display: none;
+    }
+
+    &__btn--google {
+        background-color: #DD4B39;
+    }
+
+    &__btn--vk {
+        background-color: #2787F5;
+    }
+
+    &__btn--fb {
+        background-color: #1976D2;
+    }
+}
+
+.modal-login-open-id {
+    width: auto;
+
+    .modal-content {
+        padding: 20px 32px 32px 32px;
+    }
+
+    .auth-social {
+        display: grid;
+        grid-gap: 16px;
+
+        &__title {
+            padding: 0;
+            margin: 0;
+            flex-basis: auto;
+        }
+
+
+        &__favorite-btns-wrap {
+            display: grid;
+            grid-gap: 16px;
+            margin-right: 0;
+        }
+
+
+        &__other-btns-wrap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 48px);
+            grid-gap: 24px;
+            justify-content: center;
+
+            svg {
+                display: block;
+            }
+        }
+
+        &__btn {
+            width: auto;
+            height: auto;
+            border-radius: 0;
+            margin-left: 0;
+        }
+
+        &__btn--fb,
+        &__btn--vk,
+        &__btn--google {
+            display: grid;
+            grid-template-columns: 33px calc(100% - 33px);
+            grid-gap: 20px;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 22px;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        &__btn-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__btn-text {
+            font-size: 16px;
+            text-align: center;
+            display: block;
+        }
+
+        &__btn--fb {
+            background-color: #1976D2;
+        }
+
+        &__btn--vk {
+            background-color: #2787F5;
+        }
+
+        &__btn--google {
+            background-color: #DD4B39;
+        }
+    }
+}
+
+@media #{$viewport-sm} {
+    .modal-login-open-id {
+        .auth-social {
+            &__btn-text {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+        }
+    }
+}

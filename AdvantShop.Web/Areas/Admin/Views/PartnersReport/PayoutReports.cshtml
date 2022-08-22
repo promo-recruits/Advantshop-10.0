@@ -1,0 +1,49 @@
+﻿@using AdvantShop.Core.Services.Admin
+@{
+    Layout = "~/Areas/Admin/Views/Partners/_PartnersLayout.cshtml";
+    var periodTo = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddDays(-1);
+}
+
+@if (AdminAreaTemplate.IsAdminv3())
+{
+    @*@Html.Back("Партнеры", Url.Action("Index", "Partners"))
+    @section BlockAdditional {
+        <button class="btn btn-sm btn-success" type="button" ng-click="partnersPayoutReports.getPayoutsReport()">
+            <span class="fa fa-plus"></span> Сформировать отчет за @periodTo.ToString("MMMM yyyy")
+        </button>
+    }*@
+}
+
+<div class="sticky-page-name m-t-n-xs m-b-xs" sticky sticky-top="0">
+    <div class="page-name-block sticky-page-name-inner">
+        <div class="page-name-block-item-main p-b-xs">
+            <h2 class="m-t-none m-b-none sticky-page-name-text" style="margin-top:3px;">
+                Отчеты по выплатам партнерам
+            </h2>
+        </div>
+        @if (!AdminAreaTemplate.IsAdminv3())
+        {
+            <div class="page-name-block-item-additional">
+                <button class="btn btn-sm btn-success" type="button" ng-click="partnersPayoutReports.getPayoutsReport()">
+                    <span class="fa fa-plus"></span> Сформировать отчет за @periodTo.ToString("MMMM yyyy")
+                </button>
+            </div>
+        }
+    </div>
+    <div class="sticky-hidden-content m-b-xs">
+        Отчеты формируются автоматически 1-го числа каждого месяца.
+    </div>
+</div>
+<div class="ibox">
+    <div class="ibox-content">
+        <ui-grid-custom grid-unique-id="grid"
+                        grid-options="partnersPayoutReports.gridOptions"
+                        grid-on-init="partnersPayoutReports.gridOnInit(grid)"
+                        grid-filter-enabled="false"
+                        grid-selection-enabled="false"
+                        grid-url="'partnersReport/GetPayoutReports'">
+            <ui-grid-custom-footer class="ui-grid-custom-footer" ng-bind="partnersPayoutReports.grid.gridOptions.TotalString">
+            </ui-grid-custom-footer>
+        </ui-grid-custom>
+    </div>
+</div>

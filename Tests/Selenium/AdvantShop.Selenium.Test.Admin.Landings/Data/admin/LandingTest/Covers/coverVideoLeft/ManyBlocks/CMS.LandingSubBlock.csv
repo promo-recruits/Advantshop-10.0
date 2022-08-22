@@ -1,0 +1,19 @@
+﻿Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
+1;1;title;Создавай с AdvantShop;html;null;0
+2;1;text;Простой инструмент для онлайн-продаж. Зарабатывайте больше, используя различные каналы продаж, и выстраивайте правильные отношения с клиентом.;html;null;100
+3;1;video;;video;"{""urlVideo"":""https://www.youtube.com/watch?v=8ntCvzUqNwU"",""heightVideo"":null,""widthVideo"":null}";200
+4;2;logo;;logo;"{""alt"":""Мой магазин"",""src"":""areas/landing/frontend/images/logotype.png""}";0
+5;2;phone;8 (800) 550-83-13;html;null;100
+6;2;phone_mobile;88005508313;phonemobile;null;200
+7;2;email;info@mysite.ru;html;null;300
+8;2;callback;;button;"{""text"":""Обратный звонок"",""style"":{}}";400
+9;2;menuHeader;;menu;"{""font_size"":16,""menu_items_spacing"":20,""style"":{""font-size"":""16px"",""padding-left"":""20px"",""padding-right"":""20px""}}";500
+10;3;title;Вдохновляйся идеями;html;null;0
+11;3;subtitle;Реализуй все с Advantshop;html;null;100
+12;3;text;"Текст, от латинского textus «ткань; сплетение, связь, сочетание» — зафиксированная на каком-либо материальном носителе человеческая мысль; в общем плане связная и полная последовательность символов.";html;null;200
+13;3;picture;;picture;"{""src"":""./areas/landing/frontend/images/texts/text_image_reverse.jpg"",""class"":""""}";300
+14;4;title;Вдохновляйся идеями;html;null;0
+15;4;subtitle;Реализуй все с Advantshop;html;null;100
+16;4;text;Простой инструмент для онлайн-продаж. Зарабатывайте больше, используя различные каналы продаж, и выстраивайте правильные отношения с клиентом.;html;null;200
+17;5;title;Создавай с Advantshop;html;null;0
+18;5;subtitle;Реализуй все с Advantshop;html;null;100

@@ -1,0 +1,52 @@
+﻿@using AdvantShop.Payment
+@model AdvantShop.Core.Services.Payment.PaymentMethodAdminModel
+
+
+@if (Model.ShowUrls.HasFlag(UrlStatus.ReturnUrl))
+{
+    <div class="form-group row">
+        <div class="flex-grow-n col-fixed-size-md">
+            Return url
+        </div>
+        <div class="col-xs-6 relative">
+            @Model.SuccessUrl
+        </div>
+    </div>
+}
+
+@if (Model.ShowUrls.HasFlag(UrlStatus.FailUrl))
+{
+    <div class="form-group row">
+        <div class="flex-grow-n col-fixed-size-md">
+            Fail url
+        </div>
+        <div class="col-xs-6 relative">
+            @Model.FailUrl
+        </div>
+    </div>
+}
+
+@if (Model.ShowUrls.HasFlag(UrlStatus.CancelUrl))
+{
+    <div class="form-group row">
+        <div class="flex-grow-n col-fixed-size-md">
+            Cancel url
+        </div>
+        <div class="col-xs-6 relative">
+            @Model.CancelUrl
+        </div>
+    </div>
+}
+
+@if (Model.ShowUrls.HasFlag(UrlStatus.NotificationUrl))
+{
+    <div class="form-group row">
+        <div class="flex-grow-n col-fixed-size-md">
+            @T("Admin.PaymentMethods.CommonUrls.NotificationUrl")
+        </div>
+        <div class="col-xs-6 relative">
+            @Model.NotificationUrl
+        </div>
+    </div>
+
+}

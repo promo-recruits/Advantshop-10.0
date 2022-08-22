@@ -1,0 +1,18 @@
+.scrollbar-custom--scroll-h {
+  overflow-x: auto;
+}
+.scrollbar-custom--scroll-v {
+  overflow-y: auto;
+}
+.scrollbar-custom::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.scrollbar-custom::-webkit-scrollbar:vertical {
+  width: 6px;
+}
+.scrollbar-custom::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #dbdcde;
+}

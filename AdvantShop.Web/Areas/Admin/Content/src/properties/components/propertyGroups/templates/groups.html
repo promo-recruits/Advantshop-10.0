@@ -1,0 +1,25 @@
+﻿<div class="aside-menu property-groups" data-as-sortable="$ctrl.sortableOptions" data-ng-model="$ctrl.groups">
+    <div ng-repeat="group in $ctrl.groups" data-as-sortable-item data-e2e-property-group-id="{{group.PropertyGroupId}}">
+        <div class="link-invert aside-menu-row aside-menu-row-with-move" ng-class="{'selected': group.PropertyGroupId == $ctrl.groupId || ($ctrl.groupId == null && group.PropertyGroupId == 0)}">
+            <div class="aside-menu-inner">
+                <div class="aside-menu-name">
+                    <span data-as-sortable-item-handle><icon-move></icon-move></span>
+                    <a class="link-invert link-decoration-none" ng-click="$ctrl.selectGroup(group.PropertyGroupId)" href="">{{group.Name}}</a> <!--href="properties{{ group.PropertyGroupId != 0 ? '?groupId=' + group.PropertyGroupId : '' }}"-->
+                </div>
+                <div class="aside-menu-count">
+                    <div class="links-edit" ng-hide="group.PropertyGroupId == 0 || group.PropertyGroupId == -1">
+                        <ui-modal-trigger data-controller="'ModalAddGroupCtrl'" controller-as="ctrl"
+                                          template-url="../areas/admin/content/src/properties/modal/addGroup/addGroup.html"
+                                          data-resolve="{'groupId': group.PropertyGroupId}"
+                                          data-on-close="$ctrl.fetch()">
+                            <a href="" class="link-invert fas fa-pencil-alt link-decoration-none"></a>
+                        </ui-modal-trigger>
+
+                        <a href="" class="link-invert fas fa-times link-decoration-none" ng-click="$ctrl.deleteGroup(group.PropertyGroupId, $index)"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr ng-show="group.PropertyGroupId == -1" />
+    </div>
+</div>

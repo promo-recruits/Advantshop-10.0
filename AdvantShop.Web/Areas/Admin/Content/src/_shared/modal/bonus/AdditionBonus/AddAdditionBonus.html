@@ -1,0 +1,128 @@
+﻿<form novalidate>
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{'Admin.Js.AdditionBonus.AccrueAdditionalBonuses'|translate}}</h2>
+    </div>
+    <div class="modal-body">
+        <div class="form-horizontal m-r m-l" style="min-height: 465px;" ng-if="!ctrl.isStartExport">
+            <div class="form-group m-b-lg">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <label class="control-label m-b-xs">
+                            {{'Admin.Js.AdditionBonus.Name'|translate}}
+                        </label>
+                    </div>
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" ng-disabled="ctrl.isStartExport" ng-model="ctrl.name" autofocus data-e2e="Name" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row m-b-lg">
+                    <div class="col-xs-12">
+                        <div class="row form-group">
+                            <div class="col-xs-5 ">
+                                <label class="control-label m-b-xs">
+                                    {{'Admin.Js.AdditionBonus.ValidFrom'|translate}}
+                                </label>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="input-group" ng-flatpickr fp-opts="{dateFormat: 'd.m.Y', startDateFormat: 'Y-m-d', wrap: true}">
+                                    <span class="flatpickr-custom-wrap">
+                                        <input data-e2e="addAdditionBonusStartDate" class="form-control" ng-flatpickr-input ng-disabled="ctrl.isStartExport" ng-model="ctrl.startDate">
+                                        <span class="flatpickr-custom-clear" data-close data-clear><i class="fas fa-times"></i></span>
+                                    </span>
+                                    <span class="input-group-addon" data-toggle><i class="fas fa-calendar-alt"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row m-b-lg">
+                            <div class="col-xs-5">
+                                <label class="control-label m-b-xs">
+                                    {{'Admin.Js.AdditionBonus.ValidInclusiveUpTo'|translate}}
+                                </label>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="input-group" ng-flatpickr fp-opts="{dateFormat: 'd.m.Y', startDateFormat: 'Y-m-d', wrap: true}">
+                                    <span class="flatpickr-custom-wrap">
+                                        <input data-e2e="addAdditionBonusEndDate" type="text" class="form-control" ng-flatpickr-input ng-disabled="ctrl.isStartExport" ng-model="ctrl.endDate">
+                                        <span class="flatpickr-custom-clear" data-close data-clear><i class="fas fa-times"></i></span>
+                                    </span>
+                                    <span class="input-group-addon" data-toggle><i class="fas fa-calendar-alt"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-b-lg">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <label class="control-label m-b-xs">
+                            <span class="text-required">{{'Admin.Js.AdditionBonus.BonusAmount'|translate}}</span>
+                        </label>
+                    </div>
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" ng-model="ctrl.amount" required validation-input-text="{{'Admin.Js.AdditionBonus.BonusAmount'|translate}}" data-e2e="Amount" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-b-lg">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <label class="control-label m-b-xs">
+                            {{'Admin.Js.AdditionBonus.Base'|translate}}
+                        </label>
+                    </div>
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" ng-model="ctrl.reason" validation-input-text="{{'Admin.Js.AdditionBonus.Base'|translate}}" data-e2e="Reason" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-b-lg">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <label class="control-label m-b-xs">
+                            {{'Admin.Js.Bonus.SendSms'|translate}}
+                        </label>
+                    </div>
+                    <div class="col-xs-7">
+                        <switch-on-off checked="ctrl.SendSms" data-id="SendSms" readonly="ctrl.isStartExport" on-change="ctrl.onChangeSwitch(checked)"></switch-on-off>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cm-stat ng-if="ctrl.isStartExport" on-tick="ctrl.onTick(data)">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <uib-progressbar max="cmStat.entity.Total" value="cmStat.entity.Processed"><span style="color:white; white-space:nowrap;">{{cmStat.entity.ProcessedPercent }} %</span></uib-progressbar>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-if="!cmStat.entity.IsRun">
+                        <div class="col-xs-6">
+                            <div class="form-group row" ng-if="cmStat.entity.Error == 0">
+                                <div class="col-xs-12">
+                                    <div class="setting-label-wrap">
+                                        {{'Admin.Js.AdditionBonus.Completed'|translate}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </cm-stat>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-save btn-primary" type="submit" button-validation button-validation-success="ctrl.addBonus();" ladda="ctrl.btnLoading" data-e2e="bonusAdd">{{'Admin.Js.AdditionBonus.Add'|translate}}</button>
+        <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.AdditionBonus.Cancel'|translate}}</button>
+    </div>
+</form>

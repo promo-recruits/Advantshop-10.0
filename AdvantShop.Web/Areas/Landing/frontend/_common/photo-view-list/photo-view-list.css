@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/*>480 - смартфоны*/
+/*>768 - планшеты*/
+/*>1024 - нетбуки, ноутбуки*/
+/*>1200 - десктоп*/
+/*>1600 - десктоп*/
+.photo-view-list__nav-wrap {
+  display: none;
+}
+.photo-view-list__item-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.photo-view-list__item {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.photo-view-list__item img {
+  /*display: block;*/
+  display: inline-block;
+}
+.photo-view-list__item + .photo-view-list__item {
+  margin-left: 5px;
+}
+.photo-view-list__item-wrap::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 2px;
+}
+.photo-view-list__item-wrap::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 64em) {
+  .photo-view-list {
+    position: relative;
+  }
+  .photo-view-list__item-wrap {
+    display: block;
+    overflow-x: initial;
+    position: relative;
+  }
+  .photo-view-list__item {
+    max-width: none;
+  }
+  .photo-view-list__item + .photo-view-list__item {
+    margin-left: 0;
+  }
+  .photo-view-list__item {
+    height: 0;
+    transition: 0.1s;
+  }
+  .photo-view-list__item img {
+    opacity: 0;
+    pointer-events: none;
+    /*display: block;*/
+    display: inline-block;
+    margin: 0 auto;
+  }
+  .photo-view-list__item.active {
+    height: auto;
+  }
+  .photo-view-list__item.active img {
+    opacity: 1;
+  }
+  .photo-view-list__nav-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    z-index: 1;
+  }
+  .photo-view-list__nav {
+    flex-grow: 1;
+    flex-shrink: 1;
+    position: relative;
+  }
+  .photo-view-list__nav > * {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+    height: 1px;
+    pointer-events: none;
+  }
+  .photo-view-list__nav + .photo-view-list__nav > * {
+    margin-left: 2px;
+  }
+  .photo-view-list__nav:not(.active) > span {
+    background-color: rgba(121, 119, 121, 0.7);
+  }
+}

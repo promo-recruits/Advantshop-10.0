@@ -1,0 +1,6 @@
+﻿ShippingMethodID;ShippingType;Name;Description;Enabled;SortOrder;DisplayCustomFields;ShowInDetails;ZeroPriceMessage;DisplayIndex;TaxId;CurrencyId
+141;FixedRate;Курьером по Москве;В удобное для Вас время;true;1;true;true;Бесплатно;false;21;4
+145;FreeShipping;Бесплатная доставка;;false;0;true;true;Бесплатно;true;21;NULL
+209;SelfDelivery;Самовывоз;;true;0;NULL;true;Бесплатно;false;21;4
+210;FixedRate;Курьером;;true;1;true;true;Бесплатно;false;21;4
+212;YandexDelivery;Яндекс.Доставка;;true;100;true;false;Бесплатно;true;21;4

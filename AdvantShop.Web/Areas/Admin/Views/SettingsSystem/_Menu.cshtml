@@ -1,0 +1,22 @@
+﻿@using AdvantShop.CMS
+
+<div ng-controller="MenusCtrl as menus">
+    <div class="setting-title-top flex middle-xs">
+        <h3>@T("Admin.Settings.SystemSettings.CustomMenu")</h3>
+        <help-trigger class="ng-cloak m-l-xs m-b-xs" data-title='@T("Admin.Settings.SystemSettings.CustomMenu")'>
+            @T("Admin.Settings.SystemSettings.CustomMenuHint")
+        </help-trigger>
+    </div>
+
+    <div class="flex-grow flex-basis-n">
+        <div class="m-b-sm">
+            <ui-modal-trigger data-controller="'ModalAddEditMenuItemCtrl'" controller-as="ctrl"
+                                template-url="../areas/admin/content/src/menus/modal/AddEditMenuItem/AddEditMenuItem.html"
+                                data-resolve="{params: {menuType: '@EMenuType.Admin'}}"
+                                data-on-close="menus.updateMenu(result, 'admin')">
+                <a class="btn btn-sm btn-success">@T("Admin.Menus.Index.AddMenuPoint")</a>
+            </ui-modal-trigger>
+        </div>
+        <menu-treeview selected-id="0" type="@EMenuType.Admin" menu-treeview-on-init="menus.menuTreeviewInit(jstree, 'admin')" level="1"></menu-treeview>
+    </div>
+</div>

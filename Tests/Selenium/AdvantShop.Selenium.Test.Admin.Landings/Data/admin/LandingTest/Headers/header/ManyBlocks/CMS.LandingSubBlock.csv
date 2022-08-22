@@ -1,0 +1,13 @@
+﻿Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
+1;1;logo;;logo;"{""alt"":""Мой магазин"",""src"":""pictures/landing/1/1/1/logo_20190514130252.jpg""}";0
+2;1;phone;+7(000)000-00-00;html;null;100
+3;1;phone_mobile;8,902124E+10;phonemobile;null;200
+4;1;email;mail@email.mail;html;null;300
+5;1;menuHeader;;menu;"{""font_size"":16,""menu_items_spacing"":20,""style"":{""font-size"":""16px"",""padding-left"":""20px"",""padding-right"":""20px""}}";400
+6;2;title;Создавай с AdvantShop;html;null;0
+7;2;text;Простой инструмент для онлайн-продаж. Зарабатывайте больше, используя различные каналы продаж, и выстраивайте правильные отношения с клиентом.;html;null;100
+8;3;title;Вдохновляйся идеями;html;null;0
+9;3;subtitle;Реализуй все с Advantshop;html;null;100
+10;3;text;Простой инструмент для онлайн-продаж. Зарабатывайте больше, используя различные каналы продаж, и выстраивайте правильные отношения с клиентом.;html;null;200
+11;4;title;Создавай с Advantshop;html;null;0
+12;4;subtitle;Реализуй все с Advantshop;html;null;100

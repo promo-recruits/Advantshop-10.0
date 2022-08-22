@@ -1,0 +1,58 @@
+﻿@model string
+
+@using AdvantShop.Core.Services.Admin
+@{
+    Layout = "~/Areas/Admin/Views/Settings/_SettingsLayout.cshtml";
+    var isAdminv3 = AdminAreaTemplate.Current == "adminv3";
+}
+
+
+
+@using (Html.BeginForm("AdminCss", "SettingsSystem", FormMethod.Post, new { enctype = "multipart/form-data", name = "form", novalidate = "novalidate" }))
+{
+    <div class="sticky-page-name p-n m-n" sticky sticky-top="0">
+        <div class="page-name-block sticky-page-name-inner header-hidden">
+            <div class="page-name-block-item-main">
+                <h1 class="page-name-block-text sticky-page-name-text">
+                    <span class="float-header-page" ng-bind="settingsSystem.floatHeader"></span>
+                </h1>
+            </div>
+            <div class="page-name-block-item-additional">
+                <input type="submit" class="btn btn-sm btn-success" value="@T("Admin.Settings.Save")" data-button-validation disabled ng-disabled="!form.modified" />
+            </div>
+        </div>
+    </div>
+
+    if (isAdminv3)
+    {
+        @Html.Back("Настройки", Url.Action("Index", "Settings"))
+        <div class="sticky-page-name">
+            <div class="row middle-xs">
+                <div class="col-xs-6">
+                    <h1 class="page-name-block-text">@T("Admin.Settings.Commonpage.Systemsettings")</h1>
+
+                </div>
+                <div class="col-xs-6">
+                    <div class="text-right">
+                        <input type="submit" class="btn btn-sm btn-success" value="@T("Admin.Settings.Save")" data-button-validation disabled ng-disabled="!form.modified" data-e2e="BtnSaveSettings" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    @Html.AntiForgeryToken()
+
+    <div data-ng-controller="CssEditorCtrl as csseditor">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="adv-panel-info col-xs-6 col-wl-4">
+                    <div>@T("Admin.Settings.System.AdminCssEditor.Attention")<br>@T("Admin.Settings.System.AdminCssEditor.UseFile")</div>
+                </div>
+            </div>
+        </div>
+        <ui-ace-textarea ui-ace-options="{mode: 'css'}" ng-model="csseditor.text">
+            @Html.TextArea("cssEditorText", Model, new { ng_model = "csseditor.text" })
+        </ui-ace-textarea>
+    </div>
+}

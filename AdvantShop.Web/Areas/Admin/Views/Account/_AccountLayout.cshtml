@@ -1,0 +1,38 @@
+﻿@{
+    var staticUrl = UrlService.GetUrl("areas/admin/content/");
+}
+<!DOCTYPE html>
+<html class="auth-root" data-ng-app="error" data-ng-controller="ErrorCtrl as error" style="min-width: 0; height: var(--min-full-height);">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="AdVantShop.NET">
+    <meta name="advid" content="@Html.GetAdvId()">
+    <title>@T("Admin.Account.Authorization")</title>
+    <base href="@UrlService.GetUrl("adminv2/")" />
+    <link rel="stylesheet" type="text/css" href="@(staticUrl)client/full-height-mobile/full-height-mobile.css">
+    @Html.Action("Favicon", "Common", new { area = "", imgSource = "favicon.ico" })
+    @Html.Partial("~/Areas/Admin/Views/Shared/_HeaderScripts.cshtml")
+</head>
+<body class="auth-body flex white-bg" data-full-height-mobile>
+    <div class="auth-bg auth-block-bg"></div>
+    <div class="flex center-xs end-sm auth-container auth-container-wrap">
+        <div class="loginscreen animated fadeInDown full-width login_blocks-wrap">
+            @RenderBody()
+            <div class="flex flex-column">
+                <span class="login__copyright-text">&copy; @DateTime.Now.Year <a href="https://www.advantshop.net/" target="_blank">AdvantShop</a></span>
+                <span class="admin-login__version">
+                    @Html.Partial("~/Areas/Admin/Views/Shared/_Version.cshtml")
+                </span>
+            </div>
+        </div>
+        
+    </div>
+    @Html.GetNotifyMessages()
+
+    <script src="@(staticUrl)vendors/angular/angular.min.js"></script>
+    <script src="@(staticUrl)vendors/toaster/toaster.js"></script>
+    <script src="@(staticUrl)client/full-height-mobile/full-height-mobile.component.js"></script>
+    <script src="@(staticUrl)src/error/error.js"></script>
+</body>
+</html>

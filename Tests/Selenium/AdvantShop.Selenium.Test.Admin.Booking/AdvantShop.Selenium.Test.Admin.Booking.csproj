@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <ImplicitUsings>true</ImplicitUsings>
+        <OutputType>Library</OutputType>
+        <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+        <Title>AdvantShop.Selenium.Test.Admin.Booking</Title>
+        <Company>AdvantShop</Company>
+        <Product>AdvantShop</Product>
+        <Copyright>Copyright © AdvantShop 2021</Copyright>
+        <AssemblyVersion>10.0.0</AssemblyVersion>
+        <FileVersion>10.0.0</FileVersion>
+        <Version>10.0.0</Version>
+        <ApplicationIcon />
+        <StartupObject />
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+        <PackageReference Include="MSTest.TestAdapter" Version="2.2.7" />
+        <PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="NUnit" Version="3.13.2" />
+        <PackageReference Include="NUnit3TestAdapter" Version="4.1.0" />
+        <PackageReference Include="Selenium.Firefox.WebDriver" Version="*" />
+        <PackageReference Include="Selenium.Support" Version="4.0.1" />
+        <PackageReference Include="Selenium.WebDriver" Version="4.0.1" />
+        <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="*" />
+        <PackageReference Include="WebDriver.GeckoDriver" Version="0.20.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\AdvantShop.Selenium.Core\AdvantShop.Selenium.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="app.config" />
+        <None Remove="app.config_build" />
+        <None Remove="app.config_buildQA" />
+        <None Remove="app.config_etalon" />
+    </ItemGroup>
+
+</Project>

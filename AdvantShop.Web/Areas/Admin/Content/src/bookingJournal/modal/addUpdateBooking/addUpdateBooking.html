@@ -1,0 +1,202 @@
+﻿<form novalidate name="bookingAddUpdateForm" class="modal-body js-add-update-booking-modal-body">
+
+    <!--<div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{ctrl.mode === 'add' ? ('Admin.Js.AddUpdateBooking.Add'|translate) : (('Admin.Js.AddUpdateBooking.Edit'|translate) + ctrl.bookingInfo.id)}}</h2>
+        <div class="page-name-block-item-additional">
+            <button type="button" class="btn btn-sm btn-red-white btn-default" ng-click="ctrl.deleteBooking()" ng-if="ctrl.mode !== 'add' && ctrl.bookingInfo.status != 'completed'">Удалить</button>
+        </div>
+    </div>-->
+
+    <div class="sticky-page-name sticky-page-name-in-modal--panel" sticky sticky-top="0" sticky-spy=".js-add-update-booking-modal-body">
+        <div class="page-name-block sticky-page-name-inner m-b-sm">
+            <div class="page-name-block-item-main m-l">
+                <div class="page-name-block-text sticky-page-name-text inline order-header-item order-header-item-name">
+                    {{ctrl.mode === 'add' ? ('Admin.Js.AddUpdateBooking.Add'|translate) : (('Admin.Js.AddUpdateBooking.Edit'|translate) + ' ' + ctrl.bookingInfo.id)}}
+                </div>
+            </div>
+            <div class="page-name-block-item-additional">
+                <span class="ng-cloak m-r-xs" ng-if="ctrl.isPaied && ctrl.summary.ShowCreateBillingLink">
+                    <a ng-if="ctrl.canBeEditing" href="" ng-click="ctrl.createOrder()">
+                        Создать заказ
+                    </a>
+                </span>
+                <span class="ng-cloak m-r-xs" ng-if="!ctrl.isPaied && ctrl.mode === 'edit'">
+                    <a ng-if="ctrl.summary.ShowCreateBillingLink && ctrl.canBeEditing" href="" ng-click="ctrl.createPaymentLink()">
+                        Создать ссылку на оплату
+                    </a>
+                    <ui-modal-trigger ng-if="ctrl.summary.ShowSendBillingLink"
+                                      data-controller="'ModalGetBillingLinkCtrl'" data-controller-as="ctrl"
+                                      data-resolve="{params: { orderId: ctrl.bookingInfo.orderId }}"
+                                      template-url="../areas/admin/content/src/order/modal/getBillingLink/getBillingLink.html">
+                        <a href="">Ссылка на оплату</a>
+                    </ui-modal-trigger>
+                </span>
+                <div class="inline m-r-md" ng-if="ctrl.canBeEditing">
+                    <switcher-state checked="ctrl.bookingInfo.payed" text-off="Не оплачена" text-on="Оплачена" on-change="ctrl.changePay(checked)"></switcher-state>
+                </div>
+                <button type="button" class="btn btn-sm btn-red-white btn-default" ng-click="ctrl.deleteBooking(); ctrl.btnLoading = true" ng-if="ctrl.canBeDeleted && ctrl.mode !== 'add' && ctrl.bookingInfo.status != 'completed'" ladda="ctrl.btnLoading">Удалить</button>
+                <button data-e2e="BookingAdd" class="btn btn-sm btn-success" type="submit" ng-if="ctrl.canBeEditing" ng-disabled="ctrl.mode !== 'add' && !ctrl.isLoaded()" button-validation button-validation-success="ctrl.addUpdateBooking(); ctrl.btnLoading = true" ladda="ctrl.btnLoading">{{ctrl.mode === 'add' ? ('Admin.Js.AddEdit.Add'|translate) : ('Admin.Js.AddEdit.Save'|translate)}}</button>
+            </div>
+        </div>
+        <ui-modal-cross></ui-modal-cross>
+    </div>
+
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-4 col-wl-3">
+                    <div class="aside-menu">
+
+                        <!--booing description-->
+                        <div class="ibox">
+                            <div class="ibox-content block-additional-parameters-content block-additional-parameters-content--padding-mid">
+                                <div class="form-horizontal container-fluid">
+
+                                    <booking-info booking-info="ctrl.bookingInfo" mode="ctrl.mode" can-be-editing="ctrl.canBeEditing"
+                                                  params="ctrl.params"
+                                                  on-init="ctrl.bookingInfoOnInit(bookingInfo)"></booking-info>
+
+                                </div>
+                            </div>
+                        </div>
+                        <booking-customer customer="ctrl.customer" mode="ctrl.mode" can-be-editing="ctrl.canBeEditing"
+                                          on-init="ctrl.bookingCustomerOnInit(bookingCustomer)"
+                                          params="ctrl.params"
+                                          booking-events="ctrl.bookingEvents">
+                        </booking-customer>
+
+                        <!--attached files-->
+                        <div class="ibox" ng-if="ctrl.mode === 'edit'">
+                            <div class="ibox-content block-additional-parameters-content">
+                                <h3 class="m-b-md">
+                                    Прикрепленные файлы
+                                </h3>
+                                <ol class="p-l-sm ng-cloak" ng-if="ctrl.attachments.length > 0">
+                                    <li class="word-break" ng-repeat="attachment in ctrl.attachments track by $index">
+                                        <a href="" target="_blank" ng-href="{{attachment.FilePathAdmin}}" ng-bind="attachment.FileName" data-e2e="attachedFileName"></a> - <span ng-bind="attachment.FileSize"></span>
+                                        <a href="" ng-click="ctrl.deleteAttachment(attachment.Id)" class="fa fa-times link-invert link-decoration-none" title="Удалить" data-e2e="attachedFileDelete"></a>
+                                    </li>
+                                </ol>
+                                <p class="ng-cloak" ng-if="ctrl.attachments.length == 0">
+                                    Нет файлов
+                                </p>
+                                <figure class="" ng-if="ctrl.canBeEditing">
+                                    <button class="btn btn-action btn-sm" type="button" ngf-drop ngf-max-size="15MB" ngf-select="" multiple
+                                            ngf-change="ctrl.uploadAttachment($files, $file, $newFiles, $duplicateFiles, $invalidFiles, $event)" ladda="ctrl.loadingFiles">
+                                        <i class="fa fa-upload"></i>&nbsp;&nbsp;<span class="bold">Прикрепить файл</span>
+                                    </button>
+                                    <help-trigger class="ng-cloak m-l-xs" ng-if="ctrl.attachmentHelpText" use-template="true">
+                                        <div class="help-content">
+                                            {{ctrl.attachmentHelpText}}
+                                        </div>
+                                    </help-trigger>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <!--templateDocx-->
+                        <div class="ibox" ng-if="ctrl.mode === 'edit'">
+                            <div class="ibox-content block-additional-parameters-content">
+                                <h3 class="m-b-md">
+                                    Генерация документов
+                                </h3>
+                                <div ng-if="ctrl.templatesDocx.length > 0">
+                                    <div>Выберите шаблоны:</div>
+                                    <div class="p-b-sm">
+                                        <div ng-repeat="template in ctrl.templatesDocx track by template.Id">
+                                            <label class="adv-checkbox-label form-label-block">
+                                                <input type="checkbox" checklist-model="ctrl.selectedTemplatesDocx" checklist-value="template.Id" class="adv-checkbox-input" />
+                                                <span class="adv-checkbox-emul"></span>
+                                                {{template.Name}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-success btn-sm" type="button" ladda="ctrl.creatingDocxs"
+                                            disabled ng-disabled="!ctrl.selectedTemplatesDocx || ctrl.selectedTemplatesDocx.length === 0"
+                                            ng-click="ctrl.createDocx()">
+                                        <span class="fa fa-download" ng-class="{'fa-plus': ctrl.templatesDocxAttach, 'fa-download': !ctrl.templatesDocxAttach}"></span> Создать документы
+                                    </button>
+                                    <label class="adv-checkbox-label" ng-if="ctrl.canBeEditing">
+                                        <input id="BookingTemplatesDocxAttach" type="checkbox" class="adv-checkbox-input control-checkbox" ng-model="ctrl.templatesDocxAttach" />
+                                        <span class="adv-checkbox-emul"></span>
+                                        Прикрепить к файлам
+                                    </label>
+                                </div>
+                                <p class="ng-cloak" ng-if="ctrl.templatesDocx.length === 0">
+                                    Нет шаблонов
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-xs-8 col-wl-9">
+                    <div class="ibox m-b" ng-show="ctrl.mode === 'add' || ctrl.gridBookingItemsOptions.data.length > 0 || !ctrl.bookingEvents || !ctrl.bookingEvents.data || ctrl.bookingEvents.data.length == 0 || !ctrl.canBeEditing"><!--|| !ctrl.customer.customerId-->
+                        <div class="ibox-content">
+                            <div class="m-b-sm">
+                                <div class="flex between-xs inline">
+                                    <h1 class="page-name-block-text">
+                                        {{'Admin.Js.AddUpdateBooking.Content'|translate}}
+                                    </h1>
+                                </div>
+                                <ui-modal-trigger class="pull-right" size="xs-11" data-controller="'ModalBookingServicesSelectvizrCtrl'" data-controller-as="ctrl"
+                                                  data-resolve="{params:{affiliateId: ctrl.bookingInfo.affiliateId, reservationResourceId: ctrl.bookingInfo.reservationResourceId}}"
+                                                  data-on-close="ctrl.addServicesModal(result)"
+                                                  template-url="../areas/admin/content/src/_shared/modal/bookingServicesSelectvizr/bookingServicesSelectvizr.html"
+                                                  ng-if="ctrl.canBeEditing && !ctrl.isPaied">
+                                    <a class="btn btn-sm btn-success" href="">
+                                        <span class="fa fa-plus"></span> {{'Admin.Js.AddUpdateBooking.AddService'|translate}}
+                                    </a>
+                                </ui-modal-trigger>
+                            </div>
+                            <div class="m-b">
+                                <div>
+                                    <ui-grid-custom grid-unique-id="{{ctrl.gridUniqueId}}"
+                                                    grid-on-init="ctrl.gridBookingItemsOnInit(grid)"
+                                                    grid-filter-enabled="false"
+                                                    grid-pagination-enabled="false"
+                                                    grid-selection-enabled="false"
+                                                    grid-options="ctrl.gridBookingItemsOptions"
+                                                    grid-extend-ctrl="ctrl"
+                                                    grid-on-inplace-before-apply="ctrl.gridOnInplaceBeforeApply(rowEntity, colDef, newValue)"
+                                                    grid-empty-text="ctrl.canBeEditing ? ('Admin.Js.AddUpdateBooking.SelectServices'|translate) : 'Нет услуг'">
+                                    </ui-grid-custom>
+                                    
+                                    <booking-items-summary summary="ctrl.summary" mode="ctrl.mode" can-be-editing="ctrl.canBeEditing && !ctrl.isPaied"
+                                                           params="ctrl.params"
+                                                           on-init="ctrl.bookingItemsSummaryOnInit(bookingItemsSummary)"
+                                                           update-summary-fn="ctrl.updateSummary()"
+                                                           change-payment-fn="ctrl.changePayment(payment)"
+                                                           ng-show="ctrl.gridBookingItems && ctrl.gridBookingItems.gridOptions.data.length"
+                                                           on-stop-edit="ctrl.checkStopEdit()">
+                                    </booking-items-summary>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div bs-modifiable="false" ng-if="ctrl.bookingInfo.id && ctrl.bookingCustomerComponent && ctrl.bookingInfoComponent">
+                        <lead-events obj-id="ctrl.bookingInfo.id" obj-type="ctrl.bookingInfo.id ? 'booking' : null" customer-id="ctrl.customer.customerId" on-init="ctrl.bookingEventsOnInit(leadEvents)">
+                            <!--<task-create class="ng-cloak link m-b-sm m-r-sm inline h4" ng-if="lead.taskGrid == null || lead.taskGrid.gridTasks.gridOptions.data.length === 0" data-resolve="{bindTo:{objId: @Model.Id, type: 'lead'}}" on-after="lead.taskGrid.modalClose()" data-e2e="addTaskTab">
+                                @T("Admin.Leads.Popup.Task")
+                            </task-create>-->
+                            <ui-modal-trigger ng-if="ctrl.canBeEditing && !ctrl.isPaied && (ctrl.gridBookingItems == null || ctrl.gridBookingItems.gridOptions.data.length === 0)"
+                                              class="ng-cloak link m-b-sm m-r-sm inline h4" size="xs-11" data-controller="'ModalBookingServicesSelectvizrCtrl'" data-controller-as="ctrl"
+                                              data-resolve="{params:{affiliateId: ctrl.bookingInfo.affiliateId, reservationResourceId: ctrl.bookingInfo.reservationResourceId}}"
+                                              data-on-close="ctrl.addServicesModal(result)"
+                                              template-url="../areas/admin/content/src/_shared/modal/bookingServicesSelectvizr/bookingServicesSelectvizr.html">
+                                Услуги
+                            </ui-modal-trigger>
+                        </lead-events>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="modal-footer">
+        <button data-e2e="BookingCancel" class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.AddEdit.Cancel'|translate}}</button>
+    </div>-->
+</form>

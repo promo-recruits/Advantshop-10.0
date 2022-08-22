@@ -1,0 +1,46 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="inline product-setting-title content-header">{{'Admin.Js.ProductReviews.Title'|translate}}</h2>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div ng-form="" name="formRatio" class="ratio" id="ratio" bs-modifiable="false">
+        <div class="properties-group">
+            <div class="properties-group-name cs-t-5">{{'Admin.Js.ProductReviews.Ratio'|translate}}</div>
+        </div>
+        <div class="row m-n middle-xs">
+            <div class="col-xs-6 row middle-xs">
+                <input class="col-xs-1 m-n" type="radio" id="real" name="RatioType" value="current" ng-checked="$ctrl.ratioType == 'current'" ng-model="ctrl.ratioType" ng-change="$ctrl.changeType('current')" />
+                <div class="row middle-xs col-xs">
+                    <label for="$ctrl.ratioType" class="col-xs" ng-click="$ctrl.changeType('current')">
+                        {{'Admin.Js.ProductReviews.CurrentRatio'|translate}}: {{$ctrl.productRatio}}
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6 row middle-xs">
+                <input class="col-xs-1 m-n" type="radio" name="RatioType" value="manual" ng-checked="$ctrl.ratioType == 'manual'" ng-model="ctrl.ratioType" ng-change="$ctrl.changeType('manual')" />
+                <div class="row middle-xs col-xs">
+                    <label for="$ctrl.ratioType" class="col-xs" style="max-width: 150px;" ng-click="$ctrl.changeType('manual')">
+                        {{'Admin.Js.ProductReviews.ManualRatio'|translate}}:
+                    </label>
+                    <input type="number" pattern="[0-9]*" class="form-control col-xs-2" style="max-width: 50px;" ng-model="$ctrl.productManualRatio" ng-disabled="$ctrl.ratioType != 'manual'" />
+                    <input type="button" class="btn btn-sm btn-action col-xs-2 m-l-sm" ng-if="$ctrl.productManualRatio != $ctrl.productPrevManualRatio && $ctrl.ratioType == 'manual'" ng-disabled="$ctrl.productManualRatio == undefined" ng-click="$ctrl.changeManualRatio()" value="{{'Admin.Js.ProductReviews.SetManualRatio'|translate}}" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="properties-group">
+        <div class="properties-group-name cs-t-5">{{'Admin.Js.ProductReviews.Reviews'|translate}}</div>
+    </div>
+    <ui-grid-custom grid-unique-id="grid"
+                    grid-on-init="$ctrl.gridOnInit(grid)"
+                    grid-options="$ctrl.gridOptions"
+                    grid-params="{ProductId:$ctrl.productId}"
+                    grid-url="'reviews/getreviews'"
+                    grid-extend-ctrl="$ctrl">
+        <ui-grid-custom-footer class="ui-grid-custom-footer" ng-bind="$ctrl.grid.gridOptions.TotalString">
+        </ui-grid-custom-footer>
+    </ui-grid-custom>
+</div>

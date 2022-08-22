@@ -1,0 +1,48 @@
+﻿
+<div class="">
+    <h2 ng-if="$ctrl.ProductName != null" class="inline">{{$ctrl.ProductName}}</h2>
+    
+    <ui-modal-trigger data-controller="'ModalProductsSelectvizrCtrl'" controller-as="ctrl" size="xs-11"
+                      data-resolve="{multiSelect: false}"
+                      template-url="../areas/admin/content/src/_shared/modal/products-selectvizr/productsSelectvizrModal.html"
+                      data-on-close="$ctrl.selectProducts(result)">
+        <a href="">{{'Admin.Js.ProductReport.ChooseProduct'|translate}}</a>
+    </ui-modal-trigger>
+</div>
+
+<div ng-show="$ctrl.productId != null">
+
+    <div class="reports-graphic">
+        <div class="clear">
+            <h2 class="reports-title">
+                {{'Admin.Js.ProductReport.Sum'|translate}}
+            </h2>
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-xs btn-white" ng-class="{'active': $ctrl.groupFormatString == 'dd'}" ng-click="$ctrl.changeGroup('dd')">{{'Admin.Js.AnalyticsReport.ByDays'|translate}}</button>
+                    <button type="button" class="btn btn-xs btn-white" ng-class="{'active': $ctrl.groupFormatString == 'wk'}" ng-click="$ctrl.changeGroup('wk')">{{'Admin.Js.AnalyticsReport.ByWeeks'|translate}}</button>
+                    <button type="button" class="btn btn-xs btn-white" ng-class="{'active': $ctrl.groupFormatString == 'mm'}" ng-click="$ctrl.changeGroup('mm')">{{'Admin.Js.AnalyticsReport.ByMonths'|translate}}</button>
+                </div>
+            </div>
+        </div>
+        <canvas class="chart chart-line"
+                chart-data="$ctrl.SumData.Data"
+                chart-labels="$ctrl.SumData.Labels"
+                chart-series="$ctrl.SumData.Series"
+                chart-colors="$ctrl.SumData.Colors"></canvas>
+    </div>
+    
+
+    <div class="reports-graphic">
+        <ui-grid-custom grid-unique-id="gridProductReport"
+                        grid-on-init="$ctrl.gridOnInit(grid)"
+                        grid-options="$ctrl.gridOptions"
+                        grid-url="'analytics/getProductStatisticsList'"
+                        grid-params="{productId: $ctrl.productId, dateFrom:  $ctrl.dateFrom, dateTo: $ctrl.dateTo, paid: $ctrl.paid}"
+                        grid-selection-enabled="false"
+                        grid-extend-ctrl="$ctrl">
+            <ui-grid-custom-footer class="ui-grid-custom-footer" ng-bind="$ctrl.grid.gridOptions.TotalString">
+            </ui-grid-custom-footer>
+        </ui-grid-custom>
+    </div>
+</div>

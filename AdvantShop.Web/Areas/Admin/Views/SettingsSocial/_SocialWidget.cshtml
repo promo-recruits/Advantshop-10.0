@@ -1,0 +1,319 @@
+﻿@model AdvantShop.Web.Admin.Models.Settings.SocialSettingsModel
+
+<div class="setting-title m-t-none m-b-none">
+    <h3>@T("Admin.Settings.Social.SocialWidget.Title")</h3>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-9">
+        <div class="adv-panel-info">
+            <a href="https://www.advantshop.net/help/pages/vidzhety-kommunikatsii" target="_blank">@T("Admin.Settings.Social.SocialWidget.Help")</a>
+        </div>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">@T("Admin.Settings.Social.SocialWidget.ShowCommunicationWidget")</div>
+    </div>
+    <div class="col-xs-4">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetIsActive, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetIsActive", ng_init = "settingsCrm.SocialWidgetIsActive=" + Model.SocialWidgetIsActive.ToLowerString() })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetIsActive"></span>
+        </label>
+        <help-trigger class="ng-cloak m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Social.SocialWidget.ShowCommunicationWidget")">
+            @T("Admin.Settings.Social.SocialWidget.ShowCommunicationWidget.HelpText")
+        </help-trigger>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class=" col-xs-offset-3 col-xs-2 col-wl-1 col-wl-offset-2 col-wl-1 text-center">
+        Полная версия
+    </div>
+    <div class="col-xs-2 col-wl-1 col-wl-1 text-center">
+        Мобильная версия
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Social.SocialWidget.ShowVkontakte") <br />(@T("Admin.Settings.Social.SocialWidget.IfIntegrationIsConfigured"))
+            <help-trigger class="ng-cloak m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Social.SocialWidget.TitleHote")">
+                @T("Admin.Settings.Social.SocialWidget.ShowVkontakte.HelpText")
+            </help-trigger>
+        </div>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetVkShowInDesktop, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetVkShowInDesktop", ng_init = "settingsSocial.SocialWidgetVkShowInDesktop=" + Model.SocialWidgetVkShowInDesktop.ToLowerString() })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetVkShowInDesktop"></span>
+        </label>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetVkShowInMobile, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetVkShowInMobile", ng_init = "settingsSocial.SocialWidgetVkShowInMobile=" + Model.SocialWidgetVkShowInMobile.ToLowerString() })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetVkShowInMobile"></span>
+        </label>
+    </div>
+</div>
+@*<div class="form-group row">
+        <div class="col-xs-3 col-wl-2">
+            <div class="setting-label-wrap">@T("Admin.Settings.Social.SocialWidget.ShowFaceBook") <br />(@T("Admin.Settings.Social.SocialWidget.IfIntegrationIsConfigured"))</div>
+        </div>
+        <div class="col-xs-4">
+            <label class="adv-checkbox-label">
+                @Html.CheckBoxFor(x => x.SocialWidgetIsShowFb, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetIsShowFb", ng_init = "settingsSocial.SocialWidgetIsShowFb=" + Model.SocialWidgetIsShowFb.ToLowerString() })
+                <span class="adv-checkbox-emul" data-e2e="SocialWidgetIsShowFb"></span>
+            </label>
+            <help-trigger class="ng-cloak m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Social.SocialWidget.TitleHote")">
+                @T("Admin.Settings.Social.SocialWidget.ShowFaceBook.HelpText")
+            </help-trigger>
+        </div>
+    </div>*@
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Social.SocialWidget.ShowJivosite") <br />(@T("Admin.Settings.Social.SocialWidget.IfJivositeModuleIsConnected"))
+            <help-trigger class="ng-cloak m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Social.SocialWidget.TitleHote")">
+                @T("Admin.Settings.Social.SocialWidget.ShowJivosite.HelpText")
+            </help-trigger>
+        </div>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetJivositeShowInDesktop, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetJivositeShowInDesktop", ng_init = "settingsSocial.SocialWidgetJivositeShowInDesktop=" + Model.SocialWidgetJivositeShowInDesktop.ToLowerString() })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetJivositeShowInDesktop"></span>
+        </label>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetJivositeShowInMobile, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetJivositeShowInMobile", ng_init = "settingsSocial.SocialWidgetJivositeShowInMobile=" + Model.SocialWidgetJivositeShowInMobile.ToLowerString() })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetJivositeShowInMobile"></span>
+        </label>
+    </div>
+</div>
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap">
+            @T("Admin.Settings.Social.SocialWidget.ShowCallback") <br />(@T("Admin.Settings.Social.SocialWidget.IfCallBackModuleIsConnected"))
+            <help-trigger class="ng-cloak m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Social.SocialWidget.TitleHote")">
+                @T("Admin.Settings.Social.SocialWidget.ShowCallback.HelpText")
+            </help-trigger>
+        </div>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetCallbackShowInDesktop, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetCallbackShowInDesktop", ng_init = "settingsSocial.SocialWidgetCallbackShowInDesktop=" + Model.SocialWidgetCallbackShowInDesktop.ToLowerString() })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetCallbackShowInDesktop"></span>
+        </label>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetCallbackShowInMobile, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetCallbackShowInMobile", ng_init = "settingsSocial.SocialWidgetCallbackShowInMobile=" + Model.SocialWidgetCallbackShowInMobile.ToLowerString() })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetCallbackShowInMobile"></span>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap setting-label-wrap--height-min">
+            @T("Admin.Settings.Social.SocialWidget.ShowWhatsApp") @*<br />(@T("Admin.Settings.Social.SocialWidget.OnlyMobileVersion"))*@
+            <help-trigger class="ng-cloak  m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Social.SocialWidget.ShowWhatsApp")">
+                @T("Admin.Settings.Social.SocialWidget.ShowWhatsApp.HelpText")
+            </help-trigger>
+        </div>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetWhatsAppShowInDesktop, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetWhatsAppShowInDesktop" })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetWhatsAppShowInDesktop"></span>
+        </label>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetWhatsAppShowInMobile, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetWhatsAppShowInMobile" })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetWhatsAppShowInMobile"></span>
+        </label>
+    </div>
+    <div class="col-xs-3">
+        <label class="flex middle-xs col-xs relative" ng-if="settingsSocial.socialwidget.SocialWidgetWhatsAppShowInMobile">
+            @Html.TextBoxFor(x => x.SocialWidgetWhatsAppPhone, new { @class = "form-control", ng_model = "settingsSocial.socialwidget.SocialWidgetWhatsAppPhone", type = "text", validation_input_text = @T("Admin.Settings.Social.SocialWidget.ShowWhatsApp"), placeholder = "74950000000", mask_control = "", mask_control_preset = "number"  })
+            <help-trigger class="ng-cloak help-trigger-icon-abs">
+                @T("Admin.Settings.Social.SocialWidget.WhatsApp.HelpText")
+            </help-trigger>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap setting-label-wrap--height-min">
+            @T("Admin.Settings.Social.SocialWidget.ShowViber") @*<br />(@T("Admin.Settings.Social.SocialWidget.OnlyMobileVersion"))*@
+            <help-trigger class="ng-cloak  m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Social.SocialWidget.ShowViber")">
+                @T("Admin.Settings.Social.SocialWidget.ShowViber.HelpText")
+            </help-trigger>
+        </div>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label ">
+            @Html.CheckBoxFor(x => x.SocialWidgetViberShowInDesktop, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetViberShowInDesktop" })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetViberShowInDesktop"></span>
+        </label>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label ">
+            @Html.CheckBoxFor(x => x.SocialWidgetViberShowInMobile, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetViberShowInMobile" })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetViberShowInMobile"></span>
+        </label>
+    </div>
+    <div class="col-xs-3">
+        <label class="flex middle-xs col-xs relative" ng-if="settingsSocial.socialwidget.SocialWidgetViberShowInMobile">
+            @Html.TextBoxFor(x => x.SocialWidgetViberPhone, new { @class = "form-control", type = "text", ng_model = "settingsSocial.socialwidget.SocialWidgetViberPhone", validation_input_text = @T("Admin.Settings.Social.SocialWidget.ShowViber"), placeholder = "74950000000", mask_control = "", mask_control_preset = "number" })
+            <help-trigger class="ng-cloak help-trigger-icon-abs">
+                @T("Admin.Settings.Social.SocialWidget.Viber.HelpText")
+            </help-trigger>
+        </label>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap setting-label-wrap--height-min">
+            @T("Admin.Settings.Social.SocialWidget.ShowOdnoklassniki")
+            <help-trigger class="ng-cloak  m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Social.SocialWidget.TitleHote")">
+                @T("Admin.Settings.Social.SocialWidget.ShowOdnoklassniki.HelpText")
+            </help-trigger>
+        </div>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetOdnoklassnikiShowInDesktop, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetOdnoklassnikiShowInDesktop" })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetOdnoklassnikiShowInDesktop"></span>
+        </label>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetOdnoklassnikiShowInMobile, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetOdnoklassnikiShowInMobile" })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetOdnoklassnikiShowInMobile"></span>
+        </label>
+    </div>
+    <div class="col-xs-3">
+        <label class="flex middle-xs col-xs ng-hide" ng-show="settingsSocial.socialwidget.SocialWidgetOdnoklassnikiShowInDesktop || settingsSocial.socialwidget.SocialWidgetOdnoklassnikiShowInMobile">
+            @Html.TextBoxFor(x => x.SocialWidgetLinkOdnoklassniki, new { @class = "form-control", ng_model = "settingsSocial.socialwidget.SocialWidgetLinkOdnoklassniki", placeholder = "https://ok.ru/messages/group/<GROUP_ID>" })
+        </label>
+    </div>
+</div>
+
+<div class="form-group row middle-xs">
+    <div class="col-xs-3 col-wl-2">
+        <div class="setting-label-wrap setting-label-wrap--height-min">
+            @T("Admin.Settings.Social.SocialWidget.ShowTelegram")
+            <help-trigger class="ng-cloak  m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Social.SocialWidget.TitleHote")">
+                @T("Admin.Settings.Social.SocialWidget.ShowTelegram.HelpText")
+            </help-trigger>
+        </div>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label">
+            @Html.CheckBoxFor(x => x.SocialWidgetTelegramShowInDesktop, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetTelegramShowInDesktop" })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetTelegramShowInDesktop"></span>
+        </label>
+    </div>
+    <div class="col-xs-2 col-wl-1 text-center">
+        <label class="adv-checkbox-label ">
+            @Html.CheckBoxFor(x => x.SocialWidgetTelegramShowInMobile, new { @class = "adv-checkbox-input", ng_model = "settingsSocial.socialwidget.SocialWidgetTelegramShowInMobile" })
+            <span class="adv-checkbox-emul" data-e2e="SocialWidgetTelegramShowInMobile"></span>
+        </label>
+    </div>
+    <div class="col-xs-3">
+        <label class="flex middle-xs col-xs ng-hide" ng-show="settingsSocial.socialwidget.SocialWidgetTelegramShowInDesktop || settingsSocial.socialwidget.SocialWidgetTelegramShowInMobile">
+            @Html.TextBoxFor(x => x.SocialWidgetLinkTelegram, new { @class = "form-control", ng_model = "settingsSocial.socialwidget.SocialWidgetLinkTelegram", placeholder = "https://t.me/<Username>" })
+        </label>
+    </div>
+</div>
+
+<div class="setting-title setting-title__m-t-md flex middle-xs">
+    <h3 class="m-n">@T("Admin.Settings.Social.SocialWidget.CustomWidgetTitle")</h3>
+    <help-trigger class="ng-cloak m-l-xs" classes="'setting__catolog-popover-custom'" data-title="@T("Admin.Settings.Social.SocialWidget.CustomWidgetTitle")">
+        @T("Admin.Settings.Social.SocialWidget.CustomWidgetTitleNote")
+    </help-trigger>
+</div>
+
+<div class="form-group row m-t">
+    <div class="col-xs-2 col-wl-2">
+    </div>
+    <div class="col-xs-3">
+        @T("Admin.Settings.Social.SocialWidget.Name")
+    </div>
+    <div class="col-xs-4">
+        @T("Admin.Settings.Social.SocialWidget.UrlAddressOfLink")
+    </div>
+    <div class="col-xs-3">
+        Иконка (55x55)
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-2 col-wl-2">
+        <div class="setting-label-wrap">@T("Admin.Settings.Social.SocialWidget.CustomWidget1")</div>
+    </div>
+    <div class="col-xs-3">
+        @Html.TextBoxFor(x => x.SocialWidgetCustomLinkText1, new { @class = "form-control", ng_model = "settingsSocial.socialwidget.SocialWidgetCustomLinkText1", placeholder = T("Admin.Settings.Social.SocialWidget.Name") })
+    </div>
+    <div class="col-xs-4">
+        @Html.TextBoxFor(x => x.SocialWidgetCustomLink1, new { @class = "form-control", ng_model = "settingsSocial.socialwidget.SocialWidgetCustomLink1", placeholder = T("Admin.Settings.Social.SocialWidget.UrlAddressOfLink") })
+    </div>
+    <div class="col-xs-3">
+        <picture-uploader start-src="@Model.SocialWidgetCustomIcon1Src"
+                          picture-id="1"
+                          upload-url="settingsSocial/UploadSocialWidgetIcon"
+                          upload-params="{'type': '1' }"
+                          delete-url="settingsSocial/DeleteSocialWidgetIcon"
+                          delete-params="{'type': '1' }">
+        </picture-uploader>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-2 col-wl-2">
+        <div class="setting-label-wrap">@T("Admin.Settings.Social.SocialWidget.CustomWidget2")</div>
+    </div>
+    <div class="col-xs-3">
+        @Html.TextBoxFor(x => x.SocialWidgetCustomLinkText2, new { @class = "form-control", ng_model = "settingsSocial.socialwidget.SocialWidgetCustomLinkText2", placeholder = T("Admin.Settings.Social.SocialWidget.Name") })
+    </div>
+    <div class="col-xs-4">
+        @Html.TextBoxFor(x => x.SocialWidgetCustomLink2, new { @class = "form-control", ng_model = "settingsSocial.socialwidget.SocialWidgetCustomLink2", placeholder = T("Admin.Settings.Social.SocialWidget.UrlAddressOfLink") })
+    </div>
+    <div class="col-xs-3">
+        <picture-uploader start-src="@Model.SocialWidgetCustomIcon2Src"
+                          picture-id="2"
+                          upload-url="settingsSocial/UploadSocialWidgetIcon"
+                          upload-params="{'type': '2' }"
+                          delete-url="settingsSocial/DeleteSocialWidgetIcon"
+                          delete-params="{'type': '2' }">
+        </picture-uploader>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-2 col-wl-2">
+        <div class="setting-label-wrap">@T("Admin.Settings.Social.SocialWidget.CustomWidget3")</div>
+    </div>
+    <div class="col-xs-3">
+        @Html.TextBoxFor(x => x.SocialWidgetCustomLinkText3, new { @class = "form-control", ng_model = "settingsSocial.socialwidget.SocialWidgetCustomLinkText3", placeholder = T("Admin.Settings.Social.SocialWidget.Name") })
+    </div>
+    <div class="col-xs-4">
+        @Html.TextBoxFor(x => x.SocialWidgetCustomLink3, new { @class = "form-control", ng_model = "settingsSocial.socialwidget.SocialWidgetCustomLink3", placeholder = T("Admin.Settings.Social.SocialWidget.UrlAddressOfLink") })
+    </div>
+    <div class="col-xs-3">
+        <picture-uploader start-src="@Model.SocialWidgetCustomIcon3Src"
+                          picture-id="3"
+                          upload-url="settingsSocial/UploadSocialWidgetIcon"
+                          upload-params="{'type': '3' }"
+                          delete-url="settingsSocial/DeleteSocialWidgetIcon"
+                          delete-params="{'type': '3' }">
+        </picture-uploader>
+    </div>
+</div>

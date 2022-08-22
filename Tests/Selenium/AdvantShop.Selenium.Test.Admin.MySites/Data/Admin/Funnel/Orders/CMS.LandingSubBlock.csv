@@ -1,0 +1,11 @@
+﻿Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
+1;1;title;Создавай с Advantshop;html;;0
+2;1;subtitle;Более 5000 функций для удобных и эффективных продаж;html;;100
+3;2;title;Создавай с Advantshop;html;;0
+4;2;subtitle;Более 5000 функций для удобных и эффективных продаж;html;;100
+5;3;title;Магазин;html;;0
+6;3;subtitle;Более 2000 довольных клиентов по всему миру;html;;100
+7;4;title;Магазин;html;;0
+8;4;subtitle;Более 2000 довольных клиентов по всему миру;html;;100
+9;4;productsViewItem;;productsViewItem;;200
+10;4;video;Смотреть видео;video;;300

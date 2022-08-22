@@ -1,0 +1,3 @@
+﻿Id;AffiliateId;BeginDate;EndDate;Status;Sum;DateAdded;CustomerId[GUID];FirstName;LastName;Email;Patronymic;ReservationResourceId;ManagerId;OrderSourceId;IsSendedSmsBeforeStart
+1;1;2018-09-11 09:00:00.000;2018-09-11 10:00:00.000;0;990;11.09.2018 15:52;58EA5B1F-329E-4E5D-BE8C-5F06B2CF4D5D;Иван;Иванов;test@test.test;Иванович;3;6;12;false
+2;1;2018-09-11 12:30:00.000;2018-09-11 13:00:00.000;1;950;11.09.2018 15:54;553C381B-7ECD-4017-B77F-CFFC4CC8A61E;Петр;Петров;;Петрович;1;6;12;false

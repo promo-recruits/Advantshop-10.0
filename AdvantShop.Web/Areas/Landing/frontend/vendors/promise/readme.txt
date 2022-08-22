@@ -1,0 +1,1 @@
+Используется для плагина SweeAlert2 https://github.com/sweetalert2/sweetalert2/wiki/Migration-from-SweetAlert-to-SweetAlert2#1-ie-support

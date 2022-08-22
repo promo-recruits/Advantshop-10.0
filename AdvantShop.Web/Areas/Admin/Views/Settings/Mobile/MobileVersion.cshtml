@@ -1,0 +1,418 @@
+﻿@model AdvantShop.Web.Admin.Models.Settings.MobileVersionSettingsModel
+@{
+    Layout = "~/Areas/Admin/Views/Store/_StoreLayout.cshtml";
+}
+<div class="form-horizontal">
+    @using (Html.BeginForm("MobileVersion", "Settings", FormMethod.Post, new { name = "form", enctype = "multipart/form-data", novalidate = "novalidate" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="sticky-page-name p-n m-n" sticky sticky-top="0">
+            <div class="page-name-block sticky-page-name-inner header-hidden">
+                <div class="page-name-block-item-main">
+                    <h2 class="page-name-block-text sticky-page-name-text" ng-init="settingsMobile.floatHeaderList = {};">
+                        <span class="float-header-page" ng-bind="settingsMobile.floatHeaderList[settingsMobile.settingsTab]"></span>
+                    </h2>
+                </div>
+                <div class="page-name-block-item-additional">
+                    <input type="submit" class="btn btn-sm btn-success btn--margin-left" data-e2e="SettingsTemplateSaveHead" value="@T("Admin.Settings.Save")" data-button-validation disabled ng-disabled="!form.modified" />
+                </div>
+            </div>
+        </div>
+
+        <div class="page-name-block-item-main--without-action m-b-xs">
+            <div class="flex middle-xs funnel-site__settings page-name-block-item-main--without-action sticky-page-name-inner header-hidden">
+                <h2 class="m-r-md m-t-none m-b-none sticky-page-name-text">
+                    @T("Admin.Settings.Commonpage.Mobile")
+                </h2>
+                <a href="https://www.advantshop.net/help/pages/mobile-version" target="_blank" class="link-academy link-invert inline-flex middle-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="18" height="18" fill="#989a9b" class="m-r-xs">
+                    <path d="M20.005,512c-5.097,0-10.116-1.948-13.925-5.641c-5.845-5.666-7.672-14.309-4.621-21.855l45.411-112.333  C16.162,332.253,0,285.425,0,236c0-63.375,26.855-122.857,75.62-167.489C123.891,24.331,187.952,0,256,0  s132.109,24.331,180.38,68.511C485.145,113.143,512,172.625,512,236c0,45.448-14.04,89.577-40.602,127.615  c-6.325,9.057-18.792,11.271-27.849,4.947s-11.271-18.792-4.947-27.849C460.452,309.425,472,273.215,472,236  c0-108.075-96.897-196-216-196S40,127.925,40,236c0,43.783,15.577,85.2,45.046,119.773c4.834,5.671,6.115,13.561,3.321,20.47  l-31.366,77.589l91.345-40.266c5.063-2.231,10.826-2.267,15.916-0.095C193.082,425.766,223.946,432,256,432  c36.892,0,73.299-8.587,105.286-24.832c9.85-5,21.887-1.072,26.889,8.775c5.001,9.849,1.073,21.887-8.775,26.889  C341.828,461.914,299.157,472,256,472c-34.48,0-67.835-6.191-99.276-18.413L28.068,510.301C25.474,511.444,22.728,512,20.005,512z   M276,325V217c0-11.046-8.954-20-20-20s-20,8.954-20,20v108c0,11.046,8.954,20,20,20S276,336.046,276,325z M256,128  c-11.046,0-20,8.954-20,20l0,0c0,11.046,8.954,20,20,20s20-8.954,20-20l0,0C276,136.954,267.046,128,256,128z">|</path>
+                    </svg>
+                    <span>Инструкция. Настройка мобильной версии</span>
+                </a>
+            </div>
+
+            @*<div class="m-t-xs" style="padding-right:0.625rem;">
+                    <input type="submit" class="btn btn-sm btn-success btn--margin-left" value="@T("Admin.Settings.Common.Save")"
+                           data-button-validation disabled ng-disabled="!form.modified"
+                           data-e2e="mobileSave" />
+                </div>*@
+        </div>
+        <div class="flex middle-xs funnel-site__settings p-b-sm between-xs"> 
+            <div class="flex middle-xs funnel-site__settings">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item ng-tab" ng-class="{'active': settingsMobile.settingsTab == 'settings'}"
+                    ng-init="settingsMobile.floatHeaderList['settings'] = '@T("Admin.Settings.Commonpage.Mobile") / Настройки';">
+                        <a href="" ng-click="settingsMobile.changeSettingsTab('settings')">Настройки</a>
+                    </li>
+                    <li class="nav-item ng-tab" ng-class="{'active': settingsMobile.settingsTab == 'robots'}"
+                    ng-init="settingsMobile.floatHeaderList['robots'] = '@T("Admin.Settings.Commonpage.Mobile") / Robots.txt';">
+                        <a href="" ng-click="settingsMobile.changeSettingsTab('robots')">Robots.txt</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="m-t-xs" style="padding-right:0.625rem;">
+                <input type="submit" class="btn btn-sm btn-success btn--margin-left" value="@T("Admin.Settings.Common.Save")"
+                       data-button-validation disabled ng-disabled="!form.modified"
+                       data-e2e="mobileSave" />
+            </div>
+        </div>
+            <div class="tab-content" style="padding-right: 0.625rem;">
+                <div class="tab-pane" ng-class="{'active': settingsMobile.settingsTab == 'settings'}">
+                    <div class="row">
+                        <div class="mobile-settings__preview">
+                            <div class="m-r-lg">
+                                <div class="iframe-mobile__wrapper">
+                                    <iframe frameborder="0" src="@UrlService.GetUrl("?mobilePreview=true")" scrolling="no" class="iframe-mobile" onload="this.nextElementSibling.classList.add('ng-hide')"></iframe>
+                                    <div class="tpl-iframe-loading--text">
+                                        @T("Admin.LoadingData")
+                                    </div>
+                                    <div class="mobile-qrcode__block">
+                                        <div class="mobile-qrcode__inner">
+                                            <img class="mobile-qrcode__image" src="@Url.Action("GetMobileVersionQrCode", "Settings")" alt="qrcode" />
+                                            <h2 class="mobile-qrcode__header">@T("Admin.Settings.Mobile.MobileVersion.OpenOnMobile.Title")</h2>
+                                            <p class="mobile-qrcode__text">@T("Admin.Settings.Mobile.MobileVersion.OpenOnMobile.Subtitle")</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden-md m-t-sm">
+                                    <a href="@UrlService.GetUrl()" class="btn btn-success btn-block">@T("Admin.Settings.MobileVersion")</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs">
+                            <div class="row m-b">
+                                <div class="col-xs-12">
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-3 ">
+                                    <div class="setting-label-wrap">
+                                        @Html.LabelFor(x => x.Enabled, T("Admin.Settings.MobileVersion.Enabled"))
+                                    </div>
+                                </div>
+                                <div class="col-xs-7">
+                                    <label class="adv-checkbox-label form-label-block" data-e2e="mobileEnabled">
+                                        @Html.CheckBoxFor(x => x.Enabled, new { ng_model = "settingsMobile.enabled", ng_init = "settingsMobile.enabled=" + Model.Enabled.ToLowerString(), @class = "adv-checkbox-input" })
+                                        <span class="adv-checkbox-emul"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-xs-3 ">
+                                    <div class="setting-label-wrap">
+                                        @Html.LabelFor(x => x.IsFullCheckout, T("Admin.Settings.MobileVersion.IsFullCheckout"))
+                                    </div>
+                                </div>
+                                <div class="col-xs-7">
+                                    <label class="adv-checkbox-label form-label-block" data-e2e="mobileFullCheckout">
+                                        @Html.CheckBoxFor(x => x.IsFullCheckout, new { ng_model = "settingsMobile.isFullCheckout", ng_init = "settingsMobile.isFullCheckout=" + Model.IsFullCheckout.ToLowerString(), @class = "adv-checkbox-input" })
+                                        <span class="adv-checkbox-emul"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <h3 class="m-b m-t">
+                                @T("Admin.Settings.MobileVersion.MobileTemlateHeader")
+                            </h3>
+                            <div @*style="display:none;"*@>
+                                @if (Model.MobileTemplates != null && Model.MobileTemplates.Count > 1)
+                                {
+                                    <div class="form-group row">
+                                        <div class="col-xs-3 ">
+                                            <div class="setting-label-wrap">
+                                                @Html.LabelFor(x => x.MobileTemlate, T("Admin.Settings.MobileVersion.MobileTemlate"))
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-7 relative">
+                                            @Html.DropDownListFor(x => x.MobileTemlate, Model.MobileTemplates, new { @class = "form-control", ng_model = "settingsMobile.mobileTemlate", ng_change = "settingsMobile.changeTemplate()" })
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    @Html.HiddenFor(x => x.MobileTemlate, new { ng_model = "settingsMobile.mobileTemlate" })
+                                }
+                                <div class="form-group row">
+                                    <div class="col-xs-3 ">
+                                        <div class="setting-label-wrap">
+                                            @Html.LabelFor(x => x.BrowserColorVariantsSelected, T("Admin.Settings.MobileVersion.BrowserPanelColor"))
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7 relative">
+                                        <div class="row relative">
+                                            <div class="col-xs">
+                                                @Html.DropDownListFor(x => x.BrowserColorVariantsSelected, Model.BrowserColorVariantsList, new { @class = "form-control", ng_model = "settingsMobile.templateSettings.BrowserColorVariantsSelected", convert_to_number = "" })
+                                                @Html.HiddenFor(x => x.BrowserColor, new { ng_value = "settingsMobile.templateSettings.BrowserColor" })
+                                            </div>
+                                            <div class="col-xs-slim" ng-if="settingsMobile.templateSettings.BrowserColorVariantsSelected === 2"
+                                                 ng-init="settingsMobile.templateSettings.BrowserColor = '@(Model.BrowserColor.IsNotEmpty() ? Model.BrowserColor : "0662c1")'">
+                                                <color-picker required
+                                                              ng-model="settingsMobile.templateSettings.BrowserColor"
+                                                              options="settingsMobile.colorPickerOptions"
+                                                              api="settingsMobile.colorPickerApi"
+                                                              event-api="settingsMobile.colorPickerEventApi"></color-picker>
+                                            </div>
+                                            <help-trigger class="ng-cloak help-trigger-icon-abs m-l-xs" data-title="@T("Admin.Settings.MobileVersion.BrowserPanelColor")">
+                                                <div class="help-content">
+                                                    @T("Admin.Settings.MobileVersion.BrowserPanelColorHint")
+                                                </div>
+                                            </help-trigger>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-group row middle-xs">
+                                        <div class="col-xs-3 ">
+                                            <div class="setting-label-wrap">
+                                                @Html.LabelFor(x => x.HeaderColorVariantsSelected, "Цвет шапки")
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-7 relative">
+                                            @Html.DropDownListFor(x => x.HeaderColorVariantsSelected, Model.HeaderColorVariantsList, new { @class = "form-control", ng_model = "settingsMobile.templateSettings.HeaderColorVariantsSelected", convert_to_number = "" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row middle-xs">
+                                        <div class="col-xs-3 ">
+                                            <div class="setting-label-wrap">
+                                                @Html.LabelFor(x => x.CatalogMenuViewMode, "Вид отображения категорий")
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-7 relative">
+                                            @Html.DropDownListFor(x => x.CatalogMenuViewMode, Model.CatalogMenuViewModeList, new { @class = "form-control", ng_model = "settingsMobile.templateSettings.CatalogMenuViewMode", convert_to_number = "" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row middle-xs">
+                                        <div class="col-xs-3 ">
+                                            <div class="setting-label-wrap">
+                                                @Html.LabelFor(x => x.BlockProductPhotoHeight, "Высота блока изображения товара в каталоге")
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-7 relative">
+                                            @Html.TextBoxFor(x => x.BlockProductPhotoHeight, new { @class = "form-control", ng_model = "settingsMobile.TemplateSettings.BlockProductPhotoHeight", type = "number" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row middle-xs">
+                                        <div class="col-xs-3 ">
+                                            <div class="setting-label-wrap">
+                                                @Html.LabelFor(x => x.ViewCategoriesOnMain, "Отображения категорий на главной странице")
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-7 relative">
+                                            @Html.DropDownListFor(x => x.ViewCategoriesOnMain, Model.ViewCategoriesOnMainList, new { @class = "form-control", ng_model = "settingsMobile.templateSettings.ViewCategoriesOnMain", convert_to_number = "" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row  middle-xs">
+                                        <div class="col-xs-3 ">
+                                            <div class="setting-label-wrap">
+                                                @Html.LabelFor(x => x.ShowMenuLinkAll, "Отображать ссылку все товары категории в меню")
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-7 relative">
+                                            <label class="adv-checkbox-label form-label-block">
+                                                @Html.CheckBoxFor(x => x.ShowMenuLinkAll, new { ng_model = "settingsMobile.templateSettings.ShowMenuLinkAll", @class = "adv-checkbox-input" })
+                                                <span class="adv-checkbox-emul"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group row">
+                                            <div class="col-xs-3 ">
+                                                <div class="setting-label-wrap">
+                                                    @Html.LabelFor(x => x.LogoType, "Варианты отображения логотипа")
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-7 relative">
+                                                @Html.DropDownListFor(x => x.LogoType, Model.LogoTypeList, new { @class = "form-control", ng_model = "settingsMobile.templateSettings.LogoType", convert_to_number = "" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row" ng-if="settingsMobile.templateSettings.LogoType === 2">
+                                            <div class="col-xs-7 col-xs-offset-3">
+                                                @Html.PictureUploader(AdvantShop.Catalog.PhotoType.LogoMobile, 0, Model.LogoImgSrc)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-ng-show="settingsMobile.templateSettings.LogoType === 0">
+                                    <div class="form-group row">
+                                        <div class="col-xs-3 ">
+                                            <div class="setting-label-wrap">
+                                                @Html.LabelFor(x => x.DisplayHeaderTitle, T("Admin.Settings.MobileVersion.DisplayHeaderTitle"))
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-7">
+                                            <label class="adv-checkbox-label form-label-block" data-e2e="mobileDisplayHeader">
+                                                @Html.CheckBoxFor(x => x.DisplayHeaderTitle, new { ng_model = "settingsMobile.templateSettings.DisplayHeaderTitle", @class = "adv-checkbox-input" })
+                                                <span class="adv-checkbox-emul"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-xs-3 ">
+                                            <div class="setting-label-wrap">
+                                                @Html.LabelFor(x => x.HeaderCustomTitle, T("Admin.Settings.MobileVersion.HeaderCustomTitle"))
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-7">
+                                            @Html.TextAreaFor(x => x.HeaderCustomTitle, new { @class = "form-control", ng_model = "settingsMobile.templateSettings.HeaderCustomTitle", cols = "50" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="form-group row">
+                                        <div class="col-xs-3 ">
+                                            <div class="setting-label-wrap">
+                                                @Html.LabelFor(x => x.ShowAddButton, T("Admin.Settings.MobileVersion.DisplayShowAddButton"))
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-7">
+                                            <label class="adv-checkbox-label form-label-block">
+                                                @Html.CheckBoxFor(x => x.ShowAddButton, new { ng_model = "settingsMobile.templateSettings.ShowAddButton", @class = "adv-checkbox-input" })
+                                                <span class="adv-checkbox-emul"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-xs-3 ">
+                                            <div class="setting-label-wrap">
+                                                @Html.LabelFor(x => x.CountLinesProductName, T("Admin.Settings.MobileVersion.СountLinesProductName"))
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-7">
+                                            <label class="adv-checkbox-label form-label-block">
+                                                @Html.TextBoxFor(x => x.CountLinesProductName, new { @class = "form-control", ng_model = "settingsMobile.templateSettings.CountLinesProductName", style = "width: 60px;", min = "1", type = "number" })
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-xs-3 ">
+                                        <div class="setting-label-wrap">
+                                            @Html.LabelFor(x => x.MainPageCatalogView, "Тип отображения списка товаров на главной")
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7 relative">
+
+                                        <select class="form-control" convert-to-number id="MainPageCatalogView" name="MainPageCatalogView" ng-model="settingsMobile.templateSettings.MainPageCatalogView">
+                                            @foreach (var mainPageCatalogView in Model.MainPageCatalogViewList)
+                                            {
+                                                <option value="@mainPageCatalogView.Value" @(mainPageCatalogView.Value == Model.MainPageCatalogView.ConvertIntString() ? "selected" : "")>
+                                                    @mainPageCatalogView.Text
+                                                </option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-xs-3 ">
+                                        <div class="setting-label-wrap">
+                                            @Html.LabelFor(x => x.DefaultCatalogView, "Тип отображения списка товаров в каталоге (по умолчанию)")
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7 relative">
+
+                                        <select class="form-control" convert-to-number id="DefaultCatalogView" name="DefaultCatalogView" ng-model="settingsMobile.templateSettings.DefaultCatalogView">
+                                            @foreach (var catalogView in Model.DefaultViewList)
+                                            {
+                                                <option value="@catalogView.Value" @(catalogView.Value == Model.DefaultCatalogView.ConvertIntString() ? "selected" : "")>
+                                                    @catalogView.Text
+                                                </option>
+                                            }
+                                        </select>
+                                        @*@Html.DropDownListFor(x => x.DefaultCatalogView, Model.DefaultViewList, new { @class = "form-control", ng_model = "settingsMobile.templateSettings.DefaultCatalogView", convert_to_number = "" })*@
+                                        <label class="adv-checkbox-label m-t-xs">
+                                            @Html.CheckBoxFor(x => x.EnableCatalogViewChange, new { @class = "adv-checkbox-input", ng_model = "settingsMobile.templateSettings.EnableCatalogViewChange" })
+                                            @T("Admin.Settings.Catalog.EnableCatalogViewChange")
+                                            <span class="adv-checkbox-emul" data-e2e="EnableCatalogViewChange"></span>
+                                        </label>
+                                        <help-trigger class="ng-cloak m-l-xs" data-title="@T("Admin.Settings.Catalog.EnableCatalogViewChange")">
+                                            <div class="help-content">
+                                                @T("Admin.SettingsCatalog.CatalogCommon.KindOfDisplayForProducts")
+                                            </div>
+                                        </help-trigger>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-3 ">
+                                    <div class="setting-label-wrap">
+                                        @Html.LabelFor(x => x.MainPageProductCountMobile, T("Admin.Settings.MobileVersion.MainPageProductsCount"))
+                                    </div>
+                                </div>
+                                <div class="col-xs-7">
+                                    @Html.TextBoxFor(x => x.MainPageProductCountMobile, new { @class = "form-control", ng_model = "settingsMobile.templateSettings.MainPageProductCountMobile", style = "width: 60px;" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-3 ">
+                                    <div class="setting-label-wrap">
+                                        @Html.LabelFor(x => x.ShowCity, T("Admin.Settings.MobileVersion.ShowCity"))
+                                    </div>
+                                </div>
+                                <div class="col-xs-7">
+                                    <label class="adv-checkbox-label form-label-block" data-e2e="mobileShowCity">
+                                        @Html.CheckBoxFor(x => x.ShowCity, new { ng_model = "settingsMobile.templateSettings.ShowCity", @class = "adv-checkbox-input" })
+                                        <span class="adv-checkbox-emul"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-3 ">
+                                    <div class="setting-label-wrap">
+                                        @Html.LabelFor(x => x.ShowSlider, T("Admin.Settings.MobileVersion.ShowSlider"))
+                                    </div>
+                                </div>
+                                <div class="col-xs-7">
+                                    <label class="adv-checkbox-label form-label-block" data-e2e="mobileShowSlider">
+                                        @Html.CheckBoxFor(x => x.ShowSlider, new { ng_model = "settingsMobile.templateSettings.ShowSlider", @class = "adv-checkbox-input" })
+                                        <span class="adv-checkbox-emul"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group row">
+                                <div class="col-xs-3 ">
+                                    <div class="setting-label-wrap">
+                                        @Html.LabelFor(x => x.ShowBottomPanel, T("Admin.Settings.MobileVersion.ShowBottomPanel"))
+                                    </div>
+                                </div>
+                                <div class="col-xs-7">
+                                    <label class="adv-checkbox-label form-label-block" data-e2e="mobileShowBottomPanel">
+                                        @Html.CheckBoxFor(x => x.ShowBottomPanel, new { ng_model = "settingsMobile.templateSettings.ShowBottomPanel", @class = "adv-checkbox-input" })
+                                        <span class="adv-checkbox-emul"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" ng-class="{'active': settingsMobile.settingsTab == 'robots'}">
+                    <div class="form-group row">
+                        <div class="col-xs-3">
+                            <div class="setting-label-wrap">
+                                @Html.LabelFor(x => x.Robots, T("Admin.Settings.MobileVersion.Robots"))
+                                <div class="m-t-sm">
+                                    @T("Admin.Settings.Mobile.MobileVersion.FileWillBeUsed")
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            <ui-ace-textarea ng-model="settingsMobile.robots">
+                                @Html.TextAreaFor(x => x.Robots, new { ng_model = "settingsMobile.robots" })
+                            </ui-ace-textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+
+        </div>
+

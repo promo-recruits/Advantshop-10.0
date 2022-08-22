@@ -1,0 +1,18 @@
+﻿<div class="modal-header">
+    <ui-modal-cross></ui-modal-cross>
+    <h2 class="modal-header-title">{{'Admin.Js.ChangeLeadSalesFunnel.Header'|translate}}</h2>
+</div>
+<div class="modal-body">
+    <div class="m-b-xs">{{'Admin.Js.ChangeLeadSalesFunnel.SalesFunnel'|translate}}</div>
+    <div class="m-b">
+        <select class="form-control" ng-model="ctrl.salesFunnelId" ng-options="s.value as s.label for s in ctrl.funnels" ng-change="ctrl.getDealStatuses()" data-e2e="leadsEditSalesFunnel"></select>
+    </div>
+    <div class="m-b-xs">{{'Admin.Js.ChangeLeadSalesFunnel.DealStatus'|translate}}</div>
+    <div>
+        <select class="form-control" ng-model="ctrl.dealSatatusId" ng-options="s.value as s.label for s in ctrl.statuses" data-e2e="leadsEditDealStatus"></select>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-save btn-primary" type="button" ng-click="ctrl.save()" ng-disabled="ctrl.btnSaveDisabled" data-e2e="leadsEditSave">{{'Admin.Js.AddEdit.Save'|translate}}</button>
+    <button class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()" data-e2e="leadsEditCancel">{{'Admin.Js.AddEdit.Cancel'|translate}}</button>
+</div>

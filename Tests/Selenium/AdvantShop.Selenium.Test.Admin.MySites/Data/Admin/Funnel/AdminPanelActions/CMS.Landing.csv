@@ -1,0 +1,10 @@
+﻿Id;Name;Enabled;Template;Url;CreatedDate;LandingSiteId;IsMain;ProductId
+1;FunnelPage1;true;Default;funnelpage1;03.06.2021 18:14;1;true;NULL
+2;FunnelPage2;true;Default;funnelpage2;03.06.2021 18:14;1;false;NULL
+3;FunnelPage3;false;Default;funnelpage3;03.06.2021 18:15;1;false;NULL
+4;FunnelPageSingle;true;Default;funnelpagesingle;03.06.2021 18:15;2;true;NULL
+5;TestFunnelForCheckInplace;true;Default;testfunnelforcheckinplace;03.06.2021 18:15;3;true;NULL
+6;FunnelProductsSinglePage;true;Default;funnelproductssinglepage;17.06.2021 17:26;4;true;NULL
+7;FunnelProductsMultiPage;true;Default;funnelproductsmultipage;17.06.2021 17:26;5;true;NULL
+8;page2;true;Default;page2;17.06.2021 17:38;5;false;NULL
+9;page3;true;Default;page3;17.06.2021 17:39;5;false;NULL

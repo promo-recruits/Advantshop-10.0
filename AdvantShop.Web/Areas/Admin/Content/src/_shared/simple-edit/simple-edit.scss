@@ -1,0 +1,27 @@
+﻿simple-edit-trigger {
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+simple-edit-content:focus {
+    background-color: rgba(0,0,0, .1);
+}
+
+.simple-edit__input {
+    width: 100%;
+    word-break: break-all;
+    &:focus{
+        text-decoration: underline;
+    }
+}
+
+.simple-edit {
+    display: flex;
+    align-items: center;
+}
+
+.is-sticky {
+    simple-edit-trigger {
+        display: none;
+    }
+}

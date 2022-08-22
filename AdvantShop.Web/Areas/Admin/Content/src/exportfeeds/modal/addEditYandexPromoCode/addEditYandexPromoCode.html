@@ -1,0 +1,71 @@
+﻿<form name="addEditePromoCode">
+    <div class="modal-header">
+        <ui-modal-cross></ui-modal-cross>
+        <h2 class="modal-header-title">{{'Admin.Js.AddEditYandexPromo.NewPromoCode'|translate}}</h2>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="row middle-xs">
+                        <label class="col-xs-3">
+                            <span class="text-required">{{'Admin.Js.AddEditYandexPromo.Name'|translate}}</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <input type="text" placeholder="" ng-model="ctrl.promo.Name" class="form-control" data-e2e="PromoAddName" required validation-input-text="{{'Admin.Js.AddEditYandexPromo.Name'|translate}}" autofocus />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row middle-xs">
+                        <label class="col-xs-3">
+                            <span>{{'Admin.Js.AddEditYandexPromo.Description'|translate}}</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <textarea style="resize: vertical;min-height: 3.2rem;" ng-model="ctrl.promo.Description" maxlength="500" class="form-control" data-e2e="PromoAddDescription"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row middle-xs">
+                        <label class="col-xs-3">
+                            <span>{{'Admin.Js.AddEditYandexPromo.PromoUrl'|translate}}</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <input type="text" ng-model="ctrl.promo.PromoUrl" class="form-control" data-e2e="PromoAddUrl" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-offset-3 col-xs-9 ">
+                            <label class="error" style="text-align:center;">
+                                <span ng-if="ctrl.warning != ''">{{ ctrl.warning }}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row middle-xs">
+                        <label class="col-xs-3">
+                            <span class="text-required">{{'Admin.Js.AddEditYandexPromo.Coupon'|translate}}</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <select ng-disabled="ctrl.coupons.length == 0 || ctrl.promo.Coupon === undefined" ng-model="ctrl.promo.Coupon" class="form-control" required validation-input-text="{{'Admin.Js.AddEditYandexPromo.Coupon'|translate}}" data-e2e="ExportAddType" ng-options="item as item.Code disable when !item.Enabled for item in ctrl.coupons"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ui-modal-trigger data-controller="'ModalAddEditCouponCtrl'" controller-as="ctrl" size="middle"
+                          template-url="../areas/admin/content/src/coupons/modal/addEditCoupon/addEditCoupon.html"
+                          data-on-close="ctrl.fetchCoupons()">
+            <a data-e2e="AddCoupon">{{'Admin.Js.AddEditYandexPromo.AddCoupon'|translate}}</a>
+        </ui-modal-trigger>
+    </div>
+    <div class="modal-footer">
+        <button data-e2e="ButtonSave" class="btn btn-save btn-primary" ng-disabled="addEditePromoCode.$pristine" type="button" data-button-validation-success="ctrl.save()" data-button-validation>{{'Admin.Js.AddEditYandexPromo.Ok'|translate}}</button>
+        <button data-e2e="ButtonCancel" class="btn btn-default btn-cancel" type="button" ng-click="ctrl.close()">{{'Admin.Js.AddEditYandexPromo.Cancel'|translate}}</button>
+    </div>
+</form>

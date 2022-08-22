@@ -1,0 +1,6 @@
+﻿@model AdvantShop.Web.Admin.Models.Home.AdminHomeViewModel
+
+@Html.Action("TopMenu","Common", new { area = "adminv3" })
+@Html.Action("StatisticsDashboard")
+@Html.Partial("GroupListAdd")
+@Html.Action("OrdersDashboard")

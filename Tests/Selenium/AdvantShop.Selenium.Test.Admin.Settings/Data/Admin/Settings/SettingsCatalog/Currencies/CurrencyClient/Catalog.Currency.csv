@@ -1,0 +1,23 @@
+CurrencyID;Name;Code;CurrencyValue;CurrencyIso3;IsCodeBefore;CurrencyNumIso3;RoundNumbers;EnablePriceRounding
+80;TestCurrencyName80;И 27;1;R80;false;80;1;true
+81;TestCurrencyName81;$27;10;R81;true;81;0,01;true
+82;TestCurrencyName82;руб.28;20;R82;true;82;10;true
+83;TestCurrencyName83;И 28;30;R83;false;83;100;true
+84;TestCurrencyName84;$28;40;R84;false;84;1000;true
+85;TestCurrencyName85;руб.29;50;R85;true;85;-1;false
+86;TestCurrencyName86;И 29;60;R86;true;86;1;true
+87;TestCurrencyName87;$29;70;R87;false;87;0,01;true
+88;TestCurrencyName88;руб.30;80;R88;false;88;10;true
+89;TestCurrencyName89;И 30;90;R89;true;89;100;true
+90;TestCurrencyName90;$30;100;R90;true;90;1000;true
+91;TestCurrencyName91;руб.31;110;R91;false;91;-1;false
+92;TestCurrencyName92;И 31;120;R92;false;92;1;true
+93;TestCurrencyName93;$31;130;R93;true;93;0,01;true
+94;TestCurrencyName94;руб.32;140;R94;true;94;10;true
+95;TestCurrencyName95;И 32;150;R95;false;95;100;true
+96;TestCurrencyName96;$32;160;R96;false;96;1000;true
+97;TestCurrencyName97;руб.33;170;R97;true;97;-1;false
+98;TestCurrencyName98;И 33;180;R98;true;98;1;true
+99;TestCurrencyName99;$33;190;R99;false;99;0,01;true
+100;TestCurrencyName100;руб.34;200;U1;false;100;10;true
+101;TestCurrencyName101;И 34;210;U2;true;101;100;true

@@ -1,0 +1,18 @@
+﻿@model AdvantShop.Web.Admin.Models.Orders.PecEasyway.OrderActionsModel
+
+@if (Model.ShowSendOrder)
+{
+    <a href="" class="m-t-xs m-b-xs block fs-xs" ng-click="$ctrl.createPecEasywayOrder()">Передать заказ в ПЭК:EASYWAY</a>
+}
+@if (Model.ShowGetLabel)
+{
+    <a href="orders/getPecEasywayOrderLabel?orderid=@Model.OrderId" target="_blank" class="m-t-xs m-b-xs block fs-xs">Получить этикетку для печати</a>
+}
+@if (Model.ShowCancelOrder)
+{
+    <a href="" class="m-t-xs m-b-xs block fs-xs" ng-click="$ctrl.cancelPecEasywayOrder()">Отменить заказ в ПЭК:EASYWAY</a>
+}
+@if (Model.IsCanceledOrder)
+{
+    <span class="m-t-xs m-b-xs block fs-xs">Заказ отменен в ПЭК:EASYWAY</span>
+}

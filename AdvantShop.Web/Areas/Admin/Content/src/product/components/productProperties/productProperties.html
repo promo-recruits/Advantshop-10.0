@@ -1,0 +1,110 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="inline product-setting-title content-header">{{'Admin.Js.ProductProperties.Title'|translate}}</h2>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div ng-form="" name="formProductProperties" class="properties" id="properties" bs-modifiable="false">
+        <div data-ng-repeat="group in $ctrl.groups track by $index">
+
+            <div class="properties-group-name" ng-if="group.Title != null" ng-bind="group.Title"></div>
+
+            <div class="properties-group">
+                <div class="properties-group-name cs-t-5" ng-bind="group.Name"></div>
+            </div>
+
+            <div data-ng-repeat="property in group.Properties track by $index" class="properties-item">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div class="properties-item-name" ng-bind="property.Name"></div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="properties-item-value">
+                            <ui-select multiple
+                                       tagging="$ctrl.propertyValueTransform"
+                                       tagging-label="true"
+                                       on-select="$ctrl.addPropertyValue(property, $item, $model)"
+                                       on-remove="$ctrl.removePropertyValue(property.PropertyId, $item, $model, property.GroupId)"
+                                       reach-infinity="$ctrl.getMoreValuesForExistProperty(property, 100)"
+                                       ng-click="$ctrl.firstCallValuesForExistProperty(property, 100)"
+                                       uis-open-close="$ctrl.closeSelectPropertyExit(isOpen, property)"
+                                       ng-model="property.SelectedPropertyValues">
+                                <ui-select-match placeholder="">{{$item.Value}}</ui-select-match>
+                                <ui-select-choices repeat="propertyValue in property.PropertyValues"
+                                                   minimum-input-length="1"
+                                                   refresh="$ctrl.getPropertyValuesByProperty(property, $select.search)"
+                                                   refresh-delay="250">
+                                    {{propertyValue.Value}}
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="properties-group">
+            <div class="properties-group-name cs-t-5">{{'Admin.Js.ProductProperties.AddingProperty'|translate}}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="properties-new-item">{{'Admin.Js.ProductProperties.Name'|translate}}</div>
+            </div>
+            <div class="col-xs-4">
+                <div class="properties-new-item">{{'Admin.Js.ProductProperties.Value'|translate}}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <ui-select data-e2e="selectProperty"
+                           validation-input-text="{{::'Admin.Js.ProductProperties.Name' | translate}}"
+                           reach-infinity="$ctrl.getMore()"
+                           ng-model="$ctrl.selectedProperty"
+                           uis-open-close="$ctrl.closeSelectProperty(isOpen)"
+                           on-select="$ctrl.selectProperty($item, $model)"
+                           ng-click="$ctrl.firstCallProperties()"
+                           reset-search-input="true">
+                    <ui-select-match allow-clear="true" placeholder="{{'Admin.Js.ProductProperties.EnterPropertyName' | translate}}">
+                        {{$select.selected.Name}}
+                    </ui-select-match>
+                    <ui-select-choices refresh="$ctrl.findProperty($select.search, $select)"
+                                       refresh-delay="250"
+                                       repeat="item in $ctrl.propertiesList track by item.PropertyId"
+                                       minimum-input-length="1">
+                        <span ng-bind="item.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="col-xs-4">
+                <ui-select data-e2e="selectPropertyValue"
+                           validation-input-text="{{::'Admin.Js.AddPropertyValue.Title' | translate}}"
+                           reach-infinity="$ctrl.getMorePropertiesValue()"
+                           ng-model="$ctrl.selectedPropertyValue"
+                           uis-open-close="$ctrl.closeSelectPropertyValue(isOpen)"
+                           on-select="$ctrl.selectPropertyValue($item, $model)"
+                           ng-click="$ctrl.firstCallPropertyValues()"
+                           reset-search-input="true">
+                    <ui-select-match allow-clear="true" placeholder="{{'Admin.Js.ProductProperties.EnterPropertyValue'|translate}}">
+                        {{$select.selected.Value}}
+                    </ui-select-match>
+                    <ui-select-choices refresh="$ctrl.findPropertyValue($ctrl.selectedProperty.PropertyId, $select.search, $select)"
+                                       refresh-delay="250"
+                                       repeat="item in $ctrl.propertyValuesList track by item.PropertyValueId"
+                                       minimum-input-length="1">
+                        <span ng-bind="item.Value"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="col-xs-3">
+                <button type="button" data-e2e="propertyAddSelected" class="btn btn-sm btn-action"
+                        ng-click="$ctrl.selectedProperty != null && $ctrl.selectedPropertyValue != null ? $ctrl.addPropertyWithValue(formProductProperties) : null"
+                        ng-disabled="$ctrl.selectedProperty == null || $ctrl.selectedProperty.Value.length === 0 || $ctrl.selectedPropertyValue == null || $ctrl.selectedPropertyValue.Value.length == 0"
+                        ng-if="!($ctrl.showNewProperty || $ctrl.showNewPropertyValue)">
+                    {{'Admin.Js.AddEdit.Add'|translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

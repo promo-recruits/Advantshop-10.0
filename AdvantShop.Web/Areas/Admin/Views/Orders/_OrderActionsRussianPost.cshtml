@@ -1,0 +1,20 @@
+﻿@model AdvantShop.Web.Admin.Models.Orders.RussianPost.OrderActionsModel
+
+@if (Model.ShowSendOrder)
+{
+    <a href="" class="m-t-xs m-b-xs block fs-xs" ng-click="$ctrl.createRussianPostOrder()">Передать заказ в Почту России</a>
+}
+@if (Model.ShowDeleteOrder)
+{
+    <a href="" class="m-t-xs m-b-xs block fs-xs" ng-click="$ctrl.deleteRussianPostOrder()">Удалить заказ из Почты России</a>
+}
+
+@if (Model.ShowGetDocumentsBeforShipment)
+{
+    <a href="" class="m-t-xs m-b-xs block fs-xs" ng-click="$ctrl.russianPostGetDocumentsBeforShipment()">Генерация печатных форм для заказа<br/>(до формирования партии)</a>
+}
+
+@if (Model.ShowGetDocuments)
+{
+    <a href="" class="m-t-xs m-b-xs block fs-xs" ng-click="$ctrl.russianPostGetDocuments()">Генерация печатных форм для заказа</a>
+}

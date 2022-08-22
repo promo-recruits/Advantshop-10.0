@@ -1,0 +1,20 @@
+﻿Id;Name;Enabled;Template;Url;CreatedDate;LandingSiteId;IsMain;PageType;ProductId
+1;emptyfunnel;true;Default;emptyfunnel;06.10.2021 16:51;1;true;0;NULL
+2;Главная;true;ArticleLead;glavnaya;06.10.2021 16:52;2;true;1;NULL
+3;Главная;true;CollectContactsForAccess;glavnaya;06.10.2021 16:52;3;true;1;NULL
+4;Главная;true;CollectContactsForAccess;glavnaya;06.10.2021 16:52;4;true;1;NULL
+5;Главная;true;CollectContactsForAccess;glavnaya;06.10.2021 16:52;5;true;1;NULL
+6;Главная;true;ConsultingNew;glavnaya;06.10.2021 16:52;6;true;1;NULL
+7;Полезный контент;true;ConsultingNew;poleznyi-kontent;06.10.2021 16:52;6;false;2;NULL
+8;Анкета;true;ConsultingNew;anketa;06.10.2021 16:52;6;false;7;NULL
+9;Страница благодарности;true;ConsultingNew;stranitsa-blagodarnosti;06.10.2021 16:52;6;false;6;NULL
+10;Главная;true;ContactForContent;glavnaya;06.10.2021 16:53;7;true;1;NULL
+11;Спасибо;true;ContactForContent;spasibo;06.10.2021 16:53;7;false;6;NULL
+12;Главная;true;ContactForEBook;glavnaya;06.10.2021 16:53;8;true;1;NULL
+13;Спасибо;true;ContactForEBook;spasibo;06.10.2021 16:53;8;false;6;NULL
+14;Главная;true;CouponWithDiscount;glavnaya;06.10.2021 16:53;9;true;1;NULL
+15;Спасибо;true;CouponWithDiscount;spasibo;06.10.2021 16:53;9;false;6;NULL
+16;Главная;true;Lottery;glavnaya;06.10.2021 16:53;10;true;1;3
+17;Спасибо;true;Lottery;spasibo;06.10.2021 16:53;10;false;6;3
+18;Главная;true;VideoLeadMagnetNew;glavnaya;06.10.2021 16:53;11;true;1;NULL
+19;Страница благодарности;true;VideoLeadMagnetNew;stranitsa-blagodarnosti;06.10.2021 16:53;11;false;6;NULL

@@ -1,0 +1,88 @@
+﻿@using AdvantShop.Saas
+@using AdvantShop.Core.Services.Admin
+@model AdvantShop.Web.Admin.Models.Settings.CatalogSettings.CatalogSettingsModel
+@{
+    Layout = "~/Areas/Admin/Views/Settings/_SettingsLayout.cshtml";
+    bool isAdminv3 = AdminAreaTemplate.IsAdminv3();
+}
+
+@using (Html.BeginForm("Index", "SettingsCatalog", FormMethod.Post, new { enctype = "multipart/form-data", name = "form", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="sticky-page-name p-n m-n" sticky sticky-top="0" data-ng-init="settingsCatalog.settingsform=form">
+        <div class="page-name-block sticky-page-name-inner header-hidden">
+            <div class="page-name-block-item-main">
+                <h1 class="page-name-block-text sticky-page-name-text">
+                    <span class="float-header-page" ng-bind="settingsCatalog.floatHeader"></span>
+                </h1>
+            </div>
+            <div class="page-name-block-item-additional">
+                <input type="submit" class="btn btn-sm btn-success btn--margin-left" data-e2e="SettingsCatalogSaveHead" value="@T("Admin.SettingsCatalog.Save")" data-button-validation disabled ng-disabled="!form.modified" data-e2e="SettingsCatalogSave" />
+            </div>
+        </div>
+    </div>
+
+    if (isAdminv3)
+    {
+        @Html.Back( T("Admin.Settings.IndexSettings").ToString(), Url.Action("Index", "Settings"))
+        <div class="sticky-page-name">
+            <div class="row middle-xs">
+                <div class="col-xs-6">
+                    <h1 class="page-name-block-text" data-e2e="ProductSettingTitle"> @T("Admin.Settings.Commonpage.Products")</h1>
+                </div>
+                <div class="col-xs-6">
+                    <div class="text-right">
+                        <input type="submit" class="btn btn-sm btn-success" data-e2e="SettingsCatalogSave" value="@T("Admin.Settings.Common.Save")" data-button-validation disabled ng-disabled="!form.modified" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <uib-tabset active uid="catalogTab" on-select-batch="settingsCatalog.floatHeader = tab.heading;">
+        <uib-tab index="'properties'" heading="@T("Admin.Properties.Index.Title")" classes="ng-tab" removable="true">
+            <div bs-modifiable="false">
+                @Html.Partial("_Properties", Model)
+            </div>
+        </uib-tab>
+        <uib-tab index="'colors'" heading="@T("Admin.Colors.Index.Title")" classes="ng-tab" removable="true">
+            <div bs-modifiable="false">
+                @Html.Partial("_Colors", Model)
+            </div>
+        </uib-tab>
+        <uib-tab index="'sizes'" heading="@T("Admin.Sizes.Index.Title")" classes="ng-tab" removable="true">
+            @Html.Partial("_Sizes", Model)
+        </uib-tab>
+        <uib-tab index="'brand'" heading="@T("Admin.Settings.Catalog.Brands")" classes="ng-tab" select="settingsCatalog.tabBrandsShow = true" deselect="settingsCatalog.tabBrandsShow = false">
+            @Html.Partial("_Brand", Model)
+        </uib-tab>
+        <uib-tab index="'search'" heading="@T("Admin.Settings.Catalog.Search")" classes="ng-tab">
+            @Html.Partial("_Search", Model)
+        </uib-tab>
+        <uib-tab index="'currency'" heading="@T("Admin.Settings.Catalog.Currencies")" classes="ng-tab" select="settingsCatalog.tabCurrencyShow = true" deselect="settingsCatalog.tabCurrencyShow = false">
+            @Html.Partial("_Currencies", Model)
+        </uib-tab>
+        <uib-tab index="'tags'" heading="@T("Admin.Tags.Index.Title")" classes="ng-tab" removable="true">
+            @if (!SaasDataService.IsSaasEnabled || SaasDataService.CurrentSaasData.HaveTags)
+            {
+                @Html.Partial("_Tags", Model)
+            }
+            else
+            {
+                @Html.Action("GetFeature", "Service", new { id = ESaasProperty.HaveTags.ToString(), partial = true })
+            }
+        </uib-tab>
+        <uib-tab index="'prices'" heading="@T("Admin.Settings.Catalog.DisplayModeOfPrices")" classes="ng-tab">
+            @Html.Partial("_Prices", Model)
+        </uib-tab>
+        <uib-tab index="'priceregulation'" heading="@T("Admin.Settings.Catalog.PriceRegulation")" classes="ng-tab">
+            @Html.Partial("_PriceRegulation")
+        </uib-tab>
+        @if (!isAdminv3)
+        {
+            <div class="js-not-tabs">
+                <input type="submit" class="btn btn-sm btn-success btn--margin-left" value="@T("Admin.SettingsCatalog.Save")" data-button-validation disabled ng-disabled="!form.modified" />
+            </div>
+        }
+    </uib-tabset>
+}

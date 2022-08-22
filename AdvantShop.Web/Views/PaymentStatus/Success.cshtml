@@ -1,0 +1,24 @@
+﻿@using AdvantShop.Core.Services.Landing
+@model AdvantShop.ViewModel.PaymentStatus.PaymentStatusViewModel
+@{
+    Html.AddAsset("checkout");
+    int siteId;
+    if (LandingHelper.IsLandingDomain(Request.Url, out siteId))
+    {
+        Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+    }
+}
+
+<div class="site-body-cell">
+    <div class="checkout-success-content">
+        <div class="page-title-row checkout-success-title-row">
+            <h1 class="checkout-success-title page-title">@Html.StaticBlock("PaymentReturn")</h1>
+        </div>
+        <div class="checkout-success-content">
+            @Html.Raw(Model.Result)
+            <div>
+                <a href="@Url.RouteUrl("Home")">@T("PaymentStatus.GoToMain")</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿ <ng-form name="shippingbyproductamount">  
+    <div>
+        <div class="m-b-md">
+            <div class="inline">
+                {{'Admin.Js.ShippingMethods.From'|translate}}
+                <div class="input-group inline valign-middle">
+                    <input type="text" ng-model="$ctrl.amount" validation-input-float class="form-control inline" style="width: 110px;" />
+                    <div class="input-group-btn">
+                        <span class="btn btn-default"><span>{{'Admin.Js.ShippingMethods.Pieces'|translate}}</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="inline m-l-sm">
+                {{'Admin.Js.ShippingMethods.DeliveryCost'|translate}}
+                <div class="input-group inline valign-middle">
+                    <input type="text" validation-input-float ng-model="$ctrl.price" class="form-control" style="width: 110px" />
+                    <div class="input-group-btn">
+                        <span class="btn btn-default"><span>{{$ctrl.currencyLabel}}</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="inline m-l-sm">
+                <button type="button" class="btn btn-action" ng-disabled="$ctrl.amount == null || $ctrl.price == null" ng-click="$ctrl.addRange()">{{'Admin.Js.ShippingMethods.Add'|translate}}</button>
+            </div>
+        </div>
+
+        <div class="m-b-md">
+        
+            <div class="m-b-xs" ng-repeat="item in $ctrl.ranges track by $index">
+
+                {{'Admin.Js.ShippingMethods.From'|translate}} {{item.amount | number}} {{'Admin.Js.ShippingMethods.Pieces'|translate}} - {{'Admin.Js.ShippingMethods.DeliveryCost'|translate}} {{item.price | number}} {{$ctrl.currencyLabel}}
+                <a href="" ng-click="$ctrl.deleteRange($index)" class="link-invert link-decoration-none fas fa-times"></a>
+            </div>
+
+        </div>
+
+        <input type="hidden" name="priceRanges" value="{{$ctrl.priceRanges}}"/>
+        <input type="text" ng-model="$ctrl.update" class="hidden" />
+
+    </div>
+</ng-form>

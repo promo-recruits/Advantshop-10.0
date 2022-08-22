@@ -1,0 +1,16 @@
+﻿<div class="modal-header">
+    <ui-modal-cross></ui-modal-cross>
+    <h2 class="modal-header-title">Список броней</h2>
+</div>
+<div class="modal-body">
+    <ui-grid-custom grid-unique-id="gridBookingsView"
+                    grid-row-identificator="'Id'"
+                    grid-on-init="ctrl.gridBookingOnInit(grid)"
+                    grid-options="ctrl.gridBookingOptions"
+                    grid-url="'booking/getlist'"
+                    grid-params="ctrl.gridParams"
+                    grid-extend-ctrl="ctrl">
+        <ui-grid-custom-footer class="ui-grid-custom-footer" ng-bind="ctrl.gridJournal.gridOptions.TotalString">
+        </ui-grid-custom-footer>
+    </ui-grid-custom>
+</div>

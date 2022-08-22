@@ -1,0 +1,122 @@
+﻿@using AdvantShop.Core.Services.Admin
+@model AdvantShop.Web.Admin.Models.Settings.BookingSettingsModel
+@{
+    var isAdminv3 = AdminAreaTemplate.Current == "adminv3";
+}
+
+<div class="m-b-md">
+    <h3 class="inline middle-cell m-r-xs m-b-xs bold">@T("Admin.SettingsCrm.Index.Common")</h3>
+</div>
+
+@if (isAdminv3)
+{
+    <div class="form-group row">
+        <div class="col-xs-2">
+            <div class="setting-label-wrap">
+                @Html.LabelFor(x => x.BookingActive, T("Admin.Settings.SystemSettings.AppsBookingActive"))
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <label class="adv-checkbox-label">
+                <switch-on-off checked="settingsBooking.BookingActive" on-change="settingsBooking.onChangeStateOffOn(checked)" data-id="BookingActive" ng-init="@("settingsBooking.BookingActive=" + Model.BookingActive.ToLowerString())"></switch-on-off>
+            </label>
+        </div>
+    </div>
+}
+
+<div @(isAdminv3 ? "ng-hide=!settingsBooking.BookingActive" : "")>
+    <div class="form-group row">
+        <div class="col-xs-3 col-wl-2 flex middle-xs">
+            <div class="setting-label-wrap">
+                @T("Admin.Settings.Booking.CategoryImageSizes")
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="m-b-xs">
+                @T("Admin.Settings.Booking.Width")
+            </div>
+           
+                <div class="input-group m-b-sm">
+                    @Html.TextBoxFor(x => x.CategoryImageWidth, new { @class = "form-control", ng_model = "settingsBooking.CategoryImageWidth" })
+                    <span class="paramUnit">px</span>&nbsp;
+                </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="m-b-xs">
+                @T("Admin.Settings.Booking.Height")
+            </div>
+            <div class="flex middle-xs">
+                <div class="input-group">
+                    @Html.TextBoxFor(x => x.CategoryImageHeight, new { @class = "form-control", ng_model = "settingsBooking.CategoryImageHeight" })
+                    <span class="paramUnit">px</span>&nbsp;
+                </div>
+                <help-trigger class="ng-cloak" data-title="@T("Admin.Settings.Booking.CategoryImageSizes")">
+                    @T("Admin.Settings.Booking.CategoryImageSizesHint")
+                </help-trigger>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-xs-3 col-wl-2 flex middle-xs">
+            <div class="setting-label-wrap">
+                @T("Admin.Settings.Booking.ServiceImageDimensions")
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="m-b-xs">
+                @T("Admin.Settings.Booking.Width")
+            </div>
+            <div class="input-group m-b-sm">
+                @Html.TextBoxFor(x => x.ServiceImageWidth, new { @class = "form-control", ng_model = "settingsBooking.ServiceImageWidth" })
+                <span class="paramUnit">px</span>&nbsp;
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="m-b-xs">
+                @T("Admin.Settings.Booking.Height")
+            </div>
+            <div class="flex middle-xs">
+                <div class="input-group">
+                    @Html.TextBoxFor(x => x.ServiceImageHeight, new { @class = "form-control", ng_model = "settingsBooking.ServiceImageHeight" })
+                    <span class="paramUnit">px</span>&nbsp;
+                </div>
+                <help-trigger class="ng-cloak" data-title="@T("Admin.Settings.Booking.ServiceImageDimensions")">
+                    @T("Admin.Settings.Booking.ServiceImageDimensionsHint")
+                </help-trigger>
+            </div>
+        </div>
+        </div>
+
+    <div class="form-group row">
+        <div class="col-xs-3 col-wl-2 flex middle-xs">
+            <div class="setting-label-wrap">
+                @T("Admin.Settings.Booking.ResourceImageDimensions")
+            </div>
+
+        </div>
+        <div class="col-xs-2">
+            <div class="m-b-xs">
+                @T("Admin.Settings.Booking.Width")
+            </div>
+            <div class="input-group m-b-sm">
+                @Html.TextBoxFor(x => x.ReservationResourceImageWidth, new { @class = "form-control", ng_model = "settingsBooking.ReservationResourceImageWidth" })
+                <span class="paramUnit">px</span>&nbsp;
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="m-b-xs">
+                @T("Admin.Settings.Booking.Height")
+            </div>
+            <div class="flex middle-xs">
+                <div class="input-group">
+                    @Html.TextBoxFor(x => x.ReservationResourceImageHeight, new { @class = "form-control", ng_model = "settingsBooking.ReservationResourceImageHeight" })
+                    <span class="paramUnit">px</span>&nbsp;
+                </div>
+                <help-trigger class="ng-cloak" data-title="@T("Admin.Settings.Booking.ResourceImageDimensions")">
+                    @T("Admin.Settings.Booking.ResourceImageDimensionsHint")
+                </help-trigger>
+            </div>
+        </div>
+    </div>
+</div>

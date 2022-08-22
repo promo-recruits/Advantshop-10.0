@@ -1,0 +1,13 @@
+﻿<div>
+    <div class="row middle-xs spinbox-block">
+        <div class="col-xs spinbox-input-wrap">
+            <input class="spinbox-input" data-ng-class="[spinbox.inputClassSize || 'input-small', spinbox.inputClasses]" type="number" max="{{::spinbox.max}}" min="{{::spinbox.min}}" step="{{::spinbox.step}}" 
+                   data-ng-model="spinbox.value" data-ng-keydown="spinbox.keydown($event)" data-ng-keyup="spinbox.keyup($event)" data-ng-blur="spinbox.valueFoldStep($event)" 
+                   data-ng-model-options="{allowInvalid:true}" validation-input-text="{{spinbox.validationText}}"/>
+        </div>
+        <div class="spinbox__arrows">
+            <a href="" class="spinbox-more icon-up-open-before link-text-decoration-none" data-ng-click="spinbox.more()" data-ng-class="{'cs-l-3 spinbox-button-disabled':spinbox.moreBtnDisabled}"></a>
+            <a href="" class="spinbox-less icon-down-open-before link-text-decoration-none" data-ng-click="spinbox.less()" data-ng-class="{'cs-l-3 spinbox-button-disabled':spinbox.lessBtnDisabled}"></a>
+        </div>
+    </div>
+</div>

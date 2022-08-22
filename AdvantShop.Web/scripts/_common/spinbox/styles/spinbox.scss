@@ -1,0 +1,82 @@
+@import "../../../../styles/_settings.scss";
+@import "../../../../styles/functions/_util.scss";
+
+
+.spinbox-more,
+.spinbox-less {
+    display: block;
+    line-height: 1;
+    padding: rem-calc(2px) rem-calc(5px);
+}
+
+.spinbox-button-disabled {
+    cursor: default;
+}
+
+.spinbox-input {
+    appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+.spinbox-input-wrap {
+    padding-right: 0;
+}
+
+.spinbox-block {
+    flex-wrap: nowrap;
+}
+
+.spinbox--mobile {
+    position: relative;
+
+    .spinbox-input-wrap {
+        padding-right: 0.625rem;
+    }
+
+    .spinbox-input {
+        text-align: center;
+    }
+
+    .spinbox__arrows {
+        width: 0;
+    }
+
+    .spinbox-less, .spinbox-more {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .spinbox-less, .spinbox-more {
+
+        &:before {
+            margin: 0;
+        }
+    }
+
+    .spinbox-less {
+        left: 0;
+
+        &:before {
+            content: "\e844"
+        }
+    }
+
+    .spinbox-more {
+        right: 0;
+
+        &:before {
+            content: "\e843"
+        }
+    }
+}

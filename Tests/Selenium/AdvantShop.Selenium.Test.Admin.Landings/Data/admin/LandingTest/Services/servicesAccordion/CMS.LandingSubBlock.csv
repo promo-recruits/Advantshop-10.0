@@ -1,0 +1,4 @@
+Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
+1;1;title;СОЗДАВАЙ С ADVANTSHOP;html;null;0
+2;1;text;Единая система для создания интернет-магазина.</br>Управляйте не только магазином, но и своим бизнесом.;html;null;100
+3;1;video;СМОТРЕТЬ ВИДЕО;video;"{""urlVideo"":""https://www.youtube.com/watch?v=XEfDYMngJeE"",""heightVideo"":null,""widthVideo"":null,""inModal"":true,""alignButton"":""center-xs""}";200

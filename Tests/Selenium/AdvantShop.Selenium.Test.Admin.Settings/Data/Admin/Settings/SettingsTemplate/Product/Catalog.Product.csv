@@ -1,0 +1,349 @@
+﻿ProductId;ArtNo;Name;Ratio;Discount;Weight;Enabled;DateAdded;DateModified;New;Bestseller;OnSale;BrandID;AllowPreOrder;SortBestseller;SortNew;SortDiscount;UrlPath;CategoryEnabled;Unit;ShippingPrice;Multiplicity;Length;Width;Height;CurrencyID;ActiveView360;DiscountAmount;PaymentSubjectType;PaymentMethodType;Hidden
+4;4;Пицца Дон Корлеоне;3;0;1,149999976;false;25.08.2007 20:08;03.08.2015 9:47;true;false;false;NULL;true;0;110;0;doncarleone;true;шт;0;1;0;0;0;4;false;0;1;1;false
+10;10;Суши Хамачи;1;0;0,200000003;true;25.08.2007 21:38;03.08.2015 9:47;false;true;false;NULL;false;410;0;NULL;ipd10;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+11;11;Coke-Cola;5;0;0,300000012;false;25.08.2007 21:54;03.08.2015 9:47;true;false;false;NULL;false;NULL;80;NULL;coke-cola;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+13;13;Sprite;1;0;0,300000012;false;25.08.2007 21:58;03.08.2015 9:47;true;false;false;NULL;false;NULL;90;NULL;sprite;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+14;14;Olympia Spirit;1;0;0,300000012;true;16.11.2009 17:32;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;olympiaspirit;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+21;21;PlayStation 3 (20GB);3;0;6;true;16.11.2009 17:32;03.08.2015 9:47;false;false;false;27;false;NULL;0;10;playstation3;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+23;23;Беспроводной контроллер SIXAXIS;3;15;0,200000003;false;16.11.2009 17:32;03.08.2015 9:47;false;false;false;27;false;NULL;NULL;20;sixaxis-gamepad;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+24;24;PlayStation 3 (80Gb/80Go);4;0;5;true;2007-06-27 21:16:14.043;03.08.2015 9:47;false;false;false;27;false;NULL;0;NULL;ipd24;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+27;27;Пицца Вегетто;1;5;1,149999976;true;25.08.2007 20:03;03.08.2015 9:47;false;true;false;NULL;false;400;NULL;75;ipd27;true;ед.;0;1;0;0;0;4;false;0;1;1;false
+28;28;Пицца Делюкс;1;0;1,149999976;true;25.08.2007 20:05;03.08.2015 9:47;true;false;false;NULL;false;NULL;100;NULL;ipd28;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+29;29;PlayStation 3 (160GB);0;0;3;true;2009-11-16 18:36:13.010;03.08.2015 9:47;false;false;false;27;false;NULL;NULL;NULL;playstation3-160gb;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+30;30;Tropic Star;1;0;0,300000012;true;16.11.2009 17:32;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;tropicstar;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+31;31;Veritas;5;0;0,300000012;true;16.11.2009 17:32;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;0;veritas;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+32;32;Fiesta;1;0;0,300000012;true;16.11.2009 17:32;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;fiesta;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+34;34;Лёгкая атлетика;1;0;0,300000012;true;16.11.2009 17:32;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd34;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+35;35;Букет из 25 роз Гранд При;1;0;0,5;true;25.08.2007 23:29;03.08.2015 9:47;false;true;false;NULL;false;330;NULL;NULL;ipd35;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+37;37;Букет из 25 красных и белых роз;5;0;0,5;true;25.08.2007 23:32;2015-08-03 09:47:01.047;false;false;false;NULL;false;NULL;NULL;NULL;ipd37;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+38;38;Композиция из Роз и Лилий;5;0;0,5;true;2007-08-25 23:33:45.067;2015-08-03 09:47:01.087;false;true;false;NULL;false;340;0;NULL;ipd38;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+165;165;Acer Aspire One 521-105Dc;0;0;4,170000076;true;2010-06-10 11:05:35.063;03.08.2015 9:47;false;false;false;8;false;NULL;0;NULL;ipd165;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+166;1664;Apple MacBook Air MC234RS/A;2;0;2,470000029;true;10.06.2010 11:09;03.08.2015 9:47;false;true;false;21;true;80;NULL;0;ipd166;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+167;167;ASUS U30JC;0;0;4,170000076;true;10.06.2010 11:12;03.08.2015 9:47;false;false;false;10;true;NULL;NULL;NULL;ipd167;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+168;168;ASRock H55 Pro (RTL) LGA1156;4;0;2,200000048;true;10.06.2010 11:15;03.08.2015 9:47;false;false;false;36;false;NULL;NULL;NULL;ipd168;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+169;169;ASUS P5Q Premium;0;0;2,720000029;true;10.06.2010 11:16;03.08.2015 9:47;false;false;false;10;false;NULL;NULL;NULL;ipd169;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+170;170;ASUS Striker II Formula;0;0;2,720000029;true;10.06.2010 11:17;03.08.2015 9:47;false;false;false;10;false;NULL;NULL;NULL;ipd170;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+171;171;CPU Intel Xeon X5650;0;0;0,090000004;true;10.06.2010 11:20;03.08.2015 9:47;false;false;false;31;false;NULL;NULL;NULL;ipd171;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+172;172;Intel Core i7 Processor Extreme Edition I7-975;0;0;0,090000004;true;10.06.2010 11:22;03.08.2015 9:47;false;true;false;31;false;100;NULL;NULL;ipd172;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+173;173;Corsair XMS3 <HX3X12G1333C9>;0;0;0,079999998;true;10.06.2010 11:38;03.08.2015 9:47;false;false;false;37;false;NULL;NULL;NULL;ipd173;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+174;174;Corsair Dominator <CMP6GX3M3A1600C7> DDR-III DIMM 6Gb KIT 3*2Gb <PC3-12800>;0;0;0,079999998;true;10.06.2010 11:39;03.08.2015 9:47;false;false;false;35;false;NULL;NULL;NULL;ipd174;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+175;175;HDD 73 Gb U320SCSI Fujitsu;0;0;0,300000012;true;10.06.2010 11:43;03.08.2015 9:47;false;false;false;39;false;NULL;NULL;NULL;ipd175;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+176;176;HDD Hitachi 500 Гб Deskstar P7K500;0;0;0,300000012;true;10.06.2010 11:44;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd176;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+177;177;Corsair Extreme Series <CMFSSD-256D1>;0;0;4,739999771;true;10.06.2010 11:45;03.08.2015 9:47;false;false;false;35;false;NULL;NULL;NULL;ipd177;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+178;178;Intel X25-M Mainstream <SSDSA2MH160G2R5>;0;0;4,739999771;true;10.06.2010 11:46;03.08.2015 9:47;false;false;false;31;false;NULL;NULL;NULL;ipd178;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+181;181;Creative GigaWorks T20 series II;0;0;4,929999828;true;10.06.2010 11:50;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd181;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+182;182;Defender Mercury 55;0;0;3,200000048;true;10.06.2010 11:51;03.08.2015 9:47;false;false;false;NULL;false;0;NULL;NULL;ipd182;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+183;183;Наушники Audio-Technica Air ATH-AD1000;4;0;0,270000011;true;10.06.2010 11:52;03.08.2015 9:47;false;false;false;NULL;false;0;NULL;NULL;ipd183;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+184;184;Audio-Technica ATH-CK9 BK;3;0;0,100000001;true;2010-06-10 11:54:42.080;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd184;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+185;185;ASUS ENGTX470;0;0;1,539999962;true;10.06.2010 11:56;03.08.2015 9:47;false;false;false;10;false;0;NULL;NULL;ipd185;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+186;186;Gigabyte GV-R587UD-1GD;0;0;1,350000024;true;10.06.2010 11:58;03.08.2015 9:47;false;false;false;30;false;NULL;0;NULL;ipd186;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+187;187;Acer X233Habd Black;4;0;4,739999771;true;10.06.2010 12:00;03.08.2015 9:47;false;false;false;8;false;NULL;NULL;NULL;ipd187;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+188;188;ASUS VH242S Black;0;0;4,739999771;true;2010-06-10 12:02:38.043;03.08.2015 9:47;false;false;false;10;false;NULL;NULL;NULL;ipd188;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+193;193;A4-Tech G-Cube3;0;0;0,129999995;true;10.06.2010 12:20;2015-08-03 09:47:02.017;false;false;false;NULL;false;NULL;0;NULL;ipd193;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+194;194;A4-Tech GKS-670MD;0;0;0,129999995;true;10.06.2010 12:25;2015-08-03 09:47:02.053;false;false;false;NULL;false;NULL;NULL;NULL;ipd194;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+199;199;Panasonic KX-MB2000RU-B;0;0;17,5;true;10.06.2010 12:35;2015-08-03 09:47:02.087;false;false;false;34;false;NULL;NULL;NULL;ipd199;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+200;200;hp COLOR LaserJet CP3525x;0;0;17,5;true;10.06.2010 12:39;03.08.2015 9:47;false;false;false;41;false;NULL;NULL;NULL;ipd200;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+208;208;Nintendo DS;0;0;0,280000001;true;11.06.2010 12:47;03.08.2015 9:47;true;false;false;NULL;false;NULL;200;NULL;ipd208;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+211;211;Беспроводной джойстик для XBOX 360 (White);0;0;0,379999995;true;11.06.2010 13:16;03.08.2015 9:47;false;false;false;43;false;NULL;NULL;NULL;ipd211;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+213;213;Microsoft XBox 360 Elite 120 GB;0;0;3,5;true;11.06.2010 13:18;03.08.2015 9:47;false;false;false;43;false;NULL;NULL;NULL;ipd213;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+214;214;Nintendo N64;0;0;0,25;true;11.06.2010 13:22;03.08.2015 9:47;false;false;false;21;false;NULL;NULL;NULL;ipd214;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+216;216;Плазменный телевизор LG 42PQ100R;1;0;24;true;11.06.2010 14:48;03.08.2015 9:47;false;true;false;28;false;60;NULL;0;ipd216;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+217;217;Плазменная панель LG 42PQ200R;5;0;24;true;11.06.2010 14:51;03.08.2015 9:47;false;false;false;28;false;NULL;NULL;NULL;ipd217;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+218;218;Телевизор LG 42PQ200R;5;0;24;true;2010-06-11 14:54:03.010;03.08.2015 9:47;false;false;false;28;false;NULL;NULL;NULL;ipd218;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+219;219;Телевизор LG 60PS8000;4;0;24;true;11.06.2010 15:05;03.08.2015 9:47;false;false;false;28;false;NULL;NULL;NULL;ipd219;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+220;220;SyncMaster 2263 UW;3;0;5;true;11.06.2010 15:14;03.08.2015 9:47;true;false;false;17;false;0;60;NULL;ipd220;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+222;222;Sega Mega Drive;0;0;0,25;true;11.06.2010 15:30;03.08.2015 9:47;false;false;false;9;false;NULL;NULL;0;ipd222;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+223;223;Sony KDL-52Z4500 Серо-черный Full HD 3D (HI-FI);4;0;1;true;11.06.2010 15:43;03.08.2015 9:47;true;false;false;8;true;10;0;NULL;ipd223;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+224;224;Sony KDL-52NX800;3;0;0,159999996;true;11.06.2010 15:54;03.08.2015 9:47;false;false;false;27;false;NULL;0;NULL;ipd224;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+225;225;Sony GXD-L52H1;5;0;0,159999996;true;11.06.2010 15:56;03.08.2015 9:47;false;false;false;27;false;NULL;NULL;NULL;ipd225;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+237;237;Банановая юкка;0;0;0,589999974;true;25.06.2010 13:29;03.08.2015 9:47;true;false;false;NULL;false;NULL;140;NULL;ipd237;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+238;238;Юкка риджида;4;0;0,589999974;true;25.06.2010 13:29;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd238;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+240;240;Молочай фрутикоса тип 2;0;0;0,589999974;true;2010-06-25 13:30:35.010;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd240;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+241;241;Молочай сиреиформис;2;0;0,589999974;true;25.06.2010 13:33;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd241;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+244;244;Нотокактус рутиланс;0;0;0,589999974;true;25.06.2010 13:45;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd244;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+247;247;Боливисереус;0;0;0,589999974;true;2010-06-25 13:54:59.020;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd247;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+248;248;Золотой Кактус Барреля;3;0;0,589999974;true;25.06.2010 13:56;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd248;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+249;249;Microsoft Xbox 360 Elite 120 GB;0;0;3,5;true;25.06.2010 15:04;03.08.2015 9:47;false;false;false;43;false;NULL;NULL;NULL;ipd249;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+251;251;Fanta;0;0;0,300000012;true;2010-06-28 09:54:06.067;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd251;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+254;254;Суши Хотатэ;0;20;0,200000003;true;28.06.2010 9:54;03.08.2015 9:47;false;true;false;NULL;false;420;NULL;50;ipd254;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+326;326;DELL Vostro 1015;0;0;2,420000076;true;2010-07-12 17:25:11.043;03.08.2015 9:47;false;false;false;9;false;NULL;NULL;NULL;ipd326;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+328;328;DELL Studio 1558;3;0;2,579999924;true;12.07.2010 17:44;03.08.2015 9:47;false;false;false;9;false;0;NULL;NULL;ipd328;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+329;329;Acer eMachines E630-302G25Mi;0;0;2,539999962;true;2010-07-12 17:50:13.023;2015-08-03 09:47:03.030;false;false;false;8;false;0;NULL;NULL;ipd329;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+330;330;Apple MacBook Pro A1297;5;0;4,46999979;true;12.07.2010 17:55;2015-08-03 09:47:03.073;false;false;false;21;false;NULL;NULL;NULL;ipd330;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+331;331;Apple MacBook Pro A1278;0;0;2,049999952;true;12.07.2010 18:05;03.08.2015 9:47;false;false;false;21;true;NULL;0;NULL;ipd331;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+332;332;SONY VAIO VPCEA1S1R;0;0;4,46999979;true;12.07.2010 18:18;03.08.2015 9:47;false;true;false;27;false;40;NULL;NULL;ipd332;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+333;333;Acer Aspire 5738ZG-443G25Mi;0;0;4,440000057;true;13.07.2010 10:21;03.08.2015 9:47;false;false;true;8;false;0;NULL;NULL;ipd333;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+334;334;ASUS K72DR;5;0;5,960000038;true;13.07.2010 10:27;03.08.2015 9:47;false;false;false;10;false;NULL;NULL;NULL;asus-k72dr;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+335;335;hp ProBook 6545b;0;0;2,700000048;true;13.07.2010 10:35;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd335;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+336;336;ASUS Eee PC 1001 PX;0;1;1,25999999;true;13.07.2010 10:43;03.08.2015 9:47;false;false;false;10;false;NULL;NULL;60;ipd336;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+337;337;Apple MacBook Pro A1286;0;0;4,659999847;true;13.07.2010 10:48;03.08.2015 9:47;false;false;false;21;false;NULL;0;NULL;ipd337;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+338;338;CPU Intel Xeon E5507 BOX;5;2;0,090000004;true;13.07.2010 11:07;03.08.2015 9:47;false;true;false;31;false;110;NULL;70;ipd338;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+340;340;CPU Intel Core 2 Duo E8500 3.16 ГГц;4;0;0,090000004;true;13.07.2010 11:17;03.08.2015 9:47;false;false;false;31;false;NULL;NULL;NULL;ipd340;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+341;341;CPU AMD ATHLON II X3 425;0;0;0,090000004;true;13.07.2010 11:22;03.08.2015 9:47;false;false;false;32;false;NULL;NULL;NULL;ipd341;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+342;342;CPU AMD Phenom II X6 1055T;2;0;0,090000004;true;13.07.2010 11:34;03.08.2015 9:47;false;false;false;32;true;NULL;NULL;NULL;ipd342;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+343;343;CPU AMD SEMPRON 140;0;0;0,090000004;true;13.07.2010 11:43;03.08.2015 9:47;false;false;true;32;false;NULL;NULL;NULL;ipd343;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+344;344;Букет из красных роз Ред Калипсо (Red Calypso);0;7;0,5;true;13.07.2010 15:35;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;30;ipd344;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+346;346;Букет из роз;0;0;0,5;true;13.07.2010 15:38;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd346;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+348;348;Роза;4;10;0,5;true;13.07.2010 15:51;03.08.2015 9:47;false;false;false;NULL;false;0;NULL;80;ipd348;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+349;349;PlayStation 3 Slim (160GB);4;0;3,200000048;false;14.07.2010 12:53;03.08.2015 9:47;false;false;false;27;false;0;0;NULL;ipd349;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+351;351;Композиция: Я люблю тебя;0;0;0,5;true;14.07.2010 13:00;03.08.2015 9:47;false;false;false;NULL;false;NULL;0;NULL;ipd351;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+352;352;Желтый мишка;0;0;0,5;true;2010-07-14 13:03:36.000;03.08.2015 9:47;false;false;false;NULL;false;NULL;0;NULL;ipd352;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+353;353;Сердце для принцессы;0;0;0,5;true;14.07.2010 13:03;03.08.2015 9:47;false;false;false;NULL;false;NULL;0;NULL;ipd353;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+354;354;Крокодил Гена;0;0;0,5;true;14.07.2010 13:03;2015-08-03 09:47:04.000;false;false;false;NULL;false;NULL;NULL;NULL;ipd354;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+356;356;Суши авокадо;5;0;0,200000003;true;14.07.2010 13:13;2015-08-03 09:47:04.050;true;false;false;NULL;false;NULL;120;NULL;ipd356;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+357;357;Суши Ика;0;0;0,200000003;true;14.07.2010 13:13;03.08.2015 9:47;true;false;false;NULL;false;NULL;130;NULL;ipd357;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+358;358;Суши Тако;0;0;0,200000003;true;14.07.2010 13:13;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd358;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+359;359;PlayStation 3 (60GB);3;0;5;false;2010-07-14 13:25:06.073;03.08.2015 9:47;false;false;false;27;false;NULL;NULL;NULL;ipd359;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+360;360;Dr.Pepper;0;0;0,300000012;true;14.07.2010 13:25;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd360;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+361;361;Nestea;0;0;0,300000012;true;14.07.2010 13:25;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd361;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+387;387;PSP 3008 Black + 2010 FIFA World Cup South Africa;2;0;0,649999976;true;14.07.2010 16:07;03.08.2015 9:47;false;false;false;27;false;NULL;NULL;NULL;ipd387;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+388;388;PSP 3008 Black;0;0;0,649999976;true;2010-07-14 16:16:38.003;03.08.2015 9:47;false;false;false;27;false;NULL;NULL;NULL;ipd388;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+389;389;PSP 3008 White;0;0;0,649999976;true;2010-07-14 16:21:13.077;03.08.2015 9:47;false;false;false;27;false;NULL;NULL;NULL;ipd389;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+390;390;PSP 3008 Red;0;0;0,649999976;true;14.07.2010 16:38;03.08.2015 9:47;false;false;false;27;false;NULL;NULL;NULL;ipd390;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+391;391;PSP 3008 Blue;0;0;0,649999976;true;14.07.2010 16:47;03.08.2015 9:47;false;false;false;27;false;NULL;NULL;NULL;ipd391;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+392;392;Беспроводной джойстик для XBOX 360 (Black);0;0;0,379999995;true;14.07.2010 17:11;03.08.2015 9:47;false;false;false;43;false;NULL;NULL;NULL;ipd392;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+401;401;HDD 1 Tb SATA-II 300 Samsung SpinPoint F3;0;0;0,300000012;true;14.07.2010 17:33;03.08.2015 9:47;false;false;false;17;false;NULL;NULL;NULL;ipd401;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+405;405;HDD 1 Tb SATA-II 300 Seagate/Maxtor Barracuda;0;0;0,349999994;true;14.07.2010 17:36;03.08.2015 9:47;false;false;false;38;false;NULL;NULL;NULL;ipd405;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+411;411;HDD 2 Tb SAS 2.0 Seagate Constellation ES <ST32000444SS> 7200rpm 16Mb;0;0;0,300000012;true;14.07.2010 17:48;03.08.2015 9:47;false;false;false;38;false;NULL;NULL;NULL;ipd411;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+412;412;Casio EX-Z2000 Black;0;0;0,119999997;true;14.07.2010 17:52;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd412;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+413;413;Nikon Coolpix L21 Brown;0;0;0,170000002;true;14.07.2010 17:55;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd413;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+414;414;Sony DSC-S2000 Silver;0;0;0,170000002;true;14.07.2010 17:58;03.08.2015 9:47;false;false;false;27;false;NULL;NULL;NULL;ipd414;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+415;415;HDD 1 TB SATA-II 300 Hitachi Deskstar E7K1000 <HDE721010SLA330> 7200 rpm 32Mb;0;0;0,649999976;true;14.07.2010 17:59;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd415;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+416;416;Samsung ES65 Black;0;0;0,109999999;true;14.07.2010 18:01;2015-08-03 09:47:05.037;false;false;false;17;false;0;NULL;NULL;ipd416;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+417;417;Canon PowerShot A3100 IS Silver;0;0;0,170000002;true;2010-07-14 18:03:01.007;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd417;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+418;418;Sony DSC-W320 Black;0;0;0,119999997;true;14.07.2010 18:05;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd418;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+419;419;Corsair XMS3 <CMX8GX3M4B1333C9> DDR-III DIMM 8Gb KIT 4*2Gb <PC3-10600>;0;0;0,079999998;true;14.07.2010 19:31;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd419;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+420;420;Corsair <CMG4GX3M2B1600C7> DDR-III DIMM 4Gb KIT 2*2Gb <PC3-12800> + Fan;0;0;0,079999998;true;14.07.2010 19:31;03.08.2015 9:47;false;false;false;35;false;NULL;NULL;NULL;ipd420;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+421;421;HYUNDAI/HYNIX DDR-III DIMM 2Gb <PC3-10600>;0;0;0,079999998;true;14.07.2010 19:31;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd421;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+422;422;HYUNDAI/HYNIX DDR-II DIMM 2Gb <PC2-6400>;0;0;0,079999998;true;14.07.2010 19:33;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd422;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+423;423;Kingmax DDR-II DIMM 2Gb <PC2-8500>;0;0;0,079999998;true;14.07.2010 19:33;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd423;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+424;424;Kingston ValueRAM <KVR1333D3N9/2G> DDR-III DIMM 2Gb <PC3-10600> CL9;0;0;0,079999998;true;14.07.2010 19:33;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd424;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+425;425;Kingston HyperX <KHX8500D2K4/4G> DDR-II DIMM 4Gb KIT 4*1Gb <PC2-8500> CL5;0;0;0,079999998;true;14.07.2010 19:33;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd425;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+426;426;OCZ Gold <OCZ3G16006GK> DDR-III DIMM 6Gb KIT 3*2Gb <PC3-12800> 8-8-8;0;0;0,079999998;true;14.07.2010 19:34;03.08.2015 9:47;false;false;false;37;false;NULL;NULL;NULL;ipd426;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+427;427;OCZ Gold <OCZ3G1600LV6GK> DDR-III DIMM 6Gb KIT 3*2Gb <PC3-12800> 8-8-8-8;0;0;0,079999998;true;14.07.2010 19:34;03.08.2015 9:47;false;false;false;37;false;NULL;NULL;NULL;ipd427;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+428;428;Kingston SSDNow M-Series <SNM225-S2/80GB>;0;0;0,079999998;true;15.07.2010 10:07;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd428;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+429;429;"Transcend <TS192GSSD25S-M> 2.5"" MLC";0;0;0,059999999;true;15.07.2010 10:20;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd429;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+430;430;"Kingston SSDNow V+ Series <SNVP325-S2/256GB> 2.5"" MLC";0;0;0,140000001;true;15.07.2010 10:26;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd430;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+431;431;"Corsair P256 <CMFSSD-256GBG2D> 2.5"" MLC";0;0;0,079999998;true;15.07.2010 10:30;03.08.2015 9:47;false;false;false;35;false;NULL;NULL;NULL;ipd431;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+433;433;Наушники с микрофоном Cosonic CD-890MV;5;0;0,50999999;true;15.07.2010 10:39;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd433;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+435;435;Наушники Defender HN-930;0;0;0,550000012;true;15.07.2010 10:45;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd435;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+438;438;Наушники беспроводные (FM) PHILIPS SBC HC 8440;0;0;0,839999974;true;2010-07-15 10:51:31.057;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd438;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+439;439;Logitech USB Headset H330;0;0;0,280000001;true;15.07.2010 10:57;03.08.2015 9:47;false;false;true;NULL;false;NULL;NULL;NULL;ipd439;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+440;440;Microlab M-890 <серебристо-коричневый> (40W +Subwoofer, дерево);0;0;6,449999809;true;15.07.2010 11:07;2015-08-03 09:47:06.030;false;false;false;NULL;false;130;NULL;NULL;ipd440;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+441;441;Microlab M-800 <чёрный> (2x16W +Subwoofer);5;0;5,980000019;true;15.07.2010 11:10;2015-08-03 09:47:06.083;true;false;false;NULL;false;NULL;20;NULL;ipd441;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+442;442;Defender Diamond 17;0;0;4,900000095;true;15.07.2010 11:13;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd442;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+443;443;Creative Inspire A200 (RTL) (2x2W +Subwoofer 5W, дерево);0;0;3,200000048;true;15.07.2010 11:16;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd443;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+444;444;Creative A60 (RTL) (2x2W);0;0;1,100000024;true;15.07.2010 11:19;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd444;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+445;445;Gigabyte GV-R465D2-1GI;0;0;0,930000007;true;15.07.2010 11:22;03.08.2015 9:47;false;false;false;30;false;NULL;NULL;NULL;ipd445;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+446;446;ASUS AH3450;0;0;0,930000007;true;15.07.2010 11:26;03.08.2015 9:47;false;false;false;10;false;NULL;NULL;NULL;ipd446;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+447;447;"Transcend <TS32GSSD25S-M> 2.5"" MLC";0;0;0,129999995;true;2010-07-15 11:42:12.010;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd447;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+449;449;Canon i-SENSYS LBP-5300 Color лазерный;0;0;31,75;true;15.07.2010 12:17;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd449;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+450;450;XEROX COLOR Phaser 6140N;0;0;22,60000038;true;15.07.2010 12:21;03.08.2015 9:47;false;false;false;42;false;NULL;NULL;NULL;ipd450;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+451;451;hp COLOR LaserJet 5550DN <Q3715A>;0;0;85;true;15.07.2010 12:24;03.08.2015 9:47;false;false;false;41;false;NULL;NULL;NULL;ipd451;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+452;452;hp COLOR LaserJet 5550 <Q3713A>;0;0;81,59999847;true;15.07.2010 12:28;03.08.2015 9:47;false;false;false;41;false;NULL;NULL;NULL;ipd452;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+453;453;XEROX Phaser 3435DN (3435V/DN);0;0;15,56000042;true;15.07.2010 12:31;03.08.2015 9:47;false;false;false;42;false;NULL;NULL;NULL;ipd453;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+458;458;ASUS EN9800GT;0;0;0,829999983;true;15.07.2010 12:56;03.08.2015 9:47;false;false;false;10;false;NULL;NULL;NULL;ipd458;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+462;462;Gigabyte GV-N465UD-1GI;0;0;0,930000007;true;15.07.2010 13:11;03.08.2015 9:47;false;false;false;30;false;NULL;0;NULL;ipd462;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+464;464;INTEL S5520HC (RTL) Dual LGA1366 <i5520>;0;0;2,019999981;true;15.07.2010 13:34;2015-08-03 09:47:07.090;false;false;false;31;false;NULL;NULL;NULL;ipd464;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+465;465;ASUS M4A785G HTPC (RTL);0;0;1,159999967;true;15.07.2010 13:40;03.08.2015 9:47;false;false;false;10;false;NULL;NULL;NULL;ipd465;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+466;466;GigaByte GA-EP41T-UD3L;0;0;1,25;true;15.07.2010 13:43;03.08.2015 9:47;false;false;false;30;false;NULL;NULL;NULL;ipd466;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+467;467;GigaByte GA-P55A-UD7;0;0;3,299999952;true;15.07.2010 13:47;03.08.2015 9:47;false;false;false;30;false;NULL;NULL;NULL;ipd467;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+468;468;BenQ G702AD Black;0;0;3,359999895;true;15.07.2010 15:03;03.08.2015 9:47;false;false;false;40;false;NULL;NULL;NULL;ipd468;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+469;469;BenQ M2700HD Black;0;0;14,02000046;true;15.07.2010 15:11;03.08.2015 9:47;false;false;false;40;false;NULL;NULL;NULL;ipd469;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+470;470;Dell E190S Black;0;0;6,360000134;true;2010-07-15 15:18:51.083;03.08.2015 9:47;false;false;false;9;false;NULL;NULL;NULL;ipd470;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+471;471;Samsung SyncMaster 943BW ESC Silver;0;0;6,300000191;true;15.07.2010 15:22;03.08.2015 9:47;false;false;false;17;false;NULL;NULL;NULL;ipd471;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+472;472;hp 2310 Black-Silver (WC291AA);0;10;4,739999771;true;15.07.2010 15:33;03.08.2015 9:47;false;false;true;NULL;false;NULL;NULL;90;ipd472;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+474;474;Apple MB110 White USB;0;0;0,129999995;true;15.07.2010 15:48;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd474;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+475;475;Gembird KB-8300 White PS/2;0;0;0,129999995;true;2010-07-15 15:52:55.040;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd475;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+477;477;Gembird KB-9848L Silver/Blue PS/2;0;0;0,129999995;true;15.07.2010 15:59;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd477;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+478;478;Defender S Zodiak KM-9010 Red-Black USB;0;0;0,129999995;true;15.07.2010 16:02;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd478;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+480;480;Genius KB600;0;0;0,129999995;true;2010-07-15 16:13:01.000;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;NULL;ipd480;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+541;541;Nintendo Wii;0;1;2;true;2011-09-27 10:23:43.020;03.08.2015 9:47;false;false;false;NULL;false;NULL;NULL;100;ipd541;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+929;929;HTC One X White;5;0;1;true;07.05.2012 15:41;03.08.2015 9:47;true;false;false;18;true;0;220;0;htc_one_x_white;true;;0;1;0;0;0;4;false;0;1;1;false
+939;app939_4s;Apple iPhone 4S 64Gb (черный);4;20;0,100000001;true;29.05.2012 17:35;03.08.2015 9:47;false;false;false;21;true;0;0;110;apple_iphone_4s_64gb_chernyi;true;;0;1;0;0;0;4;false;0;1;1;false
+940;940;Explay Гарнитура для Iphone 3.5 Jack (черный);4;0;1;true;29.05.2012 17:55;2015-08-03 09:47:08.057;false;false;false;NULL;true;0;0;0;stereogarnitura_s_mikrofonom;true;;0;1;0;0;0;4;false;0;1;1;false
+941;941;Клип-кейс SwitchEasy Reptile для iPhone 4/4s (черный);0;0;1;true;29.05.2012 18:11;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;klipkeis_switcheasy_reptile_dlia_iphone_44s_chernyi;true;;0;1;0;0;0;4;false;0;1;1;false
+942;942;Belkin сетевое ЗУ F8Z222CW03 для iPhone;5;0;1;true;29.05.2012 18:14;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;belkin_setevoe_zu_f8z222cw03_dlia_iphone;true;;0;1;0;0;0;4;false;0;1;1;false
+943;943;Apple iPhone 4S 16Gb (белый);3;0;140;true;29.05.2012 18:18;03.08.2015 9:47;false;false;false;21;true;0;0;0;apple_iphone_4s_16gb_belyi;true;;0;1;0;0;0;4;false;0;1;1;false
+946;946;HTC Sensation (черный);5;0;135;true;06.06.2012 22:21;03.08.2015 9:47;false;false;false;18;true;0;0;0;htc_sensation_chernyi;true;;0;1;0;0;0;4;false;0;1;1;false
+947;947;HTC Evo 3D (Shooter);0;0;170;true;2012-06-06 22:41:09.047;03.08.2015 9:47;false;false;false;18;true;0;0;0;htc_evo_3d_shooter;true;;0;1;0;0;0;4;false;0;1;1;false
+948;948;HTC One S (черный);0;0;120;true;06.06.2012 22:50;03.08.2015 9:47;false;false;false;18;true;0;0;0;htc_one_s_chernyi;true;;0;1;0;0;0;4;false;0;1;1;false
+949;949;Samsung Galaxy Ace Plus S7500 (черный);0;0;115;true;06.06.2012 23:03;03.08.2015 9:47;false;false;false;17;true;0;0;0;samsung_galaxy_ace_plus_s7500_chernyi;true;;0;1;0;0;0;4;false;0;1;1;false
+950;950;Samsung I9300 Galaxy S III 16Gb (синий);0;0;133;true;06.06.2012 23:13;03.08.2015 9:47;false;false;false;17;true;0;0;0;samsung_i9300_galaxy_s_iii_16gb_sinii;true;;0;1;0;0;0;4;false;0;1;1;false
+954;954;Вкусное мороженное;0;0;1;true;14.06.2012 17:44;03.08.2015 9:47;false;true;false;NULL;true;380;0;0;vkusnoe_morozhennoe;true;;0;1;0;0;0;4;false;0;1;1;false
+966;966;Элегантное вечернее платье;5;0;1;true;24.07.2012 11:46;03.08.2015 9:47;false;true;false;NULL;true;240;0;0;dress1;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+967;967;Изящное платье;4;0;1;true;2012-07-24 11:57:44.033;03.08.2015 9:47;false;true;false;NULL;true;5;0;0;dress2;true;;0;1;0;0;0;4;false;0;1;1;false
+968;968;Платье коктельное;0;0;1;true;24.07.2012 11:59;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;plate-koktelnoe;true;;0;1;0;0;0;4;false;0;1;1;false
+970;970;Платье;0;0;1;true;24.07.2012 12:24;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;dress4;true;;0;1;0;0;0;4;false;0;1;1;false
+972;972;"Платье ""City Nights""";5;0;1;true;24.07.2012 13:39;03.08.2015 9:47;true;false;false;NULL;true;100;12;0;dress-city-nights;true;;0;1;0;0;0;4;false;0;1;1;false
+973;973;Туфли Pointer;3;0;1;true;24.07.2012 13:55;2015-08-03 09:47:09.060;false;false;false;NULL;true;0;0;0;shoes-pointer;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+974;974;Туфли PUSH IT;3;0;1;true;24.07.2012 13:57;03.08.2015 9:47;true;false;false;NULL;true;0;15;0;platform-shoe-push-it;true;;0;1;0;0;0;4;false;0;1;1;false
+975;975;Туфли на платформе;0;0;1;true;24.07.2012 13:59;03.08.2015 9:47;true;false;false;NULL;true;0;160;0;platforms;true;;0;1;0;0;0;4;false;0;1;1;false
+976;976;Туфли на высоком каблуке STORM;0;0;1;true;24.07.2012 14:06;03.08.2015 9:47;true;false;false;NULL;true;0;170;0;tufli-na-vysokom-kabluke-storm;true;;0;1;0;0;0;4;false;0;1;1;false
+977;977;Туфли;4;0;1;true;24.07.2012 14:09;03.08.2015 9:47;false;true;false;NULL;true;260;70;0;tufli-na-shpilke;true;;0;1;0;0;0;4;false;0;1;1;false
+978;978;Кардиган;0;0;1;true;24.07.2012 14:20;03.08.2015 9:47;true;false;false;NULL;true;0;180;0;kardigan;true;;0;1;0;0;0;4;false;0;1;1;false
+979;979;Элегантный джемпер;0;0;1;true;24.07.2012 14:22;03.08.2015 9:47;false;true;false;NULL;true;270;0;0;elegantnyi-dzhemper;true;;0;1;0;0;0;4;false;0;1;1;false
+980;980;"Джемпер ""Space D""";0;0;1;true;24.07.2012 14:23;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;dzhemper-space-d;true;;0;1;0;0;0;4;false;0;1;1;false
+981;981;"Джемпер ""Ted""";0;10;1;true;24.07.2012 14:23;03.08.2015 9:47;false;false;false;NULL;true;0;0;40;dzhemper-ted;true;;0;1;0;0;0;4;false;0;1;1;false
+982;982;Черные джинсы;0;0;1;true;24.07.2012 14:31;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;chernye-dzhinsy;true;;0;1;0;0;0;4;false;0;1;1;false
+983;983;Синие джинсы;0;0;1;true;24.07.2012 14:31;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;sinie-dzhinsy;true;;0;1;0;0;0;4;false;0;1;1;false
+984;984;Коричневые джинсы;3;0;1;true;24.07.2012 14:31;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;korichnevye-dzhinsy;true;;0;1;0;0;0;4;false;0;1;1;false
+985;985;Белый джинсы;0;0;1;true;24.07.2012 14:48;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;belyi-dzhinsy;true;;0;1;0;0;0;4;false;0;1;1;false
+986;986;Джинсы Armani;0;0;1;true;25.07.2012 16:14;03.08.2015 9:47;true;false;false;24;false;3;190;0;ipd986;true;;0;1;0;0;0;4;false;0;1;1;false
+987;987;Черные джинсы Armani S2;0;0;1;true;25.07.2012 16:14;03.08.2015 9:47;false;false;false;24;false;0;0;0;ipd987;true;;0;1;0;0;0;4;false;0;1;1;false
+988;988;Черные джинсы Armani S3;0;0;1;true;2012-07-25 16:14:20.037;03.08.2015 9:47;false;false;false;24;false;0;0;0;ipd988;true;;0;1;0;0;0;4;false;0;1;1;false
+989;989;Белые джинсы Armani S4;5;0;1;true;25.07.2012 16:14;2015-08-03 09:47:10.003;false;false;false;24;false;0;0;0;ipd989;true;;0;1;0;0;0;4;false;0;1;1;false
+990;990;Синие джинсы Armani B2;0;0;1;true;25.07.2012 16:14;2015-08-03 09:47:10.047;false;false;false;24;false;0;0;0;ipd990;true;;0;1;0;0;0;4;false;0;1;1;false
+991;991;Автомобильное кресло;0;0;1;true;28.07.2012 22:38;2015-08-03 09:47:10.093;false;false;false;NULL;false;0;0;0;ipd991;true;шт;0;1;0;0;0;4;false;0;1;1;false
+992;992;Детское автомобильное кресло Baby Care Cocoon;0;5;1;true;28.07.2012 22:38;03.08.2015 9:47;false;true;false;NULL;false;7;0;50;ipd992;true;шт;0;1;0;0;0;4;false;0;1;1;false
+993;993;Автомобильное кресло;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd993;true;шт;0;1;0;0;0;4;false;0;1;1;false
+994;994;Кроватка;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;true;false;NULL;false;290;0;0;ipd994;true;шт;0;1;0;0;0;4;false;0;1;1;false
+995;995;Кроватка;4;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd995;true;шт;0;1;0;0;0;4;false;0;1;1;false
+996;996;Кроватка;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd996;true;шт;0;1;0;0;0;4;false;0;1;1;false
+997;997;Коляска стандартная;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd997;true;шт;0;1;0;0;0;4;false;0;1;1;false
+998;998;Коляска стандартная;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;true;false;NULL;false;320;0;0;ipd998;true;шт;0;1;0;0;0;4;false;0;1;1;false
+999;999;Коляска стандартная;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd999;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1000;1000;Коляска стандартная;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1000;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1001;1001;Бабочка;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;true;false;NULL;false;310;0;0;ipd1001;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1002;1002;Зеркальце;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1002;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1003;1003;Кубики;0;5;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;80;ipd1003;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1004;1004;Кроватка;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1004;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1005;1005;Погремушки;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1005;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1006;1006;Набор из игрушек;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1006;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1007;1007;Утенок;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1007;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1008;1008;Велосипед;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1008;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1009;1009;Велосипед;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1009;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1010;1010;Велосипед;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;true;true;false;NULL;false;300;150;0;ipd1010;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1011;1011;Костюм calvin klein;4;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;25;false;0;0;0;ipd1011;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1012;1012;Костюм calvin klein;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;25;false;0;0;0;ipd1012;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1013;1013;Костюм calvin klein;5;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;25;false;0;0;0;ipd1013;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1014;1014;Костюм;0;0;1;true;28.07.2012 22:38;2015-08-03 09:47:11.027;false;true;false;25;true;190;0;0;ipd1014;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1015;1015;Костюм calvin klein;0;0;1;true;28.07.2012 22:38;2015-08-03 09:47:11.070;false;false;false;25;false;0;0;0;ipd1015;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1016;1016;Рубашка синяя;3;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;true;false;NULL;false;220;0;0;ipd1016;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1017;1017;Рубашка;3;5;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;20;ipd1017;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1018;1018;Рубашка в синюю клеточку;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1018;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1019;1019;Рубашка в коричневую клеточку;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1019;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1020;1020;Туфли;4;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;ipd1020;true;шт.;500;2;0;0;0;4;false;0;1;1;false
+1021;1021;Туфли;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1021;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1022;1022;Туфли;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1022;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1023;1023;Туфли;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1023;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1024;1024;Туфли;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;ipd1024;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1025;1025;Джинсы Wrangler;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;26;false;0;0;0;ipd1025;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1026;1026;Джинсы Wrangler;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;26;false;0;0;0;ipd1026;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1027;1027;Джинсы Wrangler;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;26;false;0;0;0;ipd1027;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1028;1028;Джинсы Wrangler;0;0;1;true;2012-07-28 22:38:14.033;03.08.2015 9:47;false;false;false;26;false;0;0;0;ipd1028;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1029;1029;Футболка Control;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;true;false;25;false;210;0;0;ipd1029;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1030;1030;Футболка Freedom;5;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;24;false;0;0;0;ipd1030;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1031;1031;Футболка Underground;0;0;1;true;2012-07-28 22:38:15.000;03.08.2015 9:47;false;false;false;25;false;0;0;0;ipd1031;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1032;1032;Футболка Only the brave;4;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;25;false;0;0;0;ipd1032;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1033;1033;Футболка QuickSilver;0;0;1;true;28.07.2012 22:38;2015-08-03 09:47:12.053;false;false;false;25;false;0;0;0;ipd1033;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1034;1034;Футболка;0;0;1;true;28.07.2012 22:38;2015-08-03 09:47:12.093;false;false;false;25;false;0;0;0;ipd1034;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1035;1035;Мороженное;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;true;false;NULL;false;390;0;0;morozhennoe1;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1036;1036;Мороженное;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;morozhennoe2;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1037;1037;Мороженное;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;morozhennoe4;true;шт;0;1;0;0;0;4;false;0;1;1;false
+1038;1038;Яблоки;5;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;apples;true;кг;0;1;0;0;0;4;false;0;1;1;false
+1039;1039;Груши;5;0;1;true;2012-07-28 22:38:17.013;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;pears;true;кг;0;1;0;0;0;4;false;0;1;1;false
+1040;1040;Клубника;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;true;false;NULL;false;350;0;0;strawberry;true;кг;0;1;0;0;0;4;false;0;1;1;false
+1041;1041;Персик;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;true;false;NULL;false;360;0;0;peach;true;кг;0;1;0;0;0;4;false;0;1;1;false
+1042;1042;Арбуз;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;true;false;NULL;false;370;0;0;watermelon;true;кг;0;1;0;0;0;4;false;0;1;1;false
+1043;1043;Бананы;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;banans;true;кг;0;1;0;0;0;4;false;0;1;1;false
+1044;1044;Виноград;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;grapes;true;кг;0;1;0;0;0;4;false;0;1;1;false
+1045;1045;Черешня;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;true;NULL;false;0;0;0;cherry;true;кг;0;1;0;0;0;4;false;0;1;1;false
+1046;1046;Апельсины;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;orange;true;кг;0;1;0;0;0;4;false;0;1;1;false
+1047;1047;Абрикосы;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;apricot;true;кг;0;1;0;0;0;4;false;0;1;1;false
+1048;1048;Ананас;0;0;1;true;28.07.2012 22:38;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;pineapple;true;кг;0;1;0;0;0;4;false;0;1;1;false
+1050;1050;PS3 (320 ГБ) + Uncharted 3;0;0;6;true;30.07.2012 2:18;03.08.2015 9:47;false;false;false;27;false;0;0;0;ps3-320-gb-uncharted-3;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1051;1051;Игровая приставка PlayStation 3 Sony CECH-4008A 12GB;4;2;3,200000048;true;30.07.2012 2:18;03.08.2015 9:47;true;true;false;27;false;150;40;40;sony-playstation-3-slim-160-gb;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1052;1052;PS3 (320 ГБ) + Sport Champion;0;0;3,200000048;true;2012-07-30 02:18:04.010;03.08.2015 9:47;false;false;false;27;false;0;0;0;ps3-320-gb-sport-champion;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1053;1053;PS3 (320 ГБ) + Battlefield 3;0;0;1;true;30.07.2012 2:18;03.08.2015 9:47;false;false;false;27;false;0;0;0;ps3-320-gb-battlefield-3;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1054;1054;PS 3 (320 ГБ) + Resistance3;0;0;3,200000048;true;30.07.2012 2:18;03.08.2015 9:47;false;false;false;27;false;0;0;0;ps-3-320-gb-resistance-3;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1055;1055;PS 3 (320 ГБ) + Дурная репутация 2;0;0;3,200000048;true;30.07.2012 2:18;03.08.2015 9:47;false;false;false;27;false;0;0;0;ps-3-320-gb-durnaia-reputatsiia-2;true;;0;1;0;0;0;4;false;0;1;1;false
+1056;1056;PS 3 Slim (320 ГБ) + God of War 3 + Gran Turismo 5;0;0;3,200000048;true;2012-07-30 02:18:05.090;03.08.2015 9:47;false;false;false;27;false;0;0;0;ps-3-slim-320-gb-god-of-war-3-gran-turismo-5;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1057;1057;PS3 + God of War 3 + Uncharted 2;0;0;3,200000048;true;30.07.2012 2:18;2015-08-03 09:47:13.030;false;false;false;27;false;0;0;0;ps3-god-of-war-3-uncharted-2;true;;0;1;0;0;0;4;false;0;1;1;false
+1058;1058;Беспроводной контроллер Sony PlayStation Move Starter Pack;0;0;1;true;30.07.2012 2:18;2015-08-03 09:47:13.063;false;false;false;27;false;0;0;0;besprovodnoi-kontroller-sony-playstation-move-starter-pack;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1059;1059;Беспроводной контроллер Dualshock Sixaxis 3;0;0;1;true;30.07.2012 2:18;03.08.2015 9:47;false;false;false;27;false;0;0;0;besprovodnoi-kontroller-dualshock-sixaxis-3;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1060;1060;Навигационный контроллер Sony PS Move Navigation Controller;0;0;1;true;30.07.2012 2:18;03.08.2015 9:47;false;false;false;27;false;0;0;0;navigatsionnyi-kontroller-sony-ps-move-navigation-controller;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1061;1061;Камера Sony PlayStation Eye;0;0;1;true;30.07.2012 2:18;03.08.2015 9:47;false;false;false;27;false;0;0;0;kamera-sony-playstation-eye;true;;0;1;0;0;0;4;false;0;1;1;false
+1062;1062;Microsoft Xbox 360 4 ГБ;0;0;2,900000095;true;2012-07-30 02:18:06.013;03.08.2015 9:47;false;false;false;43;false;0;0;0;microsoft-xbox-360-4-gb;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1063;1063;Xbox 360 4 ГБ + Kinect + Kinect Adventures;0;0;1;true;30.07.2012 2:18;03.08.2015 9:47;true;false;false;43;false;0;210;0;xbox-360-4-gb-kinect-kinect-adventures;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1064;1064;XBOX 360 250 ГБ+Crisys 2 Forza 3+3М Live Gold;0;2;1;true;30.07.2012 2:18;03.08.2015 9:47;false;false;false;43;false;0;0;70;xbox-360-250-gbcrisys-2-forza-33m-live-gold;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1065;1065;Nikon D3100 Kit 18-55 VR;0;0;1;true;30.07.2012 2:45;03.08.2015 9:47;false;false;false;29;true;0;0;0;nikon-d3100-kit-1855-vr;true;;0;1;0;0;0;4;false;0;1;1;false
+1066;1066;Canon EOS 550D Kit 18-55 IS;0;0;1;true;30.07.2012 2:48;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;canon-eos-550d-kit-1855-is;true;;0;1;0;0;0;4;false;0;1;1;false
+1067;1067;Canon EOS 600D Kit 18-135 IS;0;0;1;true;30.07.2012 2:50;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;canon-eos-600d-kit-18135-is;true;;0;1;0;0;0;4;false;0;1;1;false
+1068;1068;Nikon D5100 Kit 18-55 VR;0;0;1;true;30.07.2012 2:51;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;nikon-d5100-kit-1855-vr;true;;0;1;0;0;0;4;false;0;1;1;false
+1069;1069;Nikon D90 Kit AF-S 18-105 DX VR;0;0;1;true;30.07.2012 2:53;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;nikon-d90-kit-afs-18105-dx-vr;true;;0;1;0;0;0;4;false;0;1;1;false
+1070;1070;Canon EOS 7D Body;0;0;1;true;30.07.2012 2:55;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;canon-eos-7d-body;true;;0;1;0;0;0;4;false;0;1;1;false
+1071;1071;Camcoder Sony HDR-PJ580E Full HD - PAL - Projector;5;0;1;true;30.07.2012 2:57;03.08.2015 9:47;false;true;false;NULL;true;20;0;0;sony-hdrpj580e;true;;0;1;0;0;0;4;false;0;1;1;false
+1072;1072;Samsung HMX-F80BP;0;0;1;true;30.07.2012 3:00;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;samsung-hmxf80bp;true;;0;1;0;0;0;4;false;0;1;1;false
+1073;1073;Samsung SMX-F700;0;0;1;true;2012-07-30 03:03:39.080;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;samsung-smxf700;true;;0;1;0;0;0;4;false;0;1;1;false
+1074;1074;Ritmix RDF-702;0;0;1;true;2012-07-30 03:09:06.047;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;ritmix-rdf702;true;;0;1;0;0;0;4;false;0;1;1;false
+1075;1075;Ritmix RDF-802;0;0;1;true;30.07.2012 3:10;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;ritmix-rdf802;true;;0;1;0;0;0;4;false;0;1;1;false
+1076;1076;Ritmix RDF-1002;0;0;1;true;30.07.2012 3:12;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;ritmix-rdf1002;true;;0;1;0;0;0;4;false;0;1;1;false
+1077;1077;TeXet TF-307;0;0;1;true;30.07.2012 3:13;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;texet-tf307;true;;0;1;0;0;0;4;false;0;1;1;false
+1078;1078;Sony DPF-D85;0;0;1;true;30.07.2012 3:14;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;sony-dpfd85;true;;0;1;0;0;0;4;false;0;1;1;false
+1079;1079;Sony DPF-C700;0;0;1;true;30.07.2012 3:15;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;sony-dpfc700;true;;0;1;0;0;0;4;false;0;1;1;false
+1080;1080;Sony DPF-HD1000;0;0;1;true;30.07.2012 3:16;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;sony-dpfhd1000;true;;0;1;0;0;0;4;false;0;1;1;false
+1081;1081;VIERA TX-LR55WT50;0;0;1;true;30.07.2012 3:22;03.08.2015 9:47;false;false;false;34;true;0;0;0;viera-txlr55wt50;true;;0;1;0;0;0;4;false;0;1;1;false
+1082;1082;VIERA TX-LR47WT50;0;0;1;true;30.07.2012 3:25;03.08.2015 9:47;false;false;false;34;true;0;0;0;viera-txlr47wt50;true;;0;1;0;0;0;4;false;0;1;1;false
+1083;1083;VIERA TX-LR55ET5;0;0;1;true;30.07.2012 3:27;03.08.2015 9:47;false;false;false;34;true;0;0;0;viera-txlr55et5;true;;0;1;0;0;0;4;false;0;1;1;false
+1084;1084;Samsung LE-32E420M2W;4;0;1;true;2012-07-30 03:29:58.047;03.08.2015 9:47;false;false;false;17;true;0;0;0;samsung-le32e420m2w;true;;0;1;0;0;0;4;false;0;1;1;false
+1085;1085;Samsung LE-46D550K1W;0;0;1;true;30.07.2012 3:30;2015-08-03 09:47:14.027;false;false;false;17;true;0;0;0;samsung-le46d550k1w;true;;0;1;0;0;0;4;false;0;1;1;false
+1086;1086;Samsung LE-46D551K2W;0;0;1;true;30.07.2012 3:31;2015-08-03 09:47:14.050;false;false;false;17;true;0;0;0;samsung-le46d551k2w;true;;0;1;0;0;0;4;false;0;1;1;false
+1087;1087;Philips 42PFL3606H;0;0;1;true;30.07.2012 3:34;2015-08-03 09:47:14.073;false;false;false;33;true;0;0;0;philips-42pfl3606h;true;;0;1;0;0;0;4;false;0;1;1;false
+1088;1088;Philips 32PFL3017H;0;0;1;true;30.07.2012 3:35;03.08.2015 9:47;false;false;false;33;true;0;0;0;philips-32pfl3017h;true;;0;1;0;0;0;4;false;0;1;1;false
+1089;1089;Philips 32PFL3606H;0;0;1;true;30.07.2012 3:35;03.08.2015 9:47;false;false;false;33;true;0;0;0;philips-32pfl3606h;true;;0;1;0;0;0;4;false;0;1;1;false
+1091;1091;Panasonic TX-LR32E5;0;0;1;true;30.07.2012 16:15;03.08.2015 9:47;false;false;false;34;true;0;0;0;panasonic-txlr32e5;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1092;1092;Panasonic TХ-LR42ET5W;0;0;1;true;30.07.2012 16:19;03.08.2015 9:47;false;false;false;34;true;0;0;0;panasonic-tkhlr42et5w;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1093;1093;Panasonic TX-LR42E5;0;0;1;true;30.07.2012 16:22;03.08.2015 9:47;false;false;false;34;true;0;0;0;panasonic-txlr42e5;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1094;1094;Panasonic TX-LR47ET5;0;0;1;true;30.07.2012 16:28;03.08.2015 9:47;false;false;false;34;true;0;0;0;panasonic-txlr47et5;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1095;1095;Panasonic TX-P65VT50;0;0;1;true;2012-07-30 16:30:49.027;03.08.2015 9:47;false;false;false;34;true;0;0;0;panasonic-txp65vt50;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1096;1096;Panasonic TX-PR65VT30;0;0;1;true;30.07.2012 16:32;03.08.2015 9:47;false;false;false;34;true;0;0;0;panasonic-txpr65vt30;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1097;1097;Panasonic TX-P50VT50;0;0;1;true;30.07.2012 16:33;03.08.2015 9:47;false;false;false;34;true;0;0;0;panasonic-txp50vt50;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1098;1098;Panasonic TX-P55VT50;0;0;1;true;30.07.2012 16:35;03.08.2015 9:47;false;false;false;34;true;0;0;0;panasonic-txp55vt50;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1099;1099;Panasonic TX-P65VT30;0;0;1;true;30.07.2012 16:36;03.08.2015 9:47;false;false;false;34;true;0;0;0;panasonic-txp65vt30;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1100;1100;Sony KDL-40BX420;0;0;1;true;30.07.2012 16:54;03.08.2015 9:47;false;false;false;27;true;0;0;0;sony-kdl40bx420;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1101;1101;Sony KDL-40BX440;0;0;1;true;30.07.2012 16:56;03.08.2015 9:47;false;false;false;27;true;0;0;0;sony-kdl40bx440;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1102;1102;Sony KDL-32BX340;0;0;1;true;30.07.2012 16:59;03.08.2015 9:47;false;false;false;27;true;0;0;0;sony-kdl32bx340;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1103;1103;Sony KDL-65HX920;0;0;1;true;30.07.2012 17:01;03.08.2015 9:47;false;false;false;27;true;0;0;0;sony-kdl65hx920;true;;0;1;0;0;0;4;false;0;1;1;false
+1583;1583;Lego - Creator Highway Speedster (от 7 до 12 лет);5;7;1;true;28.05.2013 17:43;03.08.2015 9:47;false;false;false;NULL;true;15;0;10;highway-speedster;true;;0;1;0;0;0;4;false;0;1;1;false
+1595;ps4-0001;PlayStation 4 (предзаказ);5;0;4;true;11.06.2013 15:08;03.08.2015 9:47;false;false;false;27;true;0;0;0;playstation-4-predzakaz;true;;0;1;0;0;0;4;false;0;1;1;false
+1607;645654;Apple iPhone 5 64GB (Черный);0;0;1;true;30.04.2014 11:15;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;apple-iphone-5-64gb;true;;0;1;0;0;0;4;false;0;1;1;false
+1608;646546;Samsung Galaxy S5 SM-G900F;0;0;1;true;30.04.2014 12:03;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;samsung-galaxy-s5-smg900f-16gb;true;;0;1;0;0;0;4;false;0;1;1;false
+1609;543438;Samsung Galaxy Note 3 N9000 16GB;0;0;1;true;30.04.2014 12:32;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;samsung-galaxy-note-3-n9000-16gb;true;;0;1;0;0;0;4;false;0;1;1;false
+1610;45455;Samsung Galaxy S3 mini i8190 8GB;0;0;1;true;30.04.2014 12:43;2015-08-03 09:47:15.063;false;false;false;NULL;true;0;0;0;samsung-galaxy-s3-mini-i8190-8gb;true;;0;1;0;0;0;4;false;0;1;1;false
+1611;758785;Samsung Galaxy Nexus i9250;0;0;1;true;30.04.2014 12:48;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;samsung-galaxy-nexus-i9250;true;;0;1;0;0;0;4;false;0;1;1;false
+1612;5464564;Samsung Galaxy S4 mini i9190;0;0;1;true;30.04.2014 12:58;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;samsung-galaxy-s4-mini-i9190;true;;0;1;0;0;0;4;false;0;1;1;false
+1613;7857725;Samsung Galaxy S4 i9500 16GB;0;0;1;true;30.04.2014 15:08;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;samsung-galaxy-s4-i9500-16gb;true;;0;1;0;0;0;4;false;0;1;1;false
+1614;21351351;Apple iPhone 3GS 32GB;0;0;1;true;30.04.2014 15:46;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;apple-iphone-3gs-32gb;true;;0;1;0;0;0;4;false;0;1;1;false
+1615;54548;Apple iPhone 5C 16Gb (Розовый);0;0;1;true;05.05.2014 11:02;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;apple-iphone-5c-16gb-pink;true;;0;1;0;0;0;4;false;0;1;1;false
+1616;653454;Apple iPhone 5S 32GB Gold;0;0;1;true;05.05.2014 11:11;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;apple-iphone-5s-32gb-gold;true;;0;1;0;0;0;4;false;0;1;1;false
+1617;543684;Apple iPhone 3GS 8GB;0;0;1;true;05.05.2014 12:26;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;apple-iphone-3gs-8gb;true;;0;1;0;0;0;4;false;0;1;1;false
+1618;354354;Nokia Lumia 1020;0;0;1;true;05.05.2014 12:47;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;nokia-lumia-1020;true;;0;1;0;0;0;4;false;0;1;1;false
+1619;18989;Nokia Lumia 1520;0;0;1;true;05.05.2014 15:17;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;nokia-lumia-1520;true;;0;1;0;0;0;4;false;0;1;1;false
+1620;725752;Nokia Asha 210;0;0;1;true;05.05.2014 15:26;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;nokia-asha-210;true;;0;1;0;0;0;4;false;0;1;1;false
+1621;365365;Nokia Asha 502 Dual Sim;0;0;1;true;05.05.2014 16:25;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;nokia-asha-502-dual-sim;true;;0;1;0;0;0;4;false;0;1;1;false
+1622;8257425;Samsung Galaxy S4 mini Duos i9192;0;0;1;true;05.05.2014 16:40;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;samsung-galaxy-s4-mini-duos-i9192;true;;0;1;0;0;0;4;false;0;1;1;false
+1623;452425;Samsung Galaxy Grand 2 Duos SM-G7102;0;0;1;true;05.05.2014 16:49;03.08.2015 9:47;false;false;false;NULL;true;0;0;0;samsung-galaxy-grand-2-duos-smg7102;true;;0;1;0;0;0;4;false;0;1;1;false
+1624;ipne5sgray;Смартфон Apple iPhone 5s 16Gb (серый);5;0;112;true;13.08.2014 10:26;03.08.2015 9:47;false;true;false;21;false;8;0;0;smartfon-apple-iphone-5s-16gb-seryi;true;шт.;0;1;0;0;0;4;false;0;1;1;false
+1625;133456;Apple iPhone 6 16Gb;0;0;0,129999995;true;01.04.2015 17:22;11.04.2017 13:21;false;false;false;21;true;0;0;0;apple-iphone-6-16gb;true;;0;0;0;0;0;4;false;0;1;1;false
+1626;1626;Защитная пленка LuxCase 11'' прозрачная;0;0;0,01;true;01.04.2015 17:33;03.08.2015 9:47;false;false;false;50;false;0;0;0;product;true;;0;0;0;0;0;4;false;0;1;1;false
+1627;24524;Deppa защитное стекло для Samsung Galaxy Note 4;0;0;0;true;02.04.2015 9:20;03.08.2015 9:47;false;false;false;49;false;0;0;0;deppa-zaschitnoe-steklo-dlya-samsung-galaxy-note-4;true;;0;0;0;0;0;4;false;0;1;1;false
+1628;8764;Gresso чехол для Samsung Galaxy S3;0;0;0,129999995;true;02.04.2015 9:30;03.08.2015 9:47;false;false;false;51;false;0;0;0;gresso-chekhol-dlya-samsung-galaxy-s3;true;;0;0;0;0;0;4;false;0;1;1;false
+1629;3096;Стереогарнитура Deppa для Apple iPod, iPhone, iPad, 3.5 мм, черный;0;0;0;true;02.04.2015 9:39;03.08.2015 9:47;false;false;false;49;false;0;0;0;stereogarnitura-deppa-dlya-apple-ipod-iphone-ipad-3-5-mm-chernyi;true;;0;0;0;0;0;4;false;0;1;1;false
+1630;36008;Игровая приставка Xbox One;0;0;0;true;02.04.2015 9:56;03.08.2015 9:47;false;false;false;52;false;0;0;0;igrovaya-pristavka-xbox-one;true;;0;0;0;0;0;4;false;0;1;1;false
+1631;257678;Halo: The Master Chief Collection (Xbox One);0;0;0;true;02.04.2015 10:12;03.08.2015 9:47;false;false;false;52;false;0;0;0;halo-the-master-chief-collection-xbox-one;true;;0;0;0;0;0;4;false;0;1;1;false
+1632;245346;Lenovo VIBE Z2 Pro;0;0;0,180000007;true;02.04.2015 11:09;03.08.2015 9:47;false;false;false;53;false;0;0;0;lenovo-vibe-z2-pro;true;;0;0;0;0;0;4;false;0;1;1;false
+1633;1633;Lenovo Vibe X2;0;0;0,119999997;true;02.04.2015 11:27;03.08.2015 9:47;false;false;false;53;false;0;0;0;lenovo-vibe-x2;true;;0;0;0;0;0;4;false;0;1;1;false
+1634;1634;Lenovo S860;0;0;0,189999998;true;02.04.2015 11:52;03.08.2015 9:47;false;false;false;53;false;0;0;0;lenovo-s860;true;;0;0;0;0;0;4;false;0;1;1;false
+1635;1635;Lenovo A606;0;0;0,170000002;true;02.04.2015 12:02;03.08.2015 9:47;false;false;false;53;false;0;0;0;lenovo-a606;true;;0;0;0;0;0;4;false;0;1;1;false
+1636;1636;Платье Cole Tank;0;0;0;true;2015-04-02 12:27:24.070;03.08.2015 9:47;false;false;false;54;false;0;0;0;plate-just-female-cole-tank;true;;0;0;0;0;0;4;false;0;1;1;false
+1637;1637;Платье Crop Top Skater;0;0;0;true;02.04.2015 14:28;03.08.2015 9:47;false;false;false;54;false;0;0;0;plate-crop-top-skater;true;;0;0;0;0;0;4;false;0;1;1;false
+1638;1638;Облегающее платье с открытыми плечами;0;0;0;true;02.04.2015 14:34;03.08.2015 9:47;false;false;false;24;false;0;0;0;oblegaiuschee-plate-s-otkrytymi-plechami;true;;0;0;0;0;0;4;false;0;1;1;false
+1639;1639;Samsung LT24D590EX;0;0;0;true;2015-04-02 14:47:35.083;2015-08-03 09:47:17.060;false;false;false;17;false;0;0;0;samsung-lt24d590ex;true;;0;0;0;0;0;4;false;0;1;1;false
+1640;1640;Samsung UE65H8000;0;0;0;true;02.04.2015 14:56;03.08.2015 9:47;false;false;false;17;false;0;0;0;samsung-ue65h8000;true;;0;0;0;0;0;4;false;0;1;1;false
+1641;1641;Samsung UE24H4080;0;0;0;true;02.04.2015 15:06;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;samsung-ue24h4080;true;;0;0;0;0;0;4;false;0;1;1;false
+1642;1642;Samsung MD46C;0;0;0;true;02.04.2015 15:13;03.08.2015 9:47;false;false;false;17;false;0;0;0;samsung-md46c;true;;0;0;0;0;0;4;false;0;1;1;false
+1643;1643;Philips BDL4260EL;0;0;0;true;02.04.2015 15:22;03.08.2015 9:47;false;false;false;33;false;0;0;0;philips-bdl4260el;true;;0;0;0;0;0;4;false;0;1;1;false
+1644;1644;Платье с вырезами по бокам;0;0;0;true;03.04.2015 16:41;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;plate-s-vyrezami-po-bokam;true;;0;0;0;0;0;4;false;0;1;1;false
+1645;1645;Чехол для iPhone 6;0;0;0;true;06.04.2015 9:56;03.08.2015 9:47;false;false;false;NULL;false;0;0;0;chekhol-dlya-iphone-6;true;;0;0;0;0;0;4;false;0;1;1;false
+1646;1646;Смартфон Apple iPhone 7 32GB (черный);5;0;0,137999997;true;11.04.2017 12:46;11.04.2017 14:53;true;true;false;21;false;0;50;0;smartfon-apple-iphone-7-32gb-chernyi;true;;0;1;67;138;7;4;false;0;1;1;false
