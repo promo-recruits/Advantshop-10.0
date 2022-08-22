@@ -1,9 +1,0 @@
-﻿@model AdvantShop.Web.Admin.Models.Landings.LandingAdminSiteSettings
-
-<div class="m-sm">
-    CSS стили для всех страниц воронки
-</div>
-
-<ui-ace-textarea ui-ace-options="{mode: 'css'}" ng-model="landingSite.settings.SiteCss">
-    @Html.TextAreaFor(x => x.SiteCss, new { ng_model = "landingSite.settings.SiteCss" })
-</ui-ace-textarea>

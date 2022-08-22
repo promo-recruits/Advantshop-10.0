@@ -1,8 +1,0 @@
-﻿<div>
-    <button type="button" class="btn btn-xsmall btn-submit" data-ng-click="boxberry.boxberryOpenWidget()">{{ ::'Js.ShippingTemplate.SelectPickupPoint' | translate }}</button>
-    <div data-ng-bind="boxberry.boxberryDeliveryShipping.PickpointAddress"></div>
-    <div data-ng-if="boxberry.boxberryDeliveryShipping.PickpointAddress == null && boxberry.boxberryIsSelected" class="shipping-extend-error error-color">
-        {{ ::'Js.ShippingTemplate.SelectPickupPoint.NotSelected' | translate }}
-    </div>
-    <input data-ng-if="boxberry.boxberryIsSelected" class="shipping-extend-input-hidden" type="text" data-ng-model="boxberry.boxberryDeliveryShipping.PickpointAddress" required readonly data-validation-input-text="{{ ::'Js.ShippingTemplate.SelectPickupPoint.NotSelected' | translate }}" />
-</div>

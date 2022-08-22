@@ -1,3 +1,0 @@
-﻿OrderID;Number;OrderDate[DATE];PaymentDate[DATE];GroupName;StatusComment;IsDraft;Decremented;ShippingCost;TaxCost;SupplyTotal;Sum;OrderStatusID;ShippingContactID;BillingContactID;Code[GUID];ManagerConfirmed;ManagerId;PreviousStatus;OrderSourceId;IsSendedToGA
-3;3;2021-06-07 15:16:18.000;2021-06-07 18:19:17.987;Обычный покупатель;;false;false;0;0;0;890;2;0;0;7D25CF0A-F697-459F-9C05-745F50E5F812;false;6;Новый;1;false
-4;4;2021-06-07 15:16:41.000;2021-06-07 18:19:17.987;Обычный покупатель;;false;false;0;0;0;2670;2;0;0;18E4C5D3-1954-4CFF-9BF2-0AFE6B1867F7;false;6;Новый;1;false

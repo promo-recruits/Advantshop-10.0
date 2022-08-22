@@ -1,7 +1,0 @@
-﻿CouponID;Code;Type;Value;AddingDate[DATE];PossibleUses;ActualUses;Enabled;MinimalOrderPrice;CurrencyIso3;ForFirstOrder
-1;test1;1;100;21.11.2016 11:10;0;0;true;0;RUB;false
-2;test2;1;200;20.11.2016 11:10;10;0;true;0;RUB;false
-3;test3;2;30;19.11.2016 11:10;0;0;true;0;RUB;false
-4;test4;2;40;18.11.2016 11:10;0;0;true;100;RUB;false
-5;test5;1;200;17.11.2016 11:10;0;0;false;0;RUB;false
-6;test6;1;200;16.11.2016 11:10;1;0;true;0;RUB;false

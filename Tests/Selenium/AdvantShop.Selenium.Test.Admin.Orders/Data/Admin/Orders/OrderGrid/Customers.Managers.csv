@@ -1,4 +1,0 @@
-ManagerId;CustomerId[GUID];DepartmentId;Position;Active
-2;CFC2C33B-1E84-415E-8482-E98156341604;NULL;Менеджер продаж;true
-3;CFC2C33B-1E84-415E-8482-E98156341605;NULL;Менеджер продаж;true
-4;CFC2C33B-1E84-415E-8482-E98156341603;NULL;Менеджер продаж;true

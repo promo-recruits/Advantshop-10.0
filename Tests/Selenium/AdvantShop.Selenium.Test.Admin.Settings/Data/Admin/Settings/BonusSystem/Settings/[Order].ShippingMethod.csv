@@ -1,3 +1,0 @@
-ShippingMethodID;ShippingType;Name;Enabled;SortOrder;DisplayCustomFields;ShowInDetails;ZeroPriceMessage;DisplayIndex
-1;FixedRate;FixedRateMailMen;true;1;true;false;Бесплатно;true
-2;FreeShipping;FreeShipping;false;2;true;false;Бесплатно;true

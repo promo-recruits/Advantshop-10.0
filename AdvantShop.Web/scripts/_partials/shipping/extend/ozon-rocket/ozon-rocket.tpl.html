@@ -1,8 +1,0 @@
-﻿<div>
-    <a class="btn btn-xsmall btn-submit" href="javascript:void(0)" modal-open="{{ozonRocket.modalId}}">{{ ::'Js.ShippingTemplate.SelectPickupPoint' | translate }}</a>
-    <div data-ng-bind="ozonRocket.ozonRocketShipping.PickpointAddress"></div>
-    <div data-ng-if="ozonRocket.ozonRocketShipping.PickpointAddress == null && ozonRocket.ozonRocketIsSelected" class="shipping-extend-error error-color">
-        {{ ::'Js.ShippingTemplate.SelectPickupPointOrDelivery.NotSelected' | translate }}
-    </div>
-    <input data-ng-if="ozonRocket.ozonRocketIsSelected" class="shipping-extend-input-hidden" type="text" data-ng-model="ozonRocket.ozonRocketShipping.PickpointAddress" required readonly data-validation-input-text="{{ ::'Js.ShippingTemplate.SelectPickupPoint.NotSelected' | translate }}" />
-</div>

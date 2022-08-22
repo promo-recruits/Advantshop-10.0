@@ -1,2 +1,0 @@
-﻿ContactID[GUID];CustomerID[GUID];Name;Country;City;Zone;CountryID;RegionID;Zip;Street;House
-CFC2C33B-1E84-415E-8482-E99156341700;CFC2C33B-1E84-415E-8482-E98156341604;Customer Name;Россия;Москва;Московская область;171;42;111111;Test Street;1

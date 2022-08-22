@@ -1,1 +1,0 @@
-﻿import '../scripts/app.js';

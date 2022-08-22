@@ -1,7 +1,0 @@
-﻿Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
-1;1;logo;;logo;"{""alt"":""Мой магазин"",""src"":""areas/landing/frontend/images/logotype.png""}";0
-2;1;phone;+7 (999) 420-02-01;html;null;100
-3;1;phone_mobile;88005508313;phonemobile;null;200
-4;1;email;info@mysite.ru;html;null;300
-5;1;callback;;button;"{""text"":""Обратный звонок"",""style"":{}}";400
-6;1;menuHeader;;menu;"{""font_size"":16,""menu_items_spacing"":20,""style"":{""font-size"":""16px"",""padding-left"":""20px"",""padding-right"":""20px""}}";500

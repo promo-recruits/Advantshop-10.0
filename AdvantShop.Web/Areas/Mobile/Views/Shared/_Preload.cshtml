@@ -1,5 +1,0 @@
-﻿@using AdvantShop.CDN;
-@{
-    string basePath = CDNService.UseCDN(eCDN.Fonts) ? CDNService.GetCDNUrl(eCDN.Fonts) : "fonts/";
-}
-<link rel="preload" as="font" href="@(basePath)advantshopfonts/advantshopfonts.woff2" type="font/woff2" crossorigin />

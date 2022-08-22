@@ -1,2 +1,0 @@
-﻿CurrencyID;Name;Code;CurrencyValue;CurrencyIso3;IsCodeBefore;CurrencyNumIso3;RoundNumbers;EnablePriceRounding
-1;TestCurrencyName1;руб.;66.4779;R11;true;1;-1;false

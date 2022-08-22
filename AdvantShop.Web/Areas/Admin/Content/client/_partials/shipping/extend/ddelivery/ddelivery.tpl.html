@@ -1,8 +1,0 @@
-﻿<div>    
-    <a class="btn btn-xsmall btn-submit" href="javascript:void(0)" modal-open="modalDdeliveryWidget">{{ ::'Js.ShippingTemplate.SelectPickupPoint' | translate }}</a>    
-    <div data-ng-bind="ddelivery.ddeliveryDeliveryShipping.PickpointAddress"></div>
-    <div data-ng-if="ddelivery.ddeliveryDeliveryShipping.PickpointAddress == null && ddelivery.ddeliveryIsSelected" class="shipping-extend-error error-color">
-        {{ ::'Js.ShippingTemplate.SelectPickupPoint.NotSelected' | translate }}
-    </div>
-    <input data-ng-if="ddelivery.ddeliveryIsSelected" class="shipping-extend-input-hidden" type="text" data-ng-model="ddelivery.ddeliveryDeliveryShipping.PickpointAddress" required readonly data-validation-input-text="{{ ::'Js.ShippingTemplate.SelectPickupPoint.NotSelected' | translate }}" />    
-</div>

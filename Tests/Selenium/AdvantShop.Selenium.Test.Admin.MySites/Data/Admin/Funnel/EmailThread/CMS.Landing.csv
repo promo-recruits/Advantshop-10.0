@@ -1,3 +1,0 @@
-﻿Id;Name;Enabled;Template;Url;CreatedDate;LandingSiteId;IsMain;PageType
-1;AddEmailThreadFunnel;true;Default;addemailthreadfunnel;2021-06-01 18:54:39.080;1;true;0
-2;SendEmailThreadFunnel;true;Default;sendemailthreadfunnel;2021-06-01 18:55:13.070;2;true;0

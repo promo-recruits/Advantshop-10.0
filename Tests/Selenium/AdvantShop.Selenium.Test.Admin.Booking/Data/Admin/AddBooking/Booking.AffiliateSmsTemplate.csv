@@ -1,3 +1,0 @@
-﻿Id;AffiliateId;Status;Text;Enabled
-1;1;1;Доступны следующие переменные:;true
-2;1;2;Доступны следующие переменные: #BOOKING_ID# - Номер брони;true

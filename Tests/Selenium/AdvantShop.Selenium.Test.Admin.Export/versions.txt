@@ -1,5 +1,0 @@
-Для версии 7.0.4
-1. В таблицу RelatedProducts добавлена колонка SortOrder
-2. В ProductSettingYandexExport изменен принцип проверки модификаций
-3. Добавлена обязательная колонка hidden в catalog.products
-4. Добавлено обязательное поле ProductCount в ProductGifts

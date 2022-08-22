@@ -1,4 +1,0 @@
-OrderID;Number;ShippingMethodID;PaymentMethodID;OrderDate;PaymentDate;StatusComment;Decremented;ShippingCost;TaxCost;SupplyTotal;Sum;OrderStatusID;ShippingContactID;BillingContactID;PaymentMethodName;ShippingMethodName;CertificateCode;CertificatePrice;PaymentCost;BonusCost;DiscountCost;Code[GUID];ManagerConfirmed;OrderSourceId;IsDraft;IsFromAdminArea
-4;4;209;951;2016-08-07 00:00:00.003;NULL;comment4;false;0;0;4;100;2;4;4;При получении (наличными или банковской картой);Самовывоз;NULL;NULL;0;0;0;CFC2C33B-1E84-415E-8482-E98156341513;true;1;false;false
-5;5;209;951;2016-08-08 00:00:00.004;NULL;comment5;true;0;0;5;150;2;5;5;При получении (наличными или банковской картой);Самовывоз;NULL;NULL;0;0;0;CFC2C33B-1E84-415E-8482-E98156341514;true;1;false;false
-6;6;209;951;2016-08-09 00:00:00.005;2016-08-09 00:00:00.006;comment6;true;0;0;0;200;3;6;6;При получении (наличными или банковской картой);Самовывоз;NULL;NULL;0;0;0;CFC2C33B-1E84-415E-8482-E98156341515;true;1;false;false

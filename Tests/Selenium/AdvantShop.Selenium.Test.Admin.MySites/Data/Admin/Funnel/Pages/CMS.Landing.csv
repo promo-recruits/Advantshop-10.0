@@ -1,5 +1,0 @@
-﻿Id;Name;Enabled;Template;Url;CreatedDate;LandingSiteId;IsMain;ProductId
-1;FunnelPage1;true;Default;funnelpage1;03.06.2021 18:14;1;true;NULL
-2;FunnelPage2;true;Default;funnelpage2;03.06.2021 18:14;1;false;NULL
-3;FunnelPage3;false;Default;funnelpage3;03.06.2021 18:15;1;false;NULL
-4;FunnelPage4;false;Default;funnelpage4;03.06.2021 18:15;1;false;NULL

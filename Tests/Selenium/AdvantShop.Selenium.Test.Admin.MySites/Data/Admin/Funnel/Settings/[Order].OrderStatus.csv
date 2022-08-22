@@ -1,7 +1,0 @@
-﻿OrderStatusID;StatusName;CommandID;IsDefault;IsCanceled;Color;SortOrder;IsCompleted;Hidden;CancelForbidden
-2;Новый;0;true;false;ffc73e;0;false;false;false
-3;В обработке;2;false;false;77ff77;0;false;false;false
-4;Отправлен;0;false;false;ff9bb9;0;false;false;false
-5;Доставлен;0;false;false;58bae9;0;true;false;true
-27;Отменён;1;false;true;a3a3a3;0;false;false;true
-28;Отменен навсегда;0;false;true;3f3f3f;0;false;false;true

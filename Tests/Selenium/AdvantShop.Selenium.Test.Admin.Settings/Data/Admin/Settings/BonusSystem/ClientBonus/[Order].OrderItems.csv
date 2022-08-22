@@ -1,2 +1,0 @@
-OrderItemID;OrderID;ProductID;Name;Price;Amount;ArtNo;SupplyPrice;Weight;IsCouponApplied;DecrementedAmount;IgnoreOrderDiscount;AccrueBonuses;TypeItem
-1;1;1;TestProduct1;1;1;1;0;1;false;1;true;false;Product

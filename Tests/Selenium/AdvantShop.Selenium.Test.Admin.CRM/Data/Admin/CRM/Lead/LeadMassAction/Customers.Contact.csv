@@ -1,2 +1,0 @@
-﻿ContactID[GUID];CustomerID[GUID];Name;Country;City;Zone;Address;Zip;CountryID;RegionID;Street;House;Apartment;Structure;Entrance;Floor
-F71B0898-D591-443B-B46A-1EE6681DBE92;CFC2C33B-1E84-415E-8482-E98156341604;FirstName LastName;Россия;Москва;Московская область;NULL;112233;NULL;NULL;Арбат;1;2;3;4;5

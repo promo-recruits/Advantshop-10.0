@@ -1,3 +1,0 @@
-CategoryID;ParentCategory;Name;Enabled;SortOrder;UrlPath;DisplayStyle
-1;0;TestCategory1;true;0;test-category-1;1
-2;0;TestCategory2;true;0;test-category-2;1

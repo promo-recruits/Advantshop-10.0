@@ -1,5 +1,0 @@
-﻿Id;LandingBlockId;Name;ContentHtml;Type;Settings;SortOrder
-1;1;title;Вдохновляйся идеями;html;null;0
-2;1;subtitle;Реализуй все с Advantshop;html;null;100
-3;1;text;"Текст, от латинского textus «ткань; сплетение, связь, сочетание» — зафиксированная на каком-либо материальном носителе человеческая мысль; в общем плане связная и полная последовательность символов.";html;null;200
-4;1;picture;;picture;"{""src"":""./areas/landing/frontend/images/texts/text_image_reverse.jpg"",""class"":""""}";300

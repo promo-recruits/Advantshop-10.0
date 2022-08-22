@@ -1,3 +1,0 @@
-Id;Name;Enabled;Template;Url;DomainUrl;CreatedDate;ProductId
-1;test1;true;Default;test1;;04.02.2019 13:49;NULL
-2;Воронка допродаж к TestProduct1;true;ProductCrossSellDownSell;cross-testproduct1;;18.07.2019 15:05;1

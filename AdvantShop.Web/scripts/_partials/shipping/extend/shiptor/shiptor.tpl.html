@@ -1,8 +1,0 @@
-﻿<div>
-    <a class="btn btn-xsmall btn-submit" href="javascript:void(0)" data-role="shiptor_widget_show" modal-open="{{shiptor.modalId}}">{{ ::'Js.ShippingTemplate.SelectPickupPoint' | translate }}</a>
-    <div data-ng-bind="shiptor.shiptorShipping.PickpointAddress"></div>
-    <div data-ng-if="shiptor.shiptorShipping.PickpointAddress == null && shiptor.shiptorIsSelected" class="shipping-extend-error error-color">
-        {{ ::'Js.ShippingTemplate.SelectPickupPointOrDelivery.NotSelected' | translate }}
-    </div>
-    <input data-ng-if="shiptor.shiptorIsSelected" class="shipping-extend-input-hidden" type="text" data-ng-model="shiptor.shiptorShipping.PickpointAddress" required readonly data-validation-input-text="{{ ::'Js.ShippingTemplate.SelectPickupPoint.NotSelected' | translate }}" />
-</div>

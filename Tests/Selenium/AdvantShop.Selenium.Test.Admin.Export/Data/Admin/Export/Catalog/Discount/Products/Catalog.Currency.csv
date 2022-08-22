@@ -1,4 +1,0 @@
-﻿CurrencyID;Name;Code;CurrencyValue;CurrencyIso3;IsCodeBefore;CurrencyNumIso3;RoundNumbers;EnablePriceRounding
-4;RUB; руб.;1;RUB;false;643;1;false
-16;EUR; €;75;EUR;false;978;1;false
-18;USD;$;66;USD;true;840;1;false

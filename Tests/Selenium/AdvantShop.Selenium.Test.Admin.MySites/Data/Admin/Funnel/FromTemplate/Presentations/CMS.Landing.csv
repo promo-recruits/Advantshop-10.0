@@ -1,8 +1,0 @@
-﻿Id;Name;Enabled;Template;Url;CreatedDate;LandingSiteId;IsMain;PageType;ProductId
-1;FunnelPage1;true;Default;funnelpage1;2021-06-03 18:14:00.000;1;true;NULL;NULL
-2;FunnelPage2;true;Default;funnelpage2;2021-06-03 18:14:00.000;1;false;NULL;NULL
-3;FunnelPage3;false;Default;funnelpage3;2021-06-03 18:15:00.000;1;false;NULL;NULL
-4;Главная;true;EventAction;glavnaya;06.10.2021 17:38;2;true;1;NULL
-5;Страница благодарности;true;EventAction;stranitsa-blagodarnosti;06.10.2021 17:38;2;false;6;NULL
-6;Главная;true;Webinar;glavnaya;06.10.2021 17:38;3;true;1;NULL
-7;Спасибо;true;Webinar;spasibo;06.10.2021 17:38;3;false;6;NULL

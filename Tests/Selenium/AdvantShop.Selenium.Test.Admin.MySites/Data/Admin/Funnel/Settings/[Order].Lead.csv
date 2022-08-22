@@ -1,3 +1,0 @@
-﻿Id;FirstName;Phone;Email;LeadStatus;Comment;CustomerId[GUID];ManagerId;CreatedDate[DATE];Discount;OrderSourceId;LastName;Patronymic;Description;Sum;DealStatusId;DiscountValue;IsFromAdminArea;ShippingCost;ModifiedDate;SortOrder;SalesFunnelId;Organization;Title
-2;NameSecond;79999999992;emailSecond@mail.ru;NULL;;8A22DFF6-34D5-4DD8-9C12-884310FD9B4F;6;07.06.2021 15:15;0;12;SurnameSecond;;;890;7;0;true;0;07.06.2021 15:15;10;2;;Лид №2
-3;NameThird;79999999993;emailThird@mail.ru;NULL;;443C44E3-7B8D-4D3A-A458-461EC2F0B527;6;07.06.2021 15:15;0;12;SurnameThird;;;0;10;0;true;0;07.06.2021 15:15;10;3;;Лид №3

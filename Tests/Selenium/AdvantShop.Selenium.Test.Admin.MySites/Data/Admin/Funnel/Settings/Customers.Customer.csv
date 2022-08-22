@@ -1,5 +1,0 @@
-﻿CustomerID[GUID];Password;FirstName;LastName;Phone;RegistrationDateTime[DATE];Email;CustomerGroupId;CustomerRole;Patronymic;Rating;StandardPhone;Enabled;InnerId;SortOrder;ClientStatus;RegisteredFrom
-443C44E3-7B8D-4D3A-A458-461EC2F0B527;Qpf0SxOVUjUkWySXOZ16kw==;NameThird;SurnameThird;79999999993;07.06.2021 15:13;emailThird@mail.ru;1;0;;0;NULL;true;4;0;0;http://localhost:91/registration
-2D14A6B4-ADFB-48E0-8892-84EF5323A106;Qpf0SxOVUjUkWySXOZ16kw==;NameFirst;SurnameFirst;79999999991;07.06.2021 15:12;emailFirst@mail.ru;1;0;;0;NULL;true;2;0;0;http://localhost:91/registration
-8A22DFF6-34D5-4DD8-9C12-884310FD9B4F;Qpf0SxOVUjUkWySXOZ16kw==;NameSecond;SurnameSecond;79999999992;07.06.2021 15:12;emailSecond@mail.ru;1;0;;0;NULL;true;3;0;0;http://localhost:91/registration
-835D82DF-AAA6-4D54-A870-8D353E541AF9;Qpf0SxOVUjUkWySXOZ16kw==;Администратор;Магазина;+7 495 800 20 00 ;19.10.2015 10:45;admin;1;100;;5;NULL;true;1;0;0;NULL

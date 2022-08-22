@@ -1,7 +1,0 @@
-Id;Name;FieldType;SortOrder;Required;Enabled;ShowInRegistration;ShowInCheckout;DisableCustomerEditing
-1;Customer Field 1;0;1;false;true;false;false;false
-2;Customer Field 2;1;2;false;true;false;false;false
-3;Customer Field 3;2;3;false;true;false;false;false
-4;Customer Field 4;3;4;false;true;false;false;false
-5;Customer Field 5;1;5;false;false;false;false;false
-6;Customer Field 6;4;6;false;true;false;false;false

@@ -1,5 +1,0 @@
-﻿Id;Name;Enabled;Template;Url;CreatedDate;LandingSiteId;IsMain;PageType;ProductId
-1;test1;true;Default;test1;2019-02-04 13:49:00.000;1;true;0;NULL
-2;page1;true;Default;page1;2019-02-04 13:50:00.000;1;false;0;NULL
-3;CrossSell1;true;ProductCrossSellDownSell1;cross-sell1;2019-02-04 13:50:00.000;2;true;3;8
-4;CrossSell2;true;ProductCrossSellDownSell2;cross-sell2;2019-02-04 13:50:00.000;3;true;3;8

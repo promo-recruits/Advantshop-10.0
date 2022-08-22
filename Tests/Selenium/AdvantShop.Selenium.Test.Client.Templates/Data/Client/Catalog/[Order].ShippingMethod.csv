@@ -1,8 +1,0 @@
-﻿ShippingMethodID;ShippingType;Name;Enabled;SortOrder;DisplayCustomFields;ShowInDetails;ZeroPriceMessage;DisplayIndex
-1;SelfDelivery;Самовывоз;true;1;false;false;Бесплатно;false
-2;FixedRate;Курьером по Москве;true;2;true;false;Бесплатно;true
-3;FreeShipping;Бесплатная доставка;true;3;true;false;Бесплатно;true
-4;Edost;On-line расчет стоимости;true;4;true;false;Бесплатно;true
-5;FixedRate;Курьером;true;5;true;false;Бесплатно;true
-6;CheckoutRu;Checkout;true;6;true;false;Бесплатно;true
-7;Edost;Edost;true;7;true;false;Бесплатно;true
